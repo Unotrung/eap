@@ -1,0 +1,103 @@
+<div class="title-infor hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
+
+<div class="container-right-body" [class.container-right-body-stt]="msgStt">
+    <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
+    <div [hidden] = "msgStt === 'success' || msgStt === 'fail'">
+        <div class="title-register">
+            {{'forgotPin.titleSetPin' | translate}}
+        </div>
+
+        <div class="form-code">
+            <form class="form-update">
+                <div class="mb-label">{{'forgotPin.labelNewPin' | translate}}</div>
+
+                <div class="cover-input-pin">
+                    <code-input [className]="'code-input-3'"
+                                [codeLength]="4"
+                                [isCodeHidden]="true"
+                                (codeChanged)="onCodeChanged($event)"
+                                (codeCompleted)="onCodeCompleted($event)">
+                    </code-input>
+                </div>
+            </form>
+
+            <form class="form-update">
+                <div class="mb-label">{{'forgotPin.labelVerifyPin' | translate}}</div>
+
+                <div class="cover-input-pin">
+                    <code-input [className]="msgVerifyError===''?'code-input-3':'code-input-4'"
+                                [codeLength]="4"
+                                [isCodeHidden]="true"
+                                (codeChanged)="onCodeChangedVerify($event)"
+                                (codeCompleted)="onCodeCompletedVerify($event)"
+                                #codeInput>
+                    </code-input>
+                    <div class="text-invalid" >
+                        <label *ngIf="(pinCode !== verifyPinCode) && verifyPinCode.length == 4">{{msgVerifyError|translate}}</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="cover-btn">
+            <button (click)="submit()"
+                    [disabled]="pinCode.length<4||verifyPinCode.length<4"
+                    [style]="pinCode.length<4||verifyPinCode.length<4?null:'background:#000000'">
+                {{'forgotPin.continue'|translate}}
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf = "msgStt === 'success'" class="status">
+        <app-status [isStatus]="true"
+                    [msgStatus]="'forgotPin.sttSuccess' | translate"
+                    [msgDescription]=""></app-status>
+    </div>
+    <div *ngIf = "msgStt === 'fail'" class="status">
+        <app-status [isStatus]="false"
+                    [msgStatus]="'forgotPin.sttFail' | translate"
+                    [msgDescription]=""></app-status>
+    </div>
+</div>
+
+
+
+<!--<div class="container-update-pin">-->
+<!--    <h1>Đổi mã pin</h1>-->
+<!--    <form class="form-update">-->
+<!--        <div><label>Nhập mã PIN mới</label></div>-->
+
+<!--        <div cols="4" class="cover-input-pin">-->
+<!--            <code-input [codeLength]="4"-->
+<!--                        [isCodeHidden]="true"-->
+<!--                        (codeChanged)="onNewPinChanged($event)"-->
+<!--                        (codeCompleted)="onNewPinComplete($event)">-->
+<!--            </code-input>-->
+<!--        </div>-->
+
+<!--    </form>-->
+
+<!--    <form class="form-update">-->
+<!--        <div><label>Nhập lại mã PIN mới</label></div>-->
+
+<!--        <div cols="4" class="cover-input-pin">-->
+<!--            <code-input [codeLength]="4"-->
+<!--                        (codeChanged)="onVerifyPinChanged($event)"-->
+<!--                        (codeCompleted)="onVerifyPinComplete($event)">-->
+<!--            </code-input>-->
+<!--        </div>-->
+<!--        <div fxLauout='row' class="form-valid" *ngIf="messageCompare!==''">-->
+<!--            <div class="img-valid" fxFlex='10%'><img src="../../../../assets/images/Warning.png"></div>-->
+<!--            <div class="content-valid">{{messageCompare}}</div>-->
+<!--        </div>-->
+<!--    </form>-->
+
+<!--    <div class="cover-btn">-->
+<!--        <button [style]="newPin.length<4||verifyPin.length<4?'background:#979797':null"-->
+<!--                [disabled]="newPin.length<4||verifyPin<4" (click)="submit()">Xác nhận-->
+<!--        </button>-->
+<!--    </div>-->
+
+<!--    <div class="close-popup" (click)="closePopup()">-->
+<!--        <img class="icon-close" src="../../../../assets/images/close.png">-->
+<!--    </div>-->
+<!--</div>-->

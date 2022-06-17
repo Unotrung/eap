@@ -1,0 +1,85 @@
+<div class="container-transaction hidden-480">
+    <div class="header-table">
+        <div class="name-table">{{'note.titleTable' | translate}}</div>
+        <div class="action-page">
+            <div>
+                <select>
+                    <option [value]="5" selected>{{'note.moreRecord' | translate}}</option>
+                    <option [value]="100">{{'note.100Record' | translate}}</option>
+                    <option [value]="200">{{'note.200Record' | translate}}</option>
+                    <option [value]="300">{{'note.allRecord' | translate}}</option>
+                </select>
+            </div>
+            <div class="no-page">
+                {{1}} - {{3}} of {{300}}
+            </div>
+            <div class="cover-change-page">
+                <div (click)="previousPage()" *ngIf="page !== 1" class="btn-prev-page">
+                    <img src="../../../assets/images/next-page.png">
+                </div>
+
+                <div *ngIf="page === 1" class="btn-prev-disable">
+                    <img src="../../../assets/images/disable-page.png">
+                </div>
+
+                <div (click)="nextPage()" *ngIf="page !== totalPage" class="btn-next-page">
+                    <img src="../../../assets/images/next-page.png">
+                </div>
+
+                <div *ngIf="page === totalPage" class="btn-next-disable">
+                    <img src="../../../assets/images/disable-page.png">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--    table transaction-->
+    <table>
+        <tbody>
+        <tr class="row-content" *ngFor="let note of listNote, let i = index">
+            <td width="60px">
+                <div class="first-column">
+                    <input type="checkbox">
+                </div>
+            </td>
+            <td>
+                <img (click)="pinNote(note.id)" class="star-icon" src="../../../assets/images/star-no-pin.png">
+                <img (click)="pinNote(note.id)" *ngIf="id === (i+1)" class="star-icon"
+                     src="../../../assets/images/star-pin.png">
+            </td>
+            <td>
+                {{note.content}}
+            </td>
+            <td>
+                <button class="btn-action" [style]="note.type === 'Giao dịch'?'background: #E3BFEE':
+                                     note.type === 'Mã giảm giá'? 'background: #E4BDBB':
+                                      note.type === 'Tin tức'? 'background: #C6EEF6':
+                                      note.type === 'Thanh toán'? 'background: #B4B7EC':'background: #EDDFCF'">
+                    {{note.type}}
+                </button>
+            </td>
+            <td>{{note.time}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div *ngIf="loading" class="loading">
+        <app-loading></app-loading>
+    </div>
+    <div *ngIf="errorMgs!==''" style="width: 100%;text-align: center; color: red; font-size: 16px; margin-top: 40px">
+        {{errorMgs}}!
+    </div>
+</div>
+<!--mobile web-->
+<div>
+    <div class="item-box" style="height: 2px"></div>
+    <div class="item-box" *ngFor="let note of listNote, let i = index">
+        <div class="content-mobile">{{note.content}}</div>
+        <button class="btn-mobile"
+                [style]="note.type === 'Giao dịch'?'background: #E3BFEE':
+                                     note.type === 'Mã giảm giá'? 'background: #E4BDBB':
+                                      note.type === 'Tin tức'? 'background: #C6EEF6':
+                                      note.type === 'Thanh toán'? 'background: #B4B7EC':'background: #EDDFCF'">
+            {{note.type}}
+        </button>
+    </div>
+</div>

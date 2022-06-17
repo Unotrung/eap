@@ -1,0 +1,21 @@
+<div class="container-right-body">
+    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div *ngIf="!loading">
+        <div class="content-register">
+            <div>
+                <div class="cover-img">
+                    <img src="../../assets/images/icon-btn-register-bnpl.png">
+                </div>
+                <div class="text-des">{{'inforBnpl.titleRegister' | translate}}</div>
+                <div class="cover-btn">
+                    <button routerLink="/selfie" class="btn-register-bnpl">{{'inforBnpl.btnRegister' | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading" *ngIf="loading">
+        <app-loading></app-loading>
+    </div>
+</div>
+

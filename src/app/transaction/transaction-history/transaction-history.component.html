@@ -1,0 +1,99 @@
+<div class="container-transaction">
+    <div class="header-table">
+        <div class="name-table">{{'transaction.titleTable' | translate}}</div>
+        <div class="action-page">
+            <div>
+                <div class="selection-more-records" (click)="isShow = !isShow">
+                    <div style="width: 100%; cursor: pointer" >{{itemChooseMore | translate}}</div>
+                    <img class="icon-drop-more" src="../../../assets/images/next-page.png">
+                    <div *ngIf = "isShow" class="option-cover">
+                        <div *ngFor = "let tr of listItemValue, let i = index" (click)="getManyRecord(tr,$event)">
+                            {{listItemText[i] | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf = "errorMgs ==''" class="no-page">
+                {{page}} - {{totalPage}} of {{totalItem}}
+            </div>
+            <div class="cover-change-page">
+                <div (click)="previousPage()" *ngIf="page !== 1" class="btn-prev-page">
+                    <img src="../../../assets/images/next-page.png">
+                </div>
+
+                <div *ngIf="page === 1" class="btn-prev-disable">
+                    <img src="../../../assets/images/disable-page.png">
+                </div>
+
+                <div (click)="nextPage()" *ngIf="page !== totalPage" class="btn-next-page">
+                    <img src="../../../assets/images/next-page.png">
+                </div>
+
+                <div *ngIf="page === totalPage" class="btn-next-disable">
+                    <img src="../../../assets/images/disable-page.png">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--    table transaction-->
+    <table>
+        <thead>
+        <tr>
+            <td style="width: 20%"><div class="first-column">{{'transaction.providerName' | translate}}
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='provider'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('provider')"
+                     src="../../../assets/images/angle-down.png">
+            </div>
+            </td>
+            <td style="width: 13%">{{'transaction.date' | translate}}
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='date'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('date')"
+                     src="../../../assets/images/angle-down.png">
+            </td>
+            <td style="width: 25%">{{'transaction.productName' | translate}}
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='product'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('product')"
+                     src="../../../assets/images/angle-down.png">
+            </td>
+            <td>{{'transaction.price' | translate}}
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='price'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('price')"
+                     src="../../../assets/images/angle-down.png">
+            </td>
+            <td>{{'transaction.status' | translate}}
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='status'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('status')"
+                     src="../../../assets/images/angle-down.png">
+            </td>
+            <td>{{'transaction.action' | translate}}</td>
+        </tr>
+        </thead>
+        <tbody *ngFor="let tran of listTransaction">
+        <tr *ngIf="!loading" class="row-content">
+            <td> <div class="first-column">{{tran.provider}}</div></td>
+            <td>{{tran.date | dateStyle}}</td>
+            <td>{{tran.product}}</td>
+            <td>{{tran.price}}</td>
+            <td class="status-text"
+                    [style]="tran.status==='Thành công'?'color:#56CA8B':
+                    tran.status==='Không thành công'||tran.status==='không thành công'?'color:#EE4D2D':'color:#9A9393'">
+                {{tran.status}}
+            </td>
+            <td (click)="openDialogDetail(tran._id)"><a>{{'transaction.view' | translate}}</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <div *ngIf="loading" class="loading">
+        <app-loading></app-loading>
+    </div>
+    <div  *ngIf="errorMgs!==''" style="width: 100%;text-align: center; color: red; font-size: 16px; margin-top: 40px">
+        {{errorMgs}}!
+    </div>
+</div>
+

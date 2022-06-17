@@ -1,0 +1,50 @@
+<div class="form-login-container" id="get-otp">
+  <div class="title-otp">{{'register.inputOtp' | translate}}</div>
+  <div class="note-send">
+    {{'register.noteOtp' | translate}} {{data.new_email | emailStyle}}
+  </div>
+  <div>
+    <div class="cover-input-pin">
+      <code-input [className]="messageErr!==''?'code-input-2':'code-input-1'" [codeLength]="6"
+                  [isCodeHidden]="false"
+                  (codeChanged)="onCodeChanged($event)"
+                  (codeCompleted)="onCodeCompleted($event)">
+      </code-input>
+      <div class="under-input" *ngIf="messageErr != ''">
+        <div class="err">
+          {{messageErr | translate}}
+        </div>
+      </div>
+    </div>
+    <app-button-dialog class="hidden-480" [contentBtn]="'register.buttonOtp'|translate"
+                       [isEnable]="otp.length<6"
+                       (click)="submit()">
+    </app-button-dialog>
+    <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.buttonOtp'|translate"
+                       [isEnable]="otp.length<6"
+                       (click)="submit()"
+                       [width]="200"
+                       [height]="40">
+    </app-button-dialog>
+
+    <div *ngIf="loading" class="loading">
+      <app-loading></app-loading>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <p class="note-no-send">{{'register.warn' | translate}}?</p>
+    <a [hidden]= "countDown === 0"
+       class="link-send-disable"
+       [style]="countDown<=10?'color: red':null">
+      {{'register.getOtpAgain' | translate}} ({{countDown}})
+    </a>
+    <a [hidden]="countDown > 0"
+       class="link-send"
+       (click)="getOtpAgain()">
+      {{'register.getOtpAgain' | translate}}
+    </a>
+  </div>
+
+  <app-item-close-dialog class="close-popup" (click)="onNoClick()"></app-item-close-dialog>
+</div>
+

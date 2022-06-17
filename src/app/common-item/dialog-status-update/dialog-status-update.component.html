@@ -1,0 +1,11 @@
+<div class="stt-container">
+  <div *ngIf = "isStatus" class="cover-icon-tick">
+    <img src="../../../assets/images/smile.png">
+  </div>
+  <div *ngIf = "!isStatus" class="cover-icon-tick">
+    <img src="../../../assets/images/cry.png">
+  </div>
+
+  <div class="title-status">{{messageStatus | translate}}</div>
+  <app-item-close-dialog class="close-popup" (click)="closePopup()"></app-item-close-dialog>
+</div>

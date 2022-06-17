@@ -1,0 +1,7 @@
+<div class="container-stt">
+  <img *ngIf = "isStatus" src="../../../assets/images/smile.png">
+  <img *ngIf = "!isStatus" src="../../../assets/images/cry.png">
+  <div class="msg-stt" *ngIf = "isStatus">{{msgStatus}}</div>
+  <div class="msg-stt" *ngIf = "!isStatus">{{msgStatus}}</div>
+  <div class="description">{{msgDescription}}</div>
+</div>

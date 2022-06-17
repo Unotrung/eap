@@ -1,0 +1,133 @@
+.container-update-pin {
+  width: 465px;
+  height: auto;
+  border-radius: 16px;
+  margin: auto;
+  margin-top: 3% !important;
+  position: relative;
+  background-color: white;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+h1 {
+  //font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  margin-top: 46px;
+  margin-bottom: 46px;
+}
+
+.form-update {
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 0px;
+  margin-top: 32px;
+}
+
+input {
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background-color: #979797;
+  border: hidden;
+  text-align: center;
+}
+
+label {
+  //font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
+  color: #04113E;
+}
+
+a {
+  //font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #1E81EB;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.cover-input-pin {
+  padding: 0px;
+  height: 52px;
+}
+.img-valid {
+  display: flex;
+  align-items: center;
+}
+
+.content-valid {
+  display: flex;
+  align-items: center;
+  //font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(4, 17, 62, 0.7);
+}
+
+.form-valid {
+  margin-top: 6px;
+}
+
+.cover-btn {
+  width: 33%;
+  margin: auto;
+  margin-bottom: 32px !important;
+  margin-top: 32px !important;
+}
+
+.btn-valid {
+  width: 100%;
+  height: 36px !important;
+  background: linear-gradient(180deg, rgba(18, 194, 233, 0.7) 0%, rgba(196, 113, 237, 0.8) 44.79%, rgba(246, 79, 89, 0.8) 100%);
+  border-radius: 20px;
+}
+.btn-invalid {
+  width: 100%;
+  height: 36px !important;
+  background-color: #979797;
+  border-radius: 20px;
+}
+
+.close-popup {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-close {
+  //margin-left: 6px;
+  //margin-top: 6px;
+}
+
+code-input {
+  --item-border-radius: 50%;
+  --item-height: 32px;
+  --item-spacing: 38px;
+  --item-background: #C4C4C4;
+    margin-top: 11px;
+}

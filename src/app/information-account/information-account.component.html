@@ -1,0 +1,70 @@
+<div class="title-infor hidden-lager-screen">{{'accountEap.title' | translate}}</div>
+<div  class="container-right-body">
+    <div class="title-infor hidden-480">{{'accountEap.title' | translate}}</div>
+    <div [hidden]="loading" class="infor-bnpl">
+        <form>
+            <div class="name-input">{{'accountEap.name' | translate}}</div>
+            <div class="detai-infor">
+                <input *ngIf="!openEditUsername" readonly class="content-read" type="text"
+                       [(ngModel)]="username"
+                       [ngModelOptions]="{standalone: true}"/>
+                <input *ngIf="openEditUsername" class="content-edit" id="editUsername" type="text"
+                       [(ngModel)]="username"
+                       [ngModelOptions]="{standalone: true}"
+                       (focusin)="isFocus = true; msgErrorName = ''"
+                       #usernameInput/>
+
+                <img *ngIf="!openEditUsername" class="edit-icon" (click)="openInputEditUserName($event)"
+                     [src]="linkImgEdit">
+<!--                <img *ngIf="openEditUsername" id = "confirm-edit-name" class="complete-icon"-->
+<!--                     [src]="linkImgComplete">-->
+                <img *ngIf="openEditUsername" (click)="editUsername(username)" id = "confirm-edit-name" class="complete-icon"
+                     [src]="linkImgComplete">
+                <img *ngIf="openEditUsername" (click)="cancelEditUserName()"  class="complete-icon"
+                     [src]="linkImgCancel">
+            </div>
+            <div class="cover-invalid">
+                <label *ngIf = "msgErrorName !== ''">{{msgErrorName}}</label>
+            </div>
+            <div class="name-input">{{'accountEap.phone' | translate}}</div>
+            <div class="detai-infor">
+                <input readonly class="content-read" type="text" [value]="user.phone"/>
+            </div>
+            <div class="name-input">{{'accountEap.email' | translate}}</div>
+            <div class="detai-infor">
+
+                <input *ngIf="!openEditEmail" readonly class="content-read" type="text"
+                       [(ngModel)]="email"
+                       [ngModelOptions]="{standalone: true}"/>
+                <input *ngIf="openEditEmail" class="content-edit" type="text"
+                       id="editEmail"
+                       [style]="msgErrorEmail !==''?'border: 1px solid #EE4D2D':null"
+                       [(ngModel)]="email"
+                       (focusin)="isFocus = true;msgErrorEmail = ''"
+                       [ngModelOptions]="{standalone: true}" #emailInput/>
+                <img *ngIf="!openEditEmail" class="edit-icon" (click)="openInputEditEmail($event)"
+                     [src]="linkImgEdit">
+<!--                <img *ngIf="openEditEmail" class="complete-icon" id = "confirm-edit-email"-->
+<!--                     [src]="linkImgComplete">-->
+                <img *ngIf="openEditEmail" (click)="openDialogInputOtp(email)" class="complete-icon"
+                     [src]="linkImgComplete">
+                <img *ngIf="openEditEmail" (click)="cancelEditEmail()"  class="complete-icon"
+                     [src]="linkImgCancel">
+            </div>
+            <div class="cover-invalid">
+                <label *ngIf = "msgErrorEmail !== ''">{{msgErrorEmail}}</label>
+            </div>
+
+            <div class="name-input">{{'accountEap.password' | translate}}</div>
+            <div class="detai-infor">
+                <input readonly class="content-read" type="password" [value]="'* * * * * *'"/>
+                <img (click)="openDialogChangePassword(idUser)" class="edit-icon" [src]="linkImgEdit">
+            </div>
+        </form>
+    </div>
+
+    <div class="loading" *ngIf="loading">
+        <app-loading></app-loading>
+    </div>
+</div>
+

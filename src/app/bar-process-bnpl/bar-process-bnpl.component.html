@@ -1,0 +1,11 @@
+<div class="bar-step">
+  <div class="line-step"><div [style]="'width:'+childData.widthLine +'%'"></div></div>
+  <mat-grid-list  cols="5" rowHeight="40">
+    <mat-grid-tile *ngFor ="let n of listItem, let i = index ">
+      <div [style]="i <= childData.numberStep? 'background-color:#4ECB71':null" class="cycle-step"></div>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor ="let item of listItem ">
+      <span class = "text-step">{{lang=='en'?item.stepEn:item.stepVi}}</span>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

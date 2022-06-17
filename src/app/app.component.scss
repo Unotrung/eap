@@ -1,0 +1,122 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(../assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+
+
+.block {
+  display: block;
+  height: 50vh;
+}
+
+app-navbar {
+}
+
+.container-home-bnpl {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+.bgr-main {
+  background: url("../assets/images/grd-main.png") no-repeat left 0px bottom 0px;
+}
+
+.right-content {
+  width: 100%;
+  height: auto;
+  @media screen and(max-width: 480px){
+    min-height: 100vh;
+  }
+}
+
+app-sidebar {
+  height: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+app-home-after-login {
+  width: 100% !important;
+}
+
+app-footer {
+  background-color: #000000;
+}
+
+app-home {
+  overflow-y: auto;
+}
+
+app-payment-plan-fast {
+  overflow-y: auto;
+}
+
+app-payment-detail {
+  overflow-y: auto;
+}
+
+app-status-final-payment {
+  height: calc(100vh - 80px);
+}
+
+.content-no-sidebar {
+  width: 100%;
+}
+
+.bgr-root {
+  font-family: "Montserrat";
+  justify-content: start !important;
+  background-color: #F4F4F4 !important;
+}
+
+.root {
+  background: url("../assets/images/bgr-img-1.png") no-repeat right 0 top 910px,
+  url("../assets/images/Gradient-bgr-1.png") no-repeat right 0 top 700px,
+  url("../assets/images/Gradient-bgr-2.png") no-repeat left 0 top 1650px,
+  url("../assets/images/Gradient-bgr-3.png") no-repeat left 0 top 4200px,
+  url("../assets/images/Gradient-bgr-4.png") no-repeat right 0 bottom 1880px,
+  url("../assets/images/bgr-img-2.png") no-repeat left 7% bottom 139px;
+  @media screen and(max-width: 480px){
+    background: url("../assets/images/bgr-phone-1.png") no-repeat right 0 top 746px,
+    url("../assets/images/bgr-phone-4.png") no-repeat right 0 top 555px,
+    url("../assets/images/bgr-phone-5.png") no-repeat left 0 bottom 970px,
+    url("../assets/images/bgr-phone-2.png") no-repeat right 0 bottom 1360px,
+    url("../assets/images/bgr-phone-3.png") no-repeat left 0 bottom 407px;
+  }
+}
+
+app-sidebar-header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+  transition: 0.5s;
+  overflow: hidden;
+  background: rgba(12, 30, 54, 0.3);
+}
+
+app-sidebar-mobile {
+  position: fixed;
+  width: 100%;
+  height: 0%;
+  top: 83px;
+  right: 0px;
+  z-index: 2;
+  transition: 0.5s;
+  overflow: hidden;
+  background: rgba(12, 30, 54, 0.3);
+}
+
+app-sidebar {
+  @media screen and(max-width: 480px){
+    display: none;
+  }
+}

@@ -1,0 +1,79 @@
+<div class="container-detail">
+    <h1 class="title-left">Phương thức thanh toán</h1>
+    <div class="cover-detail">
+        <div class="left-content">
+            <div class="tick">
+                <div class="cover-row-1"><input type="radio" name="1" (change)="onChooseMethodPay()"></div>
+                <div class="cover-row-1"><input type="radio" name="1" (change)="onChooseMethodPay()"></div>
+                <div class="cover-row-1"><input type="radio" name="1" (change)="onChooseMethodPay()"></div>
+            </div>
+            <div class="title-img">
+                <div class="cover-row-2">
+                    <div>Thanh toán bằng Credit Card</div>
+                    <div class="img-credit-card">
+                        <img class="img-1" src="../../../assets/images/Mastercard.png">
+                        <img class="img-1" src="../../../assets/images/Visa.png">
+                        <img class="img-1" src="../../../assets/images/JCB.png">
+                    </div>
+                </div>
+                <div class="cover-row-2">
+                    <div>Thanh toán bằng Credit Card</div>
+                    <div class="img-credit-card">
+                        <img class="img-2" src="../../../assets/images/momo.png">
+                        <img class="img-2" src="../../../assets/images/zalo.png">
+                        <img class="img-2" src="../../../assets/images/spay.png">
+                    </div>
+                </div>
+                <div class="cover-row-2">
+                    <div>Thanh toán bằng QR code</div>
+                    <div class="img-credit-card">
+                        <div class="atm-qr">
+                            <div class="atm"><p>ATM</p></div>
+                            <div class="qr">QR Code</div>
+                        </div>
+                        <div class="bank">
+                            <img class="img-3" src="../../../assets/images/vietcombank.png">
+                            <img class="img-3" src="../../../assets/images/sacombank_logo.png">
+                            <img class="img-3" src="../../../assets/images/techcombank_logo.png">
+                        </div>
+                        <div class="bank">
+                            <img class="img-3" src="../../../assets/images/eximbank_logo.png">
+                            <img class="img-3" src="../../../assets/images/acb_logo2.png">
+                            <img class="img-3" src="../../../assets/images/tpbank_logo.png">
+                        </div>
+                        <div class="bank">
+                            <img class="img-3" src="../../../assets/images/dongabank_logo.png">
+                            <img class="img-3" src="../../../assets/images/vietinbank_logo.png">
+                            <img class="img-3" src="../../../assets/images/bidv_logo.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-content">
+            <p>Phương thức thanh toán</p>
+            <div class="no-id">
+                <div>ID No</div>
+                <div>12246578732</div>
+            </div>
+            <div class="total">
+                <div>Tổng cộng</div>
+                <div>10.000.000 vnđ</div>
+            </div>
+            <div class="fee">
+                <div>Phí dịch vụ</div>
+                <div>5.000.000 vnđ</div>
+            </div>
+            <div class="total-2">
+                <div>Tổng cộng</div>
+                <div>15.000.000 vnđ</div>
+            </div>
+
+            <div class="cover-btn">
+                <button [disabled]="!choose" [style]="!choose?'background: #C4C4C4':null" routerLink="/stt-final-pay">
+                    Xác nhận
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

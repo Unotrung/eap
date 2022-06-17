@@ -1,0 +1,46 @@
+<div class="container-sidebar-header" (click)="onCloseMenu()">
+    <div class="cover-item">
+        <a (click)="backHomePage()" class="text-menu-home">
+        {{'header.homePage' | translate}}
+    </a>
+    </div>
+    <div class="cover-item">
+        <a class="text-menu">
+            {{'header.customer2' | translate}}
+        </a>
+    </div>
+    <div class="cover-item">
+        <a class="text-menu">
+            {{'header.partner2' | translate}}
+        </a>
+    </div>
+    <div class="cover-item">
+        <a class="text-menu child bounce" (click)="openDialogPayFast()">
+            {{'header.fastPay2' | translate}}
+        </a>
+    </div>
+    <div class="cover-item">
+        <a class="text-menu">
+            {{'header.help2' | translate}}
+        </a>
+    </div>
+    <div class="under-menu hidden-screen-ipad">
+        <div class="cover-btn">
+            <button class="btn-login" (click)="openDialogLogin()">
+                {{'header.login' | translate}}
+            </button>
+        </div>
+        <div class="cover-btn">
+            <button (click)="openDialogRegister()"
+                    class="btn-register">
+                {{'header.register' | translate}}
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+

@@ -1,0 +1,83 @@
+<div class="form-login-container">
+    <div class="title-login">{{'login.title' | translate}}</div>
+    <div>
+        <form [formGroup]="userForm" (ngSubmit)="submit()" autocomplete="off">
+            <div class="name-input">{{'login.email_phone' | translate}}</div>
+            <div class="cover-input">
+                <input class="input-valid"
+                       [style]="(userForm.controls.phone_email.invalid&&userForm.controls.phone_email.touched)||
+                       errorMessageAccount!==''?'border: 1px solid #EE4D2D':null"
+                       type="text"
+                       name="phone_email"
+                       formControlName="phone_email"
+                       (change)="resetMsg()"
+                       (focusin)="errorMessageAccount = ''"/>
+                <!--                <img *ngIf="(userForm.controls.phone_email.invalid&&userForm.controls.phone_email.touched)||-->
+                <!--                            errorMessageAccount !==''"-->
+                <!--                     class="icon-invalid" [src]="linkImg">-->
+            </div>
+            <div class="under-input-1">
+                <div *ngFor="let invalid of validateMessage.phone_email">
+                    <div class="err" *ngIf="(userForm.controls.phone_email.hasError(invalid.type)
+                                                &&userForm.controls.phone_email.touched)">
+                        {{invalid.message}}
+                    </div>
+                </div>
+                <div class="err" *ngIf="!isLoggedIn&&errorMessageAccount !==''">
+                    {{errorMessageAccount | translate}}
+                </div>
+            </div>
+            <div class="name-input">{{'login.password' | translate}}</div>
+            <div class="cover-input">
+                <input class="input-valid"
+                       [style]="(userForm.controls.password.invalid&&userForm.controls.password.touched)||
+                       errorMessagePass!==''?'border: 1px solid #EE4D2D':null"
+                       type="password"
+                       name="password"
+                       formControlName="password"
+                       (change)="resetMsg()"
+                       (focusin)="errorMessagePass = ''"/>
+                <!--                <img *ngIf="userForm.controls.password.invalid&&userForm.controls.password.touched||-->
+                <!--                        errorMessagePass!==''"-->
+                <!--                     class="icon-invalid" [src]="linkImg">-->
+            </div>
+            <div class="under-input">
+                <div class="invalid-note">
+                    <div>
+                        <div class="err" *ngIf="!isLoggedIn&&errorMessagePass !==''">
+                            {{errorMessagePass | translate}} ({{countFail}}/5)
+                        </div>
+
+                        <div *ngFor="let invalid of validateMessage.password">
+                            <div class="err" *ngIf="(userForm.controls.password.hasError(invalid.type)
+                                                &&userForm.controls.password.touched)">
+                                {{invalid.message}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="link-forget-pw" (click)="openDialogForgetPassword()">{{'login.forgotPass' | translate}}</a>
+            </div>
+            <div style="margin-top: 30px">
+                <app-button-dialog class="hidden-480" [contentBtn]="'login.content-btn'|translate"
+                                   [isEnable]="userForm.invalid"
+                                   [width]="300"
+                                   [height]="45">
+                </app-button-dialog>
+                <app-button-dialog class="hidden-lager-screen" [contentBtn]="'login.content-btn'|translate"
+                                   [isEnable]="userForm.invalid"
+                                   [width]="200"
+                                   [height]="40">
+                </app-button-dialog>
+            </div>
+
+        </form>
+    </div>
+    <div class="link-register"><a (click)="openDialogRegister()">{{'login.register' | translate}}</a></div>
+    <app-item-close-dialog class="close-popup" (click)="close()"></app-item-close-dialog>
+    <div *ngIf="loading" class="loading">
+        <app-loading></app-loading>
+    </div>
+</div>
+
+

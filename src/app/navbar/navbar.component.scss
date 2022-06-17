@@ -1,0 +1,435 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
+.header-format {
+  font-family: "MontserratAlternates";
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1512px;
+  margin: 0 auto;
+  height: 119px;
+  padding-left: 120px;
+  padding-right: 120px;
+  position: relative;
+  background: #F4F4F4;
+  @media screen and(max-width: 1440px){
+    padding-left: 80px;
+    padding-right: 80px;
+    height: 100px;
+  }
+  @media screen and(max-width: 1380px){
+    padding-left: 56px;
+    padding-right: 56px;
+    height: 100px;
+  }
+  @media screen and(max-width: 1140px){
+    padding-left: 36px;
+    padding-right: 36px;
+    height: 100px;
+  }
+  @media screen and(max-width: 960px){
+    padding-left: 100px;
+    padding-right: 40px;
+    height: 100px;
+  }
+  @media screen and(max-width: 480px){
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 83px;
+    background: #FFFFFF;
+  }
+}
+.img-icon-home {
+  height: 38px;
+  width: auto;
+  @media screen and(max-width: 1380px){
+    height: 32px;
+  }
+  @media screen and(max-width: 1140px){
+    height: 30px;
+  }
+  @media screen and(max-width: 960px){
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+  }
+  @media screen and(max-width: 480px){
+    width: 127px;
+    height: auto;
+    margin-top: 0px;
+  }
+
+}
+
+.cover-icon-home {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  width: 25%;
+  margin-right: 40px;
+  @media screen and(max-width: 1440px){
+    align-items: baseline;
+    margin-right: 0px;
+  }
+  @media screen and(max-width: 1380px){
+    align-items: baseline;
+    width: fit-content;
+    margin-right: 0px;
+  }
+  @media screen and(max-width: 960px){
+    width: 180px;
+    height: 34px;
+    margin-right: 0;
+  }
+  @media screen and(max-width: 480px){
+    width: 127px;
+    height: 24px;
+    justify-content: center;
+    margin-right: 0px !important;
+  }
+}
+
+.header-left {
+  width: 64.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  @media screen and(max-width: 1440px){
+    width: 66.5%;
+  }
+  @media screen and(max-width: 1380px){
+    width: 67.5%;
+    font-size: 16px;
+  }
+  @media screen and(max-width: 1140px){
+    width: 70.5%;
+  }
+  @media screen and(max-width: 1140px){
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @media screen and(max-width: 960px){
+  }
+  @media screen and(max-width: 480px){
+    width: 100%;
+    justify-content: center;
+    margin-bottom: -34px;
+  }
+}
+
+a {
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: #000000 solid underline;
+  text-underline-position: under;
+  color: #000000 !important;
+}
+
+.link-home {
+  text-decoration: #000000 solid underline;
+  text-underline-position: under;
+  color: #000000 !important;
+}
+
+.btn-login {
+  height: 45px;
+  width: 200px;
+  border-radius: 30px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: black;
+  margin-right: 20px;
+  @media screen and(max-width: 1440px){
+    width: 180px;
+  }
+  @media screen and(max-width: 1380px){
+    width: 150px;
+    font-size: 16px;
+    height: 40px;
+  }
+  @media screen and(max-width: 1140px){
+    width: 130px;
+    height: 38px;
+    margin-right: 10px;
+  }
+  @media screen and(max-width: 1024px){
+    font-size: 14px;
+  }
+  @media screen and(max-width: 960px){
+    font-size: 16px;
+    height: 40px;
+    width: 180px;
+    border-radius: 30px;
+    margin-right: 20px;
+  }
+}
+
+
+.btn-register {
+  height: 45px;
+  width: 200px;
+  border-radius: 30px;
+  background: #000000;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  @media screen and(max-width: 1380px){
+    width: 160px;
+    font-size: 16px;
+    height: 40px;
+  }
+  @media screen and(max-width: 1140px){
+    width: 130px;
+    height: 38px;
+  }
+  @media screen and(max-width: 1024px){
+    font-size: 14px;
+  }
+  @media screen and(max-width: 960px){
+    font-size: 16px;
+    height: 40px;
+    width: 180px;
+    border-radius: 30px;
+  }
+}
+
+.text-home-page {
+  color: #BABABA !important;
+}
+
+.cover-item-menu {
+  width: 73%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media screen and(max-width: 1380px){
+    width: 75%;
+  }
+  @media screen and(max-width: 1024px){
+    width: 73%;
+  }
+}
+
+.header-right {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 29px;
+  @media screen and(max-width: 960px){
+    font-size: 14px;
+  }
+  @media screen and(max-width: 480px){
+    display: none;
+  }
+}
+
+.btn-mb-5 {
+  margin-bottom: 5px;
+  @media screen and(max-width: 960px){
+    margin-bottom: 0;
+  }
+}
+
+.avatar-nav {
+  border-left:1px solid rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
+  cursor: pointer;
+  padding-left: 30px;
+}
+
+.avatar-nav div {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: #00B74F;
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  margin-right: -16px;
+}
+
+.cover-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.note {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 70px;
+  height: 40px;
+  background: #FDFDFD;
+  border-radius: 40px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.text-note {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.view-profile-drop {
+  position: absolute;
+  left: -130px;
+  top: 30px;
+  height: 50px;
+  width: 137px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.15);
+  padding-right: 10px;
+}
+
+.view-profile-drop p {
+  margin: 0;
+  padding: 0;
+  height: 25px;
+  border-bottom: 1px solid #F2F2F2;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  //font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 20px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.icon-menu {
+  cursor: pointer;
+  position: absolute;
+  @media screen and(max-width: 960px){
+    left: 40px;
+    top: 28px;
+    width: 48px;
+    height: auto;
+  }
+  @media screen and(max-width: 480px){
+    width: 30px;
+    height: 30px;
+    left: 20px;
+    top: 43px;
+  }
+}
+
+.cover-btn-icon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hidden-1300 {
+  @media screen and(max-width: 1250px){
+    display: none;
+  }
+}
+
+.hidden-1024 {
+  @media screen and(max-width: 1024px){
+    display: none;
+  }
+}
+.hidden-480 {
+  @media screen and(max-width: 480px){
+    display: none;
+  }
+}
+
+.hidden-820 {
+  @media screen and(max-width: 960px){
+    display: none;
+  }
+}
+
+.hidden-min-1024 {
+  @media screen and(min-width: 1024px){
+    display: none;
+  }
+}
+.hidden-min-960 {
+  @media screen and(min-width: 960px){
+    display: none;
+  }
+}
+
+.hidden-lager-screen {
+  @media screen and(min-width: 480px){
+    display: none !important;
+  }
+}
+
+.icon-drop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+app-notification-dropdown {
+  z-index: 1;
+  position: absolute;
+  right: -30px;
+  top: 50px;
+}
+
+.box-icon-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  position: absolute;
+  right: 24px;
+  top: 44px;
+  width: 64px;
+}
+
+.bell {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-pro {
+  width: 24px;
+  height: 24px;
+}

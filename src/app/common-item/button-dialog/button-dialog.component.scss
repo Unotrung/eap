@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
+button:disabled {
+  background: #E1E1E1;
+}
+button:enabled {
+  background: #000000;
+}
+
+button {
+  font-family: "MontserratAlternates";
+  height: 45px;
+  width: 300px;
+  border-radius: 30px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  @media screen and(max-width: 480px){
+    font-size: 14px;
+  }
+}
+
+.cover-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

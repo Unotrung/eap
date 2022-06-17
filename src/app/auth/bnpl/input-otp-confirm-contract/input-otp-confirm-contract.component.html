@@ -1,0 +1,41 @@
+<div class="form-login-container">
+    <div class="title-login">{{'forgotPass.inputOtp' | translate}}</div>
+    <div>
+        <div class="cover-input">
+            <code-input [className]="messageErr!==''?'code-input-2':'code-input-1'" [codeLength]="6"
+                        [isCodeHidden]="false"
+                        (codeChanged)="onCodeChanged($event)"
+                        (codeCompleted)="onCodeCompleted($event)">
+            </code-input>
+            <div class="under-input" *ngIf="!isCheckOtp">
+                <div class="err">
+                    {{'forgotPass.wrongOtp' | translate}}
+                </div>
+            </div>
+        </div>
+        <div class="text-note-send">Mã OTP đã được gửi đến số điện thoại 0909xxx</div>
+
+        <app-button-dialog [contentBtn]="'forgotPass.confirmOtp' | translate"
+                           [isEnable]="otp.length<6"
+                           (click)="submit()">
+        </app-button-dialog>
+        <div class="loading" *ngIf="loading">
+            <app-loading></app-loading>
+        </div>
+    </div>
+    <div class="cover-bottom">
+        <p class="note-no-send">{{'forgotPass.noOtp' | translate}}?</p>
+        <a [hidden]="countDown === 0"
+           class="link-send-disable"
+           [style]="countDown<=10?'color: red':null">
+            {{'forgotPass.otpAgain' | translate}} ({{countDown}})
+        </a>
+        <a [hidden]="countDown > 0"
+           class="link-send"
+           (click)="getOtpAgain()">
+            {{'forgotPass.otpAgain' | translate}}
+        </a>
+    </div>
+
+    <app-item-close-dialog class="close-popup" (click)="closeDialog()"></app-item-close-dialog>
+</div>

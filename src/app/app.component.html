@@ -1,0 +1,14 @@
+<ion-app cdkScrollable class = "bgr-root" [class.root]="currentAccessToken==null" (click) = "onCloseMenu()">
+    <app-navbar></app-navbar>
+
+    <div  fxLayout='row' class="container-home-bnpl" [class.bgr-main]="currentAccessToken!=null">
+        <app-sidebar *ngIf="isShowSideBar&&currentAccessToken!=null" ></app-sidebar>
+        <div [className]="currentAccessToken!==null?'right-content':'content-no-sidebar'">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <app-footer *ngIf = "currentAccessToken == null || !isShowSideBar"></app-footer>
+</ion-app>
+
+<app-sidebar-header (click)="onCloseMenu()" [style]="'height:'+ heightMenu +'%'"></app-sidebar-header>
+<app-sidebar-mobile (click)="onCloseSidebarMobile()" [style]="'height:'+ heightSidebar +'%'"></app-sidebar-mobile>

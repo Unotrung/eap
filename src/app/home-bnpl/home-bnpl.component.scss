@@ -1,0 +1,30 @@
+p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+}
+ .container-bnpl-home {
+   width: 100%;
+ }
+
+ .cover-img {
+   width: 100%;
+ }
+
+ .cover-img div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .title-home-blpn {
+   margin-top: 160px;
+ }
+
+ img {
+   cursor: pointer;
+ }

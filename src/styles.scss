@@ -1,0 +1,166 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+//import component themes
+@use "app/footer/footer-theme" as footer;
+@use "app/theme/theme-switch/theme-switch-theme" as themeSwitch;
+@use "app/navbar/navbar-theme" as navbar;
+
+@import '~@angular/material/theming';
+
+@include mat.core();
+
+@import './themes/_var';
+
+//@include angular-material-typography($dynamic-typography);
+
+@mixin all-theme-and-custom-component($theme) {
+  $_background: map.get($theme, background);
+  $app-background-color: map.get($_background, background);
+  $_foreground: map.get($theme, foreground);
+  $app-foreground-color: map.get($_foreground, text);
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+  $warn-palette: map.get($color-config, 'warn');
+  $is-dark-theme: map.get($color-config, 'is-dark');
+
+
+  @include mat.all-component-themes($theme);
+
+  /*
+   * custom component themes here
+   */
+  @include footer.theme($theme);
+  @include themeSwitch.theme($theme);
+  @include navbar.theme($theme);
+
+  //body {
+  //  background-color: $app-background-color;
+  //}.mat-list-item-content{
+  //  //  color: mat.get-color-from-palette($primary-palette, 500);
+  //  //  //background-color: mat.get-color-from-palette($accent-palette, 600);
+  //  //}
+  //
+  //.mat-sidenav {
+  //  background-color: mat.get-color-from-palette($accent-palette, 700);
+  //}
+  .mat-list-active {
+    background-color: mat.get-color-from-palette($accent-palette, 400);
+  }
+  //.footer {
+  //  background-color: mat.get-color-from-palette($primary-palette);
+  //  color: white;
+  //}
+  .mat-raised-button:hover {
+    background-color: mat.get-color-from-palette($accent-palette, 800);
+  }
+}
+
+
+$dynamic-app-light-theme: mat.define-light-theme((
+        color: (
+                primary: mat.define-palette($dynamic-theme-primary),
+                accent: mat.define-palette($dynamic-theme-accent),
+                warn: mat.define-palette(mat.$red-palette)
+        )
+));
+$dynamic-app-dark-theme: mat.define-dark-theme((
+        color: (
+                primary: mat.define-palette($dynamic-theme-primary),
+                accent: mat.define-palette($dynamic-theme-accent),
+                warn: mat.define-palette(mat.$red-palette)
+        )
+));
+
+.dark-theme {
+  @include all-theme-and-custom-component($dynamic-app-dark-theme);
+}
+
+.light-theme {
+  @include all-theme-and-custom-component($dynamic-app-light-theme);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+
+html, body {
+  height: auto;
+}
+
+body {
+  margin: 0;
+  color: black;
+  font-family: "Montserrat";
+  overflow-y: auto !important;
+  position: unset !important;
+
+}
+
+div.mat-list-item-content {
+  padding-left: 24px !important;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-flow: column;
+}
+
+.form-common {
+  display: flex;
+  flex-flow: column wrap;
+  width: 320px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+//.code-hidden .has-value {
+//  -webkit-text-fill-color: #17D7A0 !important;
+//  -webkit-box-shadow:0 0 0 50px #17D7A0 inset !important;
+//}
+
+.code-input-3 .code-hidden .has-value {
+  -webkit-text-fill-color: #56CA8B !important;
+  -webkit-box-shadow: 0 0 0 50px #56CA8B inset !important;
+}
+
+.mat-autocomplete-panel.mat-autocomplete-visible {
+  background-color: #FFFF;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px #f3f3f3;
+}
+
+.mat-dialog-container {
+  padding: 24px 0px !important;
+}
+
+.ion-page {
+  position: unset !important;
+  contain: unset !important;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #197DDE !important;
+}
+
+.cdk-overlay-pane {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  max-width: 100% !important;
+  max-height: 100%;
+}
+
+

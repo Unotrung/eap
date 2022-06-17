@@ -1,0 +1,38 @@
+<div class="container-sb-mobile">
+    <div class="cover-item">
+        <div class="item" (click)="showInfomationEap()">
+            <div class="cover-icon"><img class="icon" src="../../assets/images/eapAc.png"></div>
+            <div class="name-item">{{'sideBar.eapInformation' | translate}}</div>
+        </div>
+        <div class="item" (click)="getInformationAccountBnpl()">
+            <div class="cover-icon"><img class="icon" src="../../assets/images/fingerprint.png"></div>
+            <div class="name-item">{{'sideBar.bnplInformation-m' | translate}}</div>
+        </div>
+        <div class="item">
+            <div class="cover-icon"><img class="icon" src="../../assets/images/clock.png"></div>
+            <div class="name-item">{{'sideBar.transaction' | translate}}</div>
+        </div>
+        <div class="item" (click)="getRepaymentPlan()">
+            <div class="cover-icon"><img class="icon" src="../../assets/images/Star.png"></div>
+            <div class="name-item" style="width: 55%">{{'sideBar.repayment' | translate}}</div>
+            <div (click)="showMoreRepayment($event)">
+                <img [style]="showRepayment?'transform: rotate(0deg)':null"
+                    class="icon-drop" src="../../assets/images/angle-down.png">
+            </div>
+        </div>
+        <div [hidden]="!showRepayment" class="container-payment">
+            <div class="item">
+                <div class="cover-icon"></div>
+                <div (click)="getListRepaymentFec()" class="name-item">
+                    <div class="cover-icon-fec">
+                        <img class="icon-fec" src="../../assets/images/fec-icon-m.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cover-logout" (click)="logout()">
+        <div class="cover-icon"><img class="icon" src="../../assets/images/icon-logout.png"></div>
+        <div class="name-item">{{'sideBar.logout' | translate}}</div>
+    </div>
+</div>

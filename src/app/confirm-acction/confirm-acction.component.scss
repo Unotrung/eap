@@ -1,0 +1,44 @@
+.popup-confirm {
+  width:300px;
+  height: 200px;
+  margin: auto;
+  border: 1px solid #C4C4C4;
+  border-radius: 16px;
+  padding: 34px;
+  //font-family: Mulish;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: white;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+.cover-btn {
+  width: 180px;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-yes {
+  background-color: #00B74F;
+  width: 60px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid;
+}
+
+.btn-no {
+  background-color: #ff5b71;
+  width: 60px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid;
+}
+

@@ -1,0 +1,42 @@
+<div class="cover-content">
+    <div class="title-1">Danh sách nhà cung cấp đã đăng kí</div>
+    <table>
+        <thead>
+        <tr>
+            <th width="30%">Tên nhà cung cấp</th>
+            <th>Địa chỉ</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let x of data.listProviders">
+            <td>{{x.provider}}</td>
+            <td>{{x.address}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="add-provider">
+        <a (click)="addProvider()">
+            Đăng kí nhà cung cấp mới
+        </a>
+    </div>
+    <div *ngIf = "isShowChoose">
+        <div class="list-choose" *ngFor="let p of listChoose">
+            <div>
+                <input type="radio" name="provider"
+                       [value]="p.provider"
+                       (change)="onChooseProvider($event.target.value)">
+                <div>{{p.provider}}</div>
+                <div><img [src]="p.url"></div>
+            </div>
+        </div>
+        <div class="cover-btn">
+            <button [disabled]="!checkChoose"
+            [style]="!checkChoose?'background:#C4C4C4':null"
+            (click)="submit()">Thêm nhà cung cấp</button>
+        </div>
+    </div>
+    <div class="close-popup" (click)="onNoClick()">
+        <img class="icon-close" src="../../../assets/images/close.png">
+    </div>
+</div>
+

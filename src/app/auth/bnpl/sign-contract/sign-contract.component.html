@@ -1,0 +1,70 @@
+<div class="container-right-body">
+    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div>
+        <div class="title-register">
+            {{'takePhotoNid.title' | translate}}
+        </div>
+        <div>
+            <app-bar-process-bnpl [childData]="{widthLine: 50,numberStep:2}"></app-bar-process-bnpl>
+        </div>
+
+        <div class="title-register">
+            {{'contract.title' | translate}}
+        </div>
+
+        <div [style]="isShow?'height: auto':null" class="form-contract">
+            <div class="name-contract">
+                {{'contract.titleForm' | translate}}
+            </div>
+            <div [style]="isShow?'height: auto':null" class="content">
+                SAMPLE CONTENT - FEC input later HÌNH THỨC THANH TOÁN Đối tác được quyền thanh toán chậm
+                cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua hàng hoá trả chậm. Giá sản
+                phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt) của Đối tác. Vui
+                lòng duy trì thu nhập tại Ví dưới (ví tiền mặt) để hệ thống thực hiện thanh toán tự động,
+                tránh việc trễ hạn và ảnh hưởng đến quyền lợi của Đối tác. Trường hợp thu nhập ví dưới không
+                đủ vào ngày thanh toán định kỳ, khoản còn thiếu hệ thống sẽ tự động thu (từ ví dưới) vào những
+                ngày kế tiếp, kể cả ngày lễ và cuối tuần. Thời gian khấu trừ ví dưới dự kiến sẽ bắt đầu trong
+                vòng 7 ngày kể từ ngày nhận sản phẩm. SAMPLE CONTENT - FEC input later HÌNH THỨC THANH TOÁN Đối
+                tác được quyền thanh toán chậm cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua
+                hàng hoá trả chậm.
+                Giá sản phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt)
+                SAMPLE CONTENT - FEC input later HÌNH THỨC THANH TOÁN Đối tác được quyền thanh toán chậm
+                cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua hàng hoá trả chậm. Giá sản
+                phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt) của Đối tác. Vui
+                lòng duy trì thu nhập tại Ví dưới (ví tiền mặt) để hệ thống thực hiện thanh toán tự động,
+                tránh việc trễ hạn và ảnh hưởng đến quyền lợi của Đối tác. Trường hợp thu nhập ví dưới không
+                đủ vào ngày thanh toán định kỳ, khoản còn thiếu hệ thống sẽ tự động thu (từ ví dưới) vào những
+                ngày kế tiếp, kể cả ngày lễ và cuối tuần. Thời gian khấu trừ ví dưới dự kiến sẽ bắt đầu trong
+                vòng 7 ngày kể từ ngày nhận sản phẩm. SAMPLE CONTENT - FEC input later HÌNH THỨC THANH TOÁN Đối
+                tác được quyền thanh toán chậm cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua
+                hàng hoá trả chậm.
+                Giá sản phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt)
+            </div>
+            <div [style]="isShow?'height: 50px':null" class="under-content">
+                <div [style]="isShow?'transform: rotate(180deg)':null" (click)="showAllPageContract()"><img src="../../../../assets/images/angle-double-down.png"></div>
+                <div [hidden]="isShow" (click)="showAllPageContract()">{{'contract.seeMore' | translate}}</div>
+            </div>
+            <div class="agree-tick">
+                <div><input (change)="handleCheckboxAgree($event)" class="tick-1" type="checkbox" name="agree"></div>
+                <div><label>{{'contract.checkbox1' | translate}}</label></div>
+            </div>
+            <div class="agree-tick">
+                <div><input (change)="handleCheckboxGetOtp($event)" class="tick-1" type="checkbox" name="agree"></div>
+                <div><label>{{'contract.checkbox2' | translate}}</label></div>
+            </div>
+        </div>
+
+        <div class="cover-btn">
+            <div>
+                <app-button-dialog
+                        [isEnable]="!isGetOtp || !isAgree"
+                        [width]="160"
+                        [height]="40"
+                        [contentBtn]="'contract.signNow' | translate"
+                        (click)="submitToSignContract()">
+                </app-button-dialog>
+            </div>
+        </div>
+
+    </div>
+</div>

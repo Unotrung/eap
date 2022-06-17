@@ -1,0 +1,85 @@
+<div class="container-right-body">
+    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div fxLayout="column" fxLayoutAlign="start center" class="container-selfie">
+        <div class="global-box" fxLayout="column" fxLayoutAlign="start center">
+            <div class="global-title" appMarginTop="63">
+                <p>{{'selfie.labelNid' | translate}}</p>
+            </div>
+            <div class="cover-input">
+                <input type="text"
+                       maxlength="12"
+                       (mouseout)="handleNid($event)"
+                       (change)="handleNid($event)"
+                       (keypress)="keyPress($event)"
+                       class="global-input"
+                       [formControl]="citizenId" appMarginTop="14">
+<!--                <img *ngIf="(citizenId.dirty || citizenId.touched) && citizenId.invalid"-->
+<!--                     class="img-invalid" src="../../../../assets/images/Warning.png">-->
+            </div>
+            <div class="error" appMarginTop="8" fxFlexAlign="start">
+                <label *ngIf="(citizenId.dirty || citizenId.touched) && citizenId.hasError('required')">
+                    {{'selfie.validRequired' | translate}}
+                </label>
+                <label *ngIf="(citizenId.dirty || citizenId.touched) && citizenId.hasError('pattern')">
+                    {{'selfie.validPattern' | translate}}
+                </label>
+                <label *ngIf="isExistNid">{{'selfie.validExist' | translate}}</label>
+            </div>
+
+            <div class="image-title" appMarginTop="24">
+                <p>{{'selfie.labelTakePhoto' | translate}}</p>
+            </div>
+            <div class="background-gray">
+                <div *ngIf="!(pictureService.selfieImageComplete$ | async)" class="background-green">
+                    <div class="circle-red" (click)="startCaptureImage()">
+                        <div class="in-circle"></div>
+                    </div>
+                </div>
+                <div *ngIf="pictureService.selfieImageComplete$ | async" class="cover-img-complete">
+                    <img  [src]="pictureService.selfieImage"
+                         class="image-blurred-edge">
+                    <div class="circle-red-again" (click)="startCaptureImage()">
+                        <div class="in-circle-again"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="picture-selfie-overlay" fxLayout="column" fxLayoutAlign="center center"
+                 *ngIf="!(pictureService.selfieImageComplete$ | async)">
+                <div class="cover-camera"><img fxFlexAlign="center" width="24" height="24" alt=""
+                                               src="assets/images/camera.png"></div>
+            </div>
+            <div class="picture-selfie-overlay-2" fxLayout="column" fxLayoutAlign="top center"
+                 *ngIf="pictureService.selfieImageComplete$ | async">
+                <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
+                     [src]="pictureService.selfieImage">
+<!--                <img class="icon-dell" (click)="onDeleteImage()" src="../../../../assets/images/trash.png">-->
+                <img class="icon-tick" src="../../../../assets/images/tick-photo.png">
+            </div>
+            <div class="text-under-camera">{{'selfie.labelPhoto' | translate}}</div>
+            <div *ngIf="!(pictureService.selfieImageComplete$ | async)" class="no-take-photo">{{'selfie.noTakePhoto' | translate}}</div>
+            <div class="picture-selfie-notice" appMarginTop="16" fxFlexAlign="start">
+                {{'selfie.titleGuide' | translate}}
+            </div>
+            <ul>
+                <li class="picture-selfie-step">
+                    {{'selfie.guide1' | translate}}
+                </li>
+                <li class="picture-selfie-step">
+                    {{'selfie.guide2' | translate}}
+                </li>
+                <li class="picture-selfie-step">
+                    {{'selfie.guide3' | translate}}
+                </li>
+            </ul>
+        </div>
+        <app-button-dialog
+                [isEnable]="!(pictureService.selfieImageComplete$ | async) || citizenId.invalid || isExistNid"
+                [contentBtn]="'selfie.continue' | translate"
+                (click)="onSelfieContinue()">
+        </app-button-dialog>
+    </div>
+
+</div>
+
+

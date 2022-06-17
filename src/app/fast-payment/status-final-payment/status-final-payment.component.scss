@@ -1,0 +1,27 @@
+.container-stt {
+  margin-top: 56px;
+  height:500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-tick {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background: #00B74F;
+  border-radius: 50%;
+}
+
+p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 50px;
+}

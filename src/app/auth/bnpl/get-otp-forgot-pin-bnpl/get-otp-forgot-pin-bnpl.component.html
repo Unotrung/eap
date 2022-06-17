@@ -1,0 +1,77 @@
+<div class="title-infor hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
+<div class="container-right-body">
+    <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
+    <div class="title-update">{{'forgotPin.titleOtp' | translate}}</div>
+    <div class="title-small">{{'forgotPin.labelOtp-2' | translate}} {{phone|phoneStyle}}</div>
+    <div>
+        <div class="cover-input">
+            <code-input [className]="messageErr!==''?'code-input-2':'code-input-1'"
+                        [codeLength]="6"
+                        [isCodeHidden]="false"
+                        (codeChanged)="onCodeChanged($event)"
+                        (codeCompleted)="onCodeCompleted($event)">
+            </code-input>
+            <div class="under-input" *ngIf="messageErr!==''">
+                <div class="err">
+                    {{messageErr|translate}}
+                </div>
+            </div>
+        </div>
+        <div class="cover-btn">
+            <button (click)="submit()"
+                    [disabled]="otp.length<6"
+                    [style]="otp.length<6?null:'background:#000000'">
+                {{'forgotPass.confirmOtp'|translate}}
+            </button>
+        </div>
+        <div class="loading" *ngIf="loading">
+            <app-loading></app-loading>
+        </div>
+    </div>
+    <div class="cover-bottom">
+        <p class="note-no-send">{{'forgotPass.noOtp' | translate}}?</p>
+        <a [hidden]="countDown === 0"
+           class="link-send-disable"
+           [style]="countDown<=10?'color: red':null">
+            {{'forgotPass.otpAgain' | translate}} ({{countDown}})
+        </a>
+        <a [hidden]="countDown > 0"
+           class="link-send"
+           (click)="getOtpAgain()">
+            {{'forgotPass.otpAgain' | translate}}
+        </a>
+    </div>
+</div>
+<!--<div class="form-register-container">-->
+<!--    <div class="photo-frame"></div>-->
+<!--    <p class="title-login">Forgot PIN</p>-->
+<!--    <div>-->
+<!--        <form [formGroup]="formOtp" (ngSubmit)=submit()>-->
+<!--            <div class="form-cover" fxLayout='row'>-->
+<!--                <div fxFlex="45%" class="name-input">Nhập OTP</div>-->
+<!--                <div fxFlex class="cover-input"><input type="password"-->
+<!--                                                       placeholder="_   _   _   _   _   _"-->
+<!--                                                       name="otp" formControlName="otp"/>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div *ngFor=" let valid of validateMessage.otp">-->
+<!--                <div class="invalid-note" *ngIf="(formOtp.controls.otp.hasError(valid.type)&&formOtp.controls.otp.touched)">-->
+<!--                    <img src="../../../assets/images/Warning.png">-->
+<!--                    <label>{{valid.message}}</label>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="invalid-note" *ngIf="messageError!==''">-->
+<!--                <img src="../../../assets/images/Warning.png">-->
+<!--                <label>{{messageError}}</label>-->
+<!--            </div>-->
+
+<!--            <button [disabled]="formOtp.invalid" [style]="formOtp.invalid?'background:#979797':null" class="btn-register">XÁC NHẬN</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--    <div class="link-send-otp"><p>Không nhận được OTP?</p><a (click)="getOtpAgain()">Gửi lại OTP (59s)</a></div>-->
+<!--    <div class="close-popup" (click)="closePopup()">-->
+<!--        <img class="icon-close" src="../../../assets/images/close.png">-->
+<!--    </div>-->
+<!--</div>-->

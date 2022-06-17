@@ -1,0 +1,31 @@
+<div class="form-login-container">
+    <div class="title-login">{{'repayment.titleFast' | translate}}</div>
+<!--    <div class="title-login" style="font-size: 15px">{{'repayment.underTitleFast' | translate}}</div>-->
+    <div class="content">
+        <div class="content-1">
+            <div class="tick" (click)="choosePay('payoo')"
+            [style]="isPayoo?'border: hidden': null">
+                <img [hidden]="!isPayoo" src="../../../assets/images/tick-pay-2.png">
+            </div>
+            <div class="img-fe"><img src="../../../assets/images/payoo2.png"></div>
+        </div>
+        <div class="content-2">
+            <div class="tick" (click)="choosePay('momo')"
+                 [style]="isMomo?'border: hidden': null">
+                <img [hidden]="!isMomo" src="../../../assets/images/tick-pay-2.png">
+            </div>
+            <div class="img-fe"><img src="../../../assets/images/momo2.png"></div>
+        </div>
+    </div>
+    <app-button-dialog class="hidden-480" [contentBtn]="'repayment.confirmFast' | translate"
+                       [isEnable]="!isPayoo && !isMomo"
+                       (click)="goPaYooHome()">
+    </app-button-dialog>
+    <app-button-dialog class="hidden-lager-screen" [contentBtn]="'repayment.confirmFast' | translate"
+                       [isEnable]="!isPayoo && !isMomo"
+                       [width]="300"
+                       [height]="46"
+                       (click)="goPaYooHome()">
+    </app-button-dialog>
+    <app-item-close-dialog class="close-popup hidden-480" (click)="closeDialog()"></app-item-close-dialog>
+</div>

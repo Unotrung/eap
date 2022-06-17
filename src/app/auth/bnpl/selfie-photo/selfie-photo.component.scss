@@ -1,0 +1,332 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
+.container-right-body {
+  height: auto;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin-right: 24px;
+  font-style: normal;
+  color: #000000;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.title-infor {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: start;
+  padding-left: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 22px;
+}
+.global-box {
+  padding : 0 32px 0 32px;
+}
+
+.image-blurred-edge {
+  outline: 1px solid rgba(255, 255, 255, 0.5);
+  outline-offset: -16px;
+}
+
+.error {
+  height: 18px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #EE4D2D;
+  margin-top: 8px;
+}
+
+.error img {
+  margin-right: 8px;
+}
+
+.input-info {
+  height: 40px;
+  border-radius: 8px;
+  padding: 10px 8px 10px 8px;
+  background: #FFFFFF;
+  border: 1px solid #4ECB71;
+  box-sizing: border-box;
+}
+.circle-red:hover {
+  cursor: pointer;
+}
+
+.mat-icon:hover {
+  cursor: pointer;
+}
+
+.picture-selfie-slogan {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.image-title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  font-family: "MontserratAlternates";
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.background-gray {
+  width: 305px;
+  background: #E5E5E5;
+  border-radius: 10px;
+  margin-bottom: 34px;
+
+  .background-green {
+    width: 256px;
+    height: 256px;
+    margin: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+
+    .circle-red {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      position: absolute;
+      bottom: 24px;
+      right: 42%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .in-circle {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 3px solid #E1E1E1;
+        background-color: #FFFFFF;
+      }
+    }
+  }
+
+  .cover-img-complete {
+    width: 305px;
+    display: flex;
+    position: relative;
+    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .circle-red-again {
+      cursor: pointer;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      position: absolute;
+      bottom: 24px;
+      right: 42%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .in-circle-again {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 3px solid #E1E1E1;
+        background-color: #FFFFFF;
+      }
+    }
+  }
+}
+
+.picture-selfie-overlay {
+  width: 100px;
+  height: 100px;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .cover-camera {
+    width: 38.5px;
+    height: 38.5px;
+    background: #F3F3F3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+.picture-selfie-overlay-2 {
+  width: 100px;
+  height: auto;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .img-small {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid white;
+  }
+  .icon-dell {
+    position: absolute;
+    bottom: 12px;
+    cursor: pointer;
+  }
+  .icon-tick {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    bottom: 2px;
+    right: -2px;
+    cursor: pointer;
+  }
+
+}
+
+.picture-selfie-notice {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  font-family: "MontserratAlternates";
+  margin-bottom: 10px;
+}
+
+.picture-selfie-step {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000000;
+}
+
+ul {
+  margin-block-start: 0;
+  margin-left: -12px !important;
+  margin-bottom: 40px;
+}
+
+.cover-btn {
+  width: 177px;
+  height: 36px;
+  margin: auto;
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+  text-align: center;
+}
+
+.btn-ctn {
+  //font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 8px;
+  background: linear-gradient(180deg, rgba(18, 194, 233, 0.7) 0%, rgba(196, 113, 237, 0.8) 44.79%, rgba(246, 79, 89, 0.8) 100%);
+}
+
+.link-back {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #1E81EB;
+  margin-top:0px;
+  margin-bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.container-selfie {
+  background: rgba(247, 247, 247, 0.75);
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 370px;
+  margin: auto;
+  height: auto;
+  padding: 40px;
+  margin-top: 32px !important;
+  margin-bottom: 32px !important;
+}
+.cover-input {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin: auto;
+}
+
+.img-invalid {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.global-input {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 40px;
+  border: hidden !important;
+}
+
+.global-title {
+  font-family: "MontserratAlternates";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.text-under-camera {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #000000;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.no-take-photo {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+  text-align: center;
+  color: #EE4D2D;
+  margin-bottom: 16px;
+}

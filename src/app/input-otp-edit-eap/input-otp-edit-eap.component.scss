@@ -1,0 +1,251 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
+.form-login-container {
+  font-style: normal;
+  position: relative;
+  margin: auto;
+  width: 450px;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid #EEEEEE;
+  background: #F3F3F3;
+  padding: 30px 24px;
+  @media screen and(max-width: 480px) {
+    width: 335px;
+    padding: 30px 0px;
+    border-radius: 15px;
+  }
+}
+
+.title-otp {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  @media screen and(max-width: 480px){
+    font-size: 20px;
+  }
+}
+
+.form-cover {
+  width: 68%;
+  margin: auto;
+  height: 36px;
+  border: 1px solid rgba(55, 63, 65, 0.5);
+  border-radius: 20px;
+  margin-bottom: 13px !important;
+}
+
+.name-input {
+  font-family: "MontserratAlternates";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.input-valid{
+  background: #FFFFFF;
+  border-radius: 20px;
+  height: 40px;
+  width: 100%;
+  border: 1px solid #000000;
+  padding-left: 16px;
+}
+
+.under-input {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  height: 30px;
+  @media screen and(max-width: 480px) {
+    height: 20px;
+  }
+}
+
+.link-register {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.note-container {
+  width: 140px;
+  position: absolute;
+  left: 24px;
+  bottom: 30px;
+}
+
+.text-note {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 5px;
+  line-height: 10px;
+  color: #000000;
+}
+
+.text-note p {
+  margin-top: -5px;
+}
+
+.close-popup {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  @media screen and(max-width: 480px){
+    display: none;
+  }
+}
+
+
+.invalid-note {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  align-items: center;
+  color: rgba(4, 17, 62, 0.7);
+}
+
+.invalid-note label {
+  margin-left:24px;
+}
+
+.err {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+  color: #EE4D2D;
+  text-align: center;
+}
+
+
+.loading {
+  width: 9%;
+  margin: auto;
+  margin-top: 16px !important;
+}
+
+
+.cover-input {
+  position: relative;
+}
+
+.icon-invalid {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+}
+
+.note-send {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  margin-top: 12px;
+  @media screen and(max-width: 480px){
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: 4px;
+  }
+}
+
+.cover-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 20px;
+  margin-bottom: -8px;
+  @media screen and(max-width: 480px) {
+    font-size: 10px;
+    margin-top: 0px;
+  }
+  .link-send {
+    text-decoration-line: underline;
+    color: #0096C7;
+    cursor: pointer;
+  }
+  .note-no-send {
+    color: #000000;
+    margin-right: 8px;
+  }
+}
+
+.code-input-1 {
+  --item-border-radius: 10px;
+  --item-height: 50px;
+  --item-spacing: 12px;
+  --item-background: #FFFFFF;
+  @media screen and(max-width: 480px){
+    --item-height: 40px;
+    --item-spacing: 10px;
+  }
+}
+.code-input-2 {
+  --item-border-radius: 10px;
+  --item-height: 50px;
+  --item-spacing: 12px;
+  --item-background: #FFFFFF;
+  --item-border-has-value: 1px solid #FF8080 !important;
+  --item-border-bottom-has-value: 1px solid #FF8080 !important;
+  @media screen and(max-width: 480px){
+    --item-height: 40px;
+    --item-spacing: 10px;
+  }
+}
+
+.cover-input-pin {
+  width: 384px;
+  margin: auto;
+  margin-bottom: 34px !important;
+  margin-top: 34px !important;
+  @media screen and(max-width: 480px){
+    width: 310px;
+    margin-top: 24px !important;
+  }
+}
+
+.cover-input-pin-hidden {
+  position: absolute !important;
+  top: -34px;
+  left: 0px;
+  width: 320px;
+  margin: auto;
+  margin-bottom: 34px !important;
+  margin-top: 34px !important;
+}
+
+.link-send-disable {
+  pointer-events: none;
+  cursor: default;
+  color: grey;
+}
+
+.hidden-480 {
+  @media screen and(max-width: 480px){
+    display: none;
+  }
+}
+.hidden-lager-screen {
+  @media screen and(min-width: 480px){
+    display: none;
+  }
+}

@@ -1,0 +1,229 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
+.container-right-body {
+  min-height: 80vh;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin-right: 24px;
+  font-style: normal;
+  color: #000000;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
+  @media screen and(max-width: 480px){
+    padding: 32px 0px 32px 0px;
+    background: #ffffff;
+    min-height: auto;
+    margin: 20px;
+    border-radius: 15px;
+  }
+}
+
+.title-infor {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: start;
+  padding-left: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 22px;
+  @media screen and(max-width: 480px){
+    font-size: 20px;
+    line-height: 24px;
+    margin-left: -30px;
+    border-bottom: none;
+    padding-bottom: 0px;
+    margin-top: 20px;
+  }
+}
+
+.infor-bnpl {
+  width: 350px;
+  margin: auto;
+  margin-top: 32px !important;
+  @media screen and(max-width: 480px){
+    margin-top: 0px !important;
+  }
+}
+
+.title-update {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 30px;
+  @media screen and(max-width: 480px){
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.lable-name {
+  font-family: "MontserratAlternates";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 16px;
+  @media screen and(max-width: 480px){
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.cover-input-pin {
+  width: 189px;
+  margin: auto;
+  margin-bottom: 16px !important;
+}
+.note {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 315px;
+  margin: auto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #8A8A8A;
+  margin-bottom: 32px !important;
+  white-space: nowrap;
+  @media screen and(max-width: 480px){
+    font-size: 10px;
+    line-height: 12px;
+    width: 260px;
+  }
+  img {
+    margin-right: 10px;
+    @media screen and(max-width: 480px){
+      margin-right: 4px;
+    }
+  }
+}
+
+.cover-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    width: 200px;
+    height: 41px;
+    background: #E1E1E1;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "MontserratAlternates";
+  }
+}
+
+.cover-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: -8px;
+  @media screen and(max-width: 480px) {
+    font-size: 10px;
+  }
+  .link-send {
+    text-decoration-line: underline;
+    color: #0096C7;
+    cursor: pointer;
+  }
+  .note-no-send {
+    color: #000000;
+    margin-right: 8px;
+  }
+}
+
+.text-invalid {
+  height: 18px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+  text-align: center;
+  color: #EE4D2D;
+  margin-top: 10px;
+}
+
+.code-input-3 {
+  --item-border-radius: 50%;
+  --item-height: 21px;
+  --item-spacing: 21px;
+  --item-background: #E5E5E5;
+}
+.code-input-4 {
+  --item-border-radius: 50%;
+  --item-height: 21px;
+  --item-spacing: 21px;
+  --item-background: #E5E5E5;
+  --item-border: 2px solid #FF8080 !important;
+  --item-border-bottom: 2px solid #FF8080 !important;
+}
+
+.code-input-3 .code-hidden .has-value {
+  -webkit-text-fill-color: #17D7A0 !important;
+  -webkit-box-shadow:0 0 0 50px #17D7A0 inset !important;
+}
+
+.status {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and(max-width: 480px){
+    height: auto;
+  }
+}
+
+.hidden-480 {
+  @media screen and(max-width: 480px){
+    display: none;
+  }
+}
+
+.hidden-lager-screen {
+  @media screen and(min-width: 480px){
+    display: none;
+  }
+}
+
+.container-right-body-stt {
+  min-height: 80vh;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin-right: 24px;
+  font-style: normal;
+  color: #000000;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
+  @media screen and(max-width: 480px){
+    padding: 0px 0px 32px 0px !important;
+    background: #ffffff;
+    margin-top: 40% !important;
+    min-height: auto;
+    margin: 20px;
+    border-radius: 15px;
+  }
+}
+

@@ -1,0 +1,100 @@
+<div class="form-login-container">
+    <div class="title-login">{{'register.title' | translate}}</div>
+    <div>
+        <form [formGroup]="registerForm" (ngSubmit)="submit()">
+            <div class="name-input">{{'register.username' | translate}}</div>
+            <div class="cover-input">
+                <input class="input-valid"
+                       autocomplete="off"
+                       type="text"
+                       name="username"
+                       formControlName="username"
+                       [style]="registerForm.controls.username.invalid&&registerForm.controls.username.touched?
+                       'border: 1px solid #EE4D2D':null"/>
+                <!--                <img *ngIf="registerForm.controls.username.invalid&&registerForm.controls.username.touched"-->
+                <!--                     class="icon-invalid" [src]="linkValid">-->
+            </div>
+            <div class="under-input">
+                <div *ngFor=" let valid of validateMessage.username">
+                    <div class="err"
+                         *ngIf="(registerForm.controls.username.hasError(valid.type)&&registerForm.controls.username.touched)">
+                        {{valid.message|translate}}
+                    </div>
+                </div>
+            </div>
+            <div class="name-input">{{'register.phone' | translate}}</div>
+            <div class="cover-input">
+                <input class="input-valid"
+                       type="text"
+                       name="phone"
+                       autocomplete="off"
+                       maxlength="10"
+                       formControlName="phone"
+                       (change)="resetMsg()"
+                       (focusin)="errorMsgPhone=''"
+                       (keypress)="keyPress($event)"
+                       [style]="errorMsgPhone !=='' || (registerForm.controls.phone.invalid&&registerForm.controls.phone.touched)?
+                       'border: 1px solid #EE4D2D':null"/>
+                <!--                <img *ngIf="errorMsgPhone !=='' || (registerForm.controls.phone.invalid&&registerForm.controls.phone.touched)"-->
+                <!--                     class="icon-invalid" [src]="linkValid">-->
+            </div>
+            <div class="under-input">
+                <div *ngFor=" let valid of validateMessage.phone">
+                    <div class="err"
+                         *ngIf="(registerForm.controls.phone.hasError(valid.type)&&registerForm.controls.phone.touched)">
+                        {{valid.message|translate}}
+                    </div>
+                </div>
+                <div *ngIf="errorMsgPhone !== ''">
+                    <div class="err">
+                        {{errorMsgPhone}}
+                    </div>
+                </div>
+            </div>
+            <div class="name-input">{{'register.email' | translate}}</div>
+            <div class="cover-input">
+                <input class="input-valid"
+                       type="text"
+                       autocomplete="off"
+                       name="email"
+                       formControlName="email"
+                       (change)="resetMsg()"
+                       (focusin)="errorMsgEmail=''"
+                       [style]="errorMsgEmail !=='' || (registerForm.controls.email.invalid&&registerForm.controls.email.touched)?
+                       'border: 1px solid #EE4D2D':null"/>
+                <!--                <img *ngIf="errorMsgEmail !=='' || (registerForm.controls.email.invalid&&registerForm.controls.email.touched)"-->
+                <!--                     class="icon-invalid" [src]="linkValid">-->
+            </div>
+            <div class="under-input">
+                <div *ngFor=" let valid of validateMessage.email">
+                    <div class="err"
+                         *ngIf="(registerForm.controls.email.hasError(valid.type)&&registerForm.controls.email.touched)">
+                        {{valid.message|translate}}
+                    </div>
+                </div>
+                <div *ngIf="errorMsgEmail !== ''">
+                    <div class="err">
+                        {{errorMsgEmail}}
+                    </div>
+                </div>
+
+            </div>
+
+            <app-button-dialog class="hidden-480" [contentBtn]="'register.button'|translate"
+                               [isEnable]="registerForm.invalid">
+            </app-button-dialog>
+            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.button'|translate"
+                               [isEnable]="registerForm.invalid"
+                               [width]="200"
+                               [height]="40">
+            </app-button-dialog>
+        </form>
+        <div *ngIf="loading" class="loading">
+            <app-loading></app-loading>
+        </div>
+    </div>
+    <div class="link-register" (click)="openDialogLogin()"><a>{{'register.hadAccount' | translate}}?</a></div>
+
+    <app-item-close-dialog class="close-popup" (click)="close()"></app-item-close-dialog>
+
+</div>

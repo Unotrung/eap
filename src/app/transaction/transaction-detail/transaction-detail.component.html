@@ -1,0 +1,58 @@
+<div class="container-cover">
+    <div class="first-row">
+      <p class="title-1">Thông tin giỏ hàng</p>
+      <div class="first-row-1">
+        <div class="first-row-1-1">
+          <div><img src="../../../assets/images/detail-trans.png"></div>
+          <div>
+            <div class="name-filed">{{transaction.product}}</div>
+            <div>{{transaction.type}}</div>
+          </div>
+        </div>
+        <div class="text-bold">{{transaction.price}} VND</div>
+      </div>
+    </div>
+    <div class="second-row" >
+      <p class="title-2">Chi tiết hóa đơn</p>
+      <div>
+        <div class="name-filed">Thành tiền</div>
+        <div>{{transaction.price+transaction.conversionFee}} VND</div>
+      </div>
+      <div>
+        <div class="name-filed">Phí vận chuyển</div>
+        <div>{{transaction.ship}} VND</div>
+      </div>
+      <div>
+        <div class="text-bold">Tổng Cộng</div>
+        <div class="text-bold">{{transaction.price+transaction.conversionFee+transaction.ship}} VND</div>
+      </div>
+    </div>
+    <div class="second-row" >
+      <p class="title-2">TENOR 1</p>
+      <div>
+        <div class="name-filed">Giá sản phẩm</div>
+        <div class="text-bold">{{transaction.price}} VND</div>
+      </div>
+      <div>
+        <div class="name-filed">Phí chuyển đổi</div>
+        <div class="text-bold">{{transaction.conversionFee}} VND</div>
+      </div>
+      <div>
+        <div class="name-filed">Thời gian thanh toán</div>
+        <div class="text-bold">{{transaction.paymentTime}} Ngày</div>
+      </div>
+    </div>
+    <div class="thr-row" *ngIf = "!loading">
+      <p class="thr-1">Tổng giá trị đơn hàng</p>
+      <p class="thr-2">{{transaction.price+transaction.conversionFee+transaction.ship}} VND</p>
+      <p class="thr-3">Chúc mừng bạn đã thanh toán thành công</p>
+    </div>
+    <div *ngIf = "loading" class="loading"><app-loading></app-loading></div>
+    <div class="close-popup">
+      <div type="button"
+              (click)="close()">
+        <img class="icon-close" src="../../../assets/images/close.png">
+      </div>
+    </div>
+</div>
+

@@ -1,0 +1,80 @@
+<div class="title-infor hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
+<div class="container-right-body" [class.container-right-body-stt]="msgStt">
+    <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
+    <div [hidden] = "msgStt === 'success' || msgStt === 'fail'">
+        <div class="infor-bnpl">
+            <div class="title-update">{{'changePin.titleUpdate'|translate}}</div>
+            <div class="lable-name">{{'changePin.oldPin'|translate}}</div>
+            <div class="cover-input-pin">
+                <code-input [className]="msgWrongPassword===''?'code-input-3':'code-input-4'"
+                            [codeLength]="4"
+                            [isCodeHidden]="true"
+                            (codeChanged)="onCurrentCodeChanged($event)"
+                            (codeCompleted)="onCurrentCodeComplete($event)"
+                            #codeInput3>
+                </code-input>
+                <div class="text-invalid">
+                    <label *ngIf="msgWrongPassword!==''">{{msgWrongPassword|translate}}</label>
+                </div>
+            </div>
+            <div class="lable-name">{{'changePin.newPin'|translate}}</div>
+            <div class="cover-input-pin">
+                <code-input [className]="msgNewPinError===''?'code-input-3':'code-input-4'"
+                            [codeLength]="4"
+                            [isCodeHidden]="true"
+                            (codeChanged)="onNewCodeChanged($event)"
+                            (codeCompleted)="onNewCodeCompleted($event)"
+                            #codeInput2>
+                </code-input>
+                <div class="text-invalid">
+                    <label *ngIf="msgNewPinError!==''">{{msgNewPinError|translate}}</label>
+                </div>
+            </div>
+            <div class="lable-name">{{'changePin.verifyPin'|translate}}</div>
+            <div class="cover-input-pin">
+                <code-input [className]="msgVerifyError===''?'code-input-3':'code-input-4'"
+                            [codeLength]="4"
+                            [isCodeHidden]="true"
+                            (codeChanged)="onCodeChangedVerify($event)"
+                            (codeCompleted)="onCodeCompletedVerify($event)"
+                            #codeInput>
+                </code-input>
+                <div class="text-invalid">
+                    <label *ngIf="msgVerifyError!==''">{{msgVerifyError|translate}}</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="note">
+            <img src="../../../../assets/images/note-i.png">
+            <div>{{'changePin.note'|translate}}</div>
+        </div>
+        <div class="cover-btn">
+            <button (click)="submitUpdatePin()"
+                    [disabled]="currentPin.length<4||newPin.length<4||verifyPin.length<4"
+                    [style]="currentPin.length==4&&newPin.length==4&&verifyPin.length==4?'background:#000000':null">
+                {{'changePin.btnUpdate'|translate}}
+            </button>
+        </div>
+
+        <div class="cover-bottom">
+            <p class="note-no-send">{{'changePin.noteForgot'|translate}}</p>
+            <a class="link-send"
+               (click)="resetPinCode()">
+                {{'changePin.clickHere'|translate}}
+            </a>
+        </div>
+    </div>
+
+    <div *ngIf = "msgStt === 'success'" class="status">
+        <app-status [isStatus]="true"
+        [msgStatus]="'changePin.sttSuccess'|translate"
+        [msgDescription]="''"></app-status>
+    </div>
+    <div *ngIf = "msgStt === 'fail'" class="status">
+        <app-status [isStatus]="false"
+                    [msgStatus]="'changePin.sttFail'|translate"
+                    [msgDescription]="'changePin.sttNote'|translate"></app-status>
+    </div>
+</div>
+

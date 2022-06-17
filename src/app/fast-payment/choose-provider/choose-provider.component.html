@@ -1,0 +1,9 @@
+<div class="container-choose-provider">
+    <h1>CHỌN NHÀ CUNG CẤP BNPL</h1>
+    <div class="content">
+        <div class="name"><input type="radio" (change)="onChooseProvider()" > Mua trước trả sau cùng</div>
+        <div class="img-fe"><img src="../../../assets/images/fe-credit-1.png"></div>
+    </div>
+    <button [disabled]="!choose" [style]="!choose?'background:#979797':null" (click)="openDialogInputNid()">XÁC NHẬN</button>
+    <div><a (click)="closeDialog()">Quay lại</a></div>
+</div>

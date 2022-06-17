@@ -1,0 +1,14 @@
+<div class="cover-content">
+  <div *ngIf = "!loading">
+    <p class="title-1">{{contentContract.title1}}</p>
+    <p class="title-2">{{contentContract.title2}}</p>
+    <div class="main-content"> {{contentContract.content}}
+    </div>
+    <div class="close-popup" (click)="onNoClick()">
+      <img class="icon-close" src="../../../assets/images/close.png">
+    </div>
+  </div>
+  <div class="loading" *ngIf = "loading">
+    <app-loading></app-loading>
+  </div>
+</div>

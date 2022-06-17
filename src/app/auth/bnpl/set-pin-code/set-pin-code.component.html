@@ -1,0 +1,76 @@
+<div class="container-right-body">
+    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div>
+        <div class="title-register">
+            {{'takePhotoNid.title' | translate}}
+        </div>
+        <div>
+            <app-bar-process-bnpl [childData]="{widthLine: 25,numberStep:1}"></app-bar-process-bnpl>
+        </div>
+
+        <div class="title-register" style="font-size: 20px">
+            {{'setPin.title' | translate}}
+        </div>
+
+        <div class="form-code">
+            <form class="form-update">
+                <div style="margin-bottom: 16px"> {{'setPin.labelPin' | translate}}</div>
+
+                <div class="cover-input-pin">
+                    <code-input [className]="'code-input-3'"
+                                [codeLength]="4"
+                                [isCodeHidden]="true"
+                                (codeChanged)="onCodeChanged($event)"
+                                (codeCompleted)="onCodeCompleted($event)">
+                    </code-input>
+                </div>
+            </form>
+
+            <form class="form-update">
+                <div style="margin-bottom: 16px"> {{'setPin.labelVerifyPin' | translate}}</div>
+
+                <div class="cover-input-pin">
+                    <code-input [className]="msgVerifyError===''?'code-input-3':'code-input-4'"
+                                [codeLength]="4"
+                                [isCodeHidden]="true"
+                                (codeChanged)="onCodeChangedVerify($event)"
+                                (codeCompleted)="onCodeCompletedVerify($event)"
+                                #codeInput>
+                    </code-input>
+                    <div class="text-invalid" >
+                        <label *ngIf="(pinCode !== verifyPinCode) && verifyPinCode.length == 4">{{msgVerifyError|translate}}</label>
+                    </div>
+                </div>
+
+
+<!--                <div class="text-invalid" *ngIf="messageError!==''">-->
+<!--                    <label class="content-valid">{{messageError}}</label>-->
+<!--                </div>-->
+            </form>
+
+<!--            <div class="cover-note">-->
+<!--                <div class="note-text">Lưu ý</div>-->
+<!--                <div class="note-text-2">-->
+<!--                    <span class="red-star">*</span>-->
+<!--                    Mã pin bao gồm 4 số, dùng để check out khi thanh toán-->
+<!--                </div>-->
+<!--            </div>-->
+
+        </div>
+        <div class="cover-btn">
+            <app-button-dialog (click)="submitSetPinCode()" [height]="40" [width]="160"
+                               [contentBtn]="'takePhotoNid.continue' | translate"
+                               [isEnable]="pinCode.length<4||verifyPinCode.length<4">
+
+            </app-button-dialog>
+        </div>
+
+<!--        <div class="cover-btn">-->
+<!--            <button [style]="pinCode.length<4||verifyPinCode.length<4?'background:#979797':null"-->
+<!--                    [disabled]="pinCode.length<4||verifyPinCode.length<4"-->
+<!--                    (click)="submitSetPinCode()" class="btn-ctn">Tiếp tục-->
+<!--            </button>-->
+<!--        </div>-->
+
+    </div>
+</div>

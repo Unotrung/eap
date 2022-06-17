@@ -1,0 +1,139 @@
+<div class="container-transaction hidden-480">
+    <div class="header-table">
+        <div class="name-table">{{'repayment.titleTable' | translate}}</div>
+        <div class="action-page">
+            <div>
+                <div (click)="closeMore()" class="selection-more-records">
+                    <div style="width: 100%; cursor: pointer" >
+                        {{itemChooseMore | translate}}
+                    </div>
+                    <img class="icon-drop-more" src="../../../assets/images/next-page.png">
+                    <div *ngIf = "isShow" class="option-cover">
+                        <div *ngFor = "let tr of listItemValue, let i = index" (click)="getManyRecord(tr,$event)">
+                            {{listItemText[i] | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="no-page">
+                <label *ngIf = "errorMgs==''">{{page}} - {{totalPage}} of {{totalItem}}</label>
+            </div>
+            <div class="cover-change-page">
+                <div (click)="previousPage()" *ngIf="page !== 1" class="btn-prev-page">
+                    <img src="../../../assets/images/next-page.png">
+                </div>
+
+                <div *ngIf="page === 1" class="btn-prev-disable">
+                    <img src="../../../assets/images/disable-page.png">
+                </div>
+
+                <div (click)="nextPage()" *ngIf="page !== totalPage" class="btn-next-page">
+                    <img src="../../../assets/images/next-page.png">
+                </div>
+
+                <div *ngIf="page === totalPage" class="btn-next-disable">
+                    <img src="../../../assets/images/disable-page.png">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--    table transaction-->
+    <table>
+        <thead>
+        <tr>
+            <td><label style="margin-left: 40px">{{'repayment.issueDate' | translate}}</label>
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='dueDate'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('dueDate')"
+                     src="../../../assets/images/angle-down.png">
+            </td>
+            <td>{{'repayment.provider' | translate}}
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='provider'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('provider')"
+                     src="../../../assets/images/angle-down.png">
+            </td>
+            <td>{{'repayment.payMoney' | translate}}
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='paidMoney'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('paidMoney')"
+                     src="../../../assets/images/angle-down.png">
+            </td>
+            <td>{{'repayment.status' | translate}}
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='status'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('status')"
+                     src="../../../assets/images/angle-down.png">
+            </td>
+            <td>{{'repayment.action' | translate}}</td>
+            <td>{{'repayment.viewInvoice' | translate}}</td>
+        </tr>
+        </thead>
+        <tbody *ngFor="let tran of listRepayment">
+        <tr *ngIf="!loading" class="row-content">
+            <td><label style="margin-left: 40px">{{tran.dueDate | dateStyle}}</label></td>
+            <td>{{tran.provider}}</td>
+            <td>{{tran.paidMoney}} VNĐ</td>
+            <td class="status-text"
+                [style]="tran.status==='Chờ thanh toán'?'color:#EE9E3F':tran.status==='Quá hạn thanh toán'?
+                'color:#EE4D2D':null">
+                {{tran.status}}
+            </td>
+            <td>
+<!--                <a *ngIf="tran.status==='Chờ thanh toán'" routerLink="/repayment-detail/{{tran._id}}"-->
+<!--                   routerLinkActive="active">-->
+<!--                {{'repayment.pay' | translate}}</a>-->
+                <a *ngIf="tran.status==='Chờ thanh toán'" (click)="pay()"
+                   routerLinkActive="active">
+                    {{'repayment.pay' | translate}}</a>
+            </td>
+            <td>
+                <a *ngIf = "tran.status==='Đã thanh toán'" href="">{{'repayment.view' | translate}}</a>
+                <a *ngIf = "tran.status!=='Đã thanh toán'" style="color: #C1C1C1">{{'repayment.view' | translate}}</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div *ngIf="loading" class="loading">
+        <app-loading></app-loading>
+    </div>
+    <div  *ngIf="errorMgs!==''" style="width: 100%;text-align: center; color: red; font-size: 16px; margin-top: 40px">
+        {{errorMgs}}!
+    </div>
+</div>
+
+<!--Màn hình mobile-->
+
+<div class="container-mobile hidden-lager-screen">
+    <div class="name-table">{{'repayment.titleTable' | translate}}</div>
+    <div class="cover-item-repayment"
+         [style]="re.status=='Chờ thanh toán'?'height: 258px ':null"
+         *ngFor="let re of listRepayment">
+        <div class="row-repayment">
+            <div>{{'repayment.issueDate' | translate}}</div>
+            <div>{{re.dueDate | dateStyle}}</div>
+        </div>
+        <div class="row-repayment">
+            <div>{{'repayment.payMoney' | translate}}</div>
+            <div>{{re.paidMoney}} đ</div>
+        </div>
+        <div class="row-repayment">
+            <div>{{'repayment.status' | translate}}</div>
+            <div class="row-repayment-status"
+                 [style]="re.status==='Chờ thanh toán'?'color:#EE9E3F':re.status==='Quá hạn thanh toán'?
+                'color:#EE4D2D':null">{{re.status}}</div>
+        </div>
+        <div class="row-repayment">
+            <div>{{'repayment.viewInvoice' | translate}}</div>
+            <div [style]="re.status!=='Đã thanh toán'?'color:#C1C1C1':null">{{'repayment.view' | translate}}</div>
+        </div>
+        <div *ngIf = "re.status=='Chờ thanh toán'"
+             class="row-repayment">
+            <div></div>
+            <div><app-button-dialog [width]="200" [height]="40"
+            [contentBtn]="'repayment.pay' | translate" [isEnable]="false"
+            (click)="pay()"></app-button-dialog></div>
+        </div>
+    </div>
+</div>

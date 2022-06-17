@@ -1,0 +1,89 @@
+<div class="container-detail">
+    <div class="title-left">Phương thức thanh toán trực tuyến</div>
+    <div class="cover-detail">
+        <div class="right-content">
+            <div class="right-inside">
+                <div class="title-right">Thông tin thanh toán</div>
+                <div class="no-id">
+                    <div class="f14">Mã đơn hàng</div>
+                    <div style="width: 120px;overflow: hidden" class="f16">{{repayment._id}}</div>
+                </div>
+                <div class="total-fee">
+                    <div class="total">
+                        <div class="f14">Tổng cộng</div>
+                        <div class="f16">{{repayment.paidMoney}}  VNĐ</div>
+                    </div>
+                    <div class="fee">
+                        <div class="f14">Phí dịch vụ</div>
+                        <div class="f16">{{repayment.serviceCharge}}  VNĐ</div>
+                    </div>
+                </div>
+
+                <div class="total-2">
+                    <div class="f14">Tổng cộng</div>
+                    <div class="f24">{{repayment.paidMoney + repayment.serviceCharge}}  VNĐ</div>
+                </div>
+            </div>
+        </div>
+        <div class="left-content">
+            <div class="tick">
+                <div class="cover-row-1"><input type="radio" value="credit" name="1" (change)="onChooseMethodPay($event.target.value)"></div>
+                <div class="cover-row-1"><input type="radio" value="wallet" name="1" (change)="onChooseMethodPay($event.target.value)"></div>
+                <div class="cover-row-1"><input type="radio" value="payoo" name="1" (change)="onChooseMethodPay($event.target.value)"></div>
+                <div class="cover-row-1"><input type="radio" value="bank" name="1" (change)="onChooseMethodPay($event.target.value)"></div>
+            </div>
+            <div class="title-img">
+                <div class="cover-row-2">
+                    <div>Thanh toán bằng Credit Card</div>
+                    <div class="img-credit-card">
+                        <img class="img-1" src="../../../assets/images/Mastercard.png">
+                        <img class="img-1" src="../../../assets/images/Visa.png">
+                        <img class="img-1" src="../../../assets/images/JCB.png">
+                    </div>
+                </div>
+                <div class="cover-row-2">
+                    <div>Thanh toán bằng ví điện tử</div>
+                    <div class="img-credit-card">
+                        <img class="img-2" src="../../../assets/images/momo.png">
+                        <img class="img-2" src="../../../assets/images/zalo.png">
+                        <img class="img-2" src="../../../assets/images/spay.png">
+                    </div>
+                </div>
+                <div class="cover-row-2">
+                    <div>Thanh toán bằng Payoo</div>
+                    <div class="img-credit-card">
+                        <img class="img-2" src="../../../assets/images/payoo.jpg">
+                    </div>
+                </div>
+                <div class="cover-row-2">
+                    <div>Thanh toán bằng QR code</div>
+                    <div class="img-credit-card">
+                        <div class="atm-qr">
+                            <div class="atm"><p>ATM</p></div>
+                            <div class="qr">QR Code</div>
+                        </div>
+                        <div class="bank">
+                            <div class="cover-icon-bank" *ngFor = "let src of listImgBank"><img class="img-3" [src]="src"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cover-btn">
+        <div class="back">
+            <div class="icon-back"><img src="../../../assets/images/angle-down.png"></div>
+            <div class="text-back" (click)="back()">Quay lại</div>
+        </div>
+
+        <div>
+            <button [style]="!choose?'background: #E1E1E1':null" class="btn" [disabled]="!choose"
+                    (click)="pay()"
+            >Xác nhận
+            </button>
+        </div>
+
+        <div style="width: 30%"></div>
+    </div>
+</div>

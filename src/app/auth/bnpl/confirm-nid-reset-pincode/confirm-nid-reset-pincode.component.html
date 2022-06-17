@@ -1,0 +1,65 @@
+<div class="title-infor hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
+<div class="container-right-body">
+    <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
+    <div class="title-update">{{'forgotPin.titleNid' | translate}}</div>
+    <form [formGroup]="formNid" (ngSubmit)=submit()>
+        <div class="cover-input">
+            <div class="title-small">{{'forgotPin.labelNid' | translate}}</div>
+            <input (keypress)="keyPress($event)"
+                   class="input-nid" type="text"
+                   name="nid" formControlName="nid"
+                   autofocus
+                   (focusin)="resetMsg()"
+                   [style]="(formNid.controls.nid.touched&&formNid.controls.nid.invalid)||messageError!==''?
+                     'border: 1px solid #EE4D2D':null">
+            <div class="invalid-note">
+                <label *ngIf="messageError!==''">{{messageError|translate}}</label>
+                <div *ngFor=" let valid of validateMessage.nid">
+                    <label *ngIf="(formNid.controls.nid.hasError(valid.type)&&
+                        formNid.controls.nid.touched)">
+                        {{valid.message | translate}}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="cover-btn">
+                <button [disabled]="formNid.invalid"
+                        [style]="formNid.invalid?null:'background:#000000'">
+                    {{'forgotPin.continue'|translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--<div class="form-register-container">-->
+<!--    <div class="photo-frame"></div>-->
+<!--    <p class="title-login">Forgot PIN</p>-->
+<!--    <div>-->
+<!--        <form [formGroup]="formNid" (ngSubmit)=submit()>-->
+<!--            <div class="form-cover" fxLayout='row'>-->
+<!--                <div fxFlex="45%" class="name-input">Nhập CMND/CCCD</div>-->
+<!--                <div fxFlex class="cover-input"><input (keypress)="keyPress($event)" type="text" name="nid" formControlName="nid"/></div>-->
+<!--            </div>-->
+
+<!--            <div *ngFor=" let valid of validateMessage.nid">-->
+<!--                <div class="invalid-note"-->
+<!--                     *ngIf="(formNid.controls.nid.hasError(valid.type)&&formNid.controls.nid.touched)">-->
+<!--                    <img src="../../../assets/images/Warning.png">-->
+<!--                    <label>{{valid.message}}</label>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="invalid-note" *ngIf="messageError!==''">-->
+<!--                <img src="../../../assets/images/Warning.png">-->
+<!--                <label>{{messageError}}</label>-->
+<!--            </div>-->
+
+<!--            <button [disabled]="formNid.invalid" [style]="formNid.invalid?'background:#979797':null" class="btn-register">XÁC NHẬN</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--    <div class="close-popup" (click)="closePopup()">-->
+<!--        <img class="icon-close" src="../../../assets/images/close.png">-->
+<!--    </div>-->
+<!--</div>-->

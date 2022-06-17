@@ -1,0 +1,491 @@
+<div class="container-right-body">
+    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <div class="title-register">
+            {{'takePhotoNid.title' | translate}}
+        </div>
+        <div style="width: 100%">
+            <app-bar-process-bnpl [childData]="{widthLine: 0,numberStep:0}"></app-bar-process-bnpl>
+        </div>
+        <div [formGroup]="registerForm" class="main-content">
+            <div class="personal-info">
+                <div class="text-form">{{'kyc.inforPerson' | translate}}</div>
+                <div class="name-birth">
+                    <div class="block-info">
+                        <div class="info-title">{{'kyc.fullName' | translate}}</div>
+                        <input class="input-info" appMarginTop="8" formControlName="name">
+                    </div>
+                    <div class="block-info">
+                        <div class="info-title" appMarginTop="25">
+                            <ng-container>{{'kyc.sex' | translate}}</ng-container>
+                        </div>
+                        <div style="position: relative">
+                            <input class="input-info"
+                                   [ngClass]="{'is-invalid': (f['sex'].touched || f['sex'].dirty) && f['sex'].errors}"
+                                   appMarginTop="8" formControlName="sex" matInput [matAutocomplete]="autoSex">
+<!--                            <img *ngIf="(f['sex'].touched || f['sex'].dirty) && f['sex'].errors"-->
+<!--                                 class="img-invalid" [src]="linkImgWarn">-->
+                            <mat-autocomplete autoActiveFirstOption #autoSex="matAutocomplete">
+                                <mat-option *ngFor="let option of sexOptions, let i = index" [value]="lang == 'en'?sexOptionsEn[i]:option">
+                                    {{lang == 'en'?sexOptionsEn[i]:option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </div>
+                        <div class="error"
+                             *ngIf="(f['sex'].touched || f['sex'].dirty) && f['sex'].errors">
+                            <span>{{'kyc.validSex' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="name-birth">
+                    <div class="block-info">
+                        <div class="info-title">{{'kyc.phone' | translate}}</div>
+                        <input (keypress)="keyPress($event, InputType.number)" type="text" class="narrow-input-info"
+                               formControlName="phone"
+                               appMarginTop="8"
+                               [ngClass]="{ 'is-invalid': (f['phone'].touched || f['phone'].dirty) && f['phone'].errors }">
+                    </div>
+                    <div class="block-info margin-left-12">
+                        <div class="info-title">{{'kyc.birthday' | translate}}</div>
+                        <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="birthday">
+                    </div>
+                </div>
+                <div class="name-birth">
+                    <div class="block-info">
+                        <div class="info-title">
+                            {{'kyc.nid' | translate}}
+                        </div>
+                        <input class="narrow-input-info" appMarginTop="8" formControlName="citizenId">
+                    </div>
+                    <div class="block-info">
+                        <div class="info-title">
+                            {{'kyc.issueDate' | translate}}
+                        </div>
+                        <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="issueDate">
+                    </div>
+                </div>
+            </div>
+
+            <div class="personal-info">
+                <div class="text-form">{{'kyc.inforAddress' | translate}}</div>
+                <div class="name-birth">
+                    <div class="block-info">
+                        <div class="info-title" appMarginTop="25">
+                            {{'kyc.city' | translate}} <span class="red-star">*</span>
+                        </div>
+                        <div style="position: relative">
+                            <input class="input-info" type="text"
+                                   [ngClass]="{'is-invalid': (f['city'].touched || f['city'].dirty) && f['city'].errors}"
+                                   appMarginTop="8"
+                                   matInput
+                                   onClick="this.setSelectionRange(0, this.value.length)"
+                                   formControlName="city"
+                                   [matAutocomplete]="autoCity">
+<!--                            <img *ngIf="(f['city'].touched || f['city'].dirty) && f['city'].errors"-->
+<!--                                 class="img-invalid" [src]="linkImgWarn">-->
+                            <mat-autocomplete autoActiveFirstOption #autoCity="matAutocomplete"
+                                              (optionSelected)="onSelectedCity($event.option.value)">
+                                <mat-option *ngFor="let option of cityFilteredOptions | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </div>
+
+                        <div class="error" *ngIf="(f['city'].touched || f['city'].dirty) && f['city'].errors">
+                            <span>{{'kyc.validCity' | translate}}</span>
+                        </div>
+                    </div>
+                    <div class="block-info">
+                        <div class="info-title">
+                            {{'kyc.district' | translate}}  <span class="red-star">*</span>
+                        </div>
+                        <div style="position: relative">
+                            <input class="narrow-input-info-2" appMarginTop="8" type="text"
+                                   [ngClass]="{'is-invalid': (f['district'].touched || f['district'].dirty) && f['district'].errors}"
+                                   appMarginTop="8"
+                                   matInput
+                                   formControlName="district"
+                                   onClick="this.setSelectionRange(0, this.value.length)"
+                                   [matAutocomplete]="autoDistrict">
+<!--                            <img *ngIf="(f['district'].touched || f['district'].dirty) && f['district'].errors"-->
+<!--                                 class="img-invalid" [src]="linkImgWarn">-->
+                            <mat-autocomplete autoActiveFirstOption #autoDistrict="matAutocomplete"
+                                              (optionSelected)="onSelectedDistrict($event.option.value)">
+                                <mat-option *ngFor="let option of districtFilteredOptions | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </div>
+
+                        <div class="error"
+                             *ngIf="(f['district'].touched || f['district'].dirty) && f['district'].errors">
+                            <span>{{'kyc.validDistrict' | translate}}</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="name-birth">
+                    <div class="block-info">
+                        <div class="info-title">
+                            <ng-container>{{'kyc.ward' | translate}}</ng-container>
+                            <span class="red-star">*</span>
+                        </div>
+                        <div style="position: relative">
+                            <input class="narrow-input-info-2" appMarginTop="8" type="text"
+                                   [ngClass]="{'is-invalid': (f['ward'].touched || f['ward'].dirty) && f['ward'].errors}"
+                                   appMarginTop="8"
+                                   matInput
+                                   formControlName="ward"
+                                   onClick="this.setSelectionRange(0, this.value.length)"
+                                   [matAutocomplete]="autoWard">
+<!--                            <img *ngIf="(f['ward'].touched || f['ward'].dirty) && f['ward'].errors"-->
+<!--                                 class="img-invalid" [src]="linkImgWarn">-->
+                            <mat-autocomplete autoActiveFirstOption #autoWard="matAutocomplete"
+                                              (optionSelected)="onSelectedWard($event.option.value)">
+                                <mat-option *ngFor="let option of wardFilteredOptions | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </div>
+
+                        <div class="error" *ngIf="(f['ward'].touched || f['ward'].dirty) && f['ward'].errors">
+                            <span>{{'kyc.validWard' | translate}}</span>
+                        </div>
+                    </div>
+                    <div class="block-info">
+                        <div class="info-title" appMarginTop="16">
+                            <ng-container> {{'kyc.street' | translate}} </ng-container>
+                            <span class="red-star">*</span>
+                        </div>
+                        <div style="position: relative">
+                            <input class="input-info"
+                                   [ngClass]="{'is-invalid': (f['street'].touched || f['street'].dirty) && f['street'].errors}"
+                                   appMarginTop="8" formControlName="street">
+<!--                            <img [src]="linkImgWarn" class="img-invalid"-->
+<!--                                 *ngIf="(f['street'].touched || f['street'].dirty) && f['street'].errors">-->
+                        </div>
+
+                        <div class="error" *ngIf="(f['street'].touched || f['street'].dirty) && f['street'].errors">
+                            <span>{{'kyc.validStreet' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="personal-info">
+                <div class="text-form">{{'kyc.inforRef' | translate}}</div>
+                <div class="name-birth">
+                    <div class="block-info">
+                        <div class="info-title" appMarginTop="25">
+                            {{'kyc.titleRef' | translate}} <span class="red-star">*</span>
+                        </div>
+                        <div  style="position: relative">
+                            <input class="input-info" type="text"
+                                   [ngClass]="{'is-invalid': (f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors}"
+                                   appMarginTop="8"
+                                   matInput
+                                   formControlName="personal_title_ref"
+                                   onClick="this.setSelectionRange(0, this.value.length)"
+                                   [matAutocomplete]="autoPersonalTitle">
+<!--                            <img [src]="linkImgWarn" class="img-invalid"-->
+<!--                                 *ngIf="(f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors">-->
+                            <div>
+                                <mat-autocomplete autoActiveFirstOption #autoPersonalTitle="matAutocomplete">
+                                    <mat-option *ngFor="let option of personalTitleFilterOptions | async, let i = index"
+                                                [value]="lang=='en'?personalTitleOptionsEn[i]:option">
+                                        {{lang=='en'?personalTitleOptionsEn[i]:option}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                            </div>
+                        </div>
+
+
+                        <div class="error"
+                             *ngIf="(f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors">
+                            <span>{{'kyc.validTitleRef' | translate}}</span>
+                        </div>
+                    </div>
+                    <div class="block-info">
+                        <div class="info-title" appMarginTop="25">
+                            <ng-container>{{'kyc.nameRef' | translate}}  </ng-container>
+                            <span class="red-star">*</span>
+                        </div>
+                        <div style="position: relative">
+                            <input class="input-info" (keypress)="keyPress($event, InputType.name)"
+                                   [ngClass]="{'is-invalid': (f['name_ref'].touched || f['name_ref'].dirty) && f['name_ref'].errors}"
+                                   appMarginTop="8" formControlName="name_ref">
+<!--                            <img [src]="linkImgWarn" class="img-invalid"-->
+<!--                                 *ngIf="(f['name_ref'].touched || f['name_ref'].dirty) && f['name_ref'].errors">-->
+                        </div>
+                        <div class="error" *ngIf="(f['name_ref'].touched || f['name_ref'].dirty) && f['name_ref'].errors">
+                            <span>{{'kyc.validNameRef' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="name-birth">
+                    <div class="block-info">
+                        <div class="info-title" appMarginTop="25">
+                            {{'kyc.phoneRef' | translate}}   <span class="red-star">*</span>
+                        </div>
+                        <div style="position: relative">
+                            <input class="input-info" (keypress)="keyPress($event, InputType.number)"
+                                   [ngClass]="{'is-invalid': (f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].errors}"
+                                   appMarginTop="8" formControlName="phone_ref"
+                                   (change)="isCheckPhoneRef=false">
+<!--                            <img [src]="linkImgWarn" class="img-invalid"-->
+<!--                                 *ngIf="(f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].errors">-->
+                        </div>
+                        <div class="error"
+                             *ngIf="(f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].hasError('required')">
+                            <span>{{'kyc.validPhoneRef' | translate}}</span>
+                        </div>
+                        <div class="error"
+                             *ngIf="(f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].hasError('pattern')">
+                            <span>{{'kyc.validPhoneRefPattern' | translate}}</span>
+                        </div>
+                        <div class="error" *ngIf="isCheckPhoneRef">
+                            <span>{{'kyc.validPhoneRefOverlap' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="cover-note">
+            <span class="note-text">{{'kyc.titleNote' | translate}}:</span>
+            <span class="red-star">* </span>
+            <span class="note-text-2">{{'kyc.contentNote' | translate}} </span>
+        </div>
+
+        <div>
+            <app-button-dialog
+                    [isEnable]="registerForm.invalid"
+                    [width]="160"
+                    [height]="40"
+                    [contentBtn]="'takePhotoNid.continue' | translate"
+                    (click)="onContinue()">
+            </app-button-dialog>
+        </div>
+    </div>
+</div>
+
+
+<!--option 2-->
+
+<!--<div class="container-right-body">-->
+<!--    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>-->
+<!--    <div fxLayout="column" fxLayoutAlign="center center">-->
+<!--        <div class="title-register">-->
+<!--            Chào mừng bạn đến với quy trình đăng ký mua trước trả sau-->
+<!--        </div>-->
+<!--        <div style="width: 100%">-->
+<!--            <app-bar-process-bnpl [childData]="{widthLine: 0,numberStep:0}"></app-bar-process-bnpl>-->
+<!--        </div>-->
+<!--        <div class="main-content">-->
+<!--            <div class="enter-info-text" appMarginTop="33">-->
+<!--                {{'kyc.title' | translate}}-->
+<!--            </div>-->
+<!--            <div [formGroup]="registerForm">-->
+<!--                <div class="personal-info">-->
+<!--                    <div class="text-form">{{'kyc.inforPerson' | translate}}</div>-->
+<!--                    <div class="info-title" appMarginTop="25">{{'kyc.fullName' | translate}}</div>-->
+<!--                    <input class="input-info" appMarginTop="8" formControlName="name">-->
+<!--                    <div class="info-title" appMarginTop="25">-->
+<!--                        <ng-container>{{'kyc.sex' | translate}}</ng-container>-->
+<!--                    </div>-->
+<!--                    <div style="position: relative">-->
+<!--                        <input class="input-info"-->
+<!--                               [ngClass]="{'is-invalid': (f['sex'].touched || f['sex'].dirty) && f['sex'].errors}"-->
+<!--                               appMarginTop="8" formControlName="sex" matInput [matAutocomplete]="autoSex">-->
+<!--                        <img class="img-invalid" [src]="linkImgWarn">-->
+<!--                    </div>-->
+<!--                    <div class="error"-->
+<!--                         *ngIf="(f['sex'].touched || f['sex'].dirty) && f['sex'].errors">-->
+<!--                        <span>{{'kyc.validSex' | translate}}</span>-->
+<!--                    </div>-->
+
+<!--                    <mat-autocomplete autoActiveFirstOption #autoSex="matAutocomplete">-->
+<!--                        <mat-option *ngFor="let option of sexOptions" [value]="option">-->
+<!--                            {{option}}-->
+<!--                        </mat-option>-->
+<!--                    </mat-autocomplete>-->
+<!--                    <div class="name-birth" appMarginTop="25">-->
+<!--                        <div class="block-info">-->
+<!--                            <div class="info-title">{{'kyc.phone' | translate}}</div>-->
+<!--                            <input (keypress)="keyPress($event, InputType.number)" type="text" class="narrow-input-info"-->
+<!--                                   formControlName="phone"-->
+<!--                                   appMarginTop="8"-->
+<!--                                   [ngClass]="{ 'is-invalid': (f['phone'].touched || f['phone'].dirty) && f['phone'].errors }">-->
+<!--                        </div>-->
+<!--                        <div class="block-info margin-left-12">-->
+<!--                            <div class="info-title">{{'kyc.birthday' | translate}}</div>-->
+<!--                            <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="birthday">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="name-birth" appMarginTop="25">-->
+<!--                        <div class="block-info">-->
+<!--                            <div class="info-title">-->
+<!--                                {{'kyc.nid' | translate}}-->
+<!--                            </div>-->
+<!--                            <input class="narrow-input-info" appMarginTop="8" formControlName="citizenId">-->
+<!--                        </div>-->
+<!--                        <div class="block-info">-->
+<!--                            <div class="info-title">-->
+<!--                                {{'kyc.issueDate' | translate}}-->
+<!--                            </div>-->
+<!--                            <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="issueDate">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="personal-info">-->
+<!--                    <div class="text-form">{{'kyc.inforAddress' | translate}}</div>-->
+<!--                    <div class="info-title" appMarginTop="25">-->
+<!--                        {{'kyc.city' | translate}} <span class="red-star">*</span>-->
+<!--                    </div>-->
+<!--                    <input class="input-info" type="text"-->
+<!--                           [ngClass]="{'is-invalid': (f['city'].touched || f['city'].dirty) && f['city'].errors}"-->
+<!--                           appMarginTop="8"-->
+<!--                           matInput-->
+<!--                           onClick="this.setSelectionRange(0, this.value.length)"-->
+<!--                           formControlName="city"-->
+<!--                           [matAutocomplete]="autoCity">-->
+<!--                    <mat-autocomplete autoActiveFirstOption #autoCity="matAutocomplete"-->
+<!--                                      (optionSelected)="onSelectedCity($event.option.value)">-->
+<!--                        <mat-option *ngFor="let option of cityFilteredOptions | async" [value]="option">-->
+<!--                            {{option}}-->
+<!--                        </mat-option>-->
+<!--                    </mat-autocomplete>-->
+<!--                    <div class="error" *ngIf="(f['city'].touched || f['city'].dirty) && f['city'].errors">-->
+<!--                        <img [src]="linkImgWarn"><span>{{'kyc.validCity' | translate}}</span>-->
+<!--                    </div>-->
+<!--                    <div class="name-birth" appMarginTop="25">-->
+<!--                        <div class="block-info">-->
+<!--                            <div class="info-title">-->
+<!--                                {{'kyc.district' | translate}}  <span class="red-star">*</span>-->
+<!--                            </div>-->
+<!--                            <input class="narrow-input-info-2" appMarginTop="8" type="text"-->
+<!--                                   [ngClass]="{'is-invalid': (f['district'].touched || f['district'].dirty) && f['district'].errors}"-->
+<!--                                   appMarginTop="8"-->
+<!--                                   matInput-->
+<!--                                   formControlName="district"-->
+<!--                                   onClick="this.setSelectionRange(0, this.value.length)"-->
+<!--                                   [matAutocomplete]="autoDistrict">-->
+<!--                            <mat-autocomplete autoActiveFirstOption #autoDistrict="matAutocomplete"-->
+<!--                                              (optionSelected)="onSelectedDistrict($event.option.value)">-->
+<!--                                <mat-option *ngFor="let option of districtFilteredOptions | async" [value]="option">-->
+<!--                                    {{option}}-->
+<!--                                </mat-option>-->
+<!--                            </mat-autocomplete>-->
+<!--                            <div class="error"-->
+<!--                                 *ngIf="(f['district'].touched || f['district'].dirty) && f['district'].errors">-->
+<!--                                <img [src]="linkImgWarn"><span>{{'kyc.validDistrict' | translate}}</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="block-info">-->
+<!--                            <div class="info-title">-->
+<!--                                <ng-container>{{'kyc.ward' | translate}}</ng-container>-->
+<!--                                <span class="red-star">*</span>-->
+<!--                            </div>-->
+<!--                            <input class="narrow-input-info-2" appMarginTop="8" type="text"-->
+<!--                                   [ngClass]="{'is-invalid': (f['ward'].touched || f['ward'].dirty) && f['ward'].errors}"-->
+<!--                                   appMarginTop="8"-->
+<!--                                   matInput-->
+<!--                                   formControlName="ward"-->
+<!--                                   onClick="this.setSelectionRange(0, this.value.length)"-->
+<!--                                   [matAutocomplete]="autoWard">-->
+<!--                            <mat-autocomplete autoActiveFirstOption #autoWard="matAutocomplete"-->
+<!--                                              (optionSelected)="onSelectedWard($event.option.value)">-->
+<!--                                <mat-option *ngFor="let option of wardFilteredOptions | async" [value]="option">-->
+<!--                                    {{option}}-->
+<!--                                </mat-option>-->
+<!--                            </mat-autocomplete>-->
+<!--                            <div class="error" *ngIf="(f['ward'].touched || f['ward'].dirty) && f['ward'].errors">-->
+<!--                                <img [src]="linkImgWarn"><span>{{'kyc.validWard' | translate}}</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="info-title" appMarginTop="16">-->
+<!--                        <ng-container> {{'kyc.street' | translate}} </ng-container>-->
+<!--                        <span class="red-star">*</span>-->
+<!--                    </div>-->
+<!--                    <input class="input-info"-->
+<!--                           [ngClass]="{'is-invalid': (f['street'].touched || f['street'].dirty) && f['street'].errors}"-->
+<!--                           appMarginTop="8" formControlName="street">-->
+<!--                    <div class="error" *ngIf="(f['street'].touched || f['street'].dirty) && f['street'].errors">-->
+<!--                        <img [src]="linkImgWarn"><span>{{'kyc.validStreet' | translate}}</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="personal-info">-->
+<!--                    <div class="text-form">{{'kyc.inforRef' | translate}}</div>-->
+<!--                    <div class="info-title" appMarginTop="25">-->
+<!--                        {{'kyc.titleRef' | translate}} <span class="red-star">*</span>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;        <input class="input-info"&ndash;&gt;-->
+<!--                    &lt;!&ndash;               [ngClass]="{'is-invalid': (f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors}"&ndash;&gt;-->
+<!--                    &lt;!&ndash;               appMarginTop="8" formControlName="personal_title_ref">&ndash;&gt;-->
+<!--                    <input class="input-info" type="text"-->
+<!--                           [ngClass]="{'is-invalid': (f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors}"-->
+<!--                           appMarginTop="8"-->
+<!--                           matInput-->
+<!--                           formControlName="personal_title_ref"-->
+<!--                           onClick="this.setSelectionRange(0, this.value.length)"-->
+<!--                           [matAutocomplete]="autoPersonalTitle">-->
+<!--                    <mat-autocomplete autoActiveFirstOption #autoPersonalTitle="matAutocomplete">-->
+<!--                        <mat-option *ngFor="let option of personalTitleFilterOptions | async" [value]="option">-->
+<!--                            {{option}}-->
+<!--                        </mat-option>-->
+<!--                    </mat-autocomplete>-->
+<!--                    <div class="error"-->
+<!--                         *ngIf="(f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors">-->
+<!--                        <img [src]="linkImgWarn"><span>{{'kyc.validTitleRef' | translate}}</span>-->
+<!--                    </div>-->
+<!--                    <div class="info-title" appMarginTop="25">-->
+<!--                        <ng-container>{{'kyc.nameRef' | translate}}  </ng-container>-->
+<!--                        <span class="red-star">*</span>-->
+<!--                    </div>-->
+<!--                    <input class="input-info" (keypress)="keyPress($event, InputType.name)"-->
+<!--                           [ngClass]="{'is-invalid': (f['name_ref'].touched || f['name_ref'].dirty) && f['name_ref'].errors}"-->
+<!--                           appMarginTop="8" formControlName="name_ref">-->
+<!--                    <div class="error" *ngIf="(f['name_ref'].touched || f['name_ref'].dirty) && f['name_ref'].errors">-->
+<!--                        <img [src]="linkImgWarn"><span>{{'kyc.validNameRef' | translate}}</span>-->
+<!--                    </div>-->
+<!--                    <div class="info-title" appMarginTop="25">-->
+<!--                        {{'kyc.phoneRef' | translate}}   <span class="red-star">*</span>-->
+<!--                    </div>-->
+<!--                    <input class="input-info" (keypress)="keyPress($event, InputType.number)"-->
+<!--                           [ngClass]="{'is-invalid': (f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].errors}"-->
+<!--                           appMarginTop="8" formControlName="phone_ref">-->
+<!--                    <div class="error"-->
+<!--                         *ngIf="(f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].errors">-->
+<!--                        <img [src]="linkImgWarn"><span>{{'kyc.validPhoneRef' | translate}}</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="cover-note">-->
+<!--                <span class="note-text">{{'kyc.titleNote' | translate}}</span>-->
+<!--                <span class="red-star">* </span>-->
+<!--                <span class="note-text-2">{{'kyc.contentNote' | translate}} </span>-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <app-button-dialog-->
+<!--                        [isEnable]="registerForm.invalid"-->
+<!--                        [contentBtn]="'Tiếp tục'"-->
+<!--                        (click)="onContinue()">-->
+<!--                </app-button-dialog>-->
+<!--                &lt;!&ndash;                <button class="payment-button"&ndash;&gt;-->
+<!--                &lt;!&ndash;                        appMarginTop="36"&ndash;&gt;-->
+<!--                &lt;!&ndash;                        appMarginBottom="36"&ndash;&gt;-->
+<!--                &lt;!&ndash;                        [disabled]="registerForm.invalid" (click)="onContinue()"&ndash;&gt;-->
+<!--                &lt;!&ndash;                        [style]="registerForm.invalid?'background: #979797':null">&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <span>{{'kyc.button' | translate}}</span></button>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

@@ -1,0 +1,57 @@
+<div class="container-update-pin">
+    <h1>CẬP NHẬT MÃ PIN</h1>
+    <form class="form-update">
+        <div><label>Mã PIN cũ</label> <a (click)="openDialogConfirmNid()">Quên mã pin?</a></div>
+
+        <div class="cover-input-pin">
+            <code-input [codeLength]="4"
+                        [isCodeHidden]="true"
+                        (codeChanged)="onCurrentCodeChanged($event)"
+                        (codeCompleted)="onCurrentCodeComplete($event)">
+            </code-input>
+        </div>
+        <div *ngIf="msgWrongPassword!==''" fxLauout='row' class="form-valid">
+            <div class="img-valid" fxFlex='10%'><img src="../../../../assets/images/Warning.png"></div>
+            <div class="content-valid">{{msgWrongPassword}}</div>
+        </div>
+    </form>
+
+    <form class="form-update">
+        <div><label>Nhập mã PIN mới</label></div>
+
+        <div class="cover-input-pin">
+            <code-input [codeLength]="4"
+                        (codeChanged)="onNewCodeChanged($event)"
+                        (codeCompleted)="onNewCodeCompleted($event)">
+            </code-input>
+        </div>
+
+    </form>
+
+    <form class="form-update">
+        <div><label>Nhập lại mã PIN mới</label></div>
+
+        <div class="cover-input-pin">
+            <code-input [codeLength]="4"
+                        (codeChanged)="onCodeChangedVerify($event)"
+                        (codeCompleted)="onCodeCompletedVerify($event)">
+            </code-input>
+        </div>
+        <div *ngIf="msgVerifyError!==''" fxLauout='row' class="form-valid">
+            <div class="img-valid" fxFlex='10%'><img src="../../../../assets/images/Warning.png"></div>
+            <div class="content-valid">{{msgVerifyError}}</div>
+        </div>
+    </form>
+
+    <div class="cover-btn">
+        <button [className]="currentPin.length<4||newPin.length<4||verifyPin.length<4?'btn-invalid ':'btn-valid'"
+                [disabled]="currentPin.length<4||newPin.length<4||verifyPin.length<4"
+                (click)="submitUpdatePin()">
+                Xác nhận
+        </button>
+    </div>
+
+    <div class="close-popup" (click)="closePopup()">
+        <img class="icon-close" src="../../../../assets/images/close.png">
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container-right-body">
+    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div style="margin-bottom: 100px">
+        <div class="title-register">
+            {{'takePhotoNid.title' | translate}}
+        </div>
+        <div>
+            <app-bar-process-bnpl [childData]="{widthLine: 75,numberStep:3}"></app-bar-process-bnpl>
+        </div>
+
+        <div class="form-process">
+            <div class="text-processing">{{'process.title' | translate}}</div>
+            <div class="cover-bar">
+                <div class="bar" id="bar"></div>
+            </div>
+            <div class="text-percent">{{'process.complete' | translate}} {{100 - percentDown}}%</div>
+            <div class="cover-note">
+                <span class="note-text">{{'process.labelNote' | translate}}</span>
+                <span class="red-star">*</span>
+                <span class="note-text-2">
+                    {{'process.noteContent' | translate}}
+                </span>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="container-right-body">
+    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div>
+        <div class="title-register">
+            {{'takePhotoNid.title' | translate}}
+        </div>
+        <div>
+            <app-bar-process-bnpl [childData]="{widthLine: 0,numberStep:0}"></app-bar-process-bnpl>
+        </div>
+        <div class="title-register" style="font-size: 20px">
+            {{'confirmInformation.confirmTitle' | translate}}
+        </div>
+        <div class="personal-info-confirm">
+            <div class="title-box">{{'confirmInformation.labelInformation' | translate}}</div>
+            <div class="block-info">
+                <div class="info-text-title">
+                    {{'confirmInformation.fullName' | translate}}
+                </div>
+                <div class="info-content">
+                    {{customerInformationService.customerInfo$.getValue().name}}
+                </div>
+            </div>
+            <div class="block-info">
+                <div class="info-text-title">
+                    {{'confirmInformation.gender' | translate}}
+                </div>
+                <div class="info-content">
+                    {{showGender}}
+                </div>
+            </div>
+            <div class="block-info">
+                <div class="info-text-title">
+                    {{'confirmInformation.birthday' | translate}}
+                </div>
+                <div class="info-content">
+                    {{customerInformationService.customerInfo$.getValue().birthday | date: 'dd/MM/yyyy'}}
+                </div>
+            </div>
+            <div class="block-info">
+                <div class="info-text-title">
+                    {{'confirmInformation.phone' | translate}}
+                </div>
+                <div class="info-content">
+                    {{customerInformationService.customerInfo$.getValue().phone}}
+                </div>
+            </div>
+            <div class="block-info">
+                <div class="info-text-title">
+                    {{'confirmInformation.nid' | translate}}
+                </div>
+                <div class="info-content">
+                    {{customerInformationService.customerInfo$.getValue().citizenId}}
+                </div>
+            </div>
+            <div class="block-info">
+                <div class="info-text-title">
+                    {{'confirmInformation.makeDateNid' | translate}}
+                </div>
+                <div class="info-content">
+                    {{customerInformationService.customerInfo$.getValue().issueDate | date: 'dd/MM/yyyy'}}
+                </div>
+            </div>
+            <div class="block-info" style="align-items: baseline;">
+                <div class="info-text-title" style="width: 75%">
+                    {{'confirmInformation.address' | translate}}
+                </div>
+                <div class="info-content">
+                    {{address}}
+                </div>
+            </div>
+        </div>
+        <div class="personal-info-confirm">
+            <div class="title-box">{{'confirmInformation.labelRef' | translate}}</div>
+            <div class="block-info">
+                <div class="info-text-title">
+                    {{'confirmInformation.personalRef' | translate}}
+                </div>
+                <div class="info-content">
+                    {{showRelationship}}
+                </div>
+            </div>
+            <div class="block-info">
+                <div class="info-text-title">
+                    {{'confirmInformation.fullNameRef' | translate}}
+                </div>
+                <div class="info-content">
+                    {{customerInformationService.customerInfo$.getValue().name_ref}}
+                </div>
+            </div>
+            <div class="block-info">
+                <div class="info-text-title">
+                    {{'confirmInformation.phoneRef' | translate}}
+                </div>
+                <div class="info-content">
+                    {{customerInformationService.customerInfo$.getValue().phone_ref}}
+                </div>
+            </div>
+        </div>
+
+        <div class="cover-btn">
+            <app-button-dialog (click)="onSendConfirm()" class="btn-ctn" [height]="40" [width]="160"
+                               [contentBtn]="'takePhotoNid.continue' | translate" [isEnable]="false"></app-button-dialog>
+        </div>
+    </div>
+</div>

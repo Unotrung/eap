@@ -1,0 +1,18 @@
+
+.cover-iframe {
+  width: 100%;
+  margin: auto;
+  margin-top: 32px !important;
+  @media screen and(max-width: 480px){
+    width: 100%;
+    margin-top: 32px !important;
+  }
+}
+
+iframe {
+  height: 542px !important;
+  width: 100%;
+  @media screen and(max-width: 480px){
+    height: 872px !important;
+  }
+}

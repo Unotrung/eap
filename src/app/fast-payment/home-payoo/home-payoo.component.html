@@ -1,0 +1,10 @@
+<div class="title-infor hidden-lager-screen">{{'repayment.titleTable' | translate}}</div>
+<div  class="container-right-body">
+    <div class="title-infor hidden-480">{{'repayment.titleTable' | translate}}</div>
+    <div class="cover-iframe">
+        <iframe *ngIf = "!loading" id="ifpaybill" name="ifpaybill"
+                [src]="linkSrc | safeStyle" frameborder="0" scrolling="no"></iframe>
+
+        <div *ngIf = "loading" class="loading"><app-loading></app-loading></div>
+    </div>
+</div>

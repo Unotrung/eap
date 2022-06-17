@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
+.container-stt {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+img {
+  margin: auto;
+  margin-bottom: 40px !important;
+  margin-top: 40px !important;
+  @media screen and(max-width: 480px) {
+    width: 64px;
+    height: auto;
+    margin-bottom: 16px !important;
+  }
+}
+
+.msg-stt {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+  @media screen and(max-width: 480px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #333333;
+}

@@ -1,0 +1,24 @@
+<div class="container-right-body">
+    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div class="container-choose">
+        <div *ngIf="!loading">
+            <div class="title-register">{{'provider.title' | translate}}</div>
+            <div class="title-register" style="font-size: 14px; margin-top: 16px">{{'provider.titleBnpl' | translate}}</div>
+            <div class="content">
+                <div class="content-1" *ngFor = "let p of listProvider">
+                    <div class="tick" (click)="chooseProvider(p.provider)">
+                        <img *ngIf = "p.provider == providerChoose&&checkChoose" src="../../../../assets/images/tick-pay.png">
+                    </div>
+                    <div class="img-fe"><img src="../../../../assets/images/fec-icon-provider.png"></div>
+                </div>
+            </div>
+            <div class="cover-btn">
+                <app-button-dialog (click)="submit()" [height]="40" [width]="160"
+                                   [contentBtn]="'provider.confirmBtn' | translate" [isEnable]="!checkChoose"></app-button-dialog>
+            </div>
+        </div>
+        <div class="loading" *ngIf="loading">
+            <app-loading></app-loading>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
+.container-right-body {
+  min-height: 80vh;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin-right: 24px;
+  font-style: normal;
+  color: #000000;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
+}
+
+.title-infor {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: start;
+  padding-left: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 22px;
+}
+
+.title-register {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+h1 {
+  //font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 32px;
+  align-items: center;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.container-choose {
+  height: auto;
+  font-style: normal;
+  padding-top: 90px;
+  width: 100%;
+  text-align: center;
+}
+
+.name-input {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.name-input input {
+  height: 25px;
+  width: 25px;
+  margin-right: 20px;
+}
+
+.form-content {
+  width: 44%;
+  margin: 10px 28%;
+}
+
+button {
+  width: 177px;
+  height: 36px;
+  background: linear-gradient(180deg, rgba(18, 194, 233, 0.7) 0%, rgba(196, 113, 237, 0.8) 44.79%, rgba(246, 79, 89, 0.8) 100%);
+  border-radius: 20px;
+  margin: auto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.loading {
+  width: 9%;
+  margin: auto;
+}
+
+.content {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+.content-1 {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-fe {
+  display: flex;
+  align-items: center;
+  img {
+    width: 160px;
+    height: 32px;
+  }
+
+}
+
+.tick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  img {
+    max-width: 24px !important;
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
+.container-right-body {
+  min-height: 80vh;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin-right: 24px;
+  font-style: normal;
+  color: #000000;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
+}
+
+.title-infor {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: start;
+  padding-left: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 22px;
+}
+
+.title-register {
+  font-family: "MontserratAlternates";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin-top: 40px;
+}
+
+.enter-info-text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin-top: 30px;
+}
+
+h1 {
+  margin: auto;
+  margin-top: 16px !important;
+  margin-bottom:16px !important;
+  width: 447px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  align-items: center;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.bar-step {
+  width: 36%;
+  margin: auto;
+  margin-top: 24px !important;
+  position: relative;
+}
+
+.text-step {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 11px;
+  color: #4ECB71;
+  width: 49px;
+  text-align: center;
+}
+
+.cycle-step {
+  width: 15px;
+  height: 15px;
+  background: #C4C4C4;
+  border-radius: 50%;
+}
+
+.line-step {
+  position: absolute;
+  width: 80%;
+  height: 0;
+  left: 10%;
+  top: 24%;
+  border-top: 1px solid #C4C4C4;
+}
+
+.line-step div {
+  margin-top: -1.5px;
+  width: 100%;
+  border-top: 2px solid #4ECB71;
+}
+
+.cover-btn {
+  width: 177px;
+  height: 36px;
+  margin: auto;
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+  text-align: center;
+}
+
+
+.link-back {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #1E81EB;
+  margin-top:10px;
+}
+
+.form-process {
+
+}
+
+a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #1E81EB;
+  margin-left: 16px;
+}
+
+.note-text {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  font-family: "MontserratAlternates";
+}
+
+.red-star {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #EE4D2D;
+  margin: 0px 5px;
+}
+.note-text-2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.cover-note {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.text-processing {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  font-family: "MontserratAlternates";
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+
+.cover-bar {
+  height: 10px;
+  width: 350px;
+  margin: auto;
+  border: 1px solid #BDBDBD;
+  border-radius: 100px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  height: 10px;
+  width: 5%;
+  background: linear-gradient(90deg, rgba(18, 194, 233, 0.7) 10.73%, rgba(196, 113, 237, 0.8) 47.81%, rgba(246, 79, 89, 0.8) 93.52%);
+  border-radius: 100px;
+  border-top: hidden;
+  transition: 0.5s;
+}
+
+.text-percent {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}

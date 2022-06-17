@@ -1,0 +1,137 @@
+.container-sidebar {
+  position: relative;
+  width: 269px;
+  height: auto;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid #EEEEEE;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #2F172A;
+  padding: 24px 16px;
+}
+
+.avatar-name {
+  margin-top: 73px;
+  margin-bottom: 24px;
+}
+
+.avatar-name p {
+  //font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  align-items: center;
+  color: #333333;
+}
+
+.avatar {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  background-color: #2dd36f;
+}
+
+.acc-infor {
+  height: 55px;
+  cursor: pointer;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+
+.item img {
+  width: 20px;
+  height: 20px;
+  //margin-top: 6px;
+}
+
+.item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.acc-infor div {
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.container-payment {
+  //padding-left: 40px;
+}
+
+.repay-detail {
+  height: 40px;
+}
+
+.repay-detail div p {
+  color: #000000;
+}
+
+//.acc-infor:hover {
+//  background: #FFFFFF;
+//  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
+//  border-radius: 10px;
+//}
+
+.acc-infor-current {
+  height: 55px;
+  cursor: pointer;
+  padding-left: 8px;
+  padding-right: 8px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  align-items: center;
+}
+
+.repay-detail:hover {
+  background-color: #E0E0E0;
+}
+
+.icon-drop {
+  margin-top: 2px;
+  width: 9px !important;
+  height: 6px !important;
+  transform: rotate(-180deg);
+}
+
+hr {
+  width: 0;
+  height: calc( 100vh - 355px);
+  position: absolute;
+  right: 0;
+  top: 70px;
+  border: 1px solid #C4C4C4
+}
+
+.cover-icon-fec {
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  margin-top: 16px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.under-sidebar {
+  width: 100%;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  opacity: 0.5;
+  margin-top: 32px;
+}
+

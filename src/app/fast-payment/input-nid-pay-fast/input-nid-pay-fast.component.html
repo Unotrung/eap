@@ -1,0 +1,24 @@
+<div class="form-register-container">
+  <div class="photo-frame"></div>
+  <p class="title-login">Nhập CMND/CCCD</p>
+  <div>
+    <form [formGroup]="formNid" (ngSubmit)=submit()>
+
+      <div class="form-cover" fxLayout='row'>
+        <div fxFlex="40%" class="name-input">NhậpCMND/CCCD</div>
+        <div fxFlex class="cover-input"><input type="text" (keypress)="keyPress($event)" name="nid" formControlName="nid"/></div>
+      </div>
+      <div *ngFor=" let valid of validateMessage.nid">
+        <div class="invalid-note" *ngIf="(formNid.controls.nid.hasError(valid.type)&&formNid.controls.nid.touched)">
+          <img src="../../../assets/images/Warning.png">
+          <label>{{valid.message}}</label>
+        </div>
+      </div>
+      <button [disabled]="formNid.invalid" [style]="formNid.invalid?'background:#979797':null" class="btn-register">Tiếp tục</button>
+
+    </form>
+
+  </div>
+  <div class="link-forget-pw" (click)="closeDialog()"><a>Quay lại</a></div>
+
+</div>

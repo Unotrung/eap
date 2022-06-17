@@ -1,0 +1,90 @@
+<div class="container-right-body">
+    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <div class="title-take-nid">
+            {{'takePhotoNid.title' | translate}}
+        </div>
+
+        <div style="width: 100%">
+            <app-bar-process-bnpl [childData]="{widthLine: 0,numberStep:0}"></app-bar-process-bnpl>
+        </div>
+
+        <div class="citizen-box" fxLayout="column" fxLayoutAlign="top center" appMarginTop="20">
+            <div class='title-box'>
+                <div class="title-text">{{'takePhotoNid.labelNid' | translate}}</div>
+            </div>
+            <div [style]="(pictureService.currentShot$ | async)?'height: auto':null" class="outer-frame-box"
+                 fxLayout="column" fxLayoutAlign="center center" appMarginTop="8">
+                <div [className]="(pictureService.currentShot$ | async)?'inner-frame-box-img':'inner-frame-box'">
+                    <div class="cover-big-img" *ngIf="pictureService.currentShot$ | async">
+                        <img class="img-big-nid" [src]="pictureService.imageCurrentShot" alt="">
+                    </div>
+                    <div [className]="(pictureService.currentShot$ | async)?'circle-red-img':'circle-red-no-img'"
+                         (click)="onCaptureCitizenCard()">
+                        <div class="in-circle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="citizen-frame-list" fxLayout="row" fxLayoutAlign="space-around center" appMarginTop="34">
+                <div class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
+                    <div class="cover-camera" *ngIf="!(pictureService.citizenFrontImageComplete$ | async)">
+                        <img fxFlexAlign="center" width="24" height="24" alt="" src="assets/images/camera.png">
+                    </div>
+                    <div *ngIf="pictureService.citizenFrontImageComplete$ | async" style="position: relative">
+                        <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
+                             [src]="pictureService.citizenFrontImage">
+                        <img class="icon-dell" (click)="onDeleteImage(NCardSide.front)"
+                             src="../../../../assets/images/trash2.png">
+                        <img class="icon-tick" src="../../../../assets/images/tick-photo.png">
+                        <!--                        <mat-icon appMarginTop="8" (click)="onDeleteImage(NCardSide.front)">delete</mat-icon>-->
+                    </div>
+
+                </div>
+                <div class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
+                    <div class="cover-camera" *ngIf="!(pictureService.citizenBackImageComplete$ | async)">
+                        <img fxFlexAlign="center" width="24" height="24" alt="" src="assets/images/camera.png">
+                    </div>
+                    <div *ngIf="pictureService.citizenBackImageComplete$ | async" style="position: relative">
+                        <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
+                             [src]="pictureService.citizenBackImage">
+                        <img class="icon-dell" (click)="onDeleteImage(NCardSide.back)"
+                             src="../../../../assets/images/trash2.png">
+                        <img class="icon-tick" src="../../../../assets/images/tick-photo.png">
+                    </div>
+                </div>
+            </div>
+            <div class="citizen-frame-list" fxLayout="row" fxLayoutAlign="space-around center">
+                <div class="citizen-image-text">{{'takePhotoNid.labelBefore' | translate}}</div>
+                <div class="citizen-image-text">{{'takePhotoNid.labelAfter' | translate}}</div>
+            </div>
+            <!--            <div class="warning"-->
+            <!--                 *ngIf="!((pictureService.citizenFrontImageComplete$ | async) && (pictureService.citizenBackImageComplete$ | async))"-->
+            <!--                 fxFlexAlign="start" fxLayout="row" fxLayoutAlign="start center"-->
+            <!--                 appMarginBottom="32"-->
+            <!--                 appMarginTop="10" (click)="instruction = !instruction">-->
+            <!--                <img src="../../../../assets/images/Warning.png" width="14" height="14">-->
+            <!--                <div class="image-title">-->
+            <!--                    <ng-container>Chưa chụp</ng-container>-->
+            <!--                    {{getTextSideLocalize(NCardSide.front)}}{{getTextSideLocalize(NCardSide.back)}}-->
+            <!--                    <ng-container> CMND/CCCD</ng-container>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <div style="margin-bottom: 24px">
+                <div class="picture-selfie-notice" fxFlexAlign="start">
+                    {{'takePhotoNid.guideTitle' | translate}}
+                </div>
+                <ul>
+                    <li class="picture-selfie-step">
+                        {{'takePhotoNid.guide1' | translate}}
+                    </li>
+                </ul>
+            </div>
+            <app-button-dialog
+                    [isEnable]="!(pictureService.citizenFrontImageComplete$ | async) ||
+                !(pictureService.citizenBackImageComplete$ | async)"
+                    [contentBtn]="'takePhotoNid.continue' | translate"
+                    (click)="onCitizenCardContinue()">
+            </app-button-dialog>
+        </div>
+    </div>
+</div>

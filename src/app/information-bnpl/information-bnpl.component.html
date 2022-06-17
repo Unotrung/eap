@@ -1,0 +1,96 @@
+<div class="title-infor hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
+<div class="container-right-body">
+        <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
+        <div *ngIf="!loading">
+            <div class="top-content format-box">
+                <div class="top-title f-18 f-bold">{{'inforBnpl.infoPersion' | translate}}</div>
+                <div class="top-detail height-box-top">
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.fullName' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.name}}</div>
+                    </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.gender' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.sex}}</div>
+                    </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.birthday' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.birthday | dateStyle}}</div>
+                    </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.nid' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.citizenId}}</div>
+                    </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.phone' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.phone}}</div>
+                    </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.makeDateNid' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.issueDate | dateStyle}}</div>
+                    </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.expirationDate' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.expirationDate | dateStyle}}</div>
+                    </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.address' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.street}}, {{userBnpl.ward}},
+                            {{userBnpl.district}}, {{userBnpl.city}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="under-content format-box">
+                <div class="top-title f-18 f-bold">{{'confirmInformation.labelRef' | translate}}</div>
+                <div class="top-detail height-box-under">
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.personalRef' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.personal_title_ref}}</div>
+                    </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.fullNameRef' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.name_ref}}</div>
+                    </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.phoneRef' | translate}}</div>
+                        <div class="detail-name f-14 f-bold">{{userBnpl.phone_ref}}</div>
+                    </div>
+                </div>
+            </div>
+<!--          <div class="infor-bnpl">-->
+<!--            <form>-->
+<!--              <div class="name-input">{{'inforBnpl.fullName' | translate}}</div>-->
+<!--              <div class="detai-infor">-->
+<!--                <input readonly class="content" type="text" [value]="userBnpl.name"/>-->
+<!--              </div>-->
+<!--              <div class="name-input">{{'inforBnpl.phone' | translate}}</div>-->
+<!--              <div class="detai-infor">-->
+<!--                <input readonly class="content" type="text" [value]="userBnpl.phone"/>-->
+<!--              </div>-->
+<!--              <div class="name-input">{{'inforBnpl.email' | translate}}</div>-->
+<!--              <div class="detai-infor">-->
+<!--                <input readonly class="content" type="text" [value]="userBnpl.email"/>-->
+<!--              </div>-->
+<!--            </form>-->
+<!--          </div>-->
+
+          <div>
+            <div class="cover-btn-edit">
+              <button style=" " class="btn-edit bgr-btn-black"
+                      (click)="changePin()">
+                {{'inforBnpl.btnChange' | translate}}
+              </button>
+            </div>
+            <div class="cover-btn-edit">
+              <button style="" class="btn-edit btn-btn-white"
+                      (click)="getContentContract()">
+                {{'inforBnpl.btnShow' | translate}}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="loading" *ngIf="loading">
+          <app-loading></app-loading>
+        </div>
+</div>
+
