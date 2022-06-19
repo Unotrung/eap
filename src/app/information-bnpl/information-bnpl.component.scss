@@ -19,6 +19,7 @@
     background: rgba(255, 255, 255, 0);
     min-height: auto;
     margin-right: 0px;
+    box-shadow: unset;
   }
 }
 
@@ -164,6 +165,9 @@
     flex-direction: row;
     align-items: baseline;
     justify-content: start;
+    @media screen and(max-width: 480px){
+     justify-content: space-between;
+    }
 
     .label-name {
       width: 172px;
@@ -171,6 +175,9 @@
 
     .detail-name {
       width: 70%;
+      @media screen and(max-width: 480px){
+        text-align: end;
+      }
     }
   }
 }

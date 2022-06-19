@@ -2,7 +2,7 @@
 <div class="container-right-body">
     <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
     <div class="title-update">{{'forgotPin.titleOtp' | translate}}</div>
-    <div class="title-small">{{'forgotPin.labelOtp-2' | translate}} {{phone|phoneStyle}}</div>
+    <div class="title-small">{{'forgotPin.labelOtp-2' | translate}} <span style="font-weight: bold">{{phone|phoneStyle}}</span></div>
     <div>
         <div class="cover-input">
             <code-input [className]="messageErr!==''?'code-input-2':'code-input-1'"

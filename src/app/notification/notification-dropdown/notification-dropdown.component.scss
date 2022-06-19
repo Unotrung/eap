@@ -77,15 +77,16 @@
 }
 
 .btn {
-  font-weight: 700;
   align-items: center;
   color: #22256A;
   text-align: center;
   button {
-    font-size: 10px;
-    line-height: 16px;
-    width: 96px;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0px;
+    width: 100px;
     height: 26px;
+    font-weight: 700;
     background: #B4B7EC;
     border-radius: 5px;
     text-transform: uppercase;

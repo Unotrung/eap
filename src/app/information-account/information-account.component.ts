@@ -227,6 +227,7 @@ export class InformationAccountComponent implements OnInit {
     cancelEditUserName(){
         this.openEditUsername = false;
         this.username = this.oldUsername;
+        this.msgErrorName = '';
     }
 
     cancelEditEmail(){
