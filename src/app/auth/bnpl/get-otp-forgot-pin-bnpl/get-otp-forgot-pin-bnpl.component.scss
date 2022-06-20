@@ -51,8 +51,8 @@
   text-align: center;
   color: #000000;
   margin-bottom: 12px;
-  margin-top: 60px;
-  @media screen {
+  margin-top: 56px;
+  @media screen and(max-width: 480px){
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 4px;

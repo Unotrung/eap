@@ -20,6 +20,7 @@ export class SelfiePhotoComponent implements OnInit {
     citizenIdBackImage = '';
     citizenId!: FormControl;
     isExistNid: boolean = false;
+    isShowGuide = false;
     // formGroup!: FormGroup;
     apiResults: any
 
@@ -143,4 +144,7 @@ export class SelfiePhotoComponent implements OnInit {
       return data;
     }
 
+    showGuideShot() {
+        this.isShowGuide = true;
+    }
 }

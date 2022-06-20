@@ -1,7 +1,12 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
 .bar-step {
-  width: 90%;
+  width: 677px;
   margin: auto;
-  margin-top: 24px !important;
+  margin-top: 32px !important;
   position: relative;
 }
 
@@ -12,7 +17,7 @@
   display: flex;
   align-items: center;
   text-align: center;
-  color: #56CA8B;
+  color: #A8A8A8;
   width: 80px;
 }
 
@@ -29,11 +34,22 @@
   height: 0;
   left: 10%;
   top: 24%;
-  border-top: 1px solid #C4C4C4;
+  border-top: 1px dashed #A8A8A8;
 }
 
 .line-step div {
   margin-top: -1.5px;
   width: 0;
-  border-top: 2px solid #4ECB71;
+  border-top: 2px solid #197DDE;
+}
+
+.title {
+  font-family: 'MontserratAlternates';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
+  margin-top: 52px;
 }

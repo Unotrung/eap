@@ -8,12 +8,6 @@ import {LanguageService} from "../_service/language/language.service";
   styleUrls: ['./bar-process-bnpl.component.scss'],
 })
 export class BarProcessBnplComponent implements OnInit {
-  // listItem = [{id: 1, step: this.translateService.instant('barProcess.step1'), status: false},
-  //   {id: 2, step: this.translateService.instant('barProcess.step2'), status: false},
-  //   {id: 3, step: this.translateService.instant('barProcess.step3'), status: false},
-  //   {id: 4, step: this.translateService.instant('barProcess.step4'), status: false},
-  //   {id: 5, step: this.translateService.instant('barProcess.step5'), status: false},
-  // ];
   listItem = [{id: 1, stepEn: 'Customer Information',stepVi:'Thông tin khách hàng', status: false},
     {id: 2, stepEn: 'Pin Settings',stepVi:'Cài đặt Pin', status: false},
     {id: 3, stepEn: 'E-Sign',stepVi:'Ký điện tử',  status: false},
@@ -22,8 +16,6 @@ export class BarProcessBnplComponent implements OnInit {
   ];
   lang = '';
 
-  // widthLine: number = 25;
-  // numberStep: number = 3;
   @Input() childData = {
     widthLine: 0,
     numberStep: 0

@@ -154,7 +154,8 @@
 		"guide1": "",
 		"guide2": "",
 		"guide3": "",
-		"continue": ""
+		"continue": "Continue",
+		"start": "Start"
 	},
 	"setPin": {
 		"title": "",
@@ -383,6 +384,7 @@
 		"allRecord": "All Records"
 	},
 	"barProcess": {
+		"title": "Welcome to the Buy Now Pay Later application process",
 		"step1": "Customer Information",
 		"step2": "Pin Settings",
 		"step3": "E-Sign",

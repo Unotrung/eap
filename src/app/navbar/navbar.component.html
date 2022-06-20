@@ -43,7 +43,9 @@
                         <app-notification-dropdown #menuNote [hidden] = "!showNote"></app-notification-dropdown>
                     </div>
                     <div class="avatar-nav">
-                        <div (click)="showProfileUser()"></div>
+                        <div (click)="showProfileUser()">
+                            <img src="../../assets/images/avatar-nav.png">
+                        </div>
                     </div>
                     <div (click)="showProfileUser()" class="name">{{user.username}}</div>
                     <div #profileButton class="icon-drop" (click)="showBtnProfile=!showBtnProfile">
