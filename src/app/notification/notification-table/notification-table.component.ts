@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SidebarService} from "../../_service/side-bar/sidebar.service";
+import {TranslateService} from "@ngx-translate/core";
+import set = Reflect.set;
 
 @Component({
   selector: 'app-notification-table',
@@ -12,7 +15,14 @@ export class NotificationTableComponent implements OnInit {
   sortByField: string = 'time';
   loading: boolean =  false;
   isPin = false;
-  id:number;
+  id:number = 0;
+  isShow: boolean = false;
+  itemChooseMore = this.translateService.instant('transaction.5Record');
+  listItemValue = [5,100,200, "All"];
+  listItemText = [this.translateService.instant('transaction.5Record'),
+    this.translateService.instant('transaction.100Record'),
+    this.translateService.instant('transaction.200Record'),
+    this.translateService.instant('transaction.allRecord')];
   listNote = [
     {
       id: 1,
@@ -46,9 +56,14 @@ export class NotificationTableComponent implements OnInit {
     }
   ]
   errorMgs: string = '';
-  constructor() { }
+  constructor(private sidebarService: SidebarService,
+              private translateService: TranslateService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(()=>{
+      this.sidebarService.itemSelectObject$.next('');
+    },0)
+  }
 
   previousPage() {
 
@@ -67,11 +82,35 @@ export class NotificationTableComponent implements OnInit {
   }
 
   pinNote(i: number) {
-    this.id = i;
-    this.isPin = !this.isPin;
+    if (this.id === 0) {
+      this.id = i;
+      this.isShowStar = true;
+    } else if (this.id === i) {
+      this.id = 0;
+      this.isShowStar = false;
+    } else if (this.id !== i) {
+      this.id = i;
+      this.isShowStar = true;
+    }
   }
   // onSwipe(evt) {
   //   const x = Math.abs(evt.deltaX) > 40 ? (evt.deltaX > 0 ? 'right' : 'left'):'';
   //   const y = Math.abs(evt.deltaY) > 40 ? (evt.deltaY > 0 ? 'down' : 'up') : '';
   // }
+  isShowStar: boolean = false;
+
+  getManyRecord(pageSize: number, e:any) {
+    e.stopPropagation();
+    // this.pageSize = pageSize;
+    // this.getListTransaction();
+    let itemChoose = '';
+    let listItemText = ["25 dòng 1 trang","100 dòng 1 trang","200 dòng 1 trang","Tất cả"];
+    this.listItemValue.forEach(function (value, index) {
+      if (pageSize == value){
+        itemChoose = listItemText[index]
+      }
+    })
+    this.itemChooseMore = itemChoose;
+    this.isShow = false;
+  }
 }

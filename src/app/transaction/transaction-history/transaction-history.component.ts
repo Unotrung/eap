@@ -89,7 +89,7 @@ export class TransactionHistoryComponent implements OnInit {
         this.pageSize = pageSize;
         this.getListTransaction();
         let itemChoose = '';
-        let listItemText = ["5 giao dịch","100 giao dịch","200 giao dịch","Tất cả giao dịch"];
+        let listItemText = ["25 dòng 1 trang","100 dòng 1 trang","200 dòng 1 trang","Tất cả"];
         this.listItemValue.forEach(function (value, index) {
             if (pageSize == value){
                 itemChoose = listItemText[index]

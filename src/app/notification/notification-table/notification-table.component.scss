@@ -5,33 +5,37 @@
 
 .container-transaction {
   min-height: 80vh;
-  //max-height: auto !important;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(247, 247, 247, 0.75);
   border-radius: 20px;
   margin-right: 24px;
   font-style: normal;
   color: #000000;
-  padding-top: 50px;
+  padding-top: 40px;
   padding-bottom: 40px;
   margin-bottom: 40px;
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
 }
 
 .header-table {
+  height: 54px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-left: 40px;
-  margin-right: 40px;
+  padding-right: 40px;
+  padding-left: 40px;
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
 
 .name-table {
-  font-family: "MontserratAlternates";
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
   color: #000000;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
 .action-page {
@@ -78,7 +82,7 @@
   height: 30px;
   padding-left: 20px;
   padding-right: 10px;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   display: flex;
@@ -111,7 +115,6 @@ select {
 
 table {
   width: 100%;
-  margin-top: 18px;
 }
 
 thead {
@@ -137,8 +140,9 @@ tbody {
 }
 
 tbody tr {
-  height: 50px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 54px;
+  background: #ffffff;
+  box-shadow: inset 0px -1px 0px #E4E4E4;
 }
 
 tbody tr:hover {
@@ -147,11 +151,6 @@ tbody tr:hover {
 
 td {
   text-align: start;
-  img{
-    width: 9px;
-    height: 5.5px;
-    margin-left: 5px;
-  }
 }
 
 .loading {
@@ -199,8 +198,70 @@ a {
 }
 
 .star-icon {
+  position: absolute;
+  top: 18px;
+  left: 15px;
   width: 16px !important;
-  height: 16px !important;
+  height: auto;
+  cursor: pointer;
+}
+
+.icon-del-row {
+  width: 19px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.cover-icon-bar {
+  width: 156px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.selection-more-records {
+  width: 144px;
+  height: 36px;
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 18px;
+  margin-right: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000000;
+  background: #ffffff;
+  position: relative;
+}
+
+.icon-drop-more {
+  transform: rotate(90deg);
+  width: 5px;
+  cursor: pointer;
+}
+
+.option-cover {
+  position: absolute;
+  top: 32px;
+  left: 0px;
+  width: 144px;
+  height: auto;
+  text-align: start;
+  padding: 6px 12px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 1;
+  div{
+    height: 20px;
+    cursor: pointer;
+  }
 }
 
 .hidden-480 {

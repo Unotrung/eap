@@ -254,10 +254,10 @@
 		"viewInvoice": "Biên lai",
 		"pay": "Thanh toán ngay",
 		"view": "Hiển thị",
-		"5Record": "5 đơn thanh toán",
-		"100Record": "100 đơn thanh toán",
-		"200Record": "200 đơn thanh toán",
-		"allRecord": "Tất cả đơn thanh toán",
+		"5Record": "25 dòng 1 trang",
+		"100Record": "100 dòng 1 trang",
+		"200Record": "200 dòng 1 trang",
+		"allRecord": "Tất cả",
 		"underTitleFast": "Mua trước Trả sau cùng"
 	},
 	"footer": {
@@ -269,7 +269,7 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 20/06 1st"
+		"item-9": "Chính sách 20/06 2nd"
 	},
 	"home": {
 		"title-1": "Có VOOLO,<br/>mua sắm<br/>VÔ LO!",
@@ -377,10 +377,10 @@
 		"status": "Tình trạng",
 		"action": "Hành động",
 		"view": "Hiển thị",
-		"5Record": "5 giao dịch",
-		"100Record": "100 giao dịch",
-		"200Record": "200 giao dịch",
-		"allRecord": "Tất cả giao dịch"
+		"5Record": "25 dòng 1 trang",
+		"100Record": "100 dòng 1 trang",
+		"200Record": "200 dòng 1 trang",
+		"allRecord": "Tất cả"
 	},
 	"barProcess": {
 		"step1": "Thông tin khách hàng",

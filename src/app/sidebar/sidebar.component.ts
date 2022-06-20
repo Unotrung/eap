@@ -34,6 +34,7 @@ export class SidebarComponent implements OnInit {
     }
 
     getRepaymentPlan() {
+        this.showRepayment = !this.showRepayment;
         this.route.navigateByUrl('/repayment-plan')
     }
 

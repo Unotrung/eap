@@ -79,7 +79,7 @@
   height: 30px;
   padding-left: 20px;
   padding-right: 10px;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   display: flex;
@@ -188,21 +188,22 @@ a {
 }
 
 .selection-more-records {
-  width: 171px;
-  height: 30px;
-  border: 1px solid #000000;
+  width: 144px;
+  height: 36px;
+  border: none;
   border-radius: 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding-left: 12px;
-  padding-right: 12px;
+  padding-right: 18px;
   margin-right: 20px;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
   color: #000000;
+  background: #ffffff;
   position: relative;
 }
 
@@ -216,7 +217,7 @@ a {
   position: absolute;
   top: 32px;
   left: 0px;
-  width: 171px;
+  width: 144px;
   height: auto;
   text-align: start;
   padding: 6px 12px;
