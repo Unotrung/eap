@@ -388,5 +388,8 @@
 		"step3": "E-Sign",
 		"step4": "Verify information",
 		"step5": "Done"
+	},
+	"error": {
+		"note": "Fail connection/Unknown error"
 	}
 }

@@ -44,7 +44,7 @@ export class RepaymentPlanComponent implements OnInit {
         setTimeout(()=>{
             this.sidebarService.itemSelectObject$.next('repayment')
         },0)
-        this.getListRepayment()
+        this.getListRepayment();
     }
 
     getListRepayment() {
@@ -54,6 +54,7 @@ export class RepaymentPlanComponent implements OnInit {
             .subscribe(next => {
                 if (next.totalItem !== 0) {
                     this.listRepayment = next.data;
+                    console.log(next.data)
                     this.totalPage = next.totalPage;
                     this.totalItem = next.totalItem;
                     this.listItemValue = [5, 100, 200, next.totalItem];

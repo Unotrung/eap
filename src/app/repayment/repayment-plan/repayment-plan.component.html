@@ -48,12 +48,12 @@
                      (click)="sort('dueDate')"
                      src="../../../assets/images/angle-down.png">
             </td>
-            <td>{{'repayment.provider' | translate}}
-                <img class="sort-icon-esc"
-                     [style]="sortByField==='provider'&&!isCheckSort?'transform: rotate(-180deg)':null"
-                     (click)="sort('provider')"
-                     src="../../../assets/images/angle-down.png">
-            </td>
+<!--            <td>{{'repayment.provider' | translate}}-->
+<!--                <img class="sort-icon-esc"-->
+<!--                     [style]="sortByField==='provider'&&!isCheckSort?'transform: rotate(-180deg)':null"-->
+<!--                     (click)="sort('provider')"-->
+<!--                     src="../../../assets/images/angle-down.png">-->
+<!--            </td>-->
             <td>{{'repayment.payMoney' | translate}}
                 <img class="sort-icon-esc"
                      [style]="sortByField==='paidMoney'&&!isCheckSort?'transform: rotate(-180deg)':null"
@@ -66,15 +66,20 @@
                      (click)="sort('status')"
                      src="../../../assets/images/angle-down.png">
             </td>
-            <td>{{'repayment.action' | translate}}</td>
+            <td>{{'repayment.action' | translate}}
+                <img class="sort-icon-esc"
+                     [style]="sortByField==='status'&&!isCheckSort?'transform: rotate(-180deg)':null"
+                     (click)="sort('status')"
+                     src="../../../assets/images/angle-down.png">
+            </td>
             <td>{{'repayment.viewInvoice' | translate}}</td>
         </tr>
         </thead>
         <tbody *ngFor="let tran of listRepayment">
         <tr *ngIf="!loading" class="row-content">
             <td><label style="margin-left: 40px">{{tran.dueDate | dateStyle}}</label></td>
-            <td>{{tran.provider}}</td>
-            <td>{{tran.paidMoney}} VNĐ</td>
+<!--            <td>{{tran.provider}}</td>-->
+            <td style="font-weight: 700 !important;">{{tran.paidMoney | moneyStyle}} đ</td>
             <td class="status-text"
                 [style]="tran.status==='Chờ thanh toán'?'color:#EE9E3F':tran.status==='Quá hạn thanh toán'?
                 'color:#EE4D2D':null">
@@ -84,12 +89,11 @@
 <!--                <a *ngIf="tran.status==='Chờ thanh toán'" routerLink="/repayment-detail/{{tran._id}}"-->
 <!--                   routerLinkActive="active">-->
 <!--                {{'repayment.pay' | translate}}</a>-->
-                <a *ngIf="tran.status==='Chờ thanh toán'" (click)="pay()"
-                   routerLinkActive="active">
-                    {{'repayment.pay' | translate}}</a>
+                <button class="btn-pay" *ngIf="tran.status==='Chờ thanh toán'||tran.status==='Chưa thanh toán'" (click)="pay()">
+                    {{'repayment.pay' | translate}}</button>
             </td>
             <td>
-                <a *ngIf = "tran.status==='Đã thanh toán'" href="">{{'repayment.view' | translate}}</a>
+                <a class="view-text" *ngIf = "tran.status==='Đã thanh toán'" href="">{{'repayment.view' | translate}}</a>
                 <a *ngIf = "tran.status!=='Đã thanh toán'" style="color: #C1C1C1">{{'repayment.view' | translate}}</a>
             </td>
         </tr>

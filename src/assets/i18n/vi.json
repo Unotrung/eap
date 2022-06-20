@@ -1,7 +1,7 @@
 {
 	"inforBnpl": {
-		"title": "Thông tin Mua trước Trả sau",
-		"titleRegister": "Nhà cung cấp dịch vụ mua trước trả sau",
+		"title": "Tài Khoản Mua trước Trả sau",
+		"titleRegister": "Nhà cung cấp dịch vụ Mua trước Trả sau",
 		"btnRegister": "Đăng ký",
 		"fullName": "Họ và tên",
 		"phone": "Số điện thoại",
@@ -90,7 +90,7 @@
 		"confirmPass": "Mật khẩu xác nhận",
 		"contentStt": "Bạn đã đổi mật khẩu thành công",
 		"required": "Vui lòng nhập thông tin",
-		"pattern": "Số điện thoại/ Email không hợp lệ",
+		"pattern": "Đinh dạng số điện thoại/ Email không hợp lệ",
 		"blockOtp": "Mã OTP không chính xác (5/5). Vui lòng thử lại sau 24 giờ.",
 		"ExpiredOtp": "Mã OTP hết hiệu lực",
 		"validOtp": "Mã OTP không lớn hơn 6 kí tự",
@@ -220,7 +220,7 @@
 		"content-btn": "Đăng nhập",
 		"register": "Đăng ký",
 		"msgEmptyPhone": "Vui lòng nhập số điện thoại hoặc email",
-		"pattern": "Số điện thoại/email không hợp lệ",
+		"pattern": "Đinh dạng số điện thoại/email không hợp lệ",
 		"msgEmptyPassword": "Vui lòng nhập mật khẩu",
 		"account": "Tài khoản chưa tồn tại. Vui lòng đăng ký",
 		"block": "Tài khoản đã bị khoá",
@@ -269,7 +269,7 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 19/06 1st"
+		"item-9": "Chính sách 20/06 1st"
 	},
 	"home": {
 		"title-1": "Có VOOLO,<br/>mua sắm<br/>VÔ LO!",
@@ -329,14 +329,14 @@
 		"email": "Email",
 		"password": "Mật khẩu",
 		"invalidEmptyEmail": "Vui lòng nhập email",
-		"invalidEmail": "Email không hợp lệ",
-		"statusSuccess": "Đã đổi email thành công",
-		"statusFail": "Đổi email thất bại",
+		"invalidEmail": "Đinh dạng email không hợp lệ",
+		"statusSuccess": "Đã cập nhật email thành công",
+		"statusFail": "Cập nhật email thất bại",
 		"existEmail": "Email đã được đăng ký",
 		"invalidEmptyName": "Vui lòng nhập họ tên",
 		"invalidFullName": "Họ và tên không hợp lệ",
-		"statusSuccessName": "Đã đổi họ tên thành công",
-		"statusFailName": "Đổi họ tên thất bại"
+		"statusSuccessName": "Đã cập nhật họ tên thành công",
+		"statusFailName": "Cập nhật họ tên thất bại"
 	},
 	"header": {
 		"login": "Đăng nhập",
@@ -388,5 +388,8 @@
 		"step3": "Ký điện tử",
 		"step4": "Xác minh thông tin",
 		"step5": "Hoàn thành"
+	},
+	"error": {
+		"note": "Mất kết nối/ Lỗi không xác định"
 	}
 }

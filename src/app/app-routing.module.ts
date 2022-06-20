@@ -79,7 +79,6 @@ const routes: Routes = [
     {path: 'stt-final-pay', component: StatusFinalPaymentComponent},
     {path: 'repayment-detail/:repaymentId', component: RepaymentDetailComponent, canActivate: [AuthGuard]},
     {path: 'repayment-stt', component: RepaymentStatusComponent},
-    {path: 'error', component: ErrorComponent},
     {path: 'home-payoo', component: HomePayooComponent},
     {path: 'change-pin', component: ChangePincodeComponent},
     {path: 'status-register-bnpl', component: StatusRegisterBnplComponent},
@@ -87,6 +86,8 @@ const routes: Routes = [
     {path: 'get-otp-reset-pin', component: GetOtpForgotPinBnplComponent},
     {path: 'reset-pin', component: ResetPincodeBnplComponent},
     {path: 'home-payoo-no-nid', component: HomePayooNoNidComponent},
+    {path: 'error', component: ErrorComponent},
+    {path: '**', component: ErrorComponent},
 ];
 
 @NgModule({

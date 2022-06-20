@@ -77,6 +77,12 @@
   padding-left: 20px;
   background: #FFFFFF;
   border-radius: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  padding-right: 40px;
 }
 .content-edit {
   width: 80%;
@@ -105,8 +111,8 @@
   position: absolute;
   right: 17.5px;
   top: 14.5px;
-  width: 21px;
-  height: 21px;
+  width: 18.75px;
+  height: 18.75px;
 }
 
 .complete-icon {

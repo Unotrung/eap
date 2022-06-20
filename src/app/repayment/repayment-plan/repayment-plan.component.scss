@@ -190,6 +190,16 @@ a {
   line-height: 16px;
 }
 
+.btn-pay {
+  width: 150px;
+  height: 30px;
+  background: #000000;
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
 .selection-more-records {
   width: 171px;
   height: 30px;
@@ -270,6 +280,11 @@ a {
   justify-content: space-between;
   font-size: 14px;
   line-height: 20px;
+}
+
+.view-text {
+  text-decoration-line: underline;
+  color: #197DDE !important;
 }
 
 .row-repayment-status {
