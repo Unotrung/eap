@@ -1,4 +1,4 @@
-<div class="header-format">
+<div class="header-format" [class.header-format-login]="currentAccessToken&&isShowSidebar">
     <div class="header-left">
         <img *ngIf="currentAccessToken==null" (click)="onShowMenu($event)" class="icon-menu hidden-min-960"
              src="../../assets/images/menu-header.png">
@@ -10,8 +10,8 @@
         <a class="cover-icon-home" href="/" *ngIf="currentAccessToken==null">
             <img class="img-icon-home" src="../../assets/images/_VOOLOLogo.png">
         </a>
-        <div class="cover-item-menu hidden-480 hidden-820 " *ngIf = "currentAccessToken==null|| !isShowSidebar ">
-            <a *ngFor = "let item of listItemMenu, let i = index"
+        <div class="cover-item-menu hidden-480 hidden-820 " *ngIf="currentAccessToken==null|| !isShowSidebar ">
+            <a *ngFor="let item of listItemMenu, let i = index"
                [innerHTML]="item.text | translate"
                [className]="currentItem===item.id?'link-home':'text-home-page'"
                (click)="openOtherPage(item.router,item.id)"
@@ -21,7 +21,7 @@
 
 
     <div class="header-right">
-        <div class = "btn-mb-5">
+        <div class="btn-mb-5">
             <div class="cover-btn-icon">
                 <button class="btn-login" [hidden]="currentAccessToken!=null"
                         (click)="openDialogLogin()">
@@ -39,8 +39,8 @@
                 <div class="cover-profile">
                     <div #noteButton class="note" (click)="showNotifications()">
                         <img class="bell" src="../../assets/images/bell.png"/>
-                        <div  class="text-note">{{numberNotes}}</div>
-                        <app-notification-dropdown #menuNote [hidden] = "!showNote"></app-notification-dropdown>
+                        <div class="text-note">{{numberNotes}}</div>
+                        <app-notification-dropdown #menuNote [hidden]="!showNote"></app-notification-dropdown>
                     </div>
                     <div class="avatar-nav">
                         <div (click)="showProfileUser()">
@@ -49,18 +49,24 @@
                     </div>
                     <div (click)="showProfileUser()" class="name">{{user.username}}</div>
                     <div #profileButton class="icon-drop" (click)="showBtnProfile=!showBtnProfile">
-                        <img  src="../../assets/images/angle-down.png">
+                        <img src="../../assets/images/angle-down.png">
                         <div #menuProfile [hidden]="!showBtnProfile" class="view-profile-drop">
-                            <p (click)="showProfileUser()">{{'header.showInformation' | translate}}</p>
-                            <p (click)="logoutUser()">{{'header.logout' | translate}}</p>
+                            <div class="box-show box-profile" (click)="showProfileUser()">
+                                <img class="icon-show" src="../../assets/images/avatar-nav.png">
+                                <div>{{'header.showInformation' | translate}}</div>
+                            </div>
+                            <div class="box-show box-logout">
+                                <img class="icon-show" src="../../assets/images/icon-logout.png">
+                                <div (click)="logoutUser()">{{'header.logout' | translate}}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<!--    icon-mobile-->
-    <div *ngIf = "currentAccessToken != null" class="hidden-lager-screen box-icon-mobile">
+    <!--    icon-mobile-->
+    <div *ngIf="currentAccessToken != null" class="hidden-lager-screen box-icon-mobile">
         <img (click)="showAllNotification()" class="bell" src="../../assets/images/bell.png">
         <img (click)="showProfileUser()" class="icon-pro" src="../../assets/images/profile-mobile.png">
     </div>

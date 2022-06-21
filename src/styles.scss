@@ -83,7 +83,7 @@ $dynamic-app-dark-theme: mat.define-dark-theme((
 }
 
 html, body {
-  height: auto;
+  height: 100%;
 }
 
 body {
@@ -221,4 +221,7 @@ input:focus {
   margin-left: unset !important;
 }
 
+#hv-camera-capture-button .hv-icon-img {
+  filter: invert(76%) sepia(72%) saturate(648%) hue-rotate(106deg) brightness(88%) contrast(77%) !important;
+}
 

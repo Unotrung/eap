@@ -2,13 +2,17 @@
   font-family: "MontserratAlternates";
   src: local("MontserratAlternates"), url(../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
 }
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(../../../assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
 
 .container-dropdown {
   background: #F4F6FC;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
+  border-radius: 0px 0px 10px 10px;
   height: auto;
-  max-height: 500px;
+  max-height: 600px;
   width: 388px;
   display: flex;
   flex-direction: column;
@@ -16,19 +20,22 @@
 }
 
 .under {
+  font-family: "Montserrat";
   width: 100%;
-  height: 50px;
+  height: 41px;
   text-align: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
+  background: #FFFFFF;
   text-decoration-line: underline;
   display: flex;
   align-items: center;
+  border-radius: 0px 0px 10px 10px;
   justify-content: center;
   a {
     cursor: pointer;
-    color: #197DDE;
+    color: #197DDE !important;
   }
 }
 
@@ -41,14 +48,19 @@
 }
 
 .top-1 {
-  padding: 10px 16px;
+  padding: 20px;
   background: #FFFFFF;
-  height: 80px;
+  height: 96px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border-bottom: 1px solid #E5E5E5;
+  justify-content: center;
+  opacity: 0.5;
+}
+.top-1:hover {
+  opacity: 1;
+  background: rgba(203, 218, 236, 0.6);
+  box-shadow: inset 0px -1px 0px #E4E4E4;
 }
 
 .content {
@@ -59,6 +71,7 @@
   color: #000000;
   white-space: nowrap;
   overflow: hidden;
+  height: 40px;
   text-overflow: ellipsis;
 }
 
@@ -78,7 +91,6 @@
 
 .btn {
   align-items: center;
-  color: #22256A;
   text-align: center;
   button {
     font-size: 12px;
@@ -87,8 +99,8 @@
     width: 100px;
     height: 26px;
     font-weight: 700;
-    background: #B4B7EC;
     border-radius: 5px;
+    color: #22256A;
     text-transform: uppercase;
   }
 

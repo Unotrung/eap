@@ -8,6 +8,12 @@
   font-style: normal;
   border-radius: 8px;
   position: relative;
+  @media screen {
+    width: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: auto;
+  }
 }
 
 .title-1 {

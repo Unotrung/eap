@@ -20,7 +20,9 @@ app-navbar {
 
 .container-home-bnpl {
   width: 100%;
-  height: auto;
+  max-width: 1512px;
+  margin:auto;
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -37,9 +39,9 @@ app-navbar {
 }
 
 app-sidebar {
-  height: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  height: 100vh;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 app-home-after-login {
@@ -71,12 +73,14 @@ app-status-final-payment {
 }
 
 .bgr-root {
+  height: 100% !important;
   font-family: "Montserrat";
   justify-content: start !important;
   background-color: #F4F4F4 !important;
 }
 
 .root {
+  height: 100% !important;
   background: url("../assets/images/bgr-img-1.png") no-repeat right 0 top 910px,
   url("../assets/images/Gradient-bgr-1.png") no-repeat right 0 top 700px,
   url("../assets/images/Gradient-bgr-2.png") no-repeat left 0 top 1650px,

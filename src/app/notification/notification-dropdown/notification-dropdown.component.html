@@ -1,17 +1,15 @@
 <div class="container-dropdown">
     <div class="top">
-        <div class="top-1" *ngFor="let x of listNote, let i = index"
-             [style]="i===0?'border-radius: 20px 20px 0px 0px; background: rgba(203, 218, 236, 0.6)':''">
+        <div class="top-1" *ngFor="let x of listNote, let i = index" [style]="i==0?'opacity: 1 !important;':null">
             <div class="content overflow-ellipsis">
                 {{x.content}}
             </div>
             <div class="action">
                 <div class="btn">
-                    <button [style]="x.type === 'Giao dịch'?'background: #E3BFEE':
-                                     x.type === 'Mã giảm giá'? 'background: #E4BDBB':
-                                      x.type === 'Tin tức'? 'background: #C6EEF6':
-                                      x.type === 'Thanh toán'? 'background: #B4B7EC':'background: #EDDFCF'"
-                            (click)="alert()">
+                    <button [style]="x.type === 'Giao dịch'?'background-color: #E3BFEE !important':
+                                     x.type === 'Mã giảm giá'? 'background-color: #E4BDBB !important':
+                                      x.type === 'Tin tức'? 'background-color: #C6EEF6 !important':
+                                      x.type === 'Thanh toán'? 'background-color: #B4B7EC !important':'background: #EDDFCF'">
                         {{x.type}}
                     </button>
                 </div>
