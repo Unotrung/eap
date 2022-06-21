@@ -35,24 +35,19 @@
   @include footer.theme($theme);
   @include themeSwitch.theme($theme);
   @include navbar.theme($theme);
+  @font-face {
+    font-family: "MontserratAlternates";
+    src: local("MontserratAlternates"), url(assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"), url(/assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
+  }
 
-  //body {
-  //  background-color: $app-background-color;
-  //}.mat-list-item-content{
-  //  //  color: mat.get-color-from-palette($primary-palette, 500);
-  //  //  //background-color: mat.get-color-from-palette($accent-palette, 600);
-  //  //}
-  //
-  //.mat-sidenav {
-  //  background-color: mat.get-color-from-palette($accent-palette, 700);
-  //}
   .mat-list-active {
     background-color: mat.get-color-from-palette($accent-palette, 400);
   }
-  //.footer {
-  //  background-color: mat.get-color-from-palette($primary-palette);
-  //  color: white;
-  //}
+
   .mat-raised-button:hover {
     background-color: mat.get-color-from-palette($accent-palette, 800);
   }
@@ -161,6 +156,69 @@ input:focus {
   display: flex;
   max-width: 100% !important;
   max-height: 100%;
+}
+
+.hv-modal-content {
+  border: 3px solid #E8E8E8 !important;
+  box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 20px !important;
+  padding: 32px 48px !important;
+  @media screen and(min-width: 1025px){
+    width: 530px !important;
+    height: 580px !important;
+  }
+}
+.hv-modal-footer {
+  display: none !important;
+}
+.hv-liveness-face-found {
+  border-width: 6px !important;
+  border-color: #56CA8B !important;
+  width: 280px !important;
+  height: 280px !important;
+}
+.hv-liveness-face-not-found {
+  border-width: 6px !important;
+  width: 280px !important;
+  height: 280px !important;
+}
+.hv-instructions {
+  margin-bottom: 0px !important;
+  min-height: 32px !important;
+}
+
+.hv-bottom-instructions {
+  font-family: "Montserrat" !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  margin-top: 20px !important;
+  height: 80px !important;
+}
+
+.hv-close-button {
+  float: right !important;
+  width: 25px !important;
+  height: 25px !important;
+  line-height: 18.1px !important;
+  font-weight: 400 !important;
+  border: 2px solid #000000 !important;
+  border-radius: 50% !important;
+  justify-content: center !important;
+  display: flex !important;
+  align-items: center !important;
+  margin-top: unset !important;
+  position: absolute !important;
+  right: 24px !important;
+  top: 24px !important;
+}
+
+.hv-title {
+  margin-right: 0px !important;
+}
+
+.hv-divforcover {
+  position: unset !important;
+  margin-left: unset !important;
 }
 
 

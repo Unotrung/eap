@@ -36,9 +36,9 @@ export class SelfiePhotoComponent implements OnInit {
 
     ngOnInit(): void {
         this.pictureService.clearData();
-        if (this.authService.step$.getValue() === 0) {
-            this.router.navigate(['/infor-bnpl']);
-        }
+        // if (this.authService.step$.getValue() === 0) {
+        //     this.router.navigate(['/infor-bnpl']);
+        // }
         this.citizenId = new FormControl('', [Validators.pattern(/\b\d{9}\b|\b\d{12}\b/g), Validators.required])
     }
 

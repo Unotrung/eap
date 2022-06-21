@@ -3,12 +3,12 @@
 		"title": "Tài Khoản Mua trước Trả sau",
 		"titleRegister": "Nhà cung cấp dịch vụ Mua trước Trả sau",
 		"btnRegister": "Đăng ký",
-		"fullName": "Họ và tên",
-		"phone": "Số điện thoại",
-		"email": "Email",
+		"infoPersion": "Thông tin cá nhân",
 		"btnChange": "Đổi mã PIN",
 		"btnShow": "Xem thông tin",
-		"infoPersion": "Thông tin cá nhân"
+		"fullName": "Họ và tên",
+		"phone": "Số điện thoại",
+		"email": "Email"
 	},
 	"changePin": {
 		"titleUpdate": "Đổi mã PIN",
@@ -49,18 +49,17 @@
 		"nid": "Số CMND/CCCD",
 		"makeDateNid": "Ngày cấp",
 		"address": "Địa chỉ hiện tại",
-		"expirationDate": "Ngày hết hạn",
 		"labelRef": "Thông tin tham chiếu",
 		"personalRef": "Mối quan hệ",
 		"fullNameRef": "Họ và tên",
-		"phoneRef": "Số điện thoại"
+		"phoneRef": "Số điện thoại",
+		"expirationDate": "Ngày hết hạn"
 	},
 	"forgotPin": {
 		"titleNid": "Số CMND/ CCCD",
 		"labelNid": "Vui lòng nhập số CMND/CCCD",
 		"continue": "Tiếp tục",
 		"titleOtp": "Nhập OTP",
-		"labelOtp": "Vui lòng nhập mã OTP",
 		"labelOtp-2": "Mã OTP đã được gửi đến số điện thoại ",
 		"titleSetPin": "Cài đặt mã PIN của bạn",
 		"labelNewPin": "Mã PIN",
@@ -73,7 +72,8 @@
 		"PhoneWrong": "Số điện thoại chưa được đăng ký",
 		"errorOtpExp": "Mã OTP hết hiệu lực",
 		"errorOtpWrong": "Mã OTP không chính xác",
-		"ErrVerifyPin": "Mã PIN không khớp"
+		"ErrVerifyPin": "Mã PIN không khớp",
+		"labelOtp": "Vui lòng nhập mã OTP"
 	},
 	"forgotPass": {
 		"confirmOtp": "Xác nhận",
@@ -131,6 +131,15 @@
 		"validPhoneRefOverlap": "Số điện thoại tham chiếu trùng số điện thoại đăng ký",
 		"titleNote": "Lưu ý",
 		"contentNote": "Thông tin bắt buộc",
+		"face": {
+			"faceCaptureTitle": "Chụp ảnh chân dung",
+			"faceCaptureBottomDescription": "Mặt của bạn cần ở trong khung hình",
+			"faceNotDetectedDescription": "Khuôn mặt cần ở trong khung hình",
+			"faceTooBigDescription": "Hãy di chuyển ra xa một chút",
+			"faceDetectedDescription": "Bạn đang chụp ảnh chân dung để đăng ký tài khoản (KYC). Vui lòng sử dụng số điện thoại và thiết bị của bạn.",
+			"faceCaptureReviewTitle": "Ảnh của bạn có rõ không?",
+			"faceCaptureReviewBottomDescription": "Hãy kiểm tra ảnh của bạn"
+		},
 		"father": "Bố",
 		"mother": "Mẹ",
 		"brother": "Anh em trai",
@@ -148,14 +157,21 @@
 		"validPattern": "Số CMND/ CCCD không hợp lệ",
 		"validExist": "CMND/CCCD đã được sử dụng",
 		"labelTakePhoto": "Chụp ảnh chân dung",
+		"continue": "Tiếp tục",
+		"shouldNot": "Không nên",
+		"pleaseGuide": "Vui lòng ",
+		"noteGuide-1": "KHÔNG đội nón, đeo kính, khẩu trang",
+		"noteGuide-2": "chọn nơi có đủ ánh sáng ",
+		"toShot": "để chụp ảnh",
+		"veryGood": "Tốt lắm",
+		"noteGuide-3": "Chúng tôi sẽ tiến hành chụp ảnh chân dung của bạn",
+		"start": "Bắt đầu",
 		"labelPhoto": "Chân dung",
 		"noTakePhoto": "Chưa chụp ảnh",
 		"titleGuide": "Hướng dẫn chụp ảnh chân dung :",
 		"guide1": "Nhấn vào nút màu trắng để bắt đầu chụp hình.",
 		"guide2": "Số CMND/CCCD phải điền chính xác. Vui lòng nhập 9 số (CMND) hoặc 12 số (CCCD).",
-		"guide3": "Ảnh chụp chân dung phải đủ sáng, không đội mũ, không đeo kính.",
-		"continue": "Tiếp tục",
-		"start": "Bắt đầu"
+		"guide3": "Ảnh chụp chân dung phải đủ sáng, không đội mũ, không đeo kính."
 	},
 	"setPin": {
 		"title": "Cài đặt mã PIN của bạn",
@@ -243,12 +259,22 @@
 		"errONPass": "Mật khẩu mới không trùng với mật khẩu cũ",
 		"errWrongPass": "Mật khẩu không chính xác"
 	},
+	"barProcess": {
+		"title": "Chào mừng bạn đến với quy trình đăng ký Mua trước Trả sau",
+		"step1": "Thông tin khách hàng",
+		"step2": "Cài đặt Pin",
+		"step3": "Ký điện tử",
+		"step4": "Xác minh thông tin",
+		"step5": "Hoàn thành"
+	},
+	"error": {
+		"note": "Mất kết nối/ Lỗi không xác định"
+	},
 	"repayment": {
+		"titleTable": "Kế hoạch thanh toán",
 		"titleFast": "Chọn phương thức thanh toán",
 		"confirmFast": "Tiếp tục",
-		"titleTable": "Kế hoạch thanh toán",
 		"issueDate": "Ngày tới hạn",
-		"provider": "Nhà cung cấp",
 		"payMoney": "Số tiền thanh toán",
 		"status": "Tình trạng",
 		"action": "Hành động",
@@ -259,6 +285,7 @@
 		"100Record": "100 dòng 1 trang",
 		"200Record": "200 dòng 1 trang",
 		"allRecord": "Tất cả",
+		"provider": "Nhà cung cấp",
 		"underTitleFast": "Mua trước Trả sau cùng"
 	},
 	"footer": {
@@ -270,18 +297,17 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 20/06 3rd"
+		"item-9": "Chính sách 20/06 4th"
 	},
 	"home": {
-		"title-1": "Có VOOLO,<br/>mua sắm<br/>VÔ LO!",
-		"title-1-phone": "Có VOOLO,<br/>mua sắm VÔ LO!",
 		"content-1": "Mua sắm không giới hạn trên các sàn thương mại điện tử và hệ thống Offline",
 		"content-2": "Thanh toán chỉ trong 3 - 4 tháng",
 		"content-3": "Cơ hội nhận ưu đãi hoàn tiền chỉ trong 1 ngày",
 		"btnJoin": "Khám phá ngay",
+		"title-1": "Có VOOLO,<br/>mua sắm<br/>VÔ LO!",
+		"title-1-phone": "Có VOOLO,<br/>mua sắm VÔ LO!",
 		"titleBnplVoolo": "Mua trước trả sau cùng VOOLO",
 		"descriptionBnplVoolo": "Không trả trước - Nhẹ nhàng với 0% lãi suất - Linh hoạt thời hạn thanh toán",
-		"descriptionBnplVooloPhone": "Không trả trước <br/> Nhẹ nhàng với 0% lãi suất <br/> Linh hoạt thời hạn thanh toán",
 		"descriptionPhone-1": "Không trả trước",
 		"descriptionPhone-2": "Nhẹ nhàng với 0% lãi suất",
 		"descriptionPhone-3": "Linh hoạt thời hạn thanh toán",
@@ -293,21 +319,8 @@
 		"OurPartnersContent2": "Rất đơn giản - Chỉ cần để lại email, chúng tôi sẽ liên hệ ngay",
 		"OurPartnersBtn": "Liên hệ ngay",
 		"customerComment": "Khách hàng nói về @VOOLO",
-		"customerName": "@nyphung",
-		"placeComment": "Marketing Executive tại FE CREDIT",
-		"contentComment": "“VOOLO giúp mình mua sắm và quản lý khả năng chi tiêu thông minh mọi lúc, mọi nơi.",
-		"finalComment": "Highly recommend mọi người 👍👍”",
 		"news": "Tin tức",
-		"titleNews1": "Những ưu đãi lớn nhất đang có tại VOOLO",
-		"dateNews1": "Ngày 8 tháng 3, 2022",
-		"contentNews1": "Ngày Quốc Tế Phụ Nữ 8/3 là 1 dịp đặc biệt để trao tặng những món quà ý nghĩa thông qua chương trình khuyến mãi từ Voolo.",
 		"seeMoreNews": "Xem thêm",
-		"titleNews2": "Gen Z dẫn đầu xu hướng Mua trước Trả sau cùng VOOLO",
-		"dateNews2": "Ngày 5 tháng 3, 2022",
-		"contentNews2": "Các thương hiệu và các nhà bán lẻ phải ",
-		"titleNews3": "VOOLO chính thức ra mắt trên các sàn thương mại điện tử....",
-		"dateNews3": "Ngày 28 tháng 2, 2022",
-		"contentNews3": "Banking app given a mission of “Bank less. Get more.”",
 		"lable-2-1": "Thanh toán linh hoạt Lãi suất 0%",
 		"content-2-1": "Không trả trước & 0% lãi suất cho các gói thanh toán linh hoạt.\n Thuận tiện và Dễ dàng trong 3 - 4 tháng.",
 		"lable-2-2": "Đăng ký chỉ trong 2 phút",
@@ -320,6 +333,20 @@
 		"title-3-2": "Làm đẹp",
 		"title-3-3": "Công nghệ",
 		"title-3-4": "Sức khoẻ",
+		"customerName": "@nyphung",
+		"placeComment": "Marketing Executive tại FE CREDIT",
+		"contentComment": "“VOOLO giúp mình mua sắm và quản lý khả năng chi tiêu thông minh mọi lúc, mọi nơi.",
+		"finalComment": "Highly recommend mọi người 👍👍”",
+		"titleNews1": "Những ưu đãi lớn nhất đang có tại VOOLO",
+		"dateNews1": "Ngày 8 tháng 3, 2022",
+		"contentNews1": "Ngày Quốc Tế Phụ Nữ 8/3 là 1 dịp đặc biệt để trao tặng những món quà ý nghĩa thông qua chương trình khuyến mãi từ Voolo.",
+		"titleNews2": "Gen Z dẫn đầu xu hướng Mua trước Trả sau cùng VOOLO",
+		"dateNews2": "Ngày 5 tháng 3, 2022",
+		"contentNews2": "Các thương hiệu và các nhà bán lẻ phải ",
+		"titleNews3": "VOOLO chính thức ra mắt trên các sàn thương mại điện tử....",
+		"dateNews3": "Ngày 28 tháng 2, 2022",
+		"contentNews3": "Banking app given a mission of “Bank less. Get more.”",
+		"descriptionBnplVooloPhone": "Không trả trước <br/> Nhẹ nhàng với 0% lãi suất <br/> Linh hoạt thời hạn thanh toán",
 		"title-2": "mua sắm",
 		"title-3": "VÔ LO!"
 	},
@@ -362,12 +389,12 @@
 		"allRecord": "Tất cả"
 	},
 	"sideBar": {
-		"bnplInformation": "Tài khoản </br>Mua trước Trả sau ",
+		"eapInformation": "Tài khoản VOOLO",
 		"bnplInformation-m": "Tài khoản Mua trước Trả sau",
 		"transaction": "Lịch Sử Giao dịch ",
 		"repayment": "Kế hoạch thanh toán ",
-		"eapInformation": "Tài khoản VOOLO",
-		"logout": "Đăng Xuất"
+		"logout": "Đăng Xuất",
+		"bnplInformation": "Tài khoản </br>Mua trước Trả sau "
 	},
 	"transaction": {
 		"titleTable": "Lịch sử giao dịch",
@@ -382,16 +409,5 @@
 		"100Record": "100 dòng 1 trang",
 		"200Record": "200 dòng 1 trang",
 		"allRecord": "Tất cả"
-	},
-	"barProcess": {
-		"title": "Chào mừng bạn đến với quy trình đăng ký Mua trước Trả sau",
-		"step1": "Thông tin khách hàng",
-		"step2": "Cài đặt Pin",
-		"step3": "Ký điện tử",
-		"step4": "Xác minh thông tin",
-		"step5": "Hoàn thành"
-	},
-	"error": {
-		"note": "Mất kết nối/ Lỗi không xác định"
 	}
 }

@@ -3,6 +3,11 @@
   src: local("MontserratAlternates"), url(../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(../../assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+
 .header-format {
   font-family: "MontserratAlternates";
   display: flex;
@@ -277,6 +282,7 @@ a:hover {
 }
 
 .name {
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   display: flex;

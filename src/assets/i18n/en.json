@@ -3,12 +3,12 @@
 		"title": "Information of BNPL",
 		"titleRegister": "",
 		"btnRegister": "",
-		"fullName": "Full name",
-		"phone": "Phone number",
-		"email": "Email",
+		"infoPersion": "Personal Information",
 		"btnChange": "Change PIN code",
 		"btnShow": "View contract",
-		"infoPersion": "Personal Information"
+		"fullName": "Full name",
+		"phone": "Phone number",
+		"email": "Email"
 	},
 	"changePin": {
 		"titleUpdate": "Update PIN code",
@@ -48,19 +48,18 @@
 		"phone": "",
 		"nid": "",
 		"makeDateNid": "",
-		"expirationDate": "",
 		"address": "",
 		"labelRef": "",
 		"personalRef": "",
 		"fullNameRef": "",
-		"phoneRef": ""
+		"phoneRef": "",
+		"expirationDate": ""
 	},
 	"forgotPin": {
 		"titleNid": "National ID number",
 		"labelNid": "Please enter your National ID number",
 		"continue": "Continue",
 		"titleOtp": "Enter OTP",
-		"labelOtp": "Please enter OTP",
 		"labelOtp-2": "OTP was sent to to phone ",
 		"titleSetPin": "Enter PIN code",
 		"labelNewPin": "Enter new PIN Code",
@@ -73,7 +72,8 @@
 		"PhoneWrong": "Phone number has not been registered",
 		"errorOtpExp": "OTP has expired",
 		"errorOtpWrong": "OTP is incorrect",
-		"ErrVerifyPin": "PIN code does not match"
+		"ErrVerifyPin": "PIN code does not match",
+		"labelOtp": "Please enter OTP"
 	},
 	"forgotPass": {
 		"confirmOtp": "Continue",
@@ -131,6 +131,15 @@
 		"validPhoneRefOverlap": "Reference phone number is same as registered phone number",
 		"titleNote": "Note",
 		"contentNote": "Required Information",
+		"face": {
+			"faceCaptureTitle": "Capture Selfie",
+			"faceCaptureBottomDescription": "Make sure your face is inside the circle and is fully visible",
+			"faceNotDetectedDescription": "Please place your face inside the circle",
+			"faceTooBigDescription": "Please move away from the camera",
+			"faceDetectedDescription": "",
+			"faceCaptureReviewTitle": "Is your face fully visible, and not blurred?",
+			"faceCaptureReviewBottomDescription": "Please Review if your face is fully visible"
+		},
 		"father": "Father",
 		"mother": "Mother",
 		"brother": "Brother",
@@ -148,14 +157,21 @@
 		"validPattern": "",
 		"validExist": "",
 		"labelTakePhoto": "",
+		"continue": "Continue",
+		"shouldNot": "",
+		"pleaseGuide": "",
+		"noteGuide-1": "",
+		"noteGuide-2": "",
+		"toShot": "",
+		"veryGood": "",
+		"noteGuide-3": "",
+		"start": "Start",
 		"labelPhoto": "",
 		"noTakePhoto": "",
 		"titleGuide": "",
 		"guide1": "",
 		"guide2": "",
-		"guide3": "",
-		"continue": "Continue",
-		"start": "Start"
+		"guide3": ""
 	},
 	"setPin": {
 		"title": "",
@@ -243,12 +259,22 @@
 		"errONPass": "",
 		"errWrongPass": ""
 	},
+	"barProcess": {
+		"title": "Welcome to the Buy Now Pay Later application process",
+		"step1": "Customer Information",
+		"step2": "Pin Settings",
+		"step3": "E-Sign",
+		"step4": "Verify information",
+		"step5": "Done"
+	},
+	"error": {
+		"note": "Fail connection/Unknown error"
+	},
 	"repayment": {
+		"titleTable": "Repayment Plan",
 		"titleFast": "Choose a payment method",
 		"confirmFast": "Confirm",
-		"titleTable": "Repayment Plan",
 		"issueDate": "Due Date",
-		"provider": "Provider",
 		"payMoney": "Pay money",
 		"status": "Status",
 		"action": "Action",
@@ -259,6 +285,7 @@
 		"100Record": "100 Repayments",
 		"200Record": "200 Repayments",
 		"allRecord": "All Repayments",
+		"provider": "Provider",
 		"underTitleFast": "By now pay later with"
 	},
 	"footer": {
@@ -273,15 +300,14 @@
 		"item-9": "Privacy policy"
 	},
 	"home": {
-		"title-1": "Buy now.<br/>Pay later<br/>Interest-free!",
-		"title-1-phone": "Buy now.<br/>Pay later.Interest-free!",
 		"content-1": "Split any purchase into 4 interest-free payments.",
 		"content-2": "Online or in-store, it's easy with VOOLO.",
 		"content-3": "Try it out to earn VND50,000 reward today.",
 		"btnJoin": "Join our club",
+		"title-1": "Buy now.<br/>Pay later<br/>Interest-free!",
+		"title-1-phone": "Buy now.<br/>Pay later.Interest-free!",
 		"titleBnplVoolo": "Pay later shopping.",
 		"descriptionBnplVoolo": "Shop at your favorite stores, at your local mall or anywhere online, then checkout with VOOLO.From buying what you love, to paying over time, we make every easy step of payment.",
-		"descriptionBnplVooloPhone": "Shop at your favorite stores, at your local mall or anywhere online, then checkout with VOOLO.From buying what you love, to paying over time, we make every easy step of payment.",
 		"descriptionPhone-1": "No prepayment",
 		"descriptionPhone-2": "Gentle with 0% interest",
 		"descriptionPhone-3": "Flexible payment term",
@@ -293,21 +319,8 @@
 		"OurPartnersContent2": "",
 		"OurPartnersBtn": "Contact Now",
 		"customerComment": "People mentioned @VOOLO",
-		"customerName": "@nyphung",
-		"placeComment": "Marketing Executive at FE CREDIT",
-		"contentComment": "“Love @VOOLO it’s great to use and would definitely recommend. Never had a problem with it and will continue using it.",
-		"finalComment": "Thanks 👍👍”",
 		"news": "News",
-		"titleNews1": "Top best deal for international women's day ",
-		"dateNews1": "March 08, 2022",
-		"contentNews1": "Women Day 8/3 is the best opportunity to present your beloved women a meaningful gift with special offers from us.",
 		"seeMoreNews": "Read more",
-		"titleNews2": "Gen Z is driving growth in new shopping formats",
-		"dateNews2": "March 05, 2022",
-		"contentNews2": "Retailers and brands must begin testing and learning with new formats to retain and attract Gen Z consumers in future.",
-		"titleNews3": "VPBank’s Übank digital banking app launched",
-		"dateNews3": "February 28, 2022",
-		"contentNews3": "Banking app given a mission of “Bank less. Get more.”",
 		"lable-2-1": "Pay in 4<br/> anywhere.",
 		"content-2-1": "No prepaid & 0% interest rate. Convenient and Simple in 1 - 2 - 3 - 4 month period.",
 		"lable-2-2": "Pay in<br/> 30 days.",
@@ -320,6 +333,20 @@
 		"title-3-2": "Beauty",
 		"title-3-3": "Electronic",
 		"title-3-4": "Fitness",
+		"customerName": "@nyphung",
+		"placeComment": "Marketing Executive at FE CREDIT",
+		"contentComment": "“Love @VOOLO it’s great to use and would definitely recommend. Never had a problem with it and will continue using it.",
+		"finalComment": "Thanks 👍👍”",
+		"titleNews1": "Top best deal for international women's day ",
+		"dateNews1": "March 08, 2022",
+		"contentNews1": "Women Day 8/3 is the best opportunity to present your beloved women a meaningful gift with special offers from us.",
+		"titleNews2": "Gen Z is driving growth in new shopping formats",
+		"dateNews2": "March 05, 2022",
+		"contentNews2": "Retailers and brands must begin testing and learning with new formats to retain and attract Gen Z consumers in future.",
+		"titleNews3": "VPBank’s Übank digital banking app launched",
+		"dateNews3": "February 28, 2022",
+		"contentNews3": "Banking app given a mission of “Bank less. Get more.”",
+		"descriptionBnplVooloPhone": "Shop at your favorite stores, at your local mall or anywhere online, then checkout with VOOLO.From buying what you love, to paying over time, we make every easy step of payment.",
 		"title-2": "Pay later",
 		"title-3": "Interest-free!"
 	},
@@ -362,12 +389,12 @@
 		"allRecord": ""
 	},
 	"sideBar": {
-		"bnplInformation": "Buy now Pay later information",
+		"eapInformation": "VOOLO Account",
 		"bnplInformation-m": "BNPL Account",
 		"transaction": "Transaction History",
 		"repayment": "Repayment Plan",
-		"eapInformation": "VOOLO Account",
-		"logout": "Sign Out"
+		"logout": "Sign Out",
+		"bnplInformation": "Buy now Pay later information"
 	},
 	"transaction": {
 		"titleTable": "Transaction History",
@@ -382,16 +409,5 @@
 		"100Record": "100 Records",
 		"200Record": "200 Records",
 		"allRecord": "All Records"
-	},
-	"barProcess": {
-		"title": "Welcome to the Buy Now Pay Later application process",
-		"step1": "Customer Information",
-		"step2": "Pin Settings",
-		"step3": "E-Sign",
-		"step4": "Verify information",
-		"step5": "Done"
-	},
-	"error": {
-		"note": "Fail connection/Unknown error"
 	}
 }

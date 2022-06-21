@@ -88,11 +88,37 @@
     </div>
 
 <!--    Hiển thị hướng dẫn chụp-->
-    <div *ngIf = "isShowGuide">
+    <div class="container-guide" *ngIf = "isShowGuide">
+        <div class="box-guide">
+            <div class="box-item">
+                <img class="img-des" src="../../../../assets/images/Graphic-1.png">
+                <div class="description-text color-red">{{'selfie.shouldNot' | translate}}</div>
+                <div class="content-guide">
+                    <span class="text-light">{{'selfie.pleaseGuide' | translate}}</span>
+                    <span class="text-bold">{{'selfie.noteGuide-1' | translate}}</span>
+                </div>
+            </div>
+            <div class="box-item">
+                <img class="img-des" src="../../../../assets/images/Graphic-2.png">
+                <div class="description-text color-red">{{'selfie.shouldNot' | translate}}</div>
+                <div class="content-guide">
+                    <span class="text-light">{{'selfie.pleaseGuide' | translate}}</span>
+                    <span class="text-bold">{{'selfie.noteGuide-2' | translate}}</span>
+                    <span class="text-light">{{'selfie.toShot' | translate}}</span>
+                </div>
+            </div>
+            <div class="box-item">
+                <img class="img-des" src="../../../../assets/images/Graphic-3.png">
+                <div class="description-text color-blue">{{'selfie.veryGood' | translate}}</div>
+                <div class="content-guide">
+                    <span class="text-light">{{'selfie.noteGuide-3' | translate}}</span>
+                </div>
+            </div>
+        </div>
         <div class="cover-btn">
             <app-button-dialog
                     [isEnable]="false"
-                    [contentBtn]="'selfie.continue' | translate"
+                    [contentBtn]="'selfie.start' | translate"
                     [width]="300"
                     [height]="46"
                     (click)="startCaptureImage()">

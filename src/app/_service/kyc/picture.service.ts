@@ -10,6 +10,7 @@ import {checkInfo} from "../../_helpers/helper";
 import {AuthenticationService} from "../auth/authentication.service";
 import {WebcamImage} from "ngx-webcam";
 import {finalize} from "rxjs/operators";
+import {TranslateService} from "@ngx-translate/core";
 
 export enum NCardSide {
   front = 'front',
@@ -43,7 +44,8 @@ export class PictureService {
       private hv: HypervergeService,
       private loadingService: LoadingService,
       private messageService: MessageService,
-      private authService: AuthenticationService
+      private authService: AuthenticationService,
+      private translate: TranslateService
   ) {
     this.hvInit$ = new BehaviorSubject<boolean>(false)
     this.selfieImageComplete$ = new BehaviorSubject<boolean>(false);
@@ -79,6 +81,13 @@ export class PictureService {
     // this.hv.HyperSnapSDK.init(environment.hyperVergeToken, this.hv.HyperSnapParams.Region.AsiaPacific);
     // this.hv.HyperSnapSDK.startUserSession();
     const hvFaceConfig = new this.hv.HVFaceConfig();
+    hvFaceConfig.faceTextConfig.setFaceCaptureTitle(this.translate.instant('kyc.face.faceCaptureTitle'))
+    hvFaceConfig.faceTextConfig.setFaceCaptureBottomDescription(this.translate.instant('kyc.face.faceCaptureBottomDescription'))
+    hvFaceConfig.faceTextConfig.setFaceNotDetectedDescription(this.translate.instant('kyc.face.faceNotDetectedDescription'))
+    hvFaceConfig.faceTextConfig.setFaceTooBigDescription(this.translate.instant('kyc.face.faceTooBigDescription'))
+    hvFaceConfig.faceTextConfig.setFaceDetectedDescription(this.translate.instant('kyc.face.faceDetectedDescription'))
+    hvFaceConfig.faceTextConfig.setFaceCaptureReviewTitle(this.translate.instant('kyc.face.faceCaptureReviewTitle'))
+    hvFaceConfig.faceTextConfig.setFaceCaptureReviewBottomDescription(this.translate.instant('kyc.face.faceCaptureReviewBottomDescription'))
 
     // hvFaceConfig.setShouldShowInstructionPage(true);
 
