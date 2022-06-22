@@ -10,8 +10,8 @@
                   (codeChanged)="onCodeChanged($event)"
                   (codeCompleted)="onCodeCompleted($event)">
       </code-input>
-      <div class="under-input" *ngIf="messageErr != ''">
-        <div class="err">
+      <div class="under-input" >
+        <div *ngIf="messageErr != ''" class="err">
           {{messageErr | translate}}
         </div>
       </div>
@@ -27,12 +27,12 @@
                        [height]="40">
     </app-button-dialog>
 
-    <div *ngIf="loading" class="loading">
-      <app-loading></app-loading>
-    </div>
+<!--    <div *ngIf="loading" class="loading">-->
+<!--      <app-loading></app-loading>-->
+<!--    </div>-->
   </div>
   <div class="cover-bottom">
-    <p class="note-no-send">{{'register.warn' | translate}}?</p>
+    <div class="note-no-send">{{'register.warn' | translate}}?</div>
     <a [hidden]= "countDown === 0"
        class="link-send-disable"
        [style]="countDown<=10?'color: red':null">
