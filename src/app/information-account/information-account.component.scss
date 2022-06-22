@@ -60,7 +60,6 @@
   width: 100%;
   height: 45px;
   position: relative;
-  margin-bottom: 13px;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
@@ -102,10 +101,9 @@
 .name-input {
   font-weight: 600;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 17px;
   font-family: "MontserratAlternates";
-  margin-bottom: 16px;
-  margin-top: 22px;
+  margin-bottom: 12px;
 }
 
 .edit-icon {
@@ -139,14 +137,16 @@
 }
 
 .cover-invalid {
+  height: 40px;
   width: 100%;
   font-weight: 600;
   font-size: 10px;
-  line-height: 18px;
+  line-height: 12px;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: start;
   color: #EE4D2D;
+  padding-top: 10px;
 }
 
 .hidden-480 {

@@ -25,7 +25,7 @@
         <app-button-dialog class="hidden-480" [contentBtn]="'register.buttonOtp'|translate"
                            [isEnable]="otp.length<6"
                            (click)="submit()"
-        [width]="300"
+        [width]="299"
         [height]="46">
         </app-button-dialog>
         <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.buttonOtp'|translate"
@@ -35,9 +35,9 @@
                            [height]="40">
         </app-button-dialog>
 
-        <div *ngIf="loading" class="loading">
-            <app-loading></app-loading>
-        </div>
+<!--        <div *ngIf="loading" class="loading">-->
+<!--            <app-loading></app-loading>-->
+<!--        </div>-->
     </div>
     <div class="cover-bottom">
         <div class="note-no-send">{{'register.warn' | translate}}?</div>

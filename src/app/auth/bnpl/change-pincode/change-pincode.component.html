@@ -72,9 +72,17 @@
         [msgDescription]="''"></app-status>
     </div>
     <div *ngIf = "msgStt === 'fail'" class="status">
-        <app-status [isStatus]="false"
-                    [msgStatus]="'changePin.sttFail'|translate"
-                    [msgDescription]="'changePin.sttNote'|translate"></app-status>
+        <div style="margin-bottom: 32px">
+            <app-status [isStatus]="false"
+                        [msgStatus]="'changePin.sttFail'|translate"
+                        [msgDescription]="'changePin.sttNote'|translate"></app-status>
+        </div>
+        <div class="cover-btn">
+            <button style="background:#000000"
+            (click)="changePinAgain()">
+                {{'changePin.tryAgain'|translate}}
+            </button>
+        </div>
     </div>
 </div>
 

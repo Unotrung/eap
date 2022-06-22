@@ -139,6 +139,7 @@ export class NavbarComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe(result => {
+            this.currentItem = 1;
         });
     }
 

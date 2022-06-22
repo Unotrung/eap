@@ -14,7 +14,7 @@
                  [style]="isMomo?'border: hidden': null">
                 <img [hidden]="!isMomo" src="../../../assets/images/tick-pay-2.png">
             </div>
-            <div class="img-fe"><img src="../../../assets/images/momo2.png"></div>
+            <div class="img-fe"><img src="../../../assets/images/momo2.png" width="77px" height="77px"></div>
         </div>
     </div>
     <app-button-dialog class="hidden-480" [contentBtn]="'repayment.confirmFast' | translate"
@@ -23,7 +23,7 @@
     </app-button-dialog>
     <app-button-dialog class="hidden-lager-screen" [contentBtn]="'repayment.confirmFast' | translate"
                        [isEnable]="!isPayoo && !isMomo"
-                       [width]="300"
+                       [width]="299"
                        [height]="46"
                        (click)="goPaYooHome()">
     </app-button-dialog>

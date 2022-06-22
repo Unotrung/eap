@@ -1,11 +1,11 @@
 {
 	"inforBnpl": {
-		"title": "Tài Khoản Mua trước Trả sau",
+		"title": "Tài khoản Mua trước Trả sau",
 		"titleRegister": "Nhà cung cấp dịch vụ Mua trước Trả sau",
 		"btnRegister": "Đăng ký",
 		"infoPersion": "Thông tin cá nhân",
 		"btnChange": "Đổi mã PIN",
-		"btnShow": "Xem thông tin",
+		"btnShow": "Xem hợp đồng",
 		"fullName": "Họ và tên",
 		"phone": "Số điện thoại",
 		"email": "Email"
@@ -21,9 +21,10 @@
 		"clickHere": "Nhấn vào đây",
 		"sttSuccess": "Cập nhật mã PIN thành công",
 		"sttFail": "Cập nhật mã PIN không thành công",
-		"sttNote": "Vui lòng liên hệ hotline 1900xxx để biết thêm chi tiết.",
+		"sttNote": "Vui lòng thử lại hoặc liên hệ 1900xxx để được hỗ trợ.",
 		"validWrong": "Mã PIN không khớp",
-		"validOverlap": "Mã PIN mới trùng với mã PIN cũ"
+		"validOverlap": "Mã PIN mới trùng với mã PIN cũ",
+		"tryAgain": "Thử lại"
 	},
 	"provider": {
 		"title": "Chọn nhà cung cấp BNPL",
@@ -88,7 +89,7 @@
 		"titleSetPass": "Nhập mật khẩu mới",
 		"password": "Mật khẩu",
 		"confirmPass": "Mật khẩu xác nhận",
-		"contentStt": "Bạn đã đổi mật khẩu thành công",
+		"contentStt": "Cập nhật mật khẩu thành công",
 		"required": "Vui lòng nhập thông tin",
 		"pattern": "Đinh dạng số điện thoại/ Email không hợp lệ",
 		"blockOtp": "Mã OTP không chính xác (5/5). Vui lòng thử lại sau 24 giờ.",
@@ -207,7 +208,7 @@
 		"phone": "Số điện thoại",
 		"email": "Email",
 		"hadAccount": "Đã có tài khoản",
-		"titleSttTrue": "Đăng kí thành công",
+		"titleSttTrue": "Bạn đã đăng kí thành công",
 		"click": "Bấm vào",
 		"here": "đây",
 		"back": "để quay trở lại. ",
@@ -242,7 +243,8 @@
 		"account": "Tài khoản chưa tồn tại. Vui lòng đăng ký",
 		"block": "Tài khoản đã bị khoá",
 		"wrongPass": "Mật khẩu không chính xác",
-		"fail5": "Bạn đã nhập sai mật khẩu quá 5 lần, vui lòng đăng nhập lại sau 24h"
+		"fail5": "Bạn đã nhập sai mật khẩu quá 5 lần, vui lòng đăng nhập lại sau 24h",
+		"messageBlockLogin": "Mật khẩu không chính xác (5/5). <br/> Tài khoản của bạn đã bị khóa, thử lại sau 60 phút."
 	},
 	"updatePassword": {
 		"status": "Bạn đã đổi mật khẩu thành công!",
@@ -260,7 +262,7 @@
 		"errWrongPass": "Mật khẩu không chính xác"
 	},
 	"barProcess": {
-		"title": "Chào mừng bạn đến với quy trình đăng ký Mua trước Trả sau",
+		"title": "Chào mừng bạn đến với quy trình đăng ký <br/>Mua trước Trả sau",
 		"step1": "Thông tin khách hàng",
 		"step2": "Cài đặt Pin",
 		"step3": "Ký điện tử",
@@ -297,7 +299,7 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 21/06 1st"
+		"item-9": "Chính sách 22/06 2nd"
 	},
 	"home": {
 		"content-1": "Mua sắm không giới hạn trên các sàn thương mại điện tử và hệ thống Offline",
@@ -357,7 +359,7 @@
 		"email": "Email",
 		"password": "Mật khẩu",
 		"invalidEmptyEmail": "Vui lòng nhập email",
-		"invalidEmail": "Đinh dạng email không hợp lệ",
+		"invalidEmail": "Đinh dạng Email không hợp lệ",
 		"statusSuccess": "Đã cập nhật email thành công",
 		"statusFail": "Cập nhật email thất bại",
 		"existEmail": "Email đã được đăng ký",
@@ -391,7 +393,7 @@
 	"sideBar": {
 		"eapInformation": "Tài khoản VOOLO",
 		"bnplInformation-m": "Tài khoản Mua trước Trả sau",
-		"transaction": "Lịch Sử Giao dịch ",
+		"transaction": "Lịch sử giao dịch ",
 		"repayment": "Kế hoạch thanh toán ",
 		"logout": "Đăng Xuất",
 		"bnplInformation": "Tài khoản </br>Mua trước Trả sau "

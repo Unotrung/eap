@@ -7,12 +7,12 @@
   font-style: normal;
   position: relative;
   margin: auto;
-  width: 454px;
+  width: 477px;
   height: auto;
   border-radius: 20px;
   border: 3px solid #EEEEEE;
   background: #F3F3F3;
-  padding: 56px 48px;
+  padding: 48px 0 40px 0;
   @media screen and(max-width: 480px){
     width: 335px;
     padding: 32px 0px;
@@ -47,7 +47,7 @@
   line-height: 24px;
   text-align: center;
   color: #000000;
-  margin-top: 50px;
+  margin-top: 40px;
   font-family: "MontserratAlternates";
   @media screen and(max-width: 480px){
     font-size: 16px;

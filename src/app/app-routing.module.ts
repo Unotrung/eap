@@ -86,6 +86,9 @@ const routes: Routes = [
     {path: 'get-otp-reset-pin', component: GetOtpForgotPinBnplComponent},
     {path: 'reset-pin', component: ResetPincodeBnplComponent},
     {path: 'home-payoo-no-nid', component: HomePayooNoNidComponent},
+    {path: 'customer', component: HomeComponent},
+    {path: 'partner', component: HomeComponent},
+    {path: 'help', component: HomeComponent},
     {path: 'error', component: ErrorComponent},
     {path: '**', component: ErrorComponent},
 ];

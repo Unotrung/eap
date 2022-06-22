@@ -44,10 +44,13 @@
             <div class="under-input">
                 <div class="invalid-note">
                     <div>
-                        <div class="err" *ngIf="!isLoggedIn&&errorMessagePass !==''">
+                        <div class="err" *ngIf="!isLoggedIn&&errorMessagePass !==''&&countFail<5">
                             {{errorMessagePass | translate}} ({{countFail}}/5)
                         </div>
-
+                        <div class="err"
+                             *ngIf="!isLoggedIn&&errorMessagePass !==''&&countFail===5"
+                             [innerHTML]="'login.messageBlockLogin' | translate">
+                        </div>
                         <div *ngFor="let invalid of validateMessage.password">
                             <div class="err" *ngIf="(userForm.controls.password.hasError(invalid.type)
                                                 &&userForm.controls.password.touched)">
@@ -58,10 +61,10 @@
                 </div>
                 <a class="link-forget-pw" (click)="openDialogForgetPassword()">{{'login.forgotPass' | translate}}</a>
             </div>
-            <div style="margin-top: 30px">
+            <div>
                 <app-button-dialog class="hidden-480" [contentBtn]="'login.content-btn'|translate"
                                    [isEnable]="userForm.invalid"
-                                   [width]="300"
+                                   [width]="299"
                                    [height]="45">
                 </app-button-dialog>
                 <app-button-dialog class="hidden-lager-screen" [contentBtn]="'login.content-btn'|translate"
@@ -75,9 +78,9 @@
     </div>
     <div class="link-register"><a (click)="openDialogRegister()">{{'login.register' | translate}}</a></div>
     <app-item-close-dialog class="close-popup" (click)="close()"></app-item-close-dialog>
-    <div *ngIf="loading" class="loading">
-        <app-loading></app-loading>
-    </div>
+    <!--    <div *ngIf="loading" class="loading">-->
+    <!--        <app-loading></app-loading>-->
+    <!--    </div>-->
 </div>
 
 

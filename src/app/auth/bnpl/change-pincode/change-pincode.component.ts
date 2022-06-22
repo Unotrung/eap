@@ -77,6 +77,7 @@ export class ChangePincodeComponent implements OnInit {
             this.msgStt = 'success';
           }
         },error => {
+          console.log("error", error)
           this.resetMsg();
           if (error.error.statusCode == 1001) {
             this.msgWrongPassword = this.translateService.instant('changePin.validWrong');
@@ -97,5 +98,10 @@ export class ChangePincodeComponent implements OnInit {
     this.msgVerifyError = '';
     this.msgWrongPassword ='';
     this.msgNewPinError = '';
+  }
+
+  changePinAgain() {
+    this.router.navigate(['/change-pin']);
+    window.location.reload();
   }
 }

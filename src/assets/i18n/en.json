@@ -23,7 +23,8 @@
 		"sttFail": "Update PIN code unsuccessfully!",
 		"sttNote": "Please contact hotline 1900xxx for more details.",
 		"validWrong": "PIN code does not match",
-		"validOverlap": "PIN code does not match"
+		"validOverlap": "PIN code does not match",
+		"tryAgain": "Try again"
 	},
 	"provider": {
 		"title": "",
@@ -242,7 +243,8 @@
 		"account": "Account does not exist. Please sign up",
 		"block": "This phone/email is blocked by admin",
 		"wrongPass": "Incorrect password",
-		"fail5": "You are logged in failure 5 times. Please wait 24 hours to login again"
+		"fail5": "You are logged in failure 5 times. Please wait 24 hours to login again",
+		"messageBlockLogin": "Incorrect password (5/5). <br/> Your account has been locked, try again in 60 minutes."
 	},
 	"updatePassword": {
 		"status": "",

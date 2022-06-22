@@ -80,7 +80,7 @@
             <app-button-dialog
                     [isEnable]="!(pictureService.selfieImageComplete$ | async) || citizenId.invalid || isExistNid"
                     [contentBtn]="'selfie.continue' | translate"
-                    [width]="300"
+                    [width]="299"
                     [height]="46"
                     (click)="onSelfieContinue()">
             </app-button-dialog>
@@ -119,7 +119,7 @@
             <app-button-dialog
                     [isEnable]="false"
                     [contentBtn]="'selfie.start' | translate"
-                    [width]="300"
+                    [width]="299"
                     [height]="46"
                     (click)="startCaptureImage()">
             </app-button-dialog>

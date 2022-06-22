@@ -1,8 +1,8 @@
 <div class="header-format" [class.header-format-login]="currentAccessToken&&isShowSidebar">
     <div class="header-left">
-        <img *ngIf="currentAccessToken==null" (click)="onShowMenu($event)" class="icon-menu hidden-min-960"
+        <img *ngIf="currentAccessToken==null" (click)="onShowMenu($event)" class="icon-menu hidden-lager-screen"
              src="../../assets/images/menu-header.png">
-        <img *ngIf="currentAccessToken!=null" (click)="onShowMenuAfterAuth($event)" class="icon-menu hidden-min-960"
+        <img *ngIf="currentAccessToken!=null" (click)="onShowMenuAfterAuth($event)" class="icon-menu hidden-lager-screen"
              src="../../assets/images/menu-header.png">
         <a class="cover-icon-home" href="/auth" *ngIf="currentAccessToken!==null">
             <img class="img-icon-home" src="../../assets/images/_VOOLOLogo.png">
@@ -55,9 +55,9 @@
                                 <img class="icon-show" src="../../assets/images/avatar-nav.png">
                                 <div>{{'header.showInformation' | translate}}</div>
                             </div>
-                            <div class="box-show box-logout">
+                            <div class="box-show box-logout" (click)="logoutUser()">
                                 <img class="icon-show" src="../../assets/images/icon-logout.png">
-                                <div (click)="logoutUser()">{{'header.logout' | translate}}</div>
+                                <div>{{'header.logout' | translate}}</div>
                             </div>
                         </div>
                     </div>

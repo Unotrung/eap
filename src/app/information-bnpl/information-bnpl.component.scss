@@ -75,7 +75,7 @@
 .name-input {
   font-weight: 600;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 17px;
   font-family: "MontserratAlternates";
   margin-bottom: 16px;
   margin-top: 22px;
@@ -121,7 +121,7 @@
     height: 41px;
     border-radius: 30px;
     margin: auto;
-    margin-bottom: 13px !important;
+    margin-bottom: 24px !important;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
@@ -246,6 +246,10 @@
 .f-bold {
   font-weight: 600;
   font-family: "MontserratAlternates";
+}
+
+.f-bold-2 {
+  font-weight: 600;
 }
 
 .hidden-480 {
