@@ -111,9 +111,10 @@ hr {
 }
 
 .cover-icon-fec {
-  height: 55px;
+  height: 34.5px;
+  width: 169px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
@@ -121,6 +122,10 @@ hr {
   margin-top: 16px;
   margin-left: 24px;
   margin-right: 24px;
+  padding-left: 20px;
+  img {
+    width: 60%;
+  }
 }
 
 .under-sidebar {

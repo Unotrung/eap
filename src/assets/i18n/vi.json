@@ -277,7 +277,7 @@
 		"titleFast": "Chọn phương thức thanh toán",
 		"confirmFast": "Tiếp tục",
 		"issueDate": "Ngày tới hạn",
-		"payMoney": "Số tiền thanh toán",
+		"payMoney": "Số tiền phải thanh toán",
 		"status": "Tình trạng",
 		"action": "Hành động",
 		"viewInvoice": "Biên lai",
@@ -299,7 +299,8 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 22/06 4th"
+		"item-9": "Chính sách 22/06 5th",
+		"textDes": "Bản quyền @2022 voolo.vn <br/>Công ty Cổ phần Tư vấn Ideal Life phối hợp cùng <br/>Công ty Tài chính TNHH Ngân hàng Việt Nam Thịnh vượng SMBC"
 	},
 	"home": {
 		"content-1": "Mua sắm không giới hạn trên các sàn thương mại điện tử và hệ thống Offline",
@@ -359,8 +360,8 @@
 		"email": "Email",
 		"password": "Mật khẩu",
 		"invalidEmptyEmail": "Vui lòng nhập email",
-		"invalidEmail": "Đinh dạng Email không hợp lệ",
-		"statusSuccess": "Đã cập nhật email thành công",
+		"invalidEmail": "Định dạng Email không hợp lệ",
+		"statusSuccess": "Cập nhật email thành công",
 		"statusFail": "Cập nhật email thất bại",
 		"existEmail": "Email đã được đăng ký",
 		"invalidEmptyName": "Vui lòng nhập họ tên",

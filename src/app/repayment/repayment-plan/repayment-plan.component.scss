@@ -123,7 +123,7 @@ thead {
   height: 40px;
   font-style: normal;
   color: #000000;
-  background: #F4F6FC;
+  background: #C4D7E9;
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
@@ -143,11 +143,12 @@ tbody {
 
 tbody tr {
   height: 50px;
+  background: #FFFFFF;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 tbody tr:hover {
-  background-color: #CBDAEC;
+  background: rgba(154, 147, 147, 0.1);
 }
 
 td {
@@ -186,8 +187,8 @@ a {
 .status-text {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 10px;
-  line-height: 16px;
+  font-size: 12px;
+  line-height: 15px;
 }
 
 .btn-pay {
