@@ -20,6 +20,8 @@ export class GetOtpForgotPinBnplComponent implements OnInit {
     messageErr: string = '';
     otp: string = '';
     phone: string = '';
+    countFail = 0;
+    messageErrExp = '';
 
     constructor(public router: Router,
                 public authenticationService: AuthenticationService,
@@ -40,22 +42,35 @@ export class GetOtpForgotPinBnplComponent implements OnInit {
         this.accountBnplService.verifyOtp({phone: phone, nid: nid, otp: this.otp}).
         subscribe(next => {
             if (next.status){
-                this.messageErr = '';
+                this.resetMessErr();
                 this.authenticationService.tokenOtp$.next(next.token);
                 this.router.navigate(['/reset-pin'])
             }
         },error => {
-            this.messageErr = '';
-            console.log(error);
+            this.resetMessErr();
             if (error.error.statusCode == 3000){
-                this.messageErr = this.translateService.instant('forgotPin.errorOtpExp');
+                this.messageErrExp = this.translateService.instant('forgotPin.errorOtpExp');
             } else if (error.error.statusCode == 4000) {
-                this.messageErr = this.translateService.instant('forgotPin.errorOtpWrong');
+                if (error.error.countFail<5) {
+                    this.countFail = error.error.countFail;
+                    this.messageErr = this.translateService.instant('forgotPin.errorOtpWrong');
+                } else if (error.error.countFail ===5) {
+                    this.countFail = error.error.countFail;
+                    this.messageErr = this.translateService.instant('forgotPin.blockOtp');
+                }
+            }else if (error.error.statusCode == 1004) {
+                this.countFail = error.error.countFail;
+                this.messageErr = this.translateService.instant('forgotPin.blockOtp');
             } else {
                 this.router.navigate(['/error'])
             }
 
         })
+    }
+
+    resetMessErr(){
+        this.messageErr = '';
+        this.messageErrExp = ''
     }
 
     onCodeChanged(pin: string) {

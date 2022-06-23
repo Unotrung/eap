@@ -28,31 +28,57 @@ export class NotificationTableComponent implements OnInit {
       id: 1,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Thanh toán",
-      time: "10:45 AM"
+      time: "10:45 AM",
+      isPin: false
     },
     {
       id: 2,
-      content: "LUCY được nhận voucher chạy grab - 20/2/2022",
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Giao dịch",
-      time: "10:45 AM"
+      time: "10:45 AM",
+      isPin: false
     },
     {
       id: 3,
-      content: "LUCY được nhận voucher chạy grab - 20/2/2022",
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Mã giảm giá",
-      time: "10:45 AM"
+      time: "10:45 AM",
+      isPin: false
     },
     {
       id: 4,
-      content: "LUCY được nhận voucher chạy grab - 20/2/2022",
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Tin tức",
-      time: "10:45 AM"
+      time: "10:45 AM",
+      isPin: false
     },
     {
       id: 5,
-      content: "LUCY được nhận voucher chạy grab - 20/2/2022",
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "khác",
-      time: "10:45 AM"
+      time: "10:45 AM",
+      isPin: false
+    },
+    {
+      id: 6,
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
+      type: "Thanh toán",
+      time: "10:45 AM",
+      isPin: false
+    },
+    {
+      id: 7,
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
+      type: "Giao dịch",
+      time: "10:45 AM",
+      isPin: false
+    },
+    {
+      id: 8,
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
+      type: "Mã giảm giá",
+      time: "10:45 AM",
+      isPin: false
     }
   ]
   errorMgs: string = '';
@@ -81,17 +107,18 @@ export class NotificationTableComponent implements OnInit {
     
   }
 
-  pinNote(i: number) {
-    if (this.id === 0) {
-      this.id = i;
-      this.isShowStar = true;
-    } else if (this.id === i) {
-      this.id = 0;
-      this.isShowStar = false;
-    } else if (this.id !== i) {
-      this.id = i;
-      this.isShowStar = true;
+  pinNote(note: any) {
+    if (note.isPin) {
+      this.updateNote(false,note);
+    } else {
+      this.updateNote(true,note);
     }
+  }
+  updateNote(isPin:boolean, note: any) {
+    let newNote = {...note,isPin: isPin};
+    let newListNote = [...this.listNote];
+    newListNote.splice(note.id-1,1,newNote);
+    this.listNote = [...newListNote];
   }
   // onSwipe(evt) {
   //   const x = Math.abs(evt.deltaX) > 40 ? (evt.deltaX > 0 ? 'right' : 'left'):'';

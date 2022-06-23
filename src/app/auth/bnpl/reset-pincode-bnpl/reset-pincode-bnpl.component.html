@@ -33,7 +33,7 @@
                                 #codeInput>
                     </code-input>
                     <div class="text-invalid" >
-                        <label *ngIf="(pinCode !== verifyPinCode) && verifyPinCode.length == 4">{{msgVerifyError|translate}}</label>
+                        <label *ngIf="msgVerifyError!==''">{{msgVerifyError|translate}}</label>
                     </div>
                 </div>
             </form>

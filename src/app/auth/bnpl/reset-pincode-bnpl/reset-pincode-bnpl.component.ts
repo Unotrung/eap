@@ -39,10 +39,12 @@ export class ResetPincodeBnplComponent implements OnInit {
 
     onCodeCompleted(code: string) {
         this.pinCode = code;
+        this.resetMsg();
     }
 
     onCodeChangedVerify(code: string) {
         this.verifyPinCode = code;
+        this.resetMsg();
         this.resetMsg();
     }
 
@@ -67,6 +69,7 @@ export class ResetPincodeBnplComponent implements OnInit {
                 this.msgStt = 'fail';
             })
         } else {
+            this.verifyPinCode = '';
             this.codeInput.reset();
             this.msgVerifyError = this.translateService.instant('forgotPin.ErrVerifyPin')
         }

@@ -61,6 +61,7 @@ export class ChangePincodeComponent implements OnInit {
   submitUpdatePin() {
     if (this.newPin !== this.verifyPin) {
       this.msgVerifyError = this.translateService.instant('changePin.validWrong');
+      this.verifyPin = '';
       this.codeInput.reset();
       return
     }

@@ -69,7 +69,7 @@
     <div><img class="icon-footer" src="../../assets/images/logoHP.png"></div>
 
     <div class="footer-1">
-        <div class="text-des hidden-phone" [innerHTML]="'footer.textDes' | translate"></div>
+        <div class="text-des" [innerHTML]="'footer.textDes' | translate"></div>
         <div class="box-lang">
             <div #langButton class="choose-language" (click)="isShowLang = !isShowLang">
                 <img class="icon-union" src="../../assets/images/union.png">
@@ -82,7 +82,9 @@
                          (click)="selectLanguage(lg,$event)"
                          *ngFor="let lg of supportLanguage, let i = index"
                          [style]="i==0?'border-radius: 10px 10px 0px 0px':i==supportLanguage.length-1?
-                                                        'border-radius: 0px 0px 10px 10px':null">
+                                                        'border-radius: 0px 0px 10px 10px':null"
+                         [class.shadow-bt]="i==0"
+                         [class.choose-bgr]="langChoose===listShowLanguage[i]">
                         {{listShowLanguage[i]}}
                     </div>
                 </div>

@@ -80,7 +80,7 @@
 }
 .no-page {
   height: 30px;
-  padding-left: 20px;
+  padding-left: 32px;
   padding-right: 10px;
   font-weight: 400;
   font-size: 14px;
@@ -195,6 +195,10 @@ a {
   line-height: 14px;
   text-transform: uppercase;
   color: #22256A;
+  button {
+    background-color: #EDDFCF;
+    color: #6A5644;
+  }
 }
 
 .star-icon {
@@ -231,7 +235,7 @@ a {
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 18px;
-  margin-right: 20px;
+  margin-right: 32px;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
@@ -309,4 +313,24 @@ a {
   font-weight: 700;
   font-size: 10px;
   line-height: 12px;
+}
+
+.dd {
+  background-color: #E3BFEE !important;
+  color: #5F316B !important;
+}
+
+.mgg {
+  background-color: #E4BDBC !important;
+  color: #602E2D !important;
+}
+
+.tt {
+  background-color: #C6EEF6 !important;
+  color: #3B6975 !important;
+}
+
+.tht {
+  background-color: #B4B7EC !important;
+  color: #22256A !important;
 }

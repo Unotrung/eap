@@ -364,8 +364,8 @@
     height: 469px;
     padding: 72px 120px 120px 120px;
     @media screen and(max-width: 1280px){
-      padding: 40px 88px;
-      height: 400px;
+      padding: 72px 88px;
+      height: 460px;
     }
     @media screen and(max-width: 1140px){
       padding: 72px;
@@ -517,8 +517,12 @@
   }
 
   .name-language:hover {
-    background: #E8E8E8;
+    background: #F0F0F0;
     font-weight: 400;
+  }
+
+  .choose-bgr {
+    background: #F0F0F0 !important;
   }
 
   .footer-2 {
@@ -682,8 +686,8 @@
 
   .content-footer-phone {
     width: 100%;
-    height: 135px;
-    margin-top: 17px;
+    height: 108px;
+    margin-top: 56px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -708,10 +712,20 @@
     font-size: 20px;
     line-height: 25px;
     color: #FFFFFF;
+    @media screen and(max-width: 480px) {
+      font-size: 10px;
+      line-height: 15px;
+      color: rgba(254, 254, 255, 0.8);
+      padding-top: 1px;
+    }
   }
 
   .box-lang {
     height: 100%;
     display: flex;
     align-items: end;
+  }
+
+  .shadow-bt {
+    box-shadow: inset 0px -1px 0px #E4E4E4;
   }

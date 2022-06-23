@@ -23,8 +23,8 @@
                         {{invalid.message}}
                     </div>
                 </div>
-                <div class="err" *ngIf="!isLoggedIn&&errorMessageAccount !==''">
-                    {{errorMessageAccount | translate}}
+                <div class="err" *ngIf="!isLoggedIn&&errorMessageAccount !==''"
+                     [innerHTML]="errorMessageAccount | translate">
                 </div>
             </div>
             <div class="name-input">{{'login.password' | translate}}</div>
@@ -61,7 +61,7 @@
                 </div>
                 <a class="link-forget-pw" (click)="openDialogForgetPassword()">{{'login.forgotPass' | translate}}</a>
             </div>
-            <div>
+            <div *ngIf="!isShowButtonExit">
                 <app-button-dialog class="hidden-480" [contentBtn]="'login.content-btn'|translate"
                                    [isEnable]="userForm.invalid"
                                    [width]="299"
@@ -73,8 +73,21 @@
                                    [height]="40">
                 </app-button-dialog>
             </div>
-
         </form>
+        <div *ngIf="isShowButtonExit">
+            <app-button-dialog class="hidden-480" [contentBtn]="'login.cancel'|translate"
+                               [isEnable]="false"
+                               [width]="299"
+                               [height]="45"
+                               (click)="close()">
+            </app-button-dialog>
+            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'login.cancel'|translate"
+                               [isEnable]="false"
+                               [width]="200"
+                               [height]="40"
+                               (click)="close()">
+            </app-button-dialog>
+        </div>
     </div>
     <div class="link-register"><a (click)="openDialogRegister()">{{'login.register' | translate}}</a></div>
     <app-item-close-dialog class="close-popup" (click)="close()"></app-item-close-dialog>

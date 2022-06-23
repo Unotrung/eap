@@ -54,18 +54,19 @@
                 </div>
             </td>
             <td style="position: relative; width: 50px">
-                <img (click)="pinNote(note.id)" class="star-icon" src="../../../assets/images/star-no-pin.png">
-                <img (click)="pinNote(note.id)" class="star-icon" *ngIf="isShowStar&&id==note.id" class="star-icon"
+                <img (click)="pinNote(note)" class="star-icon" src="../../../assets/images/star-no-pin.png">
+                <img (click)="pinNote(note)" class="star-icon" *ngIf="note.isPin" class="star-icon"
                      src="../../../assets/images/star-pin.png">
             </td>
             <td>
                 {{note.content}}
             </td>
             <td>
-                <button class="btn-action" [style]="note.type === 'Giao dịch'?'background: #E3BFEE':
-                                     note.type === 'Mã giảm giá'? 'background: #E4BDBB':
-                                      note.type === 'Tin tức'? 'background: #C6EEF6':
-                                      note.type === 'Thanh toán'? 'background: #B4B7EC':'background: #EDDFCF'">
+                <button class="btn-action"
+                        [class.dd]="note.type === 'Giao dịch'"
+                        [class.mgg]="note.type === 'Mã giảm giá'"
+                        [class.tt]="note.type === 'Tin tức'"
+                        [class.tht]="note.type === 'Thanh toán'">
                     {{note.type}}
                 </button>
             </td>
@@ -89,10 +90,10 @@
     <div class="item-box" *ngFor="let note of listNote, let i = index">
         <div class="content-mobile">{{note.content}}</div>
         <button class="btn-mobile"
-                [style]="note.type === 'Giao dịch'?'background: #E3BFEE':
-                                     note.type === 'Mã giảm giá'? 'background: #E4BDBB':
-                                      note.type === 'Tin tức'? 'background: #C6EEF6':
-                                      note.type === 'Thanh toán'? 'background: #B4B7EC':'background: #EDDFCF'">
+                [class.dd]="note.type === 'Giao dịch'"
+                [class.mgg]="note.type === 'Mã giảm giá'"
+                [class.tt]="note.type === 'Tin tức'"
+                [class.tht]="note.type === 'Thanh toán'">
             {{note.type}}
         </button>
     </div>

@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
     value = 50;
     phoneAfterReset: string = '';
     user:User = null;
+    isShowButtonExit = false;
 
     constructor(public dialogRef: MatDialogRef<LoginComponent>,
                 @Inject(MAT_DIALOG_DATA) public data: any,
@@ -96,6 +97,8 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 } else if (err.error.statusCode == 1001) {
                     this.errorMessageAccount = this.translateService.instant('login.block');
+                    this.isShowButtonExit = true;
+                    console.log("isbtn", this.isShowButtonExit)
                     this.loading = false;
                 }else if (err.error.statusCode == 1003) {
                     this.errorMessagePass = this.translateService.instant('login.wrongPass');
@@ -103,6 +106,8 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 } else if (err.error.statusCode == 1004) {
                     this.errorMessageAccount = this.translateService.instant('login.fail5');
+                    this.isShowButtonExit = true;
+                    console.log("isbtn", this.isShowButtonExit)
                     this.loading = false;
                 }
             }
@@ -126,6 +131,7 @@ export class LoginComponent implements OnInit {
         setTimeout(() => {
             this.dialogRef.close();
         }, 100);
+        this.isShowButtonExit = false;
     }
 
     openDialogForgetPassword() {

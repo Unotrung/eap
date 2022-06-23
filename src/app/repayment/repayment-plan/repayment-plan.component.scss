@@ -14,6 +14,7 @@
   padding-bottom: 40px;
   margin-bottom: 40px;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .header-table {
@@ -32,10 +33,14 @@
   font-size: 32px;
   line-height: 39px;
   color: #000000;
+  position: absolute;
+  top: 27px;
+  left: 40px;
   @media screen and(max-width: 480px){
     font-size: 20px;
     line-height: 24px;
     margin: 20px;
+    top: 72px
   }
 }
 
@@ -81,7 +86,7 @@
 }
 .no-page {
   height: 30px;
-  padding-left: 20px;
+  padding-left: 32px;
   padding-right: 10px;
   font-weight: 400;
   font-size: 14px;
@@ -116,7 +121,7 @@ select {
 
 table {
   width: 100%;
-  margin-top: 18px;
+  margin-top: 10.5px;
 }
 
 thead {
@@ -213,7 +218,7 @@ a {
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 18px;
-  margin-right: 20px;
+  margin-right: 32px;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
@@ -262,6 +267,7 @@ a {
 
 .container-mobile {
   min-height: 100vh;
+  margin-top: 65px;
 }
 
 .cover-item-repayment {

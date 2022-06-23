@@ -1,6 +1,7 @@
 <div class="container-transaction hidden-480">
+    <div class="name-table">{{'repayment.titleTable' | translate}}</div>
     <div class="header-table">
-        <div class="name-table">{{'repayment.titleTable' | translate}}</div>
+        <div></div>
         <div class="action-page">
             <div>
                 <div (click)="closeMore()" class="selection-more-records">
@@ -72,7 +73,7 @@
                      (click)="sort('status')"
                      src="../../../assets/images/angle-down.png">
             </td>
-            <td>{{'repayment.viewInvoice' | translate}}</td>
+            <td style="width: 96px">{{'repayment.viewInvoice' | translate}}</td>
         </tr>
         </thead>
         <tbody *ngFor="let tran of listRepayment">
@@ -81,8 +82,9 @@
 <!--            <td>{{tran.provider}}</td>-->
             <td style="font-weight: 700 !important;">{{tran.paidMoney | moneyStyle}} đ</td>
             <td class="status-text"
-                [style]="tran.status==='Chờ thanh toán'?'color:#EE9E3F':tran.status==='Quá hạn thanh toán'?
-                'color:#EE4D2D':null">
+                [style]="tran.status==='Chờ thanh toán'?'color:#EE9E3F':
+                tran.status==='Quá hạn thanh toán'?'color:#EE4D2D':
+                tran.status==='Đã thanh toán'?'color:#8A8A8A':null">
                 {{tran.status}}
             </td>
             <td>

@@ -74,7 +74,9 @@
 		"errorOtpExp": "OTP has expired",
 		"errorOtpWrong": "OTP is incorrect",
 		"ErrVerifyPin": "PIN code does not match",
-		"labelOtp": "Please enter OTP"
+		"labelOtp": "Please enter OTP",
+		"blockOtp": "Incorrect OTP code (5/5). Please try again in 60 minutes.",
+		"confirmOtp": "Continue"
 	},
 	"forgotPass": {
 		"confirmOtp": "Continue",
@@ -92,7 +94,7 @@
 		"contentStt": "Update your password successfully!",
 		"required": "Please enter information",
 		"pattern": "Invalid phone number/Email",
-		"blockOtp": "Incorrect OTP code (5/5). Please try again in 24 hours.",
+		"blockOtp": "Incorrect OTP code (5/5). Please try again in 60 minutes.",
 		"ExpiredOtp": "OTP has expired",
 		"validOtp": "OTP code no larger than 6 characters",
 		"wrongPass": "Password does not match"
@@ -231,6 +233,7 @@
 		"BlockEmail": "Your email has been locked due to incorrect OTP input many times, please try again in 24h!"
 	},
 	"login": {
+		"cancel": "Cancel",
 		"title": "Sign In",
 		"email_phone": "Phone number/Email",
 		"password": "Password",

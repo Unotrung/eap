@@ -6,10 +6,10 @@
             </div>
             <div class="action">
                 <div class="btn">
-                    <button [style]="x.type === 'Giao dịch'?'background-color: #E3BFEE !important':
-                                     x.type === 'Mã giảm giá'? 'background-color: #E4BDBB !important':
-                                      x.type === 'Tin tức'? 'background-color: #C6EEF6 !important':
-                                      x.type === 'Thanh toán'? 'background-color: #B4B7EC !important':'background: #EDDFCF'">
+                    <button [class.dd]="x.type === 'Giao dịch'"
+                            [class.mgg]="x.type === 'Mã giảm giá'"
+                            [class.tt]="x.type === 'Tin tức'"
+                            [class.tht]="x.type === 'Thanh toán'">
                         {{x.type}}
                     </button>
                 </div>

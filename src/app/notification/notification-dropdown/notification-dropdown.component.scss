@@ -93,6 +93,7 @@
   align-items: center;
   text-align: center;
   button {
+    font-family: "Montserrat";
     font-size: 12px;
     line-height: 14px;
     padding: 0px;
@@ -100,8 +101,30 @@
     height: 26px;
     font-weight: 700;
     border-radius: 5px;
-    color: #22256A;
     text-transform: uppercase;
+    background-color: #EDDFCF;
+    color: #6A5644;
   }
 
 }
+
+.dd {
+  background-color: #E3BFEE !important;
+  color: #5F316B !important;
+}
+
+.mgg {
+  background-color: #E4BDBC !important;
+  color: #602E2D !important;
+}
+
+.tt {
+  background-color: #C6EEF6 !important;
+  color: #3B6975 !important;
+}
+
+.tht {
+  background-color: #B4B7EC !important;
+  color: #22256A !important;
+}
+

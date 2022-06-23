@@ -16,25 +16,25 @@ export class NotificationDropdownComponent implements OnInit {
     },
     {
       id: 2,
-      content: "LUCY được nhận voucher chạy grab - 20/2/2022",
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Giao dịch",
       time: "10:45 AM"
     },
     {
       id: 3,
-      content: "LUCY được nhận voucher chạy grab - 20/2/2022",
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Mã giảm giá",
       time: "10:45 AM"
     },
     {
       id: 4,
-      content: "LUCY được nhận voucher chạy grab - 20/2/2022",
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Tin tức",
       time: "10:45 AM"
     },
     {
       id: 5,
-      content: "LUCY được nhận voucher chạy grab - 20/2/2022",
+      content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "khác",
       time: "10:45 AM"
     }

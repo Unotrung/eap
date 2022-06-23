@@ -1,22 +1,22 @@
 <div class="container-sidebar">
     <div fxLayout = "row" [className]="itemChoose=='infoEap'?'acc-infor-current':'acc-infor'" (click)="getInformationAccountEap()">
-        <div fxFlex = '18%' class="item" ><img src="../../assets/images/eapAc.png"></div>
+        <div fxFlex = '14%' class="item" ><img src="../../assets/images/eapAc.png"></div>
         <div fxFlex = ''><p>{{'sideBar.eapInformation' | translate}}</p></div>
     </div>
     <div fxLayout = "row" [className]="itemChoose=='registerBNPL'?'acc-infor-current':'acc-infor'" (click)="getInformationAccountBnpl()">
-        <div fxFlex = '18%' class="item" ><img src="../../assets/images/fingerprint.png"></div>
+        <div fxFlex = '14%' class="item" ><img src="../../assets/images/fingerprint.png"></div>
         <div fxFlex = ''><p [innerHTML]="'sideBar.bnplInformation' | translate"></p></div>
     </div>
 
     <div fxLayout = "row" [className]="itemChoose=='transaction'?'acc-infor-current':'acc-infor'" (click)="getListTransaction()">
-        <div fxFlex = '18%' class="item" ><img src="../../assets/images/clock.png"></div>
+        <div fxFlex = '14%' class="item" ><img src="../../assets/images/clock.png"></div>
         <div fxFlex = ''><p>{{'sideBar.transaction' | translate}}</p></div>
     </div>
 
     <div fxLayout = "row" [className]="itemChoose=='repayment'?'acc-infor-current':'acc-infor'">
-        <div fxFlex = '18%' class="item" ><img src="../../assets/images/Star.png"></div>
+        <div fxFlex = '14%' class="item" ><img src="../../assets/images/Star.png"></div>
         <div fxFlex = '75%'  (click)="getRepaymentPlan()" ><p>{{'sideBar.repayment' | translate}}</p></div>
-        <div fxFlex = '' class="item"><img
+        <div fxFlex = '' class="item" style="margin-left: 2.5px"><img
                 (click)="getRepaymentPlan(); $event.stopPropagation()"
                  [style]="showRepayment?'transform: rotate(-180deg)':null"
                  class="icon-drop" src="../../assets/images/angle-down.png">
@@ -27,8 +27,8 @@
         <div (click)="getListRepaymentFec()" class="cover-icon-fec">
             <img src="../../assets/images/fec-icon-sidebar.png">
         </div>
-<!--        <div class="cover-icon-fec"></div>-->
-<!--        <div class="cover-icon-fec"></div>-->
+        <div class="cover-icon-fec"></div>
+        <div class="cover-icon-fec"></div>
     </div>
 </div>
-<div class="under-sidebar">31/05/@2022</div>
+<div class="under-sidebar">@2022</div>

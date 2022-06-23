@@ -1452,7 +1452,7 @@
     @media screen and(max-width: 480px) {
       font-size: 16px;
       line-height: 20px;
-      height: 56px;
+      height: 64px;
     }
 
   }
@@ -1502,11 +1502,11 @@
     @media screen and(max-width: 480px) {
       font-size: 14px;
       line-height: 17px;
-      height: 70px;
+      height: 53px;
       text-overflow: ellipsis;
       white-space: normal;
       display: -webkit-box !important;
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       margin-bottom: 16px;
     }
@@ -1533,6 +1533,9 @@
 
     span {
       margin-right: 30px;
+      @media screen and(max-width: 480px) {
+        margin-right: 12px;
+      }
     }
 
     img {

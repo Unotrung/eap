@@ -225,3 +225,7 @@ input:focus {
   filter: invert(76%) sepia(72%) saturate(648%) hue-rotate(106deg) brightness(88%) contrast(77%) !important;
 }
 
+.cdk-overlay-dark-backdrop {
+  background: rgba(7, 32, 55, 0.4) !important;
+}
+
