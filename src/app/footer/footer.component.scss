@@ -503,7 +503,7 @@
     align-items: center;
     height: 54px;
     padding: 20px;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     @media screen and(max-width: 960px){
@@ -517,12 +517,13 @@
   }
 
   .name-language:hover {
+    font-weight: 600;
     background: #F0F0F0;
-    font-weight: 400;
   }
 
   .choose-bgr {
     background: #F0F0F0 !important;
+    font-weight: 600 !important;
   }
 
   .footer-2 {

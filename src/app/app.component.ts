@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     },0)
 
 
-    this.bnIdle.startWatching(3600).subscribe((res) => {
+    this.bnIdle.startWatching(36000).subscribe((res) => {
       if (res) {
         this.authenticationService.logout();
       }

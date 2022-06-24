@@ -49,7 +49,7 @@
             <img src="../../../../assets/images/note-i.png">
             <div>{{'changePin.note'|translate}}</div>
         </div>
-        <div class="cover-btn">
+        <div class="cover-btn-try">
             <button (click)="submitUpdatePin()"
                     [disabled]="currentPin.length<4||newPin.length<4||verifyPin.length<4"
                     [style]="currentPin.length==4&&newPin.length==4&&verifyPin.length==4?'background:#000000':null">

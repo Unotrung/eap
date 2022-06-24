@@ -22,9 +22,9 @@
 		"sttSuccess": "Cập nhật mã PIN thành công",
 		"sttFail": "Cập nhật mã PIN không thành công",
 		"sttNote": "Vui lòng thử lại hoặc liên hệ 1900xxx để được hỗ trợ.",
+		"tryAgain": "Thử lại",
 		"validWrong": "Mã PIN không trùng khớp",
-		"validOverlap": "Mã PIN mới trùng với mã PIN cũ",
-		"tryAgain": "Thử lại"
+		"validOverlap": "Mã PIN mới trùng với mã PIN cũ"
 	},
 	"provider": {
 		"title": "Chọn nhà cung cấp BNPL",
@@ -34,9 +34,12 @@
 	"takePhotoNid": {
 		"title": "Chào mừng bạn đến với quy trình đăng ký mua trước trả sau",
 		"continue": "Tiếp tục",
+		"start": "Bắt đầu",
 		"labelNid": "Chụp ảnh CMND/CCCD 2 mặt",
 		"labelBefore": "Ảnh mặt trước",
 		"labelAfter": "Ảnh mặt sau",
+		"msgSttFront": "Chụp ảnh mặt trước thành công",
+		"noteToBack": "Lật mặt sau của card để tiếp tục chụp ảnh",
 		"guideTitle": "Hướng dẫn chụp đầy đủ 2 ảnh:",
 		"guide1": "Nhấn vào nút màu trắng để lần lượt chụp hình CMND/CCCD mặt trước và sau."
 	},
@@ -62,6 +65,7 @@
 		"continue": "Tiếp tục",
 		"titleOtp": "Nhập OTP",
 		"labelOtp-2": "Mã OTP đã được gửi đến số điện thoại ",
+		"confirmOtp": "Tiếp tục",
 		"titleSetPin": "Cài đặt mã PIN của bạn",
 		"labelNewPin": "Mã PIN",
 		"labelVerifyPin": "Nhập lại mã PIN",
@@ -73,17 +77,16 @@
 		"PhoneWrong": "Số điện thoại chưa được đăng ký",
 		"errorOtpExp": "Mã OTP hết hiệu lực",
 		"errorOtpWrong": "Mã OTP không chính xác",
-		"ErrVerifyPin": "Mã PIN không trùng khớp",
-		"labelOtp": "Vui lòng nhập mã OTP",
 		"blockOtp": "Mã OTP không chính xác (5/5). Vui lòng thử lại sau 60 phút.",
-		"confirmOtp": "Tiếp tục"
+		"ErrVerifyPin": "Mã PIN không trùng khớp",
+		"labelOtp": "Vui lòng nhập mã OTP"
 	},
 	"forgotPass": {
-		"confirmOtp": "Xác nhận",
 		"noOtp": "Không nhận được OTP",
 		"otpAgain": "Gửi lại OTP",
 		"inputOtp": "Nhập OTP",
 		"wrongOtp": "Mã OTP không chính xác",
+		"confirmOtp": "Xác nhận",
 		"title": "Cấp lại mật khẩu",
 		"phone": "Số điện thoại/Email",
 		"noteExist": "Tài khoản không tồn tại",
@@ -142,6 +145,13 @@
 			"faceDetectedDescription": "Bạn đang chụp ảnh chân dung để đăng ký tài khoản (KYC). Vui lòng sử dụng số điện thoại và thiết bị của bạn.",
 			"faceCaptureReviewTitle": "Ảnh của bạn có rõ không?",
 			"faceCaptureReviewBottomDescription": "Hãy kiểm tra ảnh của bạn"
+		},
+		"doc": {
+			"docCaptureBottomDescription": "Hình ảnh cần nằm trong khung hình và không bị chói",
+			"docCaptureReviewTitle": "Hãy kiểm tra lại ảnh",
+			"docReviewBottomDescription": "",
+			"docCaptureTitleFront": "Chụp hình CMND/ CCCD mặt trước",
+			"docCaptureTitleBack": "Chụp hình CMND/ CCCD mặt sau"
 		},
 		"father": "Bố",
 		"mother": "Mẹ",
@@ -233,12 +243,13 @@
 		"BlockEmail": "Email bạn đã bị khoá do nhập sai OTP nhiều lần,vui lòng thử lại sau 24h!"
 	},
 	"login": {
-		"cancel": "Thoát",
 		"title": "Đăng nhập",
 		"email_phone": "Số điện thoại/Email",
 		"password": "Mật khẩu",
+		"messageBlockLogin": "Mật khẩu không chính xác (5/5). <br/> Tài khoản của bạn đã bị khóa, thử lại sau 60 phút.",
 		"forgotPass": "Quên mật khẩu?",
 		"content-btn": "Đăng nhập",
+		"cancel": "Thoát",
 		"register": "Đăng ký",
 		"msgEmptyPhone": "Vui lòng nhập số điện thoại hoặc email",
 		"pattern": "Đinh dạng số điện thoại/email không hợp lệ",
@@ -246,8 +257,7 @@
 		"account": "Tài khoản chưa tồn tại. Vui lòng đăng ký",
 		"block": "Mật khẩu không chính xác (5/5). <br/> Tài khoản của bạn đã bị khóa, thử lại sau 60 phút.",
 		"wrongPass": "Mật khẩu không chính xác",
-		"fail5": "Mật khẩu không chính xác (5/5). <br/> Tài khoản của bạn đã bị khóa, thử lại sau 60 phút.",
-		"messageBlockLogin": "Mật khẩu không chính xác (5/5). <br/> Tài khoản của bạn đã bị khóa, thử lại sau 60 phút."
+		"fail5": "Mật khẩu không chính xác (5/5). <br/> Tài khoản của bạn đã bị khóa, thử lại sau 60 phút."
 	},
 	"updatePassword": {
 		"status": "Bạn đã đổi mật khẩu thành công!",
@@ -294,6 +304,7 @@
 		"underTitleFast": "Mua trước Trả sau cùng"
 	},
 	"footer": {
+		"textDes": "Bản quyền @2022 voolo.vn <br/>Công ty Cổ phần Tư vấn Ideal Life phối hợp cùng <br/>Công ty Tài chính TNHH Ngân hàng Việt Nam Thịnh vượng SMBC",
 		"item-1": "Về chúng tôi",
 		"item-2": "Cơ hội nghề nghiệp",
 		"item-3": "Báo chí nói về VOOLO",
@@ -302,8 +313,7 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 24/06 1st",
-		"textDes": "Bản quyền @2022 voolo.vn <br/>Công ty Cổ phần Tư vấn Ideal Life phối hợp cùng <br/>Công ty Tài chính TNHH Ngân hàng Việt Nam Thịnh vượng SMBC"
+		"item-9": "Chính sách 24/06 2nd"
 	},
 	"home": {
 		"content-1": "Mua sắm không giới hạn",

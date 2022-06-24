@@ -22,9 +22,9 @@
 		"sttSuccess": "Update PIN code successfully!",
 		"sttFail": "Update PIN code unsuccessfully!",
 		"sttNote": "Please contact hotline 1900xxx for more details.",
+		"tryAgain": "Try again",
 		"validWrong": "PIN code does not match",
-		"validOverlap": "PIN code does not match",
-		"tryAgain": "Try again"
+		"validOverlap": "PIN code does not match"
 	},
 	"provider": {
 		"title": "",
@@ -34,9 +34,12 @@
 	"takePhotoNid": {
 		"title": "",
 		"continue": "",
+		"start": "Start",
 		"labelNid": "",
 		"labelBefore": "",
 		"labelAfter": "",
+		"msgSttFront": "",
+		"noteToBack": "",
 		"guideTitle": "",
 		"guide1": ""
 	},
@@ -62,6 +65,7 @@
 		"continue": "Continue",
 		"titleOtp": "Enter OTP",
 		"labelOtp-2": "OTP was sent to to phone ",
+		"confirmOtp": "Continue",
 		"titleSetPin": "Enter PIN code",
 		"labelNewPin": "Enter new PIN Code",
 		"labelVerifyPin": "Retype new PIN Code",
@@ -73,17 +77,16 @@
 		"PhoneWrong": "Phone number has not been registered",
 		"errorOtpExp": "OTP has expired",
 		"errorOtpWrong": "OTP is incorrect",
-		"ErrVerifyPin": "PIN code does not match",
-		"labelOtp": "Please enter OTP",
 		"blockOtp": "Incorrect OTP code (5/5). Please try again in 60 minutes.",
-		"confirmOtp": "Continue"
+		"ErrVerifyPin": "PIN code does not match",
+		"labelOtp": "Please enter OTP"
 	},
 	"forgotPass": {
-		"confirmOtp": "Continue",
 		"noOtp": "Not received OTP yet",
 		"otpAgain": "Re-send OTP",
 		"inputOtp": "OTP code",
 		"wrongOtp": "OTP is incorrect",
+		"confirmOtp": "Continue",
 		"title": "Renew password",
 		"phone": "Phone number/Email",
 		"noteExist": "Account does not exist",
@@ -142,6 +145,13 @@
 			"faceDetectedDescription": "",
 			"faceCaptureReviewTitle": "Is your face fully visible, and not blurred?",
 			"faceCaptureReviewBottomDescription": "Please Review if your face is fully visible"
+		},
+		"doc": {
+			"docCaptureBottomDescription": "Make sure your document is without any glare and is fully inside",
+			"docCaptureReviewTitle": "Review your photo",
+			"docReviewBottomDescription": "",
+			"docCaptureTitleFront": "Capture front side Id Card",
+			"docCaptureTitleBack": "Capture back side Id Card"
 		},
 		"father": "Father",
 		"mother": "Mother",
@@ -233,12 +243,13 @@
 		"BlockEmail": "Your email has been locked due to incorrect OTP input many times, please try again in 24h!"
 	},
 	"login": {
-		"cancel": "Cancel",
 		"title": "Sign In",
 		"email_phone": "Phone number/Email",
 		"password": "Password",
+		"messageBlockLogin": "Incorrect password (5/5). <br/> Your account has been locked, try again in 60 minutes.",
 		"forgotPass": "Forgot password?",
 		"content-btn": "Login",
+		"cancel": "Cancel",
 		"register": "Sign up",
 		"msgEmptyPhone": "Please enter your phone number or email",
 		"pattern": "Invalid phone number/Email",
@@ -246,8 +257,7 @@
 		"account": "Account does not exist. Please sign up",
 		"block": "This phone/email is blocked by admin",
 		"wrongPass": "Incorrect password",
-		"fail5": "You are logged in failure 5 times. Please wait 24 hours to login again",
-		"messageBlockLogin": "Incorrect password (5/5). <br/> Your account has been locked, try again in 60 minutes."
+		"fail5": "You are logged in failure 5 times. Please wait 24 hours to login again"
 	},
 	"updatePassword": {
 		"status": "",
@@ -294,6 +304,7 @@
 		"underTitleFast": "By now pay later with"
 	},
 	"footer": {
+		"textDes": "",
 		"item-1": "About us",
 		"item-2": "Careers",
 		"item-3": "Press",

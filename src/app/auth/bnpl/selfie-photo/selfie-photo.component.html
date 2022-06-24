@@ -20,10 +20,10 @@
 <!--                     class="img-invalid" src="../../../../assets/images/Warning.png">-->
             </div>
             <div class="error" appMarginTop="8" fxFlexAlign="start">
-                <label *ngIf="(citizenId.dirty || citizenId.touched) && citizenId.hasError('required')">
+                <label *ngIf="(citizenId.touched) && citizenId.hasError('required')">
                     {{'selfie.validRequired' | translate}}
                 </label>
-                <label *ngIf="(citizenId.dirty || citizenId.touched) && citizenId.hasError('pattern')">
+                <label *ngIf="(citizenId.touched) && citizenId.hasError('pattern')">
                     {{'selfie.validPattern' | translate}}
                 </label>
                 <label *ngIf="isExistNid">{{'selfie.validExist' | translate}}</label>

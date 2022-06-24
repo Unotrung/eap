@@ -130,10 +130,16 @@ export class PictureService {
 
   citizenCardShot(side: NCardSide) {
     const hvDocConfig = new this.hv.HVDocConfig();
+    hvDocConfig.docTextConfig.setDocCaptureBottomDescription(this.translate.instant('kyc.doc.docCaptureBottomDescription'))
+    hvDocConfig.docTextConfig.setDocCaptureReviewTitle(this.translate.instant('kyc.doc.docCaptureReviewTitle'))
+    hvDocConfig.docTextConfig.setDocReviewBottomDescription(this.translate.instant('kyc.doc.docReviewBottomDescription'))
     if (side === NCardSide.front) {
       hvDocConfig.setOCRDetails("https://vnm-docs.hyperverge.co/v2/nationalID", hvDocConfig.DocumentSide.FRONT, {}, {});
+      hvDocConfig.docTextConfig.setDocCaptureTitle(this.translate.instant('kyc.doc.docCaptureTitleFront'))
+
     } else if (side === NCardSide.back) {
       hvDocConfig.setOCRDetails("https://vnm-docs.hyperverge.co/v2/nationalID", hvDocConfig.DocumentSide.BACK, {}, {});
+      hvDocConfig.docTextConfig.setDocCaptureTitle(this.translate.instant('kyc.doc.docCaptureTitleBack'))
     }
 
 

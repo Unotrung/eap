@@ -169,7 +169,8 @@ input:focus {
   }
 }
 .hv-modal-footer {
-  display: none !important;
+  position: unset !important;
+  margin: auto !important;
 }
 .hv-liveness-face-found {
   border-width: 6px !important;
@@ -221,8 +222,17 @@ input:focus {
   margin-left: unset !important;
 }
 
+.hv-instructions {
+}
+
 #hv-camera-capture-button .hv-icon-img {
   filter: invert(76%) sepia(72%) saturate(648%) hue-rotate(106deg) brightness(88%) contrast(77%) !important;
+}
+
+#hv-cameraholder .hv-preview-video{
+  width: 346px;
+  height: 206px;
+  border-radius: 10px;
 }
 
 .cdk-overlay-dark-backdrop {

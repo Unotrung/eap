@@ -13,6 +13,8 @@ export class TakePhotoNidComponent implements OnInit {
     side = NCardSide.front
     instruction: boolean = false
     NCardSide = NCardSide
+    isShowGuide: boolean = false;
+    isShowStatusFront: boolean = false;
 
     constructor(public pictureService: PictureService,
                 private authService: AuthenticationService,
@@ -21,9 +23,9 @@ export class TakePhotoNidComponent implements OnInit {
 
     ngOnInit() {
         this.pictureService.clearDataNid();
-        if (this.authService.step$.getValue() === 0) {
-            this.router.navigate(['/infor-bnpl']);
-        }
+        // if (this.authService.step$.getValue() === 0) {
+        //     this.router.navigate(['/infor-bnpl']);
+        // }
     }
 
     onCaptureCitizenCard() {
@@ -32,6 +34,7 @@ export class TakePhotoNidComponent implements OnInit {
         } else {
             this.pictureService.citizenCardShot(NCardSide.back);
         }
+        this.isShowGuide = false;
     }
 
     onDeleteImage(side: NCardSide) {
@@ -39,6 +42,7 @@ export class TakePhotoNidComponent implements OnInit {
     }
 
     onCitizenCardContinue() {
+        console.log("phu");
         this.router.navigate(['/register-infor-bnpl']).then()
     }
 
