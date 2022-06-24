@@ -53,7 +53,7 @@
   text-align: center;
   color: #000000;
   margin-top: 56px;
-  @media screen {
+  @media screen and(max-width: 480px){
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 4px;
@@ -297,6 +297,24 @@ a {
   align-items: center;
   @media screen and(max-width: 480px) {
     height: unset;
+  }
+}
+.cover-btn-try {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    width: 200px;
+    height: 41px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "MontserratAlternates";
   }
 }
 

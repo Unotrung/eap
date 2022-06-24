@@ -13,10 +13,13 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class InputOtpEditEapComponent implements OnInit {
     messageErr: string = '';
+    messageErrExp = '';
     loading: boolean = false;
     countDown: number = 60;
     checkCount: boolean = true;
     otp = '';
+    countFail = 0;
+
 
     constructor(public dialogRef: MatDialogRef<InputOtpEditEapComponent>,
                 @Inject(MAT_DIALOG_DATA) public data: any,
@@ -34,6 +37,7 @@ export class InputOtpEditEapComponent implements OnInit {
 
     resetMessage() {
         this.messageErr = '';
+        this.messageErrExp = '';
     }
 
     getOtpAgain() {
@@ -89,10 +93,20 @@ export class InputOtpEditEapComponent implements OnInit {
                             this.loading = false;
                         }
                     }, error => {
+                    console.log('err',error)
                         if (error.error.statusCode == 4000) {
-                            this.messageErr = this.translateService.instant('forgotPass.wrongOtp');
+                            if (error.error.countFail<5) {
+                                this.countFail = error.error.countFail;
+                                this.messageErr = this.translateService.instant('forgotPass.wrongOtp');
+                            } else if (error.error.countFail===5) {
+                                this.countFail = error.error.countFail;
+                                this.messageErr = this.translateService.instant('forgotPass.blockOtp');
+                            }
                         } else if (error.error.statusCode == 3000) {
-                            this.messageErr = this.translateService.instant('forgotPass.ExpiredOtp');
+                            this.messageErrExp = this.translateService.instant('forgotPass.ExpiredOtp');
+                        } else if (error.error.statusCode == 1004) {
+                            this.countFail = error.error.countFail;
+                            this.messageErr = this.translateService.instant('forgotPass.blockOtp');
                         }
                         this.loading = false;
                     }

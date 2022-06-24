@@ -79,6 +79,11 @@ export class ResetPincodeBnplComponent implements OnInit {
         this.msgVerifyError = '';
         this.messageError = '';
     }
+
+    changePinAgain() {
+        this.router.navigate(['/change-pin']);
+        window.location.reload();
+    }
 }
 
 

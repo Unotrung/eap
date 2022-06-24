@@ -15,6 +15,9 @@
                 <div *ngIf="messageErr != ''" class="err">
                     {{messageErr | translate}} <span *ngIf="countFail<5">({{countFail}}/5)</span>
                 </div>
+                <div *ngIf="messageErr != '' && countFail===5" class="err">
+                    {{messageErr | translate}}
+                </div>
                 <div *ngIf="messageErrExp != ''" class="err">
                     {{messageErrExp | translate}}
                 </div>

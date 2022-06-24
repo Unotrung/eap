@@ -98,16 +98,17 @@ export class LoginComponent implements OnInit {
                 } else if (err.error.statusCode == 1001) {
                     this.errorMessageAccount = this.translateService.instant('login.block');
                     this.isShowButtonExit = true;
-                    console.log("isbtn", this.isShowButtonExit)
                     this.loading = false;
                 }else if (err.error.statusCode == 1003) {
                     this.errorMessagePass = this.translateService.instant('login.wrongPass');
                     this.countFail = err.error.countFail;
+                    if (err.error.countFail ===5) {
+                        this.isShowButtonExit = true;
+                    }
                     this.loading = false;
                 } else if (err.error.statusCode == 1004) {
                     this.errorMessageAccount = this.translateService.instant('login.fail5');
                     this.isShowButtonExit = true;
-                    console.log("isbtn", this.isShowButtonExit)
                     this.loading = false;
                 }
             }

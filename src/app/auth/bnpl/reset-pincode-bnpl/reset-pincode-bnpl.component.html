@@ -2,7 +2,7 @@
 
 <div class="container-right-body" [class.container-right-body-stt]="msgStt">
     <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
-    <div [hidden] = "msgStt === 'success' || msgStt === 'fail'">
+    <div [hidden]="msgStt === 'success' || msgStt === 'fail'">
         <div class="title-register">
             {{'forgotPin.titleSetPin' | translate}}
         </div>
@@ -32,7 +32,7 @@
                                 (codeCompleted)="onCodeCompletedVerify($event)"
                                 #codeInput>
                     </code-input>
-                    <div class="text-invalid" >
+                    <div class="text-invalid">
                         <label *ngIf="msgVerifyError!==''">{{msgVerifyError|translate}}</label>
                     </div>
                 </div>
@@ -47,18 +47,26 @@
         </div>
     </div>
 
-    <div *ngIf = "msgStt === 'success'" class="status">
+    <div *ngIf="msgStt === 'success'" class="status">
         <app-status [isStatus]="true"
                     [msgStatus]="'forgotPin.sttSuccess' | translate"
                     [msgDescription]=""></app-status>
     </div>
-    <div *ngIf = "msgStt === 'fail'" class="status">
-        <app-status [isStatus]="false"
-                    [msgStatus]="'forgotPin.sttFail' | translate"
-                    [msgDescription]=""></app-status>
+    <div *ngIf="msgStt === 'fail'" class="status">
+        <div style="margin-bottom: 32px">
+            <app-status [isStatus]="false"
+                        [msgStatus]="'forgotPin.sttFail' | translate"
+                        [msgDescription]="'changePin.sttNote'|translate"></app-status>
+        </div>
+        <div class="cover-btn-try">
+            <button style="background:#000000"
+                    (click)="changePinAgain()">
+                {{'changePin.tryAgain'|translate}}
+            </button>
+        </div>
     </div>
-</div>
 
+</div>
 
 
 <!--<div class="container-update-pin">-->
