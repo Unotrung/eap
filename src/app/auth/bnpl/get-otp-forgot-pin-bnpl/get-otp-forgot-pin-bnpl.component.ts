@@ -48,6 +48,7 @@ export class GetOtpForgotPinBnplComponent implements OnInit {
             }
         },error => {
             this.resetMessErr();
+            console.log("err",error)
             if (error.error.statusCode == 3000){
                 this.messageErrExp = this.translateService.instant('forgotPin.errorOtpExp');
             } else if (error.error.statusCode == 4000) {

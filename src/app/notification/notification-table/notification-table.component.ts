@@ -55,7 +55,7 @@ export class NotificationTableComponent implements OnInit {
     {
       id: 5,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
-      type: "khác",
+      type: "Khác",
       time: "10:45 AM",
       isPin: false
     },
@@ -88,6 +88,7 @@ export class NotificationTableComponent implements OnInit {
   ngOnInit() {
     setTimeout(()=>{
       this.sidebarService.itemSelectObject$.next('');
+      this.sidebarService.showSidebar(true);
     },0)
   }
 

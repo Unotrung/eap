@@ -216,11 +216,12 @@
 
 .under-input {
   text-align: center;
-  height: 48px;
+  min-height: 48px;
+  height: auto;
   padding-top: 10px;
   width: 100%;
   @media screen and(max-width: 480px){
-    height: 32px;
+    min-height: 32px;
   }
 }
 

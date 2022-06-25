@@ -34,12 +34,12 @@
 	"takePhotoNid": {
 		"title": "",
 		"continue": "",
-		"start": "Start",
 		"labelNid": "",
 		"labelBefore": "",
 		"labelAfter": "",
 		"msgSttFront": "",
 		"noteToBack": "",
+		"start": "Start",
 		"guideTitle": "",
 		"guide1": ""
 	},
@@ -229,6 +229,8 @@
 		"required": "Please enter information",
 		"patternOtp": "OTP is incorrect",
 		"patternPass": "Password must be at least 6 characters, 1 uppercase letter, 1 number character",
+		"requiredVerify": "",
+		"patternVerify": "",
 		"wrongPass": "Password does not match",
 		"requiredName": "Please enter full name",
 		"minlengthName": "",

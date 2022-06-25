@@ -122,7 +122,7 @@
         </div>
         <div class="row-repayment">
             <div>{{'repayment.payMoney' | translate}}</div>
-            <div>{{re.paidMoney}} đ</div>
+            <div style="font-weight: 600">{{re.paidMoney | moneyStyle}} đ</div>
         </div>
         <div class="row-repayment">
             <div>{{'repayment.status' | translate}}</div>
@@ -141,5 +141,8 @@
             [contentBtn]="'repayment.pay' | translate" [isEnable]="false"
             (click)="pay()"></app-button-dialog></div>
         </div>
+    </div>
+    <div  *ngIf="errorMgs!==''" style="width: 100%;text-align: center; color: red; font-size: 16px; margin-top: 40px">
+        {{errorMgs}}!
     </div>
 </div>

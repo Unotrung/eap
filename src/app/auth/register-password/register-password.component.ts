@@ -33,6 +33,10 @@ export class RegisterPasswordComponent implements OnInit {
         {type: "required", message: this.translateService.instant('register.required')},
         {type: "pattern", message: this.translateService.instant('register.patternPass')},
     ];
+    messageInvalidVerifyPass = [
+        {type: "required", message: this.translateService.instant('register.requiredVerify')},
+        {type: "pattern", message: this.translateService.instant('register.patternVerify')},
+    ];
     msgConfirmErr: string = '';
     loading: boolean = false;
 

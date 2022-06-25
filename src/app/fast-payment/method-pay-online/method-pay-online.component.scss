@@ -189,6 +189,9 @@ a {
   justify-content: space-between;
   margin-top: 40px !important;
   margin-bottom: 40px !important;
+  @media screen and(max-width: 480px){
+    width: 80%;
+  }
 }
 
 .content-1 {
@@ -223,6 +226,18 @@ a {
 
 }
 
+.img-payYou {
+
+}
+
+.img-mono {
+  width: 77px;
+  height: 77px;
+  @media screen and(max-width: 480px){
+    width: 56px;
+    height: 56px;
+  }
+}
 .tick {
   display: flex;
   align-items: center;

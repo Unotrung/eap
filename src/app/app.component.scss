@@ -28,6 +28,9 @@ app-navbar {
 }
 .bgr-main {
   background: url("../assets/images/grd-main.png") no-repeat left 0px bottom 0px;
+  @media screen and(max-width: 480px) {
+    background: url("../assets/images/Gradient-mobile.png") no-repeat left 0px bottom 0px;
+  }
 }
 
 .right-content {

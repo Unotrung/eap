@@ -1,4 +1,5 @@
-<div class="container-sidebar-header" (click)="onCloseMenu()">
+<div class="container-sidebar-header" (click)="onCloseMenu()"
+[style]="authenticationService.currentAccessTokenValue !==null? 'height: auto': null">
     <div class="cover-item">
         <a (click)="backHomePage()" class="text-menu-home">
         {{'header.homePage' | translate}}
@@ -24,7 +25,8 @@
             {{'header.help2' | translate}}
         </a>
     </div>
-    <div class="under-menu hidden-screen-ipad">
+    <div class="under-menu hidden-screen-ipad"
+         *ngIf = "authenticationService.currentAccessTokenValue === null">
         <div class="cover-btn">
             <button class="btn-login" (click)="openDialogLogin()">
                 {{'header.login' | translate}}

@@ -34,12 +34,12 @@
 	"takePhotoNid": {
 		"title": "Chào mừng bạn đến với quy trình đăng ký mua trước trả sau",
 		"continue": "Tiếp tục",
-		"start": "Bắt đầu",
 		"labelNid": "Chụp ảnh CMND/CCCD 2 mặt",
 		"labelBefore": "Ảnh mặt trước",
 		"labelAfter": "Ảnh mặt sau",
 		"msgSttFront": "Chụp ảnh mặt trước thành công",
 		"noteToBack": "Lật mặt sau của card để tiếp tục chụp ảnh",
+		"start": "Bắt đầu",
 		"guideTitle": "Hướng dẫn chụp đầy đủ 2 ảnh:",
 		"guide1": "Nhấn vào nút màu trắng để lần lượt chụp hình CMND/CCCD mặt trước và sau."
 	},
@@ -60,7 +60,7 @@
 		"expirationDate": "Ngày hết hạn"
 	},
 	"forgotPin": {
-		"titleNid": "Số CMND/ CCCD",
+		"titleNid": "Số CMND/CCCD",
 		"labelNid": "Vui lòng nhập số CMND/CCCD",
 		"continue": "Tiếp tục",
 		"titleOtp": "Nhập OTP",
@@ -71,9 +71,9 @@
 		"labelVerifyPin": "Nhập lại mã PIN",
 		"sttSuccess": "Cập nhật mã PIN thành công",
 		"sttFail": "Cập nhật mã PIN không thành công",
-		"required": "Vui lòng nhập số CMND/ CCCD",
+		"required": "Vui lòng nhập số CMND/CCCD",
 		"pattern": "CMND/ CCCD không hợp lệ",
-		"nidWrong": "Số CMND/ CCCD chưa được đăng ký",
+		"nidWrong": "Số CMND/CCCD chưa được đăng ký",
 		"PhoneWrong": "Số điện thoại chưa được đăng ký",
 		"errorOtpExp": "Mã OTP hết hiệu lực",
 		"errorOtpWrong": "Mã OTP không chính xác",
@@ -93,9 +93,9 @@
 		"continue": "Tiếp tục",
 		"titleSetPass": "Nhập mật khẩu mới",
 		"password": "Mật khẩu",
-		"confirmPass": "Mật khẩu xác nhận",
+		"confirmPass": "Nhập lại mật khẩu",
 		"contentStt": "Cập nhật mật khẩu thành công",
-		"required": "Vui lòng nhập thông tin",
+		"required": "Vui lòng nhập mật khẩu",
 		"pattern": "Đinh dạng số điện thoại/ Email không hợp lệ",
 		"blockOtp": "Mã OTP không chính xác (5/5). Vui lòng thử lại sau 60 phút.",
 		"ExpiredOtp": "Mã OTP hết hiệu lực",
@@ -167,7 +167,7 @@
 	"selfie": {
 		"labelNid": "Vui lòng nhập CMND/CCCD",
 		"validRequired": "Vui lòng nhập thông tin",
-		"validPattern": "Số CMND/ CCCD không hợp lệ",
+		"validPattern": "Số CMND/CCCD không hợp lệ",
 		"validExist": "CMND/CCCD đã được sử dụng",
 		"labelTakePhoto": "Chụp ảnh chân dung",
 		"continue": "Tiếp tục",
@@ -226,9 +226,11 @@
 		"back": "để quay trở lại. ",
 		"autoLogin": "Tự động trở lại trang mua hàng sau ",
 		"titleSttFalse": "Đăng kí thất bại",
-		"required": "Vui lòng nhập thông tin",
+		"required": "Vui lòng nhập mật khẩu",
 		"patternOtp": "OTP không hợp lệ",
 		"patternPass": "Mật khẩu tối thiểu 6 ký tự, 1 ký tự viết hoa, 1 ký tự số",
+		"requiredVerify": "Vui lòng xác nhận mật khẩu",
+		"patternVerify": "Mật khẩu tối thiểu 6 ký tự, 1 ký tự viết hoa, 1 ký tự số",
 		"wrongPass": "Mật khẩu không trùng khớp",
 		"requiredName": "Vui lòng nhập họ tên",
 		"minlengthName": "Họ tên lớn hơn 2 kí tự",
@@ -260,7 +262,7 @@
 		"fail5": "Mật khẩu không chính xác (5/5). <br/> Tài khoản của bạn đã bị khóa, thử lại sau 60 phút."
 	},
 	"updatePassword": {
-		"status": "Bạn đã đổi mật khẩu thành công!",
+		"status": "Cập nhật mật khẩu thành công",
 		"title": "Thay đổi Mật Khẩu",
 		"oldPass": "Mật khẩu cũ",
 		"newPass": "Mật khẩu mới",
@@ -313,7 +315,7 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 24/06 2nd"
+		"item-9": "Chính sách 25/06 1st"
 	},
 	"home": {
 		"content-1": "Mua sắm không giới hạn",
@@ -337,7 +339,7 @@
 		"customerComment": "Khách hàng nói về @VOOLO",
 		"news": "Tin tức",
 		"seeMoreNews": "Xem thêm",
-		"lable-2-1": "Thanh toán linh hoạt Lãi suất 0%",
+		"lable-2-1": "Thanh toán linh hoạt lãi suất 0%",
 		"content-2-1": "Không trả trước - 0% lãi suất cho các gói thanh toán linh hoạt, thuận tiện và dễ dàng từ 1 - 4 tháng",
 		"lable-2-2": "Đăng ký chỉ trong 2 phút",
 		"content-2-2": "Chỉ 2 phút đăng kí trên trang thanh toán các sàn thương mại điện tử và website VOOLO",

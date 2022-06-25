@@ -14,7 +14,6 @@ import {RegisterComponent} from "../auth/register/register.component";
   styleUrls: ['./sidebar-header.component.scss'],
 })
 export class SidebarHeaderComponent implements OnInit {
-
   constructor(private sidebarService: SidebarService,
               private router: Router,
               public dialog: MatDialog,

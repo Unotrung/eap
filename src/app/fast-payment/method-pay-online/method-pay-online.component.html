@@ -7,14 +7,14 @@
             [style]="isPayoo?'border: hidden': null">
                 <img [hidden]="!isPayoo" src="../../../assets/images/tick-pay-2.png">
             </div>
-            <div class="img-fe"><img src="../../../assets/images/payoo2.png"></div>
+            <div class="img-fe"><img class="img-payYou" src="../../../assets/images/payoo2.png"></div>
         </div>
         <div class="content-2">
             <div class="tick" (click)="choosePay('momo')"
                  [style]="isMomo?'border: hidden': null">
                 <img [hidden]="!isMomo" src="../../../assets/images/tick-pay-2.png">
             </div>
-            <div class="img-fe"><img src="../../../assets/images/momo2.png" width="77px" height="77px"></div>
+            <div class="img-fe"><img class="img-mono" src="../../../assets/images/momo2.png"></div>
         </div>
     </div>
     <app-button-dialog class="hidden-480" [contentBtn]="'repayment.confirmFast' | translate"
@@ -23,8 +23,8 @@
     </app-button-dialog>
     <app-button-dialog class="hidden-lager-screen" [contentBtn]="'repayment.confirmFast' | translate"
                        [isEnable]="!isPayoo && !isMomo"
-                       [width]="299"
-                       [height]="46"
+                       [width]="200"
+                       [height]="41"
                        (click)="goPaYooHome()">
     </app-button-dialog>
     <app-item-close-dialog class="close-popup hidden-480" (click)="closeDialog()"></app-item-close-dialog>
