@@ -79,19 +79,20 @@
                 </div>
 
             </div>
-
-            <app-button-dialog class="hidden-480" [contentBtn]="'register.button'|translate"
-                               [isEnable]="registerForm.invalid">
-            </app-button-dialog>
-            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.button'|translate"
-                               [isEnable]="registerForm.invalid"
-                               [width]="200"
-                               [height]="40">
-            </app-button-dialog>
+            <div class="cover-btn">
+                <app-button-dialog class="hidden-480" [contentBtn]="'register.button'|translate"
+                                   [isEnable]="registerForm.invalid">
+                </app-button-dialog>
+                <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.button'|translate"
+                                   [isEnable]="registerForm.invalid"
+                                   [width]="200"
+                                   [height]="40">
+                </app-button-dialog>
+            </div>
         </form>
-<!--        <div *ngIf="loading" class="loading">-->
-<!--            <app-loading></app-loading>-->
-<!--        </div>-->
+        <!--        <div *ngIf="loading" class="loading">-->
+        <!--            <app-loading></app-loading>-->
+        <!--        </div>-->
     </div>
     <div class="link-register" (click)="openDialogLogin()"><a>{{'register.hadAccount' | translate}}?</a></div>
 

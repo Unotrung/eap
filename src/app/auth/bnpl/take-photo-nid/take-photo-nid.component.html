@@ -23,29 +23,27 @@
 <!--                </div>-->
 <!--            </div>-->
             <div class="citizen-frame-list" fxLayout="row" fxLayoutAlign="space-around center" appMarginTop="34">
-                <div (click)="isShowGuide = true" class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
+                <div class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
                     <div class="cover-camera" *ngIf="!(pictureService.citizenFrontImageComplete$ | async)">
                         <img fxFlexAlign="center" width="24" height="24" alt="" src="assets/images/camera.png">
                     </div>
                     <div *ngIf="pictureService.citizenFrontImageComplete$ | async" style="position: relative">
                         <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
                              [src]="pictureService.citizenFrontImage">
-                        <img class="icon-dell" (click)="onDeleteImage(NCardSide.front)"
-                             src="../../../../assets/images/trash2.png">
+<!--                        <img class="icon-dell" (click)="onDeleteImage(NCardSide.front)"-->
+<!--                             src="../../../../assets/images/trash2.png">-->
                         <img class="icon-tick" src="../../../../assets/images/tick-photo.png">
-                        <!--                        <mat-icon appMarginTop="8" (click)="onDeleteImage(NCardSide.front)">delete</mat-icon>-->
                     </div>
-
                 </div>
-                <div (click)="isShowGuide = true" class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
+                <div class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
                     <div class="cover-camera" *ngIf="!(pictureService.citizenBackImageComplete$ | async)">
                         <img fxFlexAlign="center" width="24" height="24" alt="" src="assets/images/camera.png">
                     </div>
                     <div *ngIf="pictureService.citizenBackImageComplete$ | async" style="position: relative">
                         <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
                              [src]="pictureService.citizenBackImage">
-                        <img class="icon-dell" (click)="onDeleteImage(NCardSide.back)"
-                             src="../../../../assets/images/trash2.png">
+<!--                        <img class="icon-dell" (click)="onDeleteImage(NCardSide.back)"-->
+<!--                             src="../../../../assets/images/trash2.png">-->
                         <img class="icon-tick" src="../../../../assets/images/tick-photo.png">
                     </div>
                 </div>
@@ -64,7 +62,7 @@
 <!--                    </li>-->
 <!--                </ul>-->
 <!--            </div>-->
-            <div class="cover-btn">
+            <div class="cover-btn" *ngIf = "(pictureService.citizenBackImageComplete$ | async)">
                 <app-button-dialog
                         [isEnable]="!(pictureService.citizenFrontImageComplete$ | async) ||
                 !(pictureService.citizenBackImageComplete$ | async)"
@@ -72,12 +70,45 @@
                         (click)="onCitizenCardContinue()">
                 </app-button-dialog>
             </div>
+            <div class="cover-btn" *ngIf = "!(pictureService.citizenBackImageComplete$ | async)">
+                <app-button-dialog
+                        [isEnable]="false"
+                        [contentBtn]="'takePhotoNid.continue' | translate"
+                        (click)="isShowGuide = true">
+                </app-button-dialog>
+            </div>
         </div>
 
 <!--        hiển thị hướng dẫn-->
 
-        <div *ngIf = "isShowGuide && !(pictureService.citizenFrontImageComplete$ | async)">
-            <button (click)="onCaptureCitizenCard()">bắt đầu</button>
+        <div *ngIf = "isShowGuide && !(pictureService.citizenFrontImageComplete$ | async)"
+             class="cover-box-guide">
+            <div class="box-guide">
+                <div class="box-item-guide">
+                <img src="../../../../assets/images/guideIdCard-1.png">
+                <div class="title" style="color: #EE4D2D">
+                    {{'takePhotoNid.titleGuide-1' | translate}}
+                </div>
+                <div class="content-guide">
+                    <span class="text-light">{{'selfie.pleaseGuide' | translate}}</span>
+                    <span class="text-bold">{{'selfie.noteGuide-2' | translate}}</span>
+                    <span class="text-light">{{'selfie.toShot' | translate}}</span>
+                </div>
+                <div class="content-guide">
+                    <span class="text-light">{{'selfie.pleaseGuide' | translate}}</span>
+                    <span class="text-bold">{{'takePhotoNid.noteGuide-2' | translate}}</span>
+                </div>
+            </div>
+                <div class="box-item-guide">
+                    <img src="../../../../assets/images/guideIdCard-2.png">
+                    <div class="title" style="color: #56CA8B">
+                        {{'takePhotoNid.titleGuide-2' | translate}}
+                    </div>
+                    <div class="content-guide">{{'takePhotoNid.titleGuide-3' | translate}}</div>
+                    <div class="content-guide">{{'takePhotoNid.titleGuide-4' | translate}}</div>
+                </div>
+            </div>
+            <button (click)="onCaptureCitizenCard()" class="btn-shot-front">{{'takePhotoNid.start' | translate}}</button>
         </div>
 <!--        thông báo thành công mặt trước-->
         <div *ngIf ="(pictureService.citizenFrontImageComplete$ | async) && !(pictureService.citizenBackImageComplete$ | async)">

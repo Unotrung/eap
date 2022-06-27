@@ -5,7 +5,7 @@
 
 .container-right-body {
   height: auto;
-  min-height: 100vh;
+  min-height: 80vh;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
   margin-right: 24px;
@@ -147,7 +147,7 @@
 .card-box {
   width: 100px;
   height: 100px;
-  background: rgba(255, 255, 255, 0.4);
+  background: #FFFFFF;
   mix-blend-mode: normal;
   border: 2px solid #EEEEEE;
   border-radius: 20px;
@@ -167,8 +167,9 @@
   }
 
   div .img-small {
-    width: 80px;
+    width: 95px;
     height: 55px;
+    border-radius: 10px;
   }
 
   div .icon-dell {
@@ -179,11 +180,11 @@
   }
 
   div .icon-tick {
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    bottom: -24px;
-    right: -8px;
+    bottom: -29px;
+    right: -10px;
     cursor: pointer;
   }
 }
@@ -300,7 +301,7 @@ h1 {
 }
 
 .cover-btn {
-  margin-top: 24px;
+  margin-top: 48px;
 }
 
 .status-front-idCard {
@@ -366,6 +367,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 72px !important;
   .img-idCard-front {
     width: 100px;
     height: 64px;
@@ -404,4 +406,61 @@ h1 {
   transform: rotate(90deg);
 }
 
+.cover-box-guide {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 56px !important;
+}
+
+.box-guide {
+  height: 360px;
+  width: 672px;
+  margin: auto;
+  margin-bottom: 72px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .box-item-guide {
+    height: 100%;
+    width: 295px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+      font-family: "MontserratAlternates";
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 32px;
+      text-align: center;
+    }
+    .content-guide {
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #000000;
+    }
+  }
+}
+
+.btn-shot-front {
+  background: #000000;
+  border-radius: 30px;
+  height: 46px;
+  width: 299px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  font-family: "MontserratAlternates";
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-light {
+  font-weight: 400;
+}
 

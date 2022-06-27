@@ -37,6 +37,11 @@
 		"labelNid": "Chụp ảnh CMND/CCCD 2 mặt",
 		"labelBefore": "Ảnh mặt trước",
 		"labelAfter": "Ảnh mặt sau",
+		"titleGuide-1": "Không nên",
+		"noteGuide-2": " KHÔNG giữ thẻ CCCD của bạn, hoặc kẹp các góc của thẻ",
+		"titleGuide-2": "Nên",
+		"titleGuide-3": "Đặt thẻ CMND/ CCCD của bạn trên bàn phẳng.",
+		"titleGuide-4": " Hiển thị tất cả 4 góc của thẻ của bạn",
 		"msgSttFront": "Chụp ảnh mặt trước thành công",
 		"noteToBack": "Lật mặt sau của card để tiếp tục chụp ảnh",
 		"start": "Bắt đầu",
@@ -242,7 +247,7 @@
 		"patternEmail": "Định dạng Email không hợp lệ.",
 		"errorPhone": "Số điện thoại đã được đăng ký VOOLO. Vui lòng đăng nhập",
 		"errorEmail": "Email đã được đăng ký VOOLO. Vui lòng đăng nhập",
-		"BlockEmail": "Email bạn đã bị khoá do nhập sai OTP nhiều lần,vui lòng thử lại sau 24h!"
+		"BlockEmail": "Email bạn đã bị khoá do nhập sai OTP nhiều lần, vui lòng thử lại sau 60 phút."
 	},
 	"login": {
 		"title": "Đăng nhập",
@@ -276,14 +281,6 @@
 		"errONPass": "Mật khẩu mới không trùng với mật khẩu cũ",
 		"errWrongPass": "Mật khẩu không chính xác"
 	},
-	"barProcess": {
-		"title": "Chào mừng bạn đến với quy trình đăng ký <br/>Mua trước Trả sau",
-		"step1": "Thông tin khách hàng",
-		"step2": "Cài đặt Pin",
-		"step3": "Ký điện tử",
-		"step4": "Xác minh thông tin",
-		"step5": "Hoàn thành"
-	},
 	"error": {
 		"note": "Mất kết nối/ Lỗi không xác định"
 	},
@@ -315,7 +312,7 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 25/06 1st"
+		"item-9": "Chính sách 27/06 2nd"
 	},
 	"home": {
 		"content-1": "Mua sắm không giới hạn",
@@ -339,9 +336,9 @@
 		"customerComment": "Khách hàng nói về @VOOLO",
 		"news": "Tin tức",
 		"seeMoreNews": "Xem thêm",
-		"lable-2-1": "Thanh toán linh hoạt lãi suất 0%",
+		"lable-2-1": "Thanh toán linh hoạt <br/> lãi suất 0%",
 		"content-2-1": "Không trả trước - 0% lãi suất cho các gói thanh toán linh hoạt, thuận tiện và dễ dàng từ 1 - 4 tháng",
-		"lable-2-2": "Đăng ký chỉ trong 2 phút",
+		"lable-2-2": "Đăng ký <br/> chỉ trong 2 phút",
 		"content-2-2": "Chỉ 2 phút đăng kí trên trang thanh toán các sàn thương mại điện tử và website VOOLO",
 		"lable-2-3": "Trải nghiệm mua sắm không giới hạn",
 		"content-2-3": "Các dịch vụ và sản phẩm đa dạng trên các sàn thương mại điện tử và chuỗi cửa hàng",
@@ -427,5 +424,13 @@
 		"100Record": "100 dòng 1 trang",
 		"200Record": "200 dòng 1 trang",
 		"allRecord": "Tất cả"
+	},
+	"barProcess": {
+		"title": "Chào mừng bạn đến với quy trình đăng ký <br/>Mua trước Trả sau",
+		"step1": "Thông tin khách hàng",
+		"step2": "Cài đặt Pin",
+		"step3": "Ký điện tử",
+		"step4": "Xác minh thông tin",
+		"step5": "Hoàn thành"
 	}
 }

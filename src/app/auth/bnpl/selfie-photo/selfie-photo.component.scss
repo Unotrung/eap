@@ -4,7 +4,7 @@
 }
 
 .container-right-body {
-  height: auto;
+  min-height: 80vh;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
   margin-right: 24px;
@@ -251,7 +251,7 @@ ul {
   width: 308px;
   margin: auto;
   height: auto;
-  margin-top: 32px !important;
+  margin-top: 56px !important;
   margin-bottom: 32px !important;
 }
 .cover-input {

@@ -37,6 +37,11 @@
 		"labelNid": "",
 		"labelBefore": "",
 		"labelAfter": "",
+		"titleGuide-1": "",
+		"noteGuide-2": "",
+		"titleGuide-2": "",
+		"titleGuide-3": "",
+		"titleGuide-4": "",
 		"msgSttFront": "",
 		"noteToBack": "",
 		"start": "Start",
@@ -242,7 +247,7 @@
 		"patternEmail": "Invalid email",
 		"errorPhone": "Phone number has been registered VOOLO. Please login!",
 		"errorEmail": "Email has been registered VOOLO. Please login!",
-		"BlockEmail": "Your email has been locked due to incorrect OTP input many times, please try again in 24h!"
+		"BlockEmail": "Your email has been locked due to incorrect OTP input many times, please try again in 60 minute"
 	},
 	"login": {
 		"title": "Sign In",
@@ -275,14 +280,6 @@
 		"errConfirmPass": "",
 		"errONPass": "",
 		"errWrongPass": ""
-	},
-	"barProcess": {
-		"title": "Welcome to the Buy Now Pay Later application process",
-		"step1": "Customer Information",
-		"step2": "Pin Settings",
-		"step3": "E-Sign",
-		"step4": "Verify information",
-		"step5": "Done"
 	},
 	"error": {
 		"note": "Fail connection/Unknown error"
@@ -427,5 +424,13 @@
 		"100Record": "100 Records",
 		"200Record": "200 Records",
 		"allRecord": "All Records"
+	},
+	"barProcess": {
+		"title": "Welcome to the Buy Now Pay Later application process",
+		"step1": "Customer Information",
+		"step2": "Pin Settings",
+		"step3": "E-Sign",
+		"step4": "Verify information",
+		"step5": "Done"
 	}
 }

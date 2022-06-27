@@ -81,9 +81,13 @@ $dynamic-app-dark-theme: mat.define-dark-theme((
   font-family: "Montserrat";
   src: local("Montserrat"), url(assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
 }
+html {
+  min-height: 100vh !important;
+}
 
 html, body {
   height: auto;
+  min-height: 100vh;
 }
 
 body {
@@ -165,23 +169,35 @@ input:focus {
   padding: 32px 48px !important;
   @media screen and(min-width: 1025px){
     width: 530px !important;
-    height: 580px !important;
+    height: 600px !important;
   }
 }
 .hv-modal-footer {
-  position: unset !important;
-  margin: auto !important;
+  bottom: 10px !important;
+  left: 200px !important;
+  width: unset !important;
+  height: unset !important;
+  margin: unset !important;
 }
+
 .hv-liveness-face-found {
   border-width: 6px !important;
   border-color: #56CA8B !important;
   width: 280px !important;
   height: 280px !important;
+  .hv-preview-video {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
 .hv-liveness-face-not-found {
   border-width: 6px !important;
   width: 280px !important;
   height: 280px !important;
+  .hv-preview-video {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
 .hv-instructions {
   margin-bottom: 0px !important;
@@ -218,8 +234,9 @@ input:focus {
 }
 
 .hv-divforcover {
-  position: unset !important;
-  margin-left: unset !important;
+  bottom: 33px !important;
+  width: unset !important;
+  margin-left: 174px !important;
 }
 
 .hv-instructions {
@@ -229,9 +246,9 @@ input:focus {
   filter: invert(76%) sepia(72%) saturate(648%) hue-rotate(106deg) brightness(88%) contrast(77%) !important;
 }
 
-#hv-cameraholder .hv-preview-video{
-  width: 346px;
-  height: 206px;
+.hv-preview-video{
+  width: 346px !important;
+  height: 206px !important;
   border-radius: 10px;
 }
 

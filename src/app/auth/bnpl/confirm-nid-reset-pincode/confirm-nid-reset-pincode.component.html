@@ -10,6 +10,8 @@
                    name="nid" formControlName="nid"
                    autofocus
                    (focusin)="resetMsg()"
+                   maxlength="12"
+                   (keypress)="keyPress($event)"
                    [style]="(formNid.controls.nid.touched&&formNid.controls.nid.invalid)||messageError!==''?
                      'border: 1px solid #EE4D2D':null">
             <div class="invalid-note">
