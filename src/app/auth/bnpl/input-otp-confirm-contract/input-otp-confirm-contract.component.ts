@@ -1,7 +1,11 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 import {TranslateService} from "@ngx-translate/core";
+import {AuthenticationService} from "../../../_service/auth/authentication.service";
+import {WaitingConfirmPhoneComponent} from "../waiting-confirm-phone/waiting-confirm.component-phone";
+import {WaitingConfirmSignContractComponent} from "../waiting-confirm-sign-contract/waiting-confirm-sign-contract.component";
+import {StatusCompleteComponent} from "../status-complete/status-complete.component";
 
 @Component({
     selector: 'app-input-otp-confirm-contract',
@@ -15,17 +19,21 @@ export class InputOtpConfirmContractComponent implements OnInit {
     checkCount: boolean = true;
     messageErr: string = '';
     otp: string = '';
+    phone = '';
 
     constructor(public dialogRef: MatDialogRef<InputOtpConfirmContractComponent>,
                 @Inject(MAT_DIALOG_DATA) public data,
+                private dialog: MatDialog,
                 private route: Router,
-                public translateService: TranslateService) {
+                public translateService: TranslateService,
+                private authenticationService: AuthenticationService) {
     }
 
     ngOnInit() {
         if (this.checkCount) {
             this.countEffectiveTimeOtp(this.countDown);
         }
+        this.phone = this.authenticationService.userCurrentSubject$.getValue().phone;
     }
 
     getOtpAgain() {
@@ -62,11 +70,29 @@ export class InputOtpConfirmContractComponent implements OnInit {
     }
 
     submit() {
-        this.route.navigateByUrl('/process-confirm');
         this.dialogRef.close();
+        // this.route.navigateByUrl('/process-confirm');
+        const dialogRef = this.dialog.open(WaitingConfirmSignContractComponent, {
+            width: '100%',
+        });
+        dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+                this.openDialogStatus(result);
+            }
+        });
     }
 
     closeDialog() {
         this.dialogRef.close();
+    }
+
+    openDialogStatus(isComplete:boolean){
+        const dialogRef = this.dialog.open(StatusCompleteComponent, {
+            width: '100%',
+            data: isComplete
+        });
+        dialogRef.afterClosed().subscribe(result => {
+
+        });
     }
 }

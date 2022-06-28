@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
   listShowLanguage = ['Tiếng Việt','English'];
   isShowLang: boolean =  false;
   langChoose: string = "Tiếng Việt";
+  isChanged = true;
   @ViewChild('langButton') langButton: ElementRef;
   @ViewChild('menuLang') menuLang: ElementRef;
   constructor(private translateService: TranslateService,
@@ -46,4 +47,9 @@ export class FooterComponent implements OnInit {
     this.langChoose = showLanguage;
   }
 
+    changeHover(lg:string) {
+       if (lg!== this.langChoose){
+         this.isChanged = false;
+       }
+    }
 }

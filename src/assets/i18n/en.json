@@ -50,6 +50,7 @@
 	},
 	"confirmInformation": {
 		"confirmTitle": "",
+		"descriptionForm": "",
 		"labelInformation": "",
 		"fullName": "",
 		"gender": "",
@@ -142,6 +143,9 @@
 		"validPhoneRefOverlap": "Reference phone number is same as registered phone number",
 		"titleNote": "Note",
 		"contentNote": "Required Information",
+		"titleForm": "Nhập thông tin cá nhân",
+		"descriptionForm": "Vui lòng điền các trường thông tin bên dưới",
+		"back" : "Back",
 		"face": {
 			"faceCaptureTitle": "Capture Selfie",
 			"faceCaptureBottomDescription": "Make sure your face is inside the circle and is fully visible",
@@ -203,7 +207,8 @@
 		"seeMore": "",
 		"checkbox1": "",
 		"checkbox2": "",
-		"signNow": ""
+		"signNow": "",
+		"content": "SAMPLE CONzTENT - FEC input later<br/> HÌNH THỨC THANH TOÁN <br/>Đối tác được quyền thanh toán chậm cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua hàng hoá trả chậm. Giá sản phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt) của Đối tác. Vui lòng duy trì thu nhập tại Ví dưới (ví tiền mặt) để hệ thống thực hiện thanh toán tự động, tránh việc trễ hạn và ảnh hưởng đến quyền lợi của Đối tác. Trường hợp thu nhập ví dưới không đủ vào ngày thanh toán định kỳ, khoản còn thiếu hệ thống sẽ tự động thu (từ ví dưới) vào những ngày kế tiếp, kể cả ngày lễ và cuối tuần. Thời gian khấu trừ ví dưới dự kiến sẽ bắt đầu trong vòng 7 ngày kể từ ngày nhận sản phẩm.<br/> SAMPLE CONTENT - FEC input later HÌNH THỨC THANH TOÁN Đối tác được quyền thanh toán chậm cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua hàng hoá trả chậm. Giá sản phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt)"
 	},
 	"status": {
 		"contentSuccess": "",

@@ -97,6 +97,8 @@ import {CloseScrollStrategy, Overlay, RepositionScrollStrategy} from "@angular/c
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {SidebarMobileComponent} from "./sidebar-mobile/sidebar-mobile.component";
 import {HomePayooNoNidComponent} from "./fast-payment/home-payoo-no-nid/home-payoo-no-nid.component";
+import {WaitingConfirmSignContractComponent} from "./auth/bnpl/waiting-confirm-sign-contract/waiting-confirm-sign-contract.component";
+import {StatusCompleteComponent} from "./auth/bnpl/status-complete/status-complete.component";
 
 // @ts-ignore
 @NgModule({
@@ -175,7 +177,9 @@ import {HomePayooNoNidComponent} from "./fast-payment/home-payoo-no-nid/home-pay
         ConfirmNidResetPincodeComponent,
         DialogStatusUpdateComponent,
         SidebarMobileComponent,
-        HomePayooNoNidComponent
+        HomePayooNoNidComponent,
+        WaitingConfirmSignContractComponent,
+        StatusCompleteComponent
     ],
     entryComponents: [],
     imports: [

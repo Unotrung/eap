@@ -7,22 +7,35 @@
   font-style: normal;
   position: relative;
   margin: auto;
-  width: 545px;
+  width: 450px;
   height: auto;
   border-radius: 20px;
   border: 3px solid #EEEEEE;
   background: #F3F3F3;
-  padding: 30px 72px;
+  padding: 30px 16px;
   //box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.25);
 }
 
 .title-login {
   font-family: "MontserratAlternates";
   font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 32px;
+  line-height: 39px;
   text-align: center;
   color: #000000;
+}
+.note-send {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #000000;
+  margin-top: 12px;
+  @media screen and(max-width: 480px){
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: 4px;
+  }
 }
 
 .form-cover {
@@ -55,9 +68,10 @@
 
 .under-input {
   text-align: center;
-  margin-top: 12px;
-  margin-bottom: 12px;
   width: 100%;
+  min-height: 40px;
+  height: auto;
+  padding-top: 10px;
 }
 
 .link-register {
@@ -117,8 +131,8 @@
 
 .close-popup {
   position: absolute;
-  right: 14px;
-  top: 14px;
+  right: 20px;
+  top: 20px;
 }
 
 
@@ -152,10 +166,10 @@
 
 
 .cover-input {
-  width: 320px;
+  width: 378px;
   margin: auto;
   margin-bottom: 34px !important;
-  margin-top: 34px !important;
+  margin-top: 29px !important;
 }
 
 .icon-invalid {
@@ -166,14 +180,6 @@
   top: 13px;
 }
 
-.note-send {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  color: #000000;
-  margin-bottom: 24px;
-}
 
 .text-note-send {
   font-weight: 400;
@@ -207,14 +213,14 @@
 
 .code-input-1 {
   --item-border-radius: 10px;
-  --item-height: 45px;
-  --item-spacing: 10px;
+  --item-height: 49px;
+  --item-spacing: 12px;
   --item-background: #FFFFFF;
 }
 .code-input-2 {
   --item-border-radius: 10px;
-  --item-height: 45px;
-  --item-spacing: 10px;
+  --item-height: 49px;
+  --item-spacing: 12px;
   --item-background: #FFFFFF;
   --item-border-has-value: 1px solid #FF8080 !important;
   --item-border-bottom-has-value: 1px solid #FF8080 !important;

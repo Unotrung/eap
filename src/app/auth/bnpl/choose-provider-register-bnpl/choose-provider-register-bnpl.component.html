@@ -1,19 +1,22 @@
 <div class="container-right-body">
     <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
     <div class="container-choose">
+        <div>
+            <app-bar-process-bnpl [childData]="{widthLine: 25,numberStep:1}"></app-bar-process-bnpl>
+        </div>
         <div *ngIf="!loading">
             <div class="title-register">{{'provider.title' | translate}}</div>
-            <div class="title-register" style="font-size: 14px; margin-top: 16px">{{'provider.titleBnpl' | translate}}</div>
+            <div class="title-register-des">{{'provider.titleBnpl' | translate}}</div>
             <div class="content">
                 <div class="content-1" *ngFor = "let p of listProvider">
                     <div class="tick" (click)="chooseProvider(p.provider)">
-                        <img *ngIf = "p.provider == providerChoose&&checkChoose" src="../../../../assets/images/tick-pay.png">
+                        <img *ngIf = "p.provider == providerChoose&&checkChoose" src="../../../../assets/images/tick-pay-2.png">
                     </div>
-                    <div class="img-fe"><img src="../../../../assets/images/fec-icon-provider.png"></div>
+                    <div><img [className]="p.provider === 'Fe Credit'? 'img-fe':'img-home'" [src]="p.url"></div>
                 </div>
             </div>
             <div class="cover-btn">
-                <app-button-dialog (click)="submit()" [height]="40" [width]="160"
+                <app-button-dialog (click)="submit()" [fontSize]="14" [height]="41" [width]="200"
                                    [contentBtn]="'provider.confirmBtn' | translate" [isEnable]="!checkChoose"></app-button-dialog>
             </div>
         </div>

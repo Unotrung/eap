@@ -30,12 +30,24 @@
 
 .title-register {
   font-family: "MontserratAlternates";
+  font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 32px;
+  line-height: 39px;
   text-align: center;
   color: #000000;
   margin-top: 40px;
+  margin-bottom: 6px;
+}
+
+.des-form {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
 }
 
 .enter-info-text {
@@ -49,10 +61,13 @@
 
 .personal-info {
   height: auto;
-  background: #F3F3F3;
+  background: rgba(154, 147, 147, 0.1);
   border-radius: 10px;
-  padding: 40px;
-  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.cover-content-info {
+  padding: 16px 30px 40px 30px;
 }
 
 .address-box {
@@ -256,18 +271,23 @@ input:disabled {
 }
 
 .text-form {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  text-align: center;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.8);
+  height: 62px;
+  width: 100%;
+  padding-left: 30px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #FFFFFF;
+  color: #000000;
   font-family: "MontserratAlternates";
 }
 
 .main-content {
   width: 100%;
-  padding: 40px 120px;
+  padding: 56px 91.5px 32px 91.5px;
 }
 
 

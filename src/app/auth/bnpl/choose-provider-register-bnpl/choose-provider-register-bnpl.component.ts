@@ -25,9 +25,9 @@ export class ChooseProviderRegisterBnplComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (this.authenticationService.step$.getValue()===0){
-            this.router.navigate(['/infor-bnpl']);
-        }
+        // if (this.authenticationService.step$.getValue()===0){
+        //     this.router.navigate(['/infor-bnpl']);
+        // }
         this.getProvider();
         let phone = this.authenticationService.userCurrentSubject$.getValue().phone;
         this.getInformationBnpl(phone);
@@ -57,21 +57,22 @@ export class ChooseProviderRegisterBnplComponent implements OnInit {
 
     submit() {
         if (this.providerChoose === '') return;
-        let nid = this.customerInformationService.customerInfo$.getValue().citizenId;
-        console.log(nid)
-        console.log(this.providerChoose);
-        this.accountBnplService.registerProvider({nid: nid, provider: this.providerChoose}).subscribe(next => {
-            console.log(next);
-            if (next.status) {
-                this.router.navigate(['/sign-contract'])
-            }
-        }, error => {
-            if (error.error.statusCode == 900) {
-                this.router.navigate(['/error']);
-            } else if (error.error.statusCode == 1005) {
-                this.router.navigate(['/error']);
-            }
-        })
+        this.router.navigate(['/sign-contract'])
+        // let nid = this.customerInformationService.customerInfo$.getValue().citizenId;
+        // console.log(nid)
+        // console.log(this.providerChoose);
+        // this.accountBnplService.registerProvider({nid: nid, provider: this.providerChoose}).subscribe(next => {
+        //     console.log(next);
+        //     if (next.status) {
+        //         this.router.navigate(['/sign-contract'])
+        //     }
+        // }, error => {
+        //     if (error.error.statusCode == 900) {
+        //         this.router.navigate(['/error']);
+        //     } else if (error.error.statusCode == 1005) {
+        //         this.router.navigate(['/error']);
+        //     }
+        // })
     }
 
     getInformationBnpl(phone: string) {

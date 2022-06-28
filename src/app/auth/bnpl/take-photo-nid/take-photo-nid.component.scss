@@ -414,8 +414,8 @@ h1 {
 }
 
 .box-guide {
-  height: 360px;
-  width: 672px;
+  height: 320px;
+  width: 595px;
   margin: auto;
   margin-bottom: 72px !important;
   display: flex;
@@ -423,7 +423,7 @@ h1 {
   justify-content: space-between;
   .box-item-guide {
     height: 100%;
-    width: 295px;
+    width: 264px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -431,18 +431,28 @@ h1 {
     .title {
       font-family: "MontserratAlternates";
       font-weight: 700;
-      font-size: 26px;
+      font-size: 22px;
       line-height: 32px;
       text-align: center;
     }
     .content-guide {
-      font-size: 16px;
+      height: 40px;
+      font-size: 14px;
       line-height: 20px;
       text-align: center;
       color: #000000;
     }
   }
 }
+
+.with-9 {
+  width: 93%;
+}
+
+.with-8 {
+  width: 80%;
+}
+
 
 .btn-shot-front {
   background: #000000;

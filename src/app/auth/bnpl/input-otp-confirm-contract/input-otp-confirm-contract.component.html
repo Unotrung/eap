@@ -1,5 +1,8 @@
 <div class="form-login-container">
     <div class="title-login">{{'forgotPass.inputOtp' | translate}}</div>
+    <div class="note-send">{{'register.noteOtp' | translate}}
+        <span style="font-weight: bold">{{phone | phoneStyle}}</span>
+    </div>
     <div>
         <div class="cover-input">
             <code-input [className]="messageErr!==''?'code-input-2':'code-input-1'" [codeLength]="6"
@@ -13,15 +16,14 @@
                 </div>
             </div>
         </div>
-        <div class="text-note-send">Mã OTP đã được gửi đến số điện thoại <span style="font-weight: bold">0909xxx</span></div>
 
         <app-button-dialog [contentBtn]="'forgotPass.confirmOtp' | translate"
                            [isEnable]="otp.length<6"
                            (click)="submit()">
         </app-button-dialog>
-        <div class="loading" *ngIf="loading">
-            <app-loading></app-loading>
-        </div>
+<!--        <div class="loading" *ngIf="loading">-->
+<!--            <app-loading></app-loading>-->
+<!--        </div>-->
     </div>
     <div class="cover-bottom">
         <p class="note-no-send">{{'forgotPass.noOtp' | translate}}?</p>

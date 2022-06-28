@@ -34,9 +34,9 @@ export class ConfirmInformationBnplComponent implements OnInit {
     ngOnInit(): void {
         this.languageService.lang$.subscribe(x => {this.lang = x;this.handleDataShowLanguage(this.lang)});
 
-        if (this.authService.step$.getValue() === 0) {
-            this.router.navigate(['/infor-bnpl']);
-        }
+        // if (this.authService.step$.getValue() === 0) {
+        //     this.router.navigate(['/infor-bnpl']);
+        // }
         this.address = `${this.customerInformationService.customerInfo$.getValue().street}, 
     ${this.customerInformationService.customerInfo$.getValue().ward}, 
     ${this.customerInformationService.customerInfo$.getValue().district}, 
@@ -73,5 +73,9 @@ export class ConfirmInformationBnplComponent implements OnInit {
             this.showGender = this.customerInformationService.customerInfo$.getValue().sex;
             this.showRelationship = this.customerInformationService.customerInfo$.getValue().personal_title_ref
         }
+    }
+
+    backForm() {
+        this.router.navigate(["/register-infor-bnpl"])
     }
 }

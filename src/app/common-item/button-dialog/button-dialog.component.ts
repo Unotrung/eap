@@ -10,6 +10,7 @@ export class ButtonDialogComponent implements OnInit {
   @Input() isEnable: boolean = true;
   @Input() width = 299;
   @Input() height= 46;
+  @Input() fontSize = 18;
   constructor() { }
 
   ngOnInit() {}

@@ -7,15 +7,28 @@
   font-style: normal;
   position: relative;
   margin: auto;
-  width: 454px;
-  height: auto;
-  border-radius: 20px;
+  width: 595px;
+  height: 314px;
+  border-radius: 15px;
   border: 3px solid #EEEEEE;
   background: #F3F3F3;
-  padding: 56px 48px;
-  //box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.12);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.title-status {
+  width: 100%;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
+  font-family: "MontserratAlternates";
+}
 .cover-icon-tick {
   width: 125px;
   height: 120px;
@@ -27,17 +40,6 @@
     width: 120px;
     height: 114px;
   }
-}
-
-.title-status {
-  width: 100%;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
-  text-align: center;
-  color: #000000;
-  margin-top: 50px;
-  font-family: "MontserratAlternates";
 }
 
 .auto-login-note {

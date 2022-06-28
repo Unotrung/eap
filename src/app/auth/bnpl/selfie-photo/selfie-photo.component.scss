@@ -181,18 +181,18 @@
 
 .picture-selfie-overlay-2 {
   width: 100px;
-  height: 100px;
+  height: auto;
   margin: auto;
   background: #FFFFFF;
-  border-radius: 30px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   .img-small {
     width: 100%;
-    height: 100%;
-    border-radius: 30px;
+    height: auto;
+    border-radius: 20px;
   }
   .icon-dell {
     position: absolute;

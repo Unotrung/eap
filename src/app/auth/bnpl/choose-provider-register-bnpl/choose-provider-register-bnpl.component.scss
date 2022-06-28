@@ -31,8 +31,18 @@
 .title-register {
   font-family: "MontserratAlternates";
   font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: #000000;
+  margin-top: 32px;
+}
+
+.title-register-des {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "MontserratAlternates";
   text-align: center;
   color: #000000;
 }
@@ -56,7 +66,6 @@ img {
 .container-choose {
   height: auto;
   font-style: normal;
-  padding-top: 90px;
   width: 100%;
   text-align: center;
 }
@@ -100,7 +109,7 @@ button {
 }
 
 .content {
-  width: 60%;
+  width: 50%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -120,13 +129,12 @@ button {
 }
 
 .img-fe {
-  display: flex;
-  align-items: center;
-  img {
-    width: 160px;
-    height: 32px;
-  }
-
+  width: 150px;
+  height: 15px;
+}
+.img-home {
+  width: 76px;
+  height: 42px;
 }
 
 .tick {
@@ -139,6 +147,7 @@ button {
   border-radius: 50%;
   margin-right: 20px;
   border: 2px solid rgba(0, 0, 0, 0.2);
+
   img {
     max-width: 24px !important;
     width: 24px;

@@ -49,7 +49,8 @@
 		"guide1": "Nhấn vào nút màu trắng để lần lượt chụp hình CMND/CCCD mặt trước và sau."
 	},
 	"confirmInformation": {
-		"confirmTitle": "Thông tin cá nhân",
+		"confirmTitle": "Đối soát thông tin",
+		"descriptionForm": "Vui lòng xác nhận các thông tin bên dưới",
 		"labelInformation": "Thông tin cá nhân",
 		"fullName": "Họ và tên",
 		"gender": "Giới tính",
@@ -142,6 +143,9 @@
 		"validPhoneRefOverlap": "Số điện thoại tham chiếu trùng số điện thoại đăng ký",
 		"titleNote": "Lưu ý",
 		"contentNote": "Thông tin bắt buộc",
+		"titleForm": "Nhập thông tin cá nhân",
+		"descriptionForm": "Vui lòng điền các trường thông tin bên dưới",
+		"back" : "Quay lại",
 		"face": {
 			"faceCaptureTitle": "Chụp ảnh chân dung",
 			"faceCaptureBottomDescription": "Mặt của bạn cần ở trong khung hình",
@@ -203,7 +207,8 @@
 		"seeMore": "Xem thêm",
 		"checkbox1": "Tôi đồng ý với điều kiện & Điền khoản hợp đồng",
 		"checkbox2": "Vui lòng gửi OTP xác nhận về số điện thoại đã đăng ký VOOLO của tôi",
-		"signNow": "Ký ngay"
+		"signNow": "Ký ngay",
+		"content": "SAMPLE CONzTENT - FEC input later<br/> HÌNH THỨC THANH TOÁN <br/>Đối tác được quyền thanh toán chậm cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua hàng hoá trả chậm. Giá sản phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt) của Đối tác. Vui lòng duy trì thu nhập tại Ví dưới (ví tiền mặt) để hệ thống thực hiện thanh toán tự động, tránh việc trễ hạn và ảnh hưởng đến quyền lợi của Đối tác.<br/> Trường hợp thu nhập ví dưới không đủ vào ngày thanh toán định kỳ, khoản còn thiếu hệ thống sẽ tự động thu (từ ví dưới) vào những ngày kế tiếp, kể cả ngày lễ và cuối tuần. Thời gian khấu trừ ví dưới dự kiến sẽ bắt đầu trong vòng 7 ngày kể từ ngày nhận sản phẩm.<br/> SAMPLE CONTENT - FEC input later HÌNH THỨC THANH TOÁN Đối tác được quyền thanh toán chậm cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua hàng hoá trả chậm. Giá sản phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt)"
 	},
 	"status": {
 		"contentSuccess": "Bạn đã đăng ký thành công",
@@ -230,7 +235,7 @@
 		"here": "đây",
 		"back": "để quay trở lại. ",
 		"autoLogin": "Tự động trở lại trang mua hàng sau ",
-		"titleSttFalse": "Đăng kí thất bại",
+		"titleSttFalse": "Đăng ký không thành công",
 		"required": "Vui lòng nhập mật khẩu",
 		"patternOtp": "OTP không hợp lệ",
 		"patternPass": "Mật khẩu tối thiểu 6 ký tự, 1 ký tự viết hoa, 1 ký tự số",
@@ -312,7 +317,7 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 27/06 2nd"
+		"item-9": "Chính sách 28/06 2nd"
 	},
 	"home": {
 		"content-1": "Mua sắm không giới hạn",
@@ -426,7 +431,7 @@
 		"allRecord": "Tất cả"
 	},
 	"barProcess": {
-		"title": "Chào mừng bạn đến với quy trình đăng ký <br/>Mua trước Trả sau",
+		"title": "Chào mừng bạn đến với quy trình đăng ký Mua trước Trả sau",
 		"step1": "Thông tin khách hàng",
 		"step2": "Cài đặt Pin",
 		"step3": "Ký điện tử",

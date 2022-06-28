@@ -29,9 +29,9 @@ export class SetPinCodeComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (this.authService.step$.getValue() === 0) {
-            this.router.navigate(['/infor-bnpl']);
-        }
+        // if (this.authService.step$.getValue() === 0) {
+        //     this.router.navigate(['/infor-bnpl']);
+        // }
         this.userBnpl = {};
     }
 
@@ -62,24 +62,25 @@ export class SetPinCodeComponent implements OnInit {
     submitSetPinCode() {
         this.checkPin();
         if (this.isCheckPin == true) {
-            this.userBnpl = {...this.customerInformationService.customerInfo$.getValue(), pin: this.pinCode};
-            console.log(this.userBnpl);
-            this.accountBnplService.registerUserBnpl(this.userBnpl).subscribe(next => {
-                console.log(next);
-                if (next.status) {
-                    this.router.navigate(['/choose-provider']).then();
-                }
-            }, error => {
-                if (error.error.statusCode == 4000) {
-                    this.messageError = "Số điện thoại tham chiếu trùng số điện thoại người dùng";
-                    this.isCheckPin = false;
-                } else if (error.error.statusCode == 1000) {
-                    this.messageError = "Người dùng đã tồn tại";
-                    this.isCheckPin = false;
-                } else {
-                    this.router.navigate(['/error'])
-                }
-            })
+            this.router.navigate(['/choose-provider']).then();
+            // this.userBnpl = {...this.customerInformationService.customerInfo$.getValue(), pin: this.pinCode};
+            // console.log(this.userBnpl);
+            // this.accountBnplService.registerUserBnpl(this.userBnpl).subscribe(next => {
+            //     console.log(next);
+            //     if (next.status) {
+            //         this.router.navigate(['/choose-provider']).then();
+            //     }
+            // }, error => {
+            //     if (error.error.statusCode == 4000) {
+            //         this.messageError = "Số điện thoại tham chiếu trùng số điện thoại người dùng";
+            //         this.isCheckPin = false;
+            //     } else if (error.error.statusCode == 1000) {
+            //         this.messageError = "Người dùng đã tồn tại";
+            //         this.isCheckPin = false;
+            //     } else {
+            //         this.router.navigate(['/error'])
+            //     }
+            // })
         } else {
             this.codeInput.reset();
             this.msgVerifyError = this.translateService.instant('setPin.errPinMsg')

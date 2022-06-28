@@ -31,24 +31,11 @@
 .title-register {
   font-family: "MontserratAlternates";
   font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 32px;
+  line-height: 39px;
   text-align: center;
   color: #000000;
-  margin-top: 40px;
-}
-h1 {
-  margin: auto;
-  margin-top: 16px !important;
-  margin-bottom:16px !important;
-  width: 447px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 32px;
-  align-items: center;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.8);
+  margin-top: 32px;
 }
 
 .bar-step {
@@ -91,7 +78,7 @@ h1 {
 }
 
 .cover-btn {
-  margin-top: 60px !important;
+  margin-top: 40px !important;
 }
 
 
@@ -126,8 +113,8 @@ input {
   margin-top: 32px !important;
   text-align: center;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 22px;
   color: #000000;
   font-family: "MontserratAlternates";
 }
@@ -163,7 +150,8 @@ a {
 }
 
 .cover-input-pin {
-  width: 100%;
+  width: 145px;
+  margin: auto;
   padding: 0px;
   height: 34px;
 }
@@ -229,14 +217,14 @@ a {
 
 .code-input-3 {
   --item-border-radius: 50%;
-  --item-height: 31px;
-  --item-spacing: 31px;
+  --item-height: 20px;
+  --item-spacing: 13px;
   --item-background: #E5E5E5;
 }
 .code-input-4 {
   --item-border-radius: 50%;
-  --item-height: 31px;
-  --item-spacing: 31px;
+  --item-height: 20px;
+  --item-spacing: 13px;
   --item-background: #E5E5E5;
   --item-border: 2px solid #FF8080 !important;
   --item-border-bottom: 2px solid #FF8080 !important;

@@ -1,9 +1,13 @@
 <div class="stt-container">
-  <div class="cover-icon-tick">
+  <div *ngIf = "!isErrorRegister" class="cover-icon-tick">
     <img src="../../../assets/images/smile.png">
   </div>
+  <div *ngIf = "isErrorRegister" class="cover-icon-tick">
+    <img src="../../../assets/images/cry.png">
+  </div>
 
-  <div class="title-status">{{'register.titleSttTrue' | translate}}</div>
+  <div *ngIf = "!isErrorRegister" class="title-status">{{'register.titleSttTrue' | translate}}</div>
+  <div *ngIf = "isErrorRegister" class="title-status">{{'register.titleSttFalse' | translate}}</div>
 
   <div class="auto-login-note">
     {{'register.click' | translate}}
@@ -11,13 +15,6 @@
     {{'register.back' | translate}}
     {{'register.autoLogin' | translate}} {{countDown}}s
   </div>
-
-  <div *ngIf = "isErrorRegister" class="cover-icon-fail">
-    <img src="../../../assets/images/cry.png">
-  </div>
-
-  <div *ngIf = "isErrorRegister" class="title-status" style="color: red">{{'register.titleSttFalse' | translate}}</div>
-
   <app-item-close-dialog class="close-popup" (click)="onNoClick()"></app-item-close-dialog>
 </div>
 
