@@ -21,7 +21,8 @@
 		"clickHere": "Click here",
 		"sttSuccess": "Update PIN code successfully!",
 		"sttFail": "Update PIN code unsuccessfully!",
-		"sttNote": "Please contact hotline 1900xxx for more details.",
+		"sttNote": "Please contact hotline ",
+		"sttNoteSuf": " for more details.",
 		"tryAgain": "Try again",
 		"validWrong": "PIN code does not match",
 		"validOverlap": "PIN code does not match"

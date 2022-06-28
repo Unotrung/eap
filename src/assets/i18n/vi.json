@@ -21,7 +21,8 @@
 		"clickHere": "Nhấn vào đây",
 		"sttSuccess": "Cập nhật mã PIN thành công",
 		"sttFail": "Cập nhật mã PIN không thành công",
-		"sttNote": "Vui lòng thử lại hoặc liên hệ 1900xxx để được hỗ trợ.",
+		"sttNote": "Vui lòng thử lại hoặc liên hệ ",
+		"sttNoteSuf": " để được hỗ trợ.",
 		"tryAgain": "Thử lại",
 		"validWrong": "Mã PIN không trùng khớp",
 		"validOverlap": "Mã PIN mới trùng với mã PIN cũ"

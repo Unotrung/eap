@@ -43,7 +43,7 @@
     <table>
         <thead>
         <tr>
-            <td><label style="margin-left: 40px">{{'repayment.issueDate' | translate}}</label>
+            <td width="21%"><label style="margin-left: 40px">{{'repayment.issueDate' | translate}}</label>
                 <img class="sort-icon-esc"
                      [style]="sortByField==='dueDate'&&!isCheckSort?'transform: rotate(-180deg)':null"
                      (click)="sort('dueDate')"
@@ -55,19 +55,19 @@
 <!--                     (click)="sort('provider')"-->
 <!--                     src="../../../assets/images/angle-down.png">-->
 <!--            </td>-->
-            <td>{{'repayment.payMoney' | translate}}
+            <td width="27%">{{'repayment.payMoney' | translate}}
                 <img class="sort-icon-esc"
                      [style]="sortByField==='paidMoney'&&!isCheckSort?'transform: rotate(-180deg)':null"
                      (click)="sort('paidMoney')"
                      src="../../../assets/images/angle-down.png">
             </td>
-            <td>{{'repayment.status' | translate}}
+            <td width="21%">{{'repayment.status' | translate}}
                 <img class="sort-icon-esc"
                      [style]="sortByField==='status'&&!isCheckSort?'transform: rotate(-180deg)':null"
                      (click)="sort('status')"
                      src="../../../assets/images/angle-down.png">
             </td>
-            <td>{{'repayment.action' | translate}}
+            <td width="21%">{{'repayment.action' | translate}}
                 <img class="sort-icon-esc"
                      [style]="sortByField==='status'&&!isCheckSort?'transform: rotate(-180deg)':null"
                      (click)="sort('status')"

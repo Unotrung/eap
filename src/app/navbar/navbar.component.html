@@ -42,25 +42,29 @@
                         <div class="text-note">{{numberNotes}}</div>
                         <app-notification-dropdown #menuNote [hidden]="!showNote"></app-notification-dropdown>
                     </div>
-                    <div class="avatar-nav">
-                        <div (click)="showProfileUser()">
-                            <img src="../../assets/images/avatar-nav.png">
-                        </div>
-                    </div>
-                    <div (click)="showProfileUser()" class="name">{{user.username}}</div>
-                    <div #profileButton class="icon-drop" (click)="showBtnProfile=!showBtnProfile">
-                        <img src="../../assets/images/angle-down.png">
-                        <div #menuProfile [hidden]="!showBtnProfile" class="view-profile-drop">
-                            <div class="box-show box-profile" (click)="showProfileUser()">
-                                <img class="icon-show" src="../../assets/images/avatar-nav.png">
-                                <div>{{'header.showInformation' | translate}}</div>
-                            </div>
-                            <div class="box-show box-logout" (click)="logoutUser()">
-                                <img class="icon-show" src="../../assets/images/icon-logout.png">
-                                <div>{{'header.logout' | translate}}</div>
+
+                    <div class="box-profile-right" #profileButton (click)="showBtnProfile=!showBtnProfile">
+                        <div class="avatar-nav" >
+                            <div>
+                                <img src="../../assets/images/avatar-nav.png">
                             </div>
                         </div>
+                        <div class="name">{{user.username}}</div>
+                        <div #profileButton class="icon-drop">
+                            <img src="../../assets/images/angle-down.png">
+                            <div #menuProfile [hidden]="!showBtnProfile" class="view-profile-drop">
+                                <div class="box-show box-profile" (click)="showProfileUser()">
+                                    <img class="icon-show" src="../../assets/images/avatar-nav.png">
+                                    <div>{{'header.showInformation' | translate}}</div>
+                                </div>
+                                <div class="box-show box-logout" (click)="logoutUser()">
+                                    <img class="icon-show" src="../../assets/images/icon-logout.png">
+                                    <div>{{'header.logout' | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

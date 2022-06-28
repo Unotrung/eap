@@ -9,6 +9,7 @@ export class StatusComponent implements OnInit {
   @Input() isStatus: boolean;
   @Input() msgStatus: string;
   @Input() msgDescription: string;
+  @Input() msgDescriptionSuf: string;
 
   constructor() { }
 

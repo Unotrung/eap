@@ -273,6 +273,11 @@ a:hover {
   margin-right: -16px;
 }
 
+.box-profile-right {
+  display: flex;
+  flex-direction: row;
+}
+
 .cover-profile {
   display: flex;
   flex-direction: row;
@@ -317,7 +322,7 @@ a:hover {
 .view-profile-drop {
   position: absolute;
   left: -208px;
-  top: 30px;
+  top: 44px;
   width: 220px;
   background: #FFFFFF;
   border-radius: 10px;
