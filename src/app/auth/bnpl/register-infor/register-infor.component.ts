@@ -29,9 +29,18 @@ export class RegisterInforComponent implements OnInit {
     wardFilteredOptions!: Observable<string[]>;
     personalTitleFilterOptions!: Observable<string[]>;
 
+    cityFilteredOptionsTemp!: Observable<string[]>;
+    districtFilteredOptionsTemp!: Observable<string[]>;
+    wardFilteredOptionsTemp!: Observable<string[]>;
+
     cityOptions : City[] = []
     districtOptions : District[] = []
     wardOptions: Ward[] = []
+
+    cityOptionsTemp : City[] = []
+    districtOptionsTemp : District[] = []
+    wardOptionsTemp: Ward[] = []
+
     personalTitleOptions!: string[]
     personalTitleOptionsEn!: string[]
     sexOptions!: string[]
@@ -44,6 +53,10 @@ export class RegisterInforComponent implements OnInit {
     selectedDistrict$!: BehaviorSubject<District>;
     selectedWard$!: BehaviorSubject<Ward>;
     selectedStreet$!: BehaviorSubject<any>;
+
+    selectedCityTemp$! : BehaviorSubject<City>;
+    selectedDistrictTemp$!: BehaviorSubject<District>;
+    selectedWardTemp$!: BehaviorSubject<Ward>;
 
     initCity = {
         city: '',
@@ -65,6 +78,7 @@ export class RegisterInforComponent implements OnInit {
     name = ''
     birthday = ''
     issueDay = ''
+    expiryDay = ''
     citizenId = ''
 
     checkInfo = checkInfo
@@ -110,7 +124,7 @@ export class RegisterInforComponent implements OnInit {
         const citizenBackData = this.pictureService.citizenBackData$.getValue()
         console.log('front data', citizenFrontData)
         console.log('back data', citizenBackData)
-        let name = '', gender = '', birthday = '', issueDay = '', citizenId = ''
+        let name = '', gender = '', birthday = '', issueDay = '', expiryDay = '', citizenId = ''
         if ('name' in citizenFrontData) {
             this.name = name = this.checkInfo(citizenFrontData['name']).value
         }
@@ -123,6 +137,9 @@ export class RegisterInforComponent implements OnInit {
         }
         if ('doi' in citizenBackData) {
             this.issueDay = issueDay = this.convertDateString(this.checkInfo(citizenBackData['doi']).value)
+        }
+        if ('doe' in citizenFrontData) {
+            this.expiryDay = expiryDay = this.convertDateString(this.checkInfo(citizenFrontData['doe']).value)
         }
         if ('idNumber' in citizenFrontData) {
             this.citizenId = citizenId = this.checkInfo(citizenFrontData['idNumber']).value
@@ -146,9 +163,6 @@ export class RegisterInforComponent implements OnInit {
             }
             wardStreet = addressParts[0]
         }
-        // console.log(city)
-        // console.log(district)
-        // console.log(wardStreet)
 
         let initCity: City
         let initDistrict: District
@@ -160,11 +174,11 @@ export class RegisterInforComponent implements OnInit {
                 ([key, value]) => {
                     // data have extra field with value = 63, so
                     if (value !== 63 && key !== 'default') {
-                        this.cityOptions[+key] = <City>value
+                        this.cityOptions[+key] = <City>value;
+                        this.cityOptionsTemp[+key] = <City>value;
                         // @ts-ignore
                         if (city.toLowerCase().indexOf(<City>value.name.toLowerCase()) > -1) {
                             initCity = <City>value
-                            // console.log(initCity)
                         }
                     }
                 }
@@ -249,6 +263,17 @@ export class RegisterInforComponent implements OnInit {
                 })
                 // console.log(this.districtOptions)
             })
+            this.selectedCityTemp$ = new BehaviorSubject<City>(null);
+            this.selectedCityTemp$.subscribe(city => {
+                // @ts-ignore
+                if (city == null) {
+                    this.districtOptionsTemp = [];
+                } else {
+                    Object.entries(city['districts']).forEach(([subKey, district]) => {
+                        this.districtOptionsTemp[+subKey] = <District>district;
+                    })
+                }
+            })
 
 
             this.selectedDistrict$.subscribe(district => {
@@ -266,14 +291,19 @@ export class RegisterInforComponent implements OnInit {
                 birthday: new FormControl({value:birthday, disabled: true}),
                 citizenId: new FormControl({value: citizenId, disabled: true}),
                 issueDate: new FormControl({value: issueDay, disabled: true}),
-                city: new FormControl({value: this.initCity.success ? this.initCity.city : '', disabled: this.initCity.success},
+                expiryDate: new FormControl({value: expiryDay, disabled: true}),
+                city: new FormControl({value: this.initCity.success ? this.initCity.city : '', disabled: false},
                     [Validators.required]),
-                district: new FormControl({value: this.initDistrict.success ? this.initDistrict.district : '', disabled: this.initDistrict.success},
+                district: new FormControl({value: this.initDistrict.success ? this.initDistrict.district : '', disabled: false},
                     [Validators.required]),
-                ward: new FormControl({value: this.initWard.success ? this.initWard.ward : '', disabled: this.initWard.success},
+                ward: new FormControl({value: this.initWard.success ? this.initWard.ward : '', disabled: false},
                     [Validators.required]),
-                street: new FormControl({value: this.initStreet.success ? this.initStreet.street: '', disabled: this.initStreet.success},
+                street: new FormControl({value: this.initStreet.success ? this.initStreet.street: '', disabled: false},
                     [Validators.required]),
+                cityTemp: new FormControl('',[Validators.required]),
+                districtTemp: new FormControl('',[Validators.required]),
+                wardTemp: new FormControl('',[Validators.required]),
+                streetTemp: new FormControl('',[Validators.required]),
                 personal_title_ref: new FormControl('', [Validators.required]),
                 name_ref: new FormControl('', [Validators.required]),
                 phone_ref: new FormControl('', [Validators.required, Validators.pattern(/^(09|03|07|08|05)+([0-9]{8}$)/g),
@@ -296,6 +326,18 @@ export class RegisterInforComponent implements OnInit {
             this.wardFilteredOptions = this.f['ward'].valueChanges.pipe(
                 startWith(''),
                 map(value => this._filter(value, 'ward'))
+            )
+            this.cityFilteredOptionsTemp = this.f['cityTemp'].valueChanges.pipe(
+                startWith(''),
+                map(value => this._filter(value, 'cityTemp'))
+            )
+            this.districtFilteredOptionsTemp = this.f['districtTemp'].valueChanges.pipe(
+                startWith(''),
+                map(value => this._filter(value, 'districtTemp'))
+            )
+            this.wardFilteredOptionsTemp = this.f['wardTemp'].valueChanges.pipe(
+                startWith(''),
+                map(value => this._filter(value, 'wardTemp'))
             )
             this.personalTitleFilterOptions = this.f['personal_title_ref'].valueChanges.pipe(
                 startWith(''),
@@ -337,7 +379,7 @@ export class RegisterInforComponent implements OnInit {
         console.log('start filter')
         const filterValue = value.toLowerCase();
         if (zone === 'city') {
-            const options = this.cityOptions.map(value => value.name)
+            const options = this.cityOptions.map(value => value.name);
             return options.filter(option => option.toLowerCase().includes(filterValue));
         }
         if (zone === 'district') {
@@ -346,6 +388,21 @@ export class RegisterInforComponent implements OnInit {
         }
         if (zone === 'ward') {
             const options = this.wardOptions.map(value => value.name)
+            return options.filter(option => option.toLowerCase().includes(filterValue))
+        }
+        if (zone === 'cityTemp') {
+            console.log("t1",this.cityOptionsTemp);
+            const options = this.cityOptionsTemp.map(value => value.name);
+            return options.filter(option => option.toLowerCase().includes(filterValue));
+        }
+        if (zone === 'districtTemp') {
+            console.log("t2",this.districtOptionsTemp);
+            const options = this.districtOptionsTemp.map(value => value.name)
+            return options.filter(option => option.toLowerCase().includes(filterValue));
+        }
+        if (zone === 'wardTemp') {
+            console.log("t3",this.wardOptionsTemp);
+            const options = this.wardOptionsTemp.map(value => value.name)
             return options.filter(option => option.toLowerCase().includes(filterValue))
         }
         if (zone === 'personal_title_ref') {
@@ -372,6 +429,7 @@ export class RegisterInforComponent implements OnInit {
             if (city === value.name){
                 this.selectedCity$.next(value);
                 this.f['district'].setValue('');
+                this.f['ward'].setValue('');
             }
         })
 
@@ -446,5 +504,24 @@ export class RegisterInforComponent implements OnInit {
             }
         })
         return  relationshipFormat;
+    }
+
+    onSelectedCityTemp(city: string) {
+        this.districtOptionsTemp.length = 0;
+        this.cityOptionsTemp.forEach((value, index) => {
+            if (city === value.name){
+                this.selectedCityTemp$.next(value);
+                this.f['districtTemp'].setValue('');
+                this.f['wardTemp'].setValue('');
+            }
+        })
+    }
+
+    onSelectedDistrictTemp(value: string) {
+
+    }
+
+    onSelectedWardTemp(value: string) {
+
     }
 }

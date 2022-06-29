@@ -124,7 +124,7 @@
 }
 
 .narrow-input-info {
-  height: 45px;
+  height: 49px;
   width: 100%;
   border-radius: 40px;
   border: hidden;
@@ -154,9 +154,31 @@
   margin-left: 12px;
 }
 .block-info {
-  display: block;
   width: 48%;
+  display: block;
 }
+
+.flex-info {
+  width: 48%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.block-info-birthday {
+  display: block;
+  width: 47.2%;
+}
+.block-info-sex {
+  display: block;
+  width: 139px;
+}
+
+.block-info-issueDate {
+  display: block;
+  width: 47.2%;
+}
+
 
 .red-star {
   margin-right: 4px;

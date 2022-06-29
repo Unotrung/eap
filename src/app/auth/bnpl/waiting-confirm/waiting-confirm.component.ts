@@ -24,5 +24,4 @@ export class WaitingConfirmComponent implements OnInit {
       this.router.navigate(['/set-pin-code']).then()
     }, 3000)
   }
-
 }
