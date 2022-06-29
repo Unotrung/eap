@@ -13,6 +13,7 @@
   padding-bottom: 40px;
   margin-bottom: 40px;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
+  position: relative;
   @media screen and(max-width: 480px) {
     padding: 32px 0px 32px 0px;
     min-height: auto;
@@ -291,7 +292,7 @@ a {
 }
 
 .status {
-  height: 70vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -345,6 +346,7 @@ a {
   padding-bottom: 40px;
   margin-bottom: 40px;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
+  position: relative;
   @media screen and(max-width: 480px) {
     padding: 0px 0px 32px 0px !important;
     min-height: auto;

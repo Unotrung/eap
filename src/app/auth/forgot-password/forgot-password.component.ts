@@ -15,6 +15,7 @@ import {TranslateService} from "@ngx-translate/core";
 export class ForgotPasswordComponent implements OnInit {
   linkValid:string = "../../../assets/images/Warning.png";
   loading = false;
+  isBlock = false;
   formPhone:FormGroup= new FormGroup({
     phone_email: new FormControl("",[Validators.required,
       Validators.pattern("^(0[0-9]{9})$|^(\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+)$")
@@ -51,16 +52,21 @@ export class ForgotPasswordComponent implements OnInit {
         this.dialogRef.close();
       }
     },error => {
+      console.log("err", error)
       if (error.error.statusCode === 900){
         this.loading = false;
         this.isExist = false;
-      } else {
+      } else if (error.error.statusCode === 1004) {
+        this.isBlock = true;
+      }
+      else {
         this.router.navigate(['/error'])
       }
     })
   }
 
   closeDialog() {
+    this.isBlock = false;
     document.getElementsByClassName("animate__animated")[0].classList.remove("animate__zoomIn")
     document.getElementsByClassName("animate__animated")[0].classList.add("animate__zoomOut");
     setTimeout(()=>{this.dialogRef.close();}, 500);

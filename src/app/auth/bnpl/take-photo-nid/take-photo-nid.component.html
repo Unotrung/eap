@@ -111,12 +111,15 @@
             <button (click)="onCaptureCitizenCard()" class="btn-shot-front">{{'takePhotoNid.start' | translate}}</button>
         </div>
 <!--        thông báo thành công mặt trước-->
-        <div *ngIf ="(pictureService.citizenFrontImageComplete$ | async) && !(pictureService.citizenBackImageComplete$ | async)">
+        <div class="box-status-front"
+             *ngIf ="(pictureService.citizenFrontImageComplete$ | async)
+             && !(pictureService.citizenBackImageComplete$ | async)">
             <div class="status-front-idCard">
                 <img class="icon-status" src="../../../../assets/images/smile.png">
                 <div class="msg-stt">{{'takePhotoNid.msgSttFront' | translate}}</div>
                 <div class="line-now"><div>Now</div></div>
             </div>
+            <img class="icon-refresh" src="../../../../assets/images/Refresh.png">
             <div class="note-continue-back">{{'takePhotoNid.noteToBack' | translate}}</div>
             <div class="content-idCard">
                 <div class="corner-1 corner"></div>

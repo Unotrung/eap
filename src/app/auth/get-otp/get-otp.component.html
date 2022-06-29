@@ -24,19 +24,35 @@
             </div>
         </div>
 
+        <div *ngIf = "!isCancel">
+            <app-button-dialog class="hidden-480" [contentBtn]="'register.buttonOtp'|translate"
+                               [isEnable]="otp.length<6"
+                               (click)="submit()"
+                               [width]="299"
+                               [height]="46">
+            </app-button-dialog>
+            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.buttonOtp'|translate"
+                               [isEnable]="otp.length<6"
+                               (click)="submit()"
+                               [width]="200"
+                               [height]="40">
+            </app-button-dialog>
+        </div>
+        <div *ngIf = "isCancel">
+            <app-button-dialog class="hidden-480" [contentBtn]="'login.cancel'|translate"
+                               [isEnable]="false"
+                               (click)="onNoClick()"
+                               [width]="299"
+                               [height]="46">
+            </app-button-dialog>
+            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'login.cancel'|translate"
+                               [isEnable]="false"
+                               (click)="onNoClick()"
+                               [width]="200"
+                               [height]="40">
+            </app-button-dialog>
+        </div>
 
-        <app-button-dialog class="hidden-480" [contentBtn]="'register.buttonOtp'|translate"
-                           [isEnable]="otp.length<6"
-                           (click)="submit()"
-        [width]="299"
-        [height]="46">
-        </app-button-dialog>
-        <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.buttonOtp'|translate"
-                           [isEnable]="otp.length<6"
-                           (click)="submit()"
-                           [width]="200"
-                           [height]="40">
-        </app-button-dialog>
 
 <!--        <div *ngIf="loading" class="loading">-->
 <!--            <app-loading></app-loading>-->

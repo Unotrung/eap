@@ -21,6 +21,7 @@ export class GetOTPComponent implements OnInit {
     };
     otp:string = '';
     countFail = 0;
+    isCancel = false;
 
     otpForm: FormGroup = new FormGroup({
         otp: new FormControl("", [Validators.required,
@@ -61,6 +62,7 @@ export class GetOTPComponent implements OnInit {
     }
 
     onNoClick() {
+        this.isCancel = false;
         document.getElementsByClassName("get-otp-animate")[0].classList.remove("animate__zoomIn")
         document.getElementsByClassName("get-otp-animate")[0].classList.add("animate__zoomOut");
         setTimeout(() => {
@@ -98,12 +100,14 @@ export class GetOTPComponent implements OnInit {
                     this.messageErr = this.translateService.instant('forgotPass.wrongOtp');
                 } else if (error.error.countFail===5){
                     this.countFail = error.error.countFail;
+                    this.isCancel = true;
                     this.messageErr = this.translateService.instant('forgotPass.blockOtp');
                 }
             } else if (error.error.statusCode == 3000) {
                 this.messageErrExp = this.translateService.instant('forgotPass.ExpiredOtp');
             } else if (error.error.statusCode == 1004) {
                 this.countFail = error.error.countFail;
+                this.isCancel = true;
                 this.messageErr = this.translateService.instant('forgotPass.blockOtp');
             }
             this.loading = false;
