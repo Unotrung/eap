@@ -39,7 +39,7 @@ export class SelfiePhotoComponent implements OnInit {
         // if (this.authService.step$.getValue() === 0) {
         //     this.router.navigate(['/infor-bnpl']);
         // }
-        this.citizenId = new FormControl('', [Validators.pattern('^[0-9]{9}|[0-9]{12}$'), Validators.required])
+        this.citizenId = new FormControl('', [Validators.pattern('^([0-9]{9})$|^([0-9]{12})$'), Validators.required])
     }
 
     onFileChanged(event: any) {

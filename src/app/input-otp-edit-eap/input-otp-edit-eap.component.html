@@ -22,16 +22,31 @@
         </div>
       </div>
     </div>
-    <app-button-dialog class="hidden-480" [contentBtn]="'register.buttonOtp'|translate"
-                       [isEnable]="otp.length<6"
-                       (click)="submit()">
-    </app-button-dialog>
-    <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.buttonOtp'|translate"
-                       [isEnable]="otp.length<6"
-                       (click)="submit()"
-                       [width]="200"
-                       [height]="40">
-    </app-button-dialog>
+    <div *ngIf = "!isCancel">
+      <app-button-dialog class="hidden-480" [contentBtn]="'register.buttonOtp'|translate"
+                         [isEnable]="otp.length<6"
+                         (click)="submit()">
+      </app-button-dialog>
+      <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.buttonOtp'|translate"
+                         [isEnable]="otp.length<6"
+                         (click)="submit()"
+                         [width]="200"
+                         [height]="40">
+      </app-button-dialog>
+    </div>
+    <div *ngIf = "isCancel">
+      <app-button-dialog class="hidden-480" [contentBtn]="'register.buttonOtp'|translate"
+                         [isEnable]="false"
+                         (click)="onNoClick()">
+      </app-button-dialog>
+      <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.buttonOtp'|translate"
+                         [isEnable]="false"
+                         (click)="onNoClick()"
+                         [width]="200"
+                         [height]="40">
+      </app-button-dialog>
+    </div>
+
 
 <!--    <div *ngIf="loading" class="loading">-->
 <!--      <app-loading></app-loading>-->
@@ -46,6 +61,7 @@
     </a>
     <a [hidden]="countDown > 0"
        class="link-send"
+       [class.link-send-disable]="isCancel"
        (click)="getOtpAgain()">
       {{'register.getOtpAgain' | translate}}
     </a>

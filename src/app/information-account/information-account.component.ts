@@ -151,6 +151,7 @@ export class InformationAccountComponent implements OnInit {
                                 this.openDialogStatusUpdate(true,
                                     this.translateService.instant('accountEap.statusSuccess'));
                             },error => {
+                                this.email = this.oldEmail;
                                 this.openDialogStatusUpdate(false,
                                     this.translateService.instant('accountEap.statusFail'));
                             })
@@ -201,7 +202,6 @@ export class InformationAccountComponent implements OnInit {
             }
             localStorage.setItem('userCurrent', JSON.stringify(newUser));
             this.authenticationService.userCurrentSubject$.next(newUser);
-            window.location.reload();
         })
     }
 

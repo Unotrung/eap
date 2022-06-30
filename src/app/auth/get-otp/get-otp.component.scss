@@ -181,7 +181,6 @@
     margin-top: 8px;
   }
   .link-send {
-    text-decoration-line: underline;
     color: #0096C7;
     cursor: pointer;
   }
@@ -227,9 +226,9 @@
 }
 
 .link-send-disable {
-  pointer-events: none;
-  cursor: default;
-  color: grey;
+  pointer-events: none !important;
+  cursor: default !important;
+  color: grey !important;
 }
 
 .hidden-480 {

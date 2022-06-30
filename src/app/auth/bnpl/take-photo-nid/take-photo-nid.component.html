@@ -126,7 +126,17 @@
                 <div class="corner-2 corner"></div>
                 <div class="corner-3 corner"></div>
                 <div class="corner-4 corner"></div>
-                <img class="img-idCard-front" [src]="pictureService.citizenFrontImage">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../../../../assets/images/front-idCard.png" width="100%" height="100%">
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="../../../../assets/images/back-idCard.png" width="100%" height="100%">
+                        </div>
+                    </div>
+                </div>
+<!--                <img class="img-idCard-front" [src]="pictureService.citizenFrontImage">-->
             </div>
             <div class="cover-btn-shot-back">
                 <app-button-dialog [contentBtn]="'takePhotoNid.start' | translate"

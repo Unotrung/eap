@@ -13,6 +13,7 @@ import {LanguageService} from "../../../_service/language/language.service";
 })
 export class ConfirmInformationBnplComponent implements OnInit {
     address = '';
+    addressTemp = '';
     userBnpl: any;
     lang = '';
     showGender = '';
@@ -41,7 +42,14 @@ export class ConfirmInformationBnplComponent implements OnInit {
     ${this.customerInformationService.customerInfo$.getValue().ward}, 
     ${this.customerInformationService.customerInfo$.getValue().district}, 
     ${this.customerInformationService.customerInfo$.getValue().city}`;
+
+        this.addressTemp = `${this.customerInformationService.customerInfo$.getValue().streetTemp}, 
+    ${this.customerInformationService.customerInfo$.getValue().wardTemp}, 
+    ${this.customerInformationService.customerInfo$.getValue().districtTemp}, 
+    ${this.customerInformationService.customerInfo$.getValue().cityTemp}`;
     }
+
+
 
     onSendConfirm() {
         const dialogRef = this.dialog.open(WaitingConfirmComponent, {

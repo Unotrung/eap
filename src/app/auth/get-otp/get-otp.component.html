@@ -67,6 +67,7 @@
         </a>
         <a [hidden]="countDown > 0"
            class="link-send"
+           [class.link-send-disable]="isCancel"
            (click)="getOtpAgain()">
             {{'register.getOtpAgain' | translate}}
         </a>

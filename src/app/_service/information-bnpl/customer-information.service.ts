@@ -20,11 +20,17 @@ export class CustomerInformationService {
       birthday: undefined,
       citizenId: undefined,
       issueDate: undefined,
+      expiryDate: undefined,
 
       city: '',
       district: '',
       ward: '',
       street: '',
+
+      cityTemp: '',
+      districtTemp: '',
+      wardTemp: '',
+      streetTemp: '',
 
       personal_title_ref: '',
       name_ref: '',

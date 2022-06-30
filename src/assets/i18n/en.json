@@ -59,6 +59,8 @@
 		"phone": "",
 		"nid": "",
 		"makeDateNid": "",
+		"expiryDateNid": "",
+		"addressTemp": "",
 		"address": "",
 		"labelRef": "",
 		"personalRef": "",

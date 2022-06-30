@@ -92,14 +92,14 @@ app-status-final-payment {
   url("../assets/images/Gradient-bgr-1.png") no-repeat right 0 top 700px,
   url("../assets/images/Gradient-bgr-2.png") no-repeat left 0 top 1650px,
   url("../assets/images/Gradient-bgr-3.png") no-repeat left 0 top 4200px,
-  url("../assets/images/Gradient-bgr-4.png") no-repeat right 0 bottom 1880px,
-  url("../assets/images/bgr-img-2.png") no-repeat left 7% bottom 139px;
+  url("../assets/images/Gradient-bgr-4.png") no-repeat right 0 bottom 1880px;
+  //url("../assets/images/bgr-img-2.png") no-repeat left 7% bottom 139px;
   @media screen and(max-width: 480px){
     background: url("../assets/images/bgr-phone-1.png") no-repeat right 0 top 746px,
     url("../assets/images/bgr-phone-4.png") no-repeat right 0 top 555px,
     url("../assets/images/bgr-phone-5.png") no-repeat left 0 bottom 970px,
-    url("../assets/images/bgr-phone-2.png") no-repeat right 0 bottom 1360px,
-    url("../assets/images/bgr-phone-3.png") no-repeat left 0 bottom 407px;
+    url("../assets/images/bgr-phone-2.png") no-repeat right 0 bottom 1360px;
+    //url("../assets/images/bgr-phone-3.png") no-repeat left 0 bottom 407px;
   }
 }
 

@@ -84,6 +84,10 @@ $dynamic-app-dark-theme: mat.define-dark-theme((
 html {
   min-height: 100vh !important;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 html, body {
   height: auto;

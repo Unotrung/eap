@@ -33,13 +33,13 @@ export class NavbarComponent implements OnInit {
             id: 2,
             name: 'customer',
             text: 'header.customer',
-            router: '/customer'
+            router: 'customer'
         },
         {
             id: 3,
             name: 'partner',
             text: 'header.partner',
-            router: '/partner'
+            router: 'partner'
         },
         {
             id: 4,
@@ -47,12 +47,12 @@ export class NavbarComponent implements OnInit {
             text: 'header.fastPay',
             router: '/fastPay'
         },
-        {
-            id: 5,
-            name: 'help',
-            text: 'header.help',
-            router: '/help'
-        }
+        // {
+        //     id: 5,
+        //     name: 'help',
+        //     text: 'header.help',
+        //     router: 'help'
+        // }
     ]
     @ViewChild('noteButton') noteButton: ElementRef;
     @ViewChild('menuNote') menuNote: ElementRef;
@@ -153,12 +153,12 @@ export class NavbarComponent implements OnInit {
         this.showNote = !this.showNote;
     }
 
-    openOtherPage(router: string, id: number) {
+    openOtherPage(router: string, id: number, e: any) {
         this.currentItem = id;
         if (router === '/fastPay') {
+            e.preventDefault();
             this.openDialogPayFast()
         } else {
-            this.router.navigate([router]);
         }
     }
 

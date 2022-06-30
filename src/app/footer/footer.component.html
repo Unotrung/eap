@@ -65,71 +65,146 @@
 <!--</div>-->
 
 
-<div class="footer-container">
-    <div><img class="icon-footer" src="../../assets/images/logoHP.png"></div>
+<!--<div class="footer-container">-->
+<!--    <div><img class="icon-footer" src="../../assets/images/logoHP.png"></div>-->
 
+<!--    <div class="footer-1">-->
+<!--        <div class="text-des" [innerHTML]="'footer.textDes' | translate"></div>-->
+<!--        <div class="box-lang">-->
+<!--            <div #langButton class="choose-language" (click)="isShowLang = !isShowLang">-->
+<!--                <img class="icon-union" src="../../assets/images/union.png">-->
+<!--                <div class="current-lang">{{langChoose}}</div>-->
+<!--                <img class="icon-drop-lang"-->
+<!--                     [style]="isShowLang?'transform: rotate(180deg);':null"-->
+<!--                     src="../../assets/images/dropdown-language.png">-->
+<!--                <div #menuLang [hidden]="!isShowLang" class="option-lang">-->
+<!--                    <div class="name-language"-->
+<!--                         (click)="selectLanguage(lg,$event)"-->
+<!--                         *ngFor="let lg of supportLanguage, let i = index"-->
+<!--                         [style]="!isChanged&&i==0?'background: #ffffff !important;font-weight: 400 !important;':null"-->
+<!--                         [class.shadow-bt]="i==0"-->
+<!--                         [class.divTop]="i==0"-->
+<!--                         [class.divBottom]="i==supportLanguage.length-1"-->
+<!--                         [class.choose-bgr]="langChoose===listShowLanguage[i]"-->
+<!--                         (mouseover)="changeHover(lg)"-->
+<!--                         (mouseleave)="isChanged = true"-->
+<!--                         [id]="i">-->
+<!--                        {{listShowLanguage[i]}}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="footer-2">-->
+<!--        <div class="footer-2-1 hidden-phone">-->
+<!--            <div class="footer-2-1-1">-->
+<!--                <div>{{'footer.item-1' | translate}}</div>-->
+<!--                <div>{{'footer.item-2' | translate}}</div>-->
+<!--                <div>{{'footer.item-3' | translate}}</div>-->
+<!--            </div>-->
+<!--            <div class="footer-2-1-1">-->
+<!--                <div>{{'footer.item-4' | translate}}</div>-->
+<!--                <div>{{'footer.item-5' | translate}}</div>-->
+<!--                <div>{{'footer.item-6' | translate}}</div>-->
+<!--            </div>-->
+<!--            <div class="footer-2-1-1 width-end">-->
+<!--                <div>{{'footer.item-7' | translate}}</div>-->
+<!--                <div>{{'footer.item-8' | translate}}</div>-->
+<!--                <div>{{'footer.item-9' | translate}}</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;        màn hình di động&ndash;&gt;-->
+<!--        <div class="content-footer-phone hidden-lager-screen">-->
+<!--            <div class="footer-2-1-1">-->
+<!--                <div>{{'footer.item-1' | translate}}</div>-->
+<!--                <div>{{'footer.item-2' | translate}}</div>-->
+<!--                <div>{{'footer.item-3' | translate}}</div>-->
+<!--                <div>{{'footer.item-4' | translate}}</div>-->
+<!--                <div>{{'footer.item-5' | translate}}</div>-->
+<!--            </div>-->
+<!--            <div class="footer-2-1-1">-->
+<!--                <div>{{'footer.item-6' | translate}}</div>-->
+<!--                <div>{{'footer.item-7' | translate}}</div>-->
+<!--                <div>{{'footer.item-8' | translate}}</div>-->
+<!--                <div>{{'footer.item-9' | translate}}</div>-->
+<!--                <div style="height: 15px"></div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="footer-2-2">-->
+<!--            <div class="footer-2-2-1">-->
+<!--                <div class="cover-icon-app"><img src="../../assets/images/facebook.png"></div>-->
+<!--                <div class="cover-icon-app"><img src="../../assets/images/twitter.png"></div>-->
+<!--                <div class="cover-icon-app"><img src="../../assets/images/instagram.png"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--mới 2-->
+
+<div class="footer-container">
     <div class="footer-1">
-        <div class="text-des" [innerHTML]="'footer.textDes' | translate"></div>
-        <div class="box-lang">
-            <div #langButton class="choose-language" (click)="isShowLang = !isShowLang">
-                <img class="icon-union" src="../../assets/images/union.png">
-                <div class="current-lang">{{langChoose}}</div>
-                <img class="icon-drop-lang"
-                     [style]="isShowLang?'transform: rotate(180deg);':null"
-                     src="../../assets/images/dropdown-language.png">
-                <div #menuLang [hidden]="!isShowLang" class="option-lang">
-                    <div class="name-language"
-                         (click)="selectLanguage(lg,$event)"
-                         *ngFor="let lg of supportLanguage, let i = index"
-                         [style]="!isChanged&&i==0?'background: #ffffff !important;font-weight: 400 !important;':null"
-                         [class.shadow-bt]="i==0"
-                         [class.divTop]="i==0"
-                         [class.divBottom]="i==supportLanguage.length-1"
-                         [class.choose-bgr]="langChoose===listShowLanguage[i]"
-                         (mouseover)="changeHover(lg)"
-                         (mouseleave)="isChanged = true"
-                         [id]="i">
-                        {{listShowLanguage[i]}}
-                    </div>
+        <div><img class="icon-footer" src="../../assets/images/logoHP.png"></div>
+        <div #langButton class="choose-language" (click)="isShowLang = !isShowLang">
+            <img class="icon-union" src="../../assets/images/union.png">
+            <div class="current-lang">{{langChoose}}</div>
+            <img class="icon-drop-lang"
+                 [style]="isShowLang?'transform: rotate(180deg);':null"
+                 src="../../assets/images/dropdown-language.png">
+            <div #menuLang [hidden]="!isShowLang" class="option-lang">
+                <div class="name-language"
+                     (click)="selectLanguage(lg,$event)"
+                     *ngFor="let lg of supportLanguage, let i = index"
+                     [style]="!isChanged&&i==0?'background: #ffffff !important;font-weight: 400 !important;':null"
+                     [class.shadow-bt]="i==0"
+                     [class.divTop]="i==0"
+                     [class.divBottom]="i==supportLanguage.length-1"
+                     [class.choose-bgr]="langChoose===listShowLanguage[i]"
+                     (mouseover)="changeHover(lg)"
+                     (mouseleave)="isChanged = true"
+                     [id]="i">
+                    {{listShowLanguage[i]}}
                 </div>
             </div>
         </div>
     </div>
     <div class="footer-2">
         <div class="footer-2-1 hidden-phone">
-            <div class="footer-2-1-1">
-                <div>{{'footer.item-1' | translate}}</div>
-                <div>{{'footer.item-2' | translate}}</div>
-                <div>{{'footer.item-3' | translate}}</div>
-            </div>
-            <div class="footer-2-1-1">
-                <div>{{'footer.item-4' | translate}}</div>
-                <div>{{'footer.item-5' | translate}}</div>
-                <div>{{'footer.item-6' | translate}}</div>
-            </div>
-            <div class="footer-2-1-1 width-end">
-                <div>{{'footer.item-7' | translate}}</div>
-                <div>{{'footer.item-8' | translate}}</div>
-                <div>{{'footer.item-9' | translate}}</div>
-            </div>
+                    <div class="text-des" [innerHTML]="'footer.textDes' | translate"></div>
+<!--            <div class="footer-2-1-1">-->
+<!--                <div>{{'footer.item-1' | translate}}</div>-->
+<!--                <div>{{'footer.item-2' | translate}}</div>-->
+<!--                <div>{{'footer.item-3' | translate}}</div>-->
+<!--            </div>-->
+<!--            <div class="footer-2-1-1">-->
+<!--                <div>{{'footer.item-4' | translate}}</div>-->
+<!--                <div>{{'footer.item-5' | translate}}</div>-->
+<!--                <div>{{'footer.item-6' | translate}}</div>-->
+<!--            </div>-->
+<!--            <div class="footer-2-1-1 width-end">-->
+<!--                <div>{{'footer.item-7' | translate}}</div>-->
+<!--                <div>{{'footer.item-8' | translate}}</div>-->
+<!--                <div>{{'footer.item-9' | translate}}</div>-->
+<!--            </div>-->
         </div>
         <!--        màn hình di động-->
         <div class="content-footer-phone hidden-lager-screen">
-            <div class="footer-2-1-1">
-                <div>{{'footer.item-1' | translate}}</div>
-                <div>{{'footer.item-2' | translate}}</div>
-                <div>{{'footer.item-3' | translate}}</div>
-                <div>{{'footer.item-4' | translate}}</div>
-                <div>{{'footer.item-5' | translate}}</div>
-            </div>
-            <div class="footer-2-1-1">
-                <div>{{'footer.item-6' | translate}}</div>
-                <div>{{'footer.item-7' | translate}}</div>
-                <div>{{'footer.item-8' | translate}}</div>
-                <div>{{'footer.item-9' | translate}}</div>
-                <div style="height: 15px"></div>
+<!--            <div class="footer-2-1-1">-->
+<!--                <div>{{'footer.item-1' | translate}}</div>-->
+<!--                <div>{{'footer.item-2' | translate}}</div>-->
+<!--                <div>{{'footer.item-3' | translate}}</div>-->
+<!--                <div>{{'footer.item-4' | translate}}</div>-->
+<!--                <div>{{'footer.item-5' | translate}}</div>-->
+<!--            </div>-->
+<!--            <div class="footer-2-1-1">-->
+<!--                <div>{{'footer.item-6' | translate}}</div>-->
+<!--                <div>{{'footer.item-7' | translate}}</div>-->
+<!--                <div>{{'footer.item-8' | translate}}</div>-->
+<!--                <div>{{'footer.item-9' | translate}}</div>-->
+<!--                <div style="height: 15px"></div>-->
 
-            </div>
+<!--            </div>-->
         </div>
         <div class="footer-2-2">
             <div class="footer-2-2-1">

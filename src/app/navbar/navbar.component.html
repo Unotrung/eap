@@ -14,7 +14,8 @@
             <a *ngFor="let item of listItemMenu, let i = index"
                [innerHTML]="item.text | translate"
                [className]="currentItem===item.id?'link-home':'text-home-page'"
-               (click)="openOtherPage(item.router,item.id)"
+               [href] = "item.router!=='/fastPay'?('#'+item.router):undefined"
+               (click)="openOtherPage(item.router,item.id,$event)"
             ></a>
         </div>
     </div>

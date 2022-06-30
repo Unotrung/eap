@@ -24,7 +24,7 @@
   text-align: start;
   padding-left: 40px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  height: 120px;
+  height: 119px;
   display: flex;
   align-items: center;
 }
@@ -134,8 +134,8 @@ button {
   height: 15px;
 }
 .img-home {
-  width: 76px;
-  height: 42px;
+  width: auto;
+  height: 28px;
 }
 
 .tick {
@@ -146,7 +146,7 @@ button {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 16px;
   border: 2px solid rgba(0, 0, 0, 0.2);
 
   img {

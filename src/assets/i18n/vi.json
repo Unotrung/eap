@@ -59,7 +59,9 @@
 		"phone": "Số điện thoại",
 		"nid": "Số CMND/CCCD",
 		"makeDateNid": "Ngày cấp",
+		"expiryDateNid": "Ngày hết hạn",
 		"address": "Địa chỉ hiện tại",
+		"addressTemp": "Địa chỉ tạm trú",
 		"labelRef": "Thông tin tham chiếu",
 		"personalRef": "Mối quan hệ",
 		"fullNameRef": "Họ và tên",
@@ -208,7 +210,7 @@
 		"title": "Xác nhận hợp đồng điện tử",
 		"titleForm": "Mẫu hợp đồng",
 		"seeMore": "Xem thêm",
-		"checkbox1": "Tôi đồng ý với điều kiện và Điền khoản hợp đồng",
+		"checkbox1": "Tôi đồng ý với Điều kiện và Điều khoản hợp đồng",
 		"checkbox2": "Vui lòng gửi OTP xác nhận về số điện thoại đã đăng ký VOOLO của tôi",
 		"signNow": "Tiếp tục",
 		"content": "SAMPLE CONzTENT - FEC input later<br/> HÌNH THỨC THANH TOÁN <br/>Đối tác được quyền thanh toán chậm cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua hàng hoá trả chậm. Giá sản phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt) của Đối tác. Vui lòng duy trì thu nhập tại Ví dưới (ví tiền mặt) để hệ thống thực hiện thanh toán tự động, tránh việc trễ hạn và ảnh hưởng đến quyền lợi của Đối tác.<br/> Trường hợp thu nhập ví dưới không đủ vào ngày thanh toán định kỳ, khoản còn thiếu hệ thống sẽ tự động thu (từ ví dưới) vào những ngày kế tiếp, kể cả ngày lễ và cuối tuần. Thời gian khấu trừ ví dưới dự kiến sẽ bắt đầu trong vòng 7 ngày kể từ ngày nhận sản phẩm.<br/> SAMPLE CONTENT - FEC input later HÌNH THỨC THANH TOÁN Đối tác được quyền thanh toán chậm cho việc mua sản phẩm trong thời hạn quy định trên Hợp đồng mua hàng hoá trả chậm. Giá sản phẩm sẽ được thanh toán định kỳ hàng ngày thông qua Ví dưới (ví tiền mặt)"
@@ -320,7 +322,7 @@
 		"item-6": "Dành cho đối tác",
 		"item-7": "Chăm sóc khách hàng",
 		"item-8": "Điều khoản sử dụng",
-		"item-9": "Chính sách 29/06 1st"
+		"item-9": "Chính sách 30/06 1st"
 	},
 	"home": {
 		"content-1": "Mua sắm không giới hạn",

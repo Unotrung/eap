@@ -275,12 +275,23 @@ export class RegisterInforComponent implements OnInit {
                 }
             })
 
-
             this.selectedDistrict$.subscribe(district => {
                 // @ts-ignore
                 Object.entries(district['wards']).forEach(([key, ward]) => {
                     this.wardOptions[+key] = <Ward>ward;
                 })
+            })
+
+            this.selectedDistrictTemp$ = new BehaviorSubject<District>(null);
+            this.selectedDistrictTemp$.subscribe(district => {
+                // @ts-ignore
+                if (district == null) {
+                    this.wardOptionsTemp = [];
+                } else {
+                    Object.entries(district['wards']).forEach(([key, ward]) => {
+                        this.wardOptionsTemp[+key] = <Ward>ward;
+                    })
+                }
             })
 
             let phone = this.authService.userCurrentSubject$.getValue().phone;
@@ -391,17 +402,14 @@ export class RegisterInforComponent implements OnInit {
             return options.filter(option => option.toLowerCase().includes(filterValue))
         }
         if (zone === 'cityTemp') {
-            console.log("t1",this.cityOptionsTemp);
             const options = this.cityOptionsTemp.map(value => value.name);
             return options.filter(option => option.toLowerCase().includes(filterValue));
         }
         if (zone === 'districtTemp') {
-            console.log("t2",this.districtOptionsTemp);
             const options = this.districtOptionsTemp.map(value => value.name)
             return options.filter(option => option.toLowerCase().includes(filterValue));
         }
         if (zone === 'wardTemp') {
-            console.log("t3",this.wardOptionsTemp);
             const options = this.wardOptionsTemp.map(value => value.name)
             return options.filter(option => option.toLowerCase().includes(filterValue))
         }
@@ -462,11 +470,17 @@ export class RegisterInforComponent implements OnInit {
             birthday: new Date(this.birthday),
             citizenId: this.f['citizenId'].value,
             issueDate: new Date(this.issueDay),
+            expiryDate: new Date(this.expiryDay),
 
             city: this.initCity.success ? this.initCity.city : this.f['city'].value,
             district: this.initDistrict.success ? this.initDistrict.district : this.f['district'].value,
-            ward: this.initWard.success ? `${this.initWard.prefix} ${this.initWard.ward}` : `${this.selectedWard$.getValue().prefix} ${this.f['ward'].value}`,
+            ward: this.initWard.success ? this.initWard.ward : this.f['ward'].value,
             street: this.initStreet.success ? this.initStreet.street : this.f['street'].value,
+
+            cityTemp: this.f['cityTemp'].value,
+            districtTemp: this.f['districtTemp'].value,
+            wardTemp: this.f['wardTemp'].value,
+            streetTemp: this.f['streetTemp'].value,
 
             // personal_title_ref: this.f['personal_title_ref'].value,
             personal_title_ref: this.handleValueRelationship(this.f['personal_title_ref'].value),
@@ -517,11 +531,21 @@ export class RegisterInforComponent implements OnInit {
         })
     }
 
-    onSelectedDistrictTemp(value: string) {
-
+    onSelectedDistrictTemp(district: string) {
+        this.wardOptionsTemp.length = 0;
+        this.districtOptionsTemp.forEach((value, index) => {
+            if (district === value.name) {
+                this.selectedDistrictTemp$.next(value);
+                this.f['wardTemp'].setValue('');
+            }
+        })
     }
 
-    onSelectedWardTemp(value: string) {
-
+    onSelectedWardTemp(ward: string) {
+        this.wardOptionsTemp.forEach((value, index) => {
+            if (ward === value.name) {
+                this.selectedWardTemp$.next(value)
+            }
+        })
     }
 }

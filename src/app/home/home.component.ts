@@ -239,4 +239,18 @@ export class HomeComponent implements OnInit {
         console.log("prev")
         this.swiper.swiperRef.slidePrev(100);
     }
+
+    scroll(el: HTMLElement) {
+        el.scrollIntoView({behavior: 'smooth'});
+    }
+
+    registerVoolo() {
+        const dialogRef = this.dialog.open(RegisterComponent, {
+            width: '100%',
+            panelClass: ['animate__animated', 'animate__zoomIn', 'animate__faster', 'animate__register']
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+        });
+    }
 }
