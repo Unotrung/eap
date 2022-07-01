@@ -93,7 +93,7 @@ export class ResetPincodeBnplComponent implements OnInit {
             this.changeBorderBottom = false;
         } else if(num ===2) {
             this.changeBorderTop = false;
-            this.changeBorderBottom = false;
+            this.changeBorderBottom = true;
         }
     }
 }

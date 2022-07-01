@@ -7,7 +7,7 @@
   min-height: 80vh;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
-  margin-right: 24px;
+  margin-right: 40px;
   font-style: normal;
   color: #000000;
   padding-bottom: 40px;
@@ -171,7 +171,7 @@
   --item-border-radius: 50%;
   --item-height: 21px;
   --item-spacing: 21px;
-  --item-background: #E5E5E5;
+  --item-background: rgba(154, 147, 147, 0.1);;
 }
 
 .focus-all {
@@ -183,7 +183,7 @@
   --item-border-radius: 50%;
   --item-height: 21px;
   --item-spacing: 21px;
-  --item-background: #E5E5E5;
+  --item-background: rgba(154, 147, 147, 0.1);
   --item-border: 2px solid #FF8080 !important;
   --item-border-bottom: 2px solid #FF8080 !important;
 }
@@ -220,7 +220,7 @@
   min-height: 80vh;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
-  margin-right: 24px;
+  margin-right: 40px;
   font-style: normal;
   color: #000000;
   padding-bottom: 40px;

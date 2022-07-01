@@ -10,7 +10,7 @@ import {MaterialModule} from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
-import {ThemeSwitchComponent} from './theme/theme-switch/theme-switch.component';
+// import {ThemeSwitchComponent} from './theme/theme-switch/theme-switch.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {LoginComponent} from './auth/login/login.component';
@@ -105,7 +105,7 @@ import {StatusCompleteComponent} from "./auth/bnpl/status-complete/status-comple
     declarations: [
         AppComponent,
         NavbarComponent,
-        ThemeSwitchComponent,
+        // ThemeSwitchComponent,
         SidebarComponent,
         LoginComponent,
         RegisterComponent,

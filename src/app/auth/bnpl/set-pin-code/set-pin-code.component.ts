@@ -89,13 +89,13 @@ export class SetPinCodeComponent implements OnInit {
         }
     }
 
-    focusAll(num:number) {
-        if (num ===1) {
+    focusAll(num: number) {
+        if (num === 1) {
             this.changeBorderTop = true;
             this.changeBorderBottom = false;
-        } else if(num ===2) {
+        } else if (num === 2) {
             this.changeBorderTop = false;
-            this.changeBorderBottom = false;
+            this.changeBorderBottom = true;
         }
     }
 }
