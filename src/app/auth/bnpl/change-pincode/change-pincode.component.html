@@ -7,7 +7,9 @@
             <div class="lable-name">{{'changePin.oldPin'|translate}}</div>
             <div class="cover-input-pin">
                 <code-input [className]="msgWrongPassword===''?'code-input-3':'code-input-4'"
+                            [class.focus-all]="changeBorderTop"
                             [codeLength]="4"
+                            (click) = "focusAll(1)"
                             [isCodeHidden]="true"
                             (codeChanged)="onCurrentCodeChanged($event)"
                             (codeCompleted)="onCurrentCodeComplete($event)"
@@ -22,6 +24,8 @@
                 <code-input [className]="msgNewPinError===''?'code-input-3':'code-input-4'"
                             [codeLength]="4"
                             [isCodeHidden]="true"
+                            [class.focus-all]="changeBorderMiddle"
+                            (click) = "focusAll(2)"
                             (codeChanged)="onNewCodeChanged($event)"
                             (codeCompleted)="onNewCodeCompleted($event)"
                             #codeInput2>
@@ -35,6 +39,8 @@
                 <code-input [className]="msgVerifyError===''?'code-input-3':'code-input-4'"
                             [codeLength]="4"
                             [isCodeHidden]="true"
+                            [class.focus-all]="changeBorderBottom"
+                            (click) = "focusAll(3)"
                             (codeChanged)="onCodeChangedVerify($event)"
                             (codeCompleted)="onCodeCompletedVerify($event)"
                             #codeInput>

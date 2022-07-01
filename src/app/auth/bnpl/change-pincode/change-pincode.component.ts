@@ -12,6 +12,9 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class ChangePincodeComponent implements OnInit {
   currentPin: string='';
+  changeBorderTop = false;
+  changeBorderMiddle = false;
+  changeBorderBottom = false;
   newPin: string='';
   verifyPin: string='';
   phone: String;
@@ -22,6 +25,7 @@ export class ChangePincodeComponent implements OnInit {
   @ViewChild('codeInput') codeInput !: CodeInputComponent;
   @ViewChild('codeInput2') codeInput2 !: CodeInputComponent;
   @ViewChild('codeInput3') codeInput3 !: CodeInputComponent;
+
   constructor(private accountBnplService: AccountBnplService,
               private authenticationService: AuthenticationService,
               private router: Router,
@@ -105,4 +109,20 @@ export class ChangePincodeComponent implements OnInit {
     this.router.navigate(['/change-pin']);
     window.location.reload();
   }
+
+    focusAll(num:number) {
+    if (num ===1) {
+      this.changeBorderTop = true;
+      this.changeBorderBottom = false;
+      this.changeBorderMiddle = false;
+    } else if(num ===2) {
+      this.changeBorderMiddle = true;
+      this.changeBorderTop = false;
+      this.changeBorderBottom = false;
+    } else if (num === 3) {
+      this.changeBorderBottom = true;
+      this.changeBorderMiddle = false;
+      this.changeBorderTop = false;
+    }
+    }
 }

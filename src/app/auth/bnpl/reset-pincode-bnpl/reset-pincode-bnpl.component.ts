@@ -19,6 +19,8 @@ export class ResetPincodeBnplComponent implements OnInit {
     messageError = "";
     msgVerifyError = '';
     msgStt : string = '';
+    changeBorderTop = false;
+    changeBorderBottom = false;
     @ViewChild('codeInput') codeInput !: CodeInputComponent;
 
     constructor(
@@ -83,6 +85,16 @@ export class ResetPincodeBnplComponent implements OnInit {
     changePinAgain() {
         this.router.navigate(['/change-pin']);
         window.location.reload();
+    }
+
+    focusAll(num:number) {
+        if (num ===1) {
+            this.changeBorderTop = true;
+            this.changeBorderBottom = false;
+        } else if(num ===2) {
+            this.changeBorderTop = false;
+            this.changeBorderBottom = false;
+        }
     }
 }
 

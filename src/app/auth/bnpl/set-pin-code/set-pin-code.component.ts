@@ -19,6 +19,8 @@ export class SetPinCodeComponent implements OnInit {
     userBnpl: any;
     messageError = "";
     msgVerifyError = '';
+    changeBorderTop = false;
+    changeBorderBottom = false;
     @ViewChild('codeInput') codeInput !: CodeInputComponent;
 
     constructor(private router: Router,
@@ -84,6 +86,16 @@ export class SetPinCodeComponent implements OnInit {
         } else {
             this.codeInput.reset();
             this.msgVerifyError = this.translateService.instant('setPin.errPinMsg')
+        }
+    }
+
+    focusAll(num:number) {
+        if (num ===1) {
+            this.changeBorderTop = true;
+            this.changeBorderBottom = false;
+        } else if(num ===2) {
+            this.changeBorderTop = false;
+            this.changeBorderBottom = false;
         }
     }
 }

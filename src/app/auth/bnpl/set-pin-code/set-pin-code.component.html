@@ -16,6 +16,8 @@
                 <div class="cover-input-pin">
                     <code-input [className]="'code-input-3'"
                                 [codeLength]="4"
+                                [class.focus-all]="changeBorderTop"
+                                (click) = "focusAll(1)"
                                 [isCodeHidden]="true"
                                 (codeChanged)="onCodeChanged($event)"
                                 (codeCompleted)="onCodeCompleted($event)">
@@ -30,6 +32,8 @@
                     <code-input [className]="msgVerifyError===''?'code-input-3':'code-input-4'"
                                 [codeLength]="4"
                                 [isCodeHidden]="true"
+                                [class.focus-all]="changeBorderBottom"
+                                (click) = "focusAll(2)"
                                 (codeChanged)="onCodeChangedVerify($event)"
                                 (codeCompleted)="onCodeCompletedVerify($event)"
                                 #codeInput>
