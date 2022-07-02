@@ -1,6 +1,6 @@
 @font-face {
   font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
 }
 
 .container-right-body {
@@ -48,7 +48,7 @@
 .infor-bnpl {
   width: 350px;
   margin: auto;
-  margin-top: 32px !important;
+  margin-top: 57px !important;
   @media screen and(max-width: 480px){
     margin-top: 0px !important;
     width: unset;
@@ -158,7 +158,7 @@
 }
 
 .text-invalid {
-  height: 18px;
+  height: 21px;
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;

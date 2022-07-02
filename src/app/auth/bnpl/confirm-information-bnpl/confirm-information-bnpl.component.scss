@@ -1,6 +1,6 @@
 @font-face {
   font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
 }
 
 .container-right-body {
@@ -37,7 +37,7 @@
   line-height: 39px;
   text-align: center;
   color: #000000;
-  margin-top: 40px;
+  margin-top: 57px;
   margin-bottom: 6px;
 }
 
@@ -106,7 +106,7 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 32px 40px 0px 40px;
+  margin: 32px 40px 0px 50px;
 }
 
 .back-step {
@@ -155,9 +155,9 @@ h1 {
   margin: auto;
   margin-top: 56px !important;
   .title-box {
-    height: 62px;
+    height: 53px;
     width: 100%;
-    padding-left: 30px;
+    padding-left: 45px;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;

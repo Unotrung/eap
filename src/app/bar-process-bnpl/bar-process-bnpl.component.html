@@ -3,8 +3,8 @@
     <div class="line-step">
         <div [style]="'width:'+childData.widthLine +'%'"></div>
     </div>
-    <mat-grid-list cols="5" rowHeight="30">
-        <mat-grid-tile *ngFor="let n of listItem, let i = index ">
+    <mat-grid-list cols="5" rowHeight="30" style = "margin-bottom: -5px">
+        <mat-grid-tile *ngFor="let n of listItem, let i = index">
             <div [style]="i <= childData.numberStep? 'background-color:#197DDE':null" class="cycle-step"></div>
         </mat-grid-tile>
     </mat-grid-list>

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
 }
 
 .container-right-body {
@@ -36,7 +36,7 @@
   line-height: 39px;
   text-align: center;
   color: #000000;
-  margin-top: 32px;
+  margin-top: 40px;
 }
 
 .title-register-des {
@@ -118,8 +118,8 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 40px !important;
-  margin-bottom: 40px !important;
+  margin-top: 56px !important;
+  margin-bottom: 56px !important;
 }
 
 .content-1 {

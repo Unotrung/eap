@@ -1,13 +1,13 @@
 @font-face {
   font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+  src: local("MontserratAlternates"), url(../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
 }
 
 .container-transaction {
   min-height: 80vh;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
-  margin-right: 24px;
+  margin-right: 40px;
   font-style: normal;
   color: #000000;
   padding-top: 72.5px;

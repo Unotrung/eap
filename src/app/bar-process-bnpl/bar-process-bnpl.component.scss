@@ -1,12 +1,12 @@
 @font-face {
   font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+  src: local("MontserratAlternates"), url(../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
 }
 
 .bar-step {
-  width: 829px;
+  width: 822px;
   margin: auto;
-  margin-top: 40px !important;
+  margin-top: 36px !important;
   position: relative;
 }
 
@@ -52,4 +52,5 @@
   text-align: center;
   color: #000000;
   margin-top: 61px;
+  letter-spacing: -0.01rem;
 }

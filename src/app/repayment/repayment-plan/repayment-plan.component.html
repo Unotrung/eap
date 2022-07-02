@@ -43,7 +43,7 @@
     <table>
         <thead>
         <tr>
-            <td width="21%"><label style="margin-left: 40px">{{'repayment.issueDate' | translate}}</label>
+            <td width="22%"><label style="margin-left: 40px">{{'repayment.issueDate' | translate}}</label>
                 <img class="sort-icon-esc"
                      [style]="sortByField==='dueDate'&&!isCheckSort?'transform: rotate(-180deg)':null"
                      (click)="sort('dueDate')"
@@ -55,25 +55,25 @@
 <!--                     (click)="sort('provider')"-->
 <!--                     src="../../../assets/images/angle-down.png">-->
 <!--            </td>-->
-            <td width="27%">{{'repayment.payMoney' | translate}}
+            <td width="25%">{{'repayment.payMoney' | translate}}
                 <img class="sort-icon-esc"
                      [style]="sortByField==='paidMoney'&&!isCheckSort?'transform: rotate(-180deg)':null"
                      (click)="sort('paidMoney')"
                      src="../../../assets/images/angle-down.png">
             </td>
-            <td width="21%">{{'repayment.status' | translate}}
+            <td width="21.5%">{{'repayment.status' | translate}}
                 <img class="sort-icon-esc"
                      [style]="sortByField==='status'&&!isCheckSort?'transform: rotate(-180deg)':null"
                      (click)="sort('status')"
                      src="../../../assets/images/angle-down.png">
             </td>
-            <td width="21%">{{'repayment.action' | translate}}
+            <td width="22%">{{'repayment.action' | translate}}
                 <img class="sort-icon-esc"
                      [style]="sortByField==='status'&&!isCheckSort?'transform: rotate(-180deg)':null"
                      (click)="sort('status')"
                      src="../../../assets/images/angle-down.png">
             </td>
-            <td style="width: 96px">{{'repayment.viewInvoice' | translate}}</td>
+            <td style="width: 9.5%">{{'repayment.viewInvoice' | translate}}</td>
         </tr>
         </thead>
         <tbody *ngFor="let tran of listRepayment">
