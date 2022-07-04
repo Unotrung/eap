@@ -42,17 +42,22 @@ export class JwtInterceptor implements HttpInterceptor {
                     }
                 });
             } else {
+                request = request.clone({
+                    setHeaders: {
+                        Authorization: `Bearer ${accessToken}`,
+                        appKey:  'WOLFCONSULTING113911',
+                        appId:  '998877665544332211'
+                    }
+                });
                 if (!checkRequestRefreshToken) {
-                    let id = this.authenticationService.userCurrentSubject$.getValue()._id;
-                    let email = this.authenticationService.userCurrentSubject$.getValue().email;
                     let data = {
-                        id: id,
-                        email: email,
                         refreshToken: refreshToken
                     }
+
+                    console.log("refresh Toke", data)
                     try {
                         let res = await this.authenticationService.changeToken(data).toPromise();
-                        console.log(res);
+                        console.log("texxxx",res);
                         let newToken = res.accessToken;
                         let newRefreshToken = res.refreshToken;
                         localStorage.setItem('accessToken', JSON.stringify(newToken));
@@ -70,13 +75,14 @@ export class JwtInterceptor implements HttpInterceptor {
                     } catch (e) {
                         e.message;
                         console.log("loi")
+                        this.router.navigate(['/error'])
                         this.authenticationService.accessTokenSubject$.next(null);
                         this.authenticationService.userCurrentSubject$.next(null);
                         this.authenticationService.refreshTokenSubject$.next(null);
                         localStorage.removeItem('accessToken');
                         localStorage.removeItem('userCurrent');
                         localStorage.removeItem('refreshToken');
-                        this.router.navigate(['/']).then(()=>{window.location.reload();});
+                        // this.router.navigate(['/']).then(()=>{window.location.reload();});
                     }
                 }
             }

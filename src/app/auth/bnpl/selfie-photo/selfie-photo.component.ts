@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {HttpClient} from "@angular/common/http";
@@ -7,11 +7,15 @@ import {AuthenticationService} from "../../../_service/auth/authentication.servi
 import {PictureService, NCardSide} from "../../../_service/kyc/picture.service";
 import {AccountBnplService} from "../../../_service/auth/account-bnpl.service";
 import {WaitingConfirmPhoneComponent} from "../waiting-confirm-phone/waiting-confirm.component-phone";
+import SwiperCore, {Navigation, Pagination, Virtual} from "swiper";
+import {SwiperComponent} from "swiper/angular";
 
+SwiperCore.use([Pagination, Navigation, Virtual]);
 @Component({
     selector: 'app-selfie-photo',
     templateUrl: './selfie-photo.component.html',
     styleUrls: ['./selfie-photo.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class SelfiePhotoComponent implements OnInit {
 
@@ -21,6 +25,7 @@ export class SelfiePhotoComponent implements OnInit {
     citizenId!: FormControl;
     isExistNid: boolean = false;
     isShowGuide = false;
+    countStepGuide = 0;
     // formGroup!: FormGroup;
     apiResults: any
 
@@ -52,6 +57,7 @@ export class SelfiePhotoComponent implements OnInit {
 
     startCaptureImage() {
         this.isShowGuide = false;
+        this.countStepGuide = 0;
         if (this.pictureService.selfieImageComplete$.getValue()) {
             this.onDeleteImage()
         }
@@ -147,5 +153,21 @@ export class SelfiePhotoComponent implements OnInit {
 
     showGuideShot() {
         this.isShowGuide = true;
+    }
+
+    @ViewChild('swiper2', {static: false}) swiper2?: SwiperComponent;
+
+    slideNext() {
+        // this.swiper2.swiperRef.slideNext(100);
+        this.swiper2.swiperRef.slideTo(2);
+        this.countStepGuide = 2;
+    }
+
+    slidePrev() {
+        this.swiper2.swiperRef.slidePrev(100);
+    }
+
+    scroll(el: HTMLElement) {
+        el.scrollIntoView({behavior: 'smooth'});
     }
 }

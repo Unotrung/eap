@@ -13,6 +13,14 @@
   padding-bottom: 40px;
   margin-bottom: 40px;
   position: relative;
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
+  @media screen and(max-width: 480px){
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-bottom: 32px;
+    min-height: auto;
+    margin-top: 26px;
+  }
 }
 
 .title-infor {
@@ -26,9 +34,19 @@
   height: 119px;
   display: flex;
   align-items: center;
+  @media screen and(max-width: 480px){
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: unset;
+    border-bottom: hidden;
+    text-align: center;
+    height: auto;
+    justify-content: center;
+    padding-top: 32px;
+  }
 }
 .global-box {
-  //padding : 0 32px 0 32px;
+  position: relative;
 }
 
 .image-blurred-edge {
@@ -37,7 +55,8 @@
 }
 
 .error {
-  height: 24px;
+  min-height: 24px;
+  height: auto;
   width: 100%;
   font-weight: 400;
   font-size: 10px;
@@ -47,7 +66,7 @@
   text-align: center;
   justify-content: start;
   color: #EE4D2D;
-  margin-top: 8px;
+  padding-top: 8px;
 }
 
 .error img {
@@ -86,6 +105,8 @@
   color: #000000;
   font-family: "MontserratAlternates";
   margin-bottom: 16px;
+  @media screen and(max-width: 480px){
+  }
 }
 
 .background-gray {
@@ -181,18 +202,18 @@
 
 .picture-selfie-overlay-2 {
   width: 100px;
-  height: auto;
+  height: 100px;
+  overflow: hidden;
   margin: auto;
   background: #FFFFFF;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   .img-small {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
+    width: auto;
+    height: 100px;
+    max-width: unset !important;
   }
   .icon-dell {
     position: absolute;
@@ -203,7 +224,7 @@
     width: 20px;
     position: absolute;
     bottom: -6px;
-    right: -4px;
+    right: 98px;
   }
 
 }
@@ -230,8 +251,21 @@ ul {
   margin-bottom: 40px;
 }
 
-.cover-btn {
-  margin-top: 50px;
+.cover-btn-continue {
+  margin-top: 64px;
+  @media screen and(max-width: 480px) {
+    margin-top: 40px;
+  }
+}
+
+.cover-btn-start {
+  margin-top: 148px;
+  @media screen and(max-width: 1280px) {
+    margin-top: 80px;
+  }
+  @media screen and(max-width: 480px) {
+    margin-top: -8px;
+  }
 }
 
 .link-back {
@@ -251,8 +285,12 @@ ul {
   width: 308px;
   margin: auto;
   height: auto;
-  margin-top: 56px !important;
+  margin-top: 40.5px !important;
   margin-bottom: 32px !important;
+  @media screen and(max-width: 480px) {
+    margin-bottom: 0px !important;
+    margin-top: 36px !important;
+  }
 }
 .cover-input {
   position: relative;
@@ -288,7 +326,7 @@ ul {
   line-height: 24px;
   text-align: center;
   color: #000000;
-  margin-bottom: 6px;
+  margin-bottom: 5.5px;
 }
 
 .text-under-camera {
@@ -311,9 +349,16 @@ ul {
 }
 
 .container-guide {
-  margin-left: 8%;
-  margin-right: 8%;
-  margin-top: 48px;
+  margin-left: 52px;
+  margin-right: 63px;
+  margin-top: 132px;
+  @media screen and(max-width: 1280px){
+    margin-top: 80px;
+  }
+  @media screen and(max-width: 480px){
+    margin: 0px !important;
+    padding-top: 30px;
+  }
 }
 
 .box-guide {
@@ -325,16 +370,25 @@ ul {
 }
 
 .box-item {
-  height: 290px;
-  width: 208px;
+  height: 387px;
+  width: 274px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @media screen and(max-width: 1280px){
+    width: 220px;
+    height: 350px;
+  }
+  @media screen and(max-width: 480px){
+    width: 274px;
+    height: 387px;
+    margin: auto;
+  }
 }
 
 .img-des {
-  width: 170px;
+  width: 100%;
   height: auto;
 }
 
@@ -342,17 +396,24 @@ ul {
   font-family: 'MontserratAlternates';
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 26px;
+  line-height: 32px;
   text-align: center;
+  @media screen and(max-width: 480px){
+
+  }
 }
 
 .content-guide {
   font-style: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 20px;
   text-align: center;
   color: #000000;
+  width:235px;
+  @media screen and(max-width: 480px){
+
+  }
 }
 
 .color-red {
@@ -369,3 +430,51 @@ ul {
 .text-light {
   font-weight: 400;
 }
+
+.text-title-guide {
+  font-family: 'MontserratAlternates';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 32px;
+}
+
+.box-skip {
+  width: 72px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-top: 32px !important;
+  img {
+    width: 12.96px;
+    height: 6.44px;
+    transform: rotate(-90deg);
+  }
+}
+
+
+@import "~swiper/css";
+@import "~swiper/css/pagination";
+@import "~swiper/css/navigation";
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+
+}
+
+.cover-swiper-guide {
+  height: 430px;
+}
+

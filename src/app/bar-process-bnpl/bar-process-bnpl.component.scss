@@ -8,6 +8,10 @@
   margin: auto;
   margin-top: 36px !important;
   position: relative;
+  @media screen and(max-width: 480px){
+    width: 308px;
+    margin-top: 10px !important;
+  }
 }
 
 .text-step {
@@ -18,7 +22,10 @@
   align-items: center;
   text-align: center;
   color: #A8A8A8;
-  width: 86px;
+  @media screen and(max-width: 480px){
+    font-size: 10px;
+    line-height: 12px;
+  }
 }
 
 .cycle-step {
@@ -26,6 +33,10 @@
   height: 15px;
   background: #C4C4C4;
   border-radius: 50%;
+  @media screen and(max-width: 480px){
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .line-step {
@@ -53,4 +64,11 @@
   color: #000000;
   margin-top: 61px;
   letter-spacing: -0.01rem;
+  @media screen and(max-width: 480px){
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 32px !important;
+    width: 80%;
+    margin: auto;
+  }
 }

@@ -81,9 +81,11 @@ $dynamic-app-dark-theme: mat.define-dark-theme((
   font-family: "Montserrat";
   src: local("Montserrat"), url(assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
 }
+
 html {
   min-height: 100vh !important;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -200,20 +202,23 @@ input {
 }
 
 .hv-modal-content {
-  border: 3px solid #E8E8E8 !important;
+  //border: 3px solid #E8E8E8 !important;
   box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.25) !important;
   border-radius: 20px !important;
   padding: 32px 48px !important;
-  @media screen and(min-width: 1025px){
+  @media screen and(min-width: 1025px) {
     width: 530px !important;
     height: 600px !important;
   }
+  @media screen and(max-width: 480px) {
+    width: 335px !important;
+    height: 600px !important;
+    padding: 24px !important;
+  }
 }
+
 .hv-modal-footer {
-  bottom: 10px !important;
-  left: 200px !important;
-  width: unset !important;
-  height: unset !important;
+  position: unset !important;
   margin: unset !important;
 }
 
@@ -222,20 +227,24 @@ input {
   border-color: #56CA8B !important;
   width: 280px !important;
   height: 280px !important;
+
   .hv-preview-video {
     width: 100% !important;
     height: 100% !important;
   }
 }
+
 .hv-liveness-face-not-found {
   border-width: 6px !important;
   width: 280px !important;
   height: 280px !important;
+
   .hv-preview-video {
     width: 100% !important;
     height: 100% !important;
   }
 }
+
 .hv-instructions {
   margin-bottom: 0px !important;
   min-height: 32px !important;
@@ -271,9 +280,10 @@ input {
 }
 
 .hv-divforcover {
-  bottom: 33px !important;
+  bottom: unset !important;
+  position: unset !important;
   width: unset !important;
-  margin-left: 174px !important;
+  margin-left: unset !important;
 }
 
 .hv-instructions {
@@ -283,7 +293,7 @@ input {
   filter: invert(76%) sepia(72%) saturate(648%) hue-rotate(106deg) brightness(88%) contrast(77%) !important;
 }
 
-.hv-preview-video{
+.hv-preview-video {
   width: 346px !important;
   height: 206px !important;
   border-radius: 10px;
@@ -291,5 +301,17 @@ input {
 
 .cdk-overlay-dark-backdrop {
   background: rgba(7, 32, 55, 0.4) !important;
+}
+
+.hidden-480 {
+  @media screen and(max-width: 480px) {
+    display: none !important;
+  }
+}
+
+.hidden-lager-screen {
+  @media screen and(min-width: 480px) {
+    display: none !important;
+  }
 }
 

@@ -1,7 +1,9 @@
 <div class="container-right-body">
-    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div class="title-infor" *ngIf="!isShowGuide">{{'selfie.labelTakePhoto' | translate}}</div>
+    <div class="title-infor hidden-480" *ngIf = "isShowGuide"
+         [innerHTML]="'selfie.titleGuideBig'|translate"></div>
 
-    <div *ngIf = "!isShowGuide" fxLayout="column" class="container-selfie">
+    <div *ngIf="!isShowGuide" fxLayout="column" class="container-selfie">
         <div class="global-box" fxLayout="column">
             <div class="global-title">
                 {{'selfie.labelNid' | translate}}
@@ -14,8 +16,8 @@
                        (keypress)="keyPress($event)"
                        class="global-input"
                        [formControl]="citizenId" appMarginTop="14">
-<!--                <img *ngIf="(citizenId.dirty || citizenId.touched) && citizenId.invalid"-->
-<!--                     class="img-invalid" src="../../../../assets/images/Warning.png">-->
+                <!--                <img *ngIf="(citizenId.dirty || citizenId.touched) && citizenId.invalid"-->
+                <!--                     class="img-invalid" src="../../../../assets/images/Warning.png">-->
             </div>
             <div class="error" appMarginTop="8" fxFlexAlign="start">
                 <label *ngIf="(citizenId.touched) && citizenId.hasError('required')">
@@ -30,22 +32,23 @@
             <div class="image-title" appMarginTop="24">
                 {{'selfie.labelTakePhoto' | translate}}
             </div>
-<!--            <div class="background-gray">-->
-<!--                <div *ngIf="!(pictureService.selfieImageComplete$ | async)" class="background-green">-->
-<!--                    <div class="circle-red" (click)="startCaptureImage()">-->
-<!--                        <div class="in-circle"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div *ngIf="pictureService.selfieImageComplete$ | async" class="cover-img-complete">-->
-<!--                    <img  [src]="pictureService.selfieImage"-->
-<!--                         class="image-blurred-edge">-->
-<!--                    <div class="circle-red-again" (click)="startCaptureImage()">-->
-<!--                        <div class="in-circle-again"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="background-gray">-->
+            <!--                <div *ngIf="!(pictureService.selfieImageComplete$ | async)" class="background-green">-->
+            <!--                    <div class="circle-red" (click)="startCaptureImage()">-->
+            <!--                        <div class="in-circle"></div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div *ngIf="pictureService.selfieImageComplete$ | async" class="cover-img-complete">-->
+            <!--                    <img  [src]="pictureService.selfieImage"-->
+            <!--                         class="image-blurred-edge">-->
+            <!--                    <div class="circle-red-again" (click)="startCaptureImage()">-->
+            <!--                        <div class="in-circle-again"></div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
 
-            <div class="picture-selfie-overlay" (click)="showGuideShot()" fxLayout="column" fxLayoutAlign="center center"
+            <div class="picture-selfie-overlay" (click)="showGuideShot()" fxLayout="column"
+                 fxLayoutAlign="center center"
                  *ngIf="!(pictureService.selfieImageComplete$ | async)">
                 <div class="cover-camera"><img fxFlexAlign="center" width="24" height="24" alt=""
                                                src="assets/images/camera.png"></div>
@@ -54,27 +57,11 @@
                  *ngIf="pictureService.selfieImageComplete$ | async">
                 <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
                      [src]="pictureService.selfieImage">
-<!--                <img class="icon-dell" (click)="onDeleteImage()" src="../../../../assets/images/trash.png">-->
+                <!--                <img class="icon-dell" (click)="onDeleteImage()" src="../../../../assets/images/trash.png">-->
                 <img class="icon-tick" src="../../../../assets/images/tick-photo.png">
             </div>
-<!--            <div class="text-under-camera">{{'selfie.labelPhoto' | translate}}</div>-->
-<!--            <div *ngIf="!(pictureService.selfieImageComplete$ | async)" class="no-take-photo">{{'selfie.noTakePhoto' | translate}}</div>-->
-<!--            <div class="picture-selfie-notice" appMarginTop="16" fxFlexAlign="start">-->
-<!--                {{'selfie.titleGuide' | translate}}-->
-<!--            </div>-->
-<!--            <ul>-->
-<!--                <li class="picture-selfie-step">-->
-<!--                    {{'selfie.guide1' | translate}}-->
-<!--                </li>-->
-<!--                <li class="picture-selfie-step">-->
-<!--                    {{'selfie.guide2' | translate}}-->
-<!--                </li>-->
-<!--                <li class="picture-selfie-step">-->
-<!--                    {{'selfie.guide3' | translate}}-->
-<!--                </li>-->
-<!--            </ul>-->
         </div>
-        <div class="cover-btn">
+        <div class="cover-btn-continue hidden-480">
             <app-button-dialog
                     [isEnable]="!(pictureService.selfieImageComplete$ | async) || citizenId.invalid || isExistNid"
                     [contentBtn]="'selfie.continue' | translate"
@@ -83,11 +70,21 @@
                     (click)="onSelfieContinue()">
             </app-button-dialog>
         </div>
+        <div class="cover-btn-continue hidden-lager-screen">
+            <app-button-dialog
+                    [isEnable]="!(pictureService.selfieImageComplete$ | async) || citizenId.invalid || isExistNid"
+                    [contentBtn]="'selfie.continue' | translate"
+                    [width]="200"
+                    [height]="41"
+                    [fontSize]="14"
+                    (click)="onSelfieContinue()">
+            </app-button-dialog>
+        </div>
     </div>
 
-<!--    Hiển thị hướng dẫn chụp-->
-    <div class="container-guide" *ngIf = "isShowGuide">
-        <div class="box-guide">
+    <!--    Hiển thị hướng dẫn chụp-->
+    <div class="container-guide" *ngIf="isShowGuide">
+        <div class="box-guide hidden-480">
             <div class="box-item">
                 <img class="img-des" src="../../../../assets/images/Graphic-1.png">
                 <div class="description-text color-red">{{'selfie.shouldNot' | translate}}</div>
@@ -102,7 +99,7 @@
                 <div class="content-guide">
                     <span class="text-light">{{'selfie.pleaseGuide' | translate}}</span>
                     <span class="text-bold">{{'selfie.noteGuide-2' | translate}}</span>
-                    <span class="text-light">{{'selfie.toShot' | translate}}</span>
+                    <span class="text-bold">{{'selfie.toShot' | translate}}</span>
                 </div>
             </div>
             <div class="box-item">
@@ -113,12 +110,69 @@
                 </div>
             </div>
         </div>
-        <div class="cover-btn">
+
+        <div class="text-title-guide hidden-lager-screen" [innerHTML]="'selfie.titleGuide'|translate"></div>
+
+        <div class="cover-swiper-guide hidden-lager-screen">
+            <swiper #swiper2
+                    [virtual]="true"
+                    [pagination]="true"
+                    [slidesPerView]="1"
+                    [scrollbar]="{ draggable: true }">
+                <ng-template swiperSlide>
+                    <div class="box-item">
+                        <img class="img-des" src="../../../../assets/images/Graphic-1.png">
+                        <div class="description-text color-red">{{'selfie.shouldNot' | translate}}</div>
+                        <div class="content-guide">
+                            <span class="text-light">{{'selfie.pleaseGuide' | translate}}</span>
+                            <span class="text-bold">{{'selfie.noteGuide-1' | translate}}</span>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="box-item">
+                        <img class="img-des" src="../../../../assets/images/Graphic-2.png">
+                        <div class="description-text color-red">{{'selfie.shouldNot' | translate}}</div>
+                        <div class="content-guide">
+                            <span class="text-light">{{'selfie.pleaseGuide' | translate}}</span>
+                            <span class="text-bold">{{'selfie.noteGuide-2' | translate}}</span>
+                            <span class="text-bold">{{'selfie.toShot' | translate}}</span>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="box-item">
+                        <img class="img-des" src="../../../../assets/images/Graphic-3.png">
+                        <div class="description-text color-blue">{{'selfie.veryGood' | translate}}</div>
+                        <div class="content-guide">
+                            <span class="text-light">{{'selfie.noteGuide-3' | translate}}</span>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+
+        <div *ngIf = "countStepGuide === 0" (click)="slideNext()" class="box-skip hidden-lager-screen">
+            <div>{{'selfie.skip'|translate}}</div>
+            <img src="../../../../assets/images/angle-down.png">
+        </div>
+
+        <div class="cover-btn-start hidden-480">
             <app-button-dialog
                     [isEnable]="false"
                     [contentBtn]="'selfie.start' | translate"
                     [width]="299"
                     [height]="46"
+                    (click)="startCaptureImage()">
+            </app-button-dialog>
+        </div>
+
+        <div *ngIf = "countStepGuide === 2" class="cover-btn-start hidden-lager-screen">
+            <app-button-dialog
+                    [isEnable]="false"
+                    [contentBtn]="'selfie.start' | translate"
+                    [width]="200"
+                    [height]="41"
                     (click)="startCaptureImage()">
             </app-button-dialog>
         </div>
