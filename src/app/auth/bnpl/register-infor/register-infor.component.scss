@@ -15,6 +15,13 @@
   margin-bottom: 40px;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
   position: relative;
+  @media screen and(max-width: 480px){
+    background: transparent;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: unset;
+  }
 }
 
 .title-infor {
@@ -40,6 +47,10 @@
   color: #000000;
   margin-top: 40px;
   margin-bottom: 6px;
+  @media screen and(max-width: 480px){
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 .des-form {
@@ -66,10 +77,17 @@
   background: rgba(154, 147, 147, 0.1);
   border-radius: 10px;
   margin-bottom: 24px;
+  @media screen and(max-width: 480px){
+    background: rgba(247, 247, 247, 0.75) !important;
+    box-shadow: 0px 4px 34px rgb(0 0 0 / 10%);
+  }
 }
 
 .cover-content-info {
   padding: 16px 30px 40px 30px;
+  @media screen and(max-width: 480px){
+    padding: 0px 24px 27px 24px;
+  }
 }
 
 .address-box {
@@ -104,10 +122,13 @@
   line-height: 24px;
   color: #000000;
   font-family: "MontserratAlternates";
+  @media screen {
+    margin-bottom: 6px;
+  }
 }
 
 .input-info {
-  height: 45px;
+  height: 49px;
   width: 100%;
   border-radius: 40px;
   border: hidden;
@@ -116,12 +137,21 @@
   line-height: 17px;
   color: #000000;
   padding-left: 20px;
+  @media screen and(max-width: 480px){
+    height: 45px;
+  }
 }
 
 .img-invalid {
   position: absolute;
   top: 14px;
   right: 12px;
+}
+
+.cover-btn-rg {
+  @media screen and(max-width: 480px){
+    margin-bottom: 32px;
+  }
 }
 
 .narrow-input-info {
@@ -134,6 +164,9 @@
   line-height: 17px;
   color: #000000;
   padding-left: 20px;
+  @media screen and(max-width: 480px){
+    height: 45px;
+  }
 }
 
 .narrow-input-info-2 {
@@ -157,6 +190,9 @@
 .block-info {
   width: 48%;
   display: block;
+  @media screen and(max-width: 480px){
+    width: 100%;
+  }
 }
 
 .flex-info {
@@ -213,6 +249,9 @@ input:disabled {
 .name-birth {
   display: flex;
   justify-content: space-between;
+  @media screen and(max-width: 480px){
+    flex-direction: column;
+  }
 }
 .cover-note {
   width: 378px;
@@ -307,11 +346,19 @@ input:disabled {
   border-bottom: 1px solid #FFFFFF;
   color: #000000;
   font-family: "MontserratAlternates";
+  @media screen and(max-width: 480px){
+    border-bottom: unset;
+    height: auto;
+    padding-top: 20px;
+  }
 }
 
 .main-content {
   width: 100%;
   padding: 56px 91.5px 32px 91.5px;
+  @media screen and(max-width: 480px){
+    padding: 32px 20px 8px 20px;
+  }
 }
 
 

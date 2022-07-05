@@ -2,7 +2,8 @@
     <app-bar-process-bnpl [childData]="{widthLine: 0,numberStep:0}"></app-bar-process-bnpl>
 </div>
 <div class="container-right-body">
-    <div *ngIf="!isShowGuide" class="title-infor">{{'takePhotoNid.labelNid' | translate}}</div>
+    <div *ngIf="(!isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))||
+((pictureService.citizenFrontImageComplete$ | async) && (pictureService.citizenBackImageComplete$ | async))" class="title-infor">{{'takePhotoNid.labelNid' | translate}}</div>
     <div fxLayout="column" fxLayoutAlign="center center">
 
         <div style="width: 100%" class="hidden-480">
@@ -51,10 +52,21 @@
                 <div class="citizen-image-text">{{'takePhotoNid.labelBefore' | translate}}</div>
                 <div class="citizen-image-text">{{'takePhotoNid.labelAfter' | translate}}</div>
             </div>
-            <div class="cover-btn-shot" *ngIf="(pictureService.citizenBackImageComplete$ | async)">
+            <div class="cover-btn-shot hidden-480" *ngIf="(pictureService.citizenBackImageComplete$ | async)">
                 <app-button-dialog
                         [isEnable]="!(pictureService.citizenFrontImageComplete$ | async) ||
                 !(pictureService.citizenBackImageComplete$ | async)"
+                        [contentBtn]="'takePhotoNid.continue' | translate"
+                        (click)="onCitizenCardContinue()">
+                </app-button-dialog>
+            </div>
+            <div class="cover-btn-shot hidden-lager-screen" *ngIf="(pictureService.citizenBackImageComplete$ | async)">
+                <app-button-dialog
+                        [isEnable]="!(pictureService.citizenFrontImageComplete$ | async) ||
+                !(pictureService.citizenBackImageComplete$ | async)"
+                        [width]="200"
+                        [height]="44"
+                        [fontSize]="14"
                         [contentBtn]="'takePhotoNid.continue' | translate"
                         (click)="onCitizenCardContinue()">
                 </app-button-dialog>
@@ -187,9 +199,17 @@
                 </div>
                 <!--                <img class="img-idCard-front" [src]="pictureService.citizenFrontImage">-->
             </div>
-            <div class="cover-btn-shot-back">
+            <div class="cover-btn-shot-back hidden-480">
                 <app-button-dialog [contentBtn]="'takePhotoNid.start' | translate"
                                    [isEnable]="false"
+                                   (click)="onCaptureCitizenCard()"></app-button-dialog>
+            </div>
+            <div class="cover-btn-shot-back hidden-lager-screen">
+                <app-button-dialog [contentBtn]="'takePhotoNid.start' | translate"
+                                   [isEnable]="false"
+                                   [width]="200"
+                                   [height]="41"
+                                   [fontSize]="14"
                                    (click)="onCaptureCitizenCard()"></app-button-dialog>
             </div>
         </div>
