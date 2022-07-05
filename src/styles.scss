@@ -213,13 +213,18 @@ input {
   @media screen and(max-width: 480px) {
     width: 335px !important;
     height: 600px !important;
-    padding: 24px !important;
+    padding: 40px 24px !important;
   }
 }
 
+#hv-cameraholder {
+  margin-top: 0px !important;
+}
+
 .hv-modal-footer {
-  position: unset !important;
   margin: unset !important;
+  bottom: 32px !important;
+  left: 0px !important;
 }
 
 .hv-liveness-face-found {
@@ -259,20 +264,35 @@ input {
 }
 
 .hv-close-button {
-  float: right !important;
-  width: 25px !important;
-  height: 25px !important;
+  //float: right !important;
+  //width: 25px !important;
+  //height: 25px !important;
+  //line-height: 18.1px !important;
+  //font-weight: 400 !important;
+  //border: 2px solid #000000 !important;
+  //border-radius: 50% !important;
+  //justify-content: center !important;
+  //display: flex !important;
+  //align-items: center !important;
+  //margin-top: unset !important;
+  //position: absolute !important;
+  //right: 24px !important;
+  //top: 24px !important;
+  /* float: right !important; */
+  /* width: 25px !important; */
+  /* height: 25px !important; */
   line-height: 18.1px !important;
   font-weight: 400 !important;
-  border: 2px solid #000000 !important;
-  border-radius: 50% !important;
   justify-content: center !important;
   display: flex !important;
   align-items: center !important;
   margin-top: unset !important;
   position: absolute !important;
-  right: 24px !important;
-  top: 24px !important;
+  font-size: 34px !important;
+  left: 16px !important;
+  top: 16px !important;
+  color: #A8A8A8 !important;
+  background-color: transparent !important;
 }
 
 .hv-title {
@@ -280,10 +300,14 @@ input {
 }
 
 .hv-divforcover {
-  bottom: unset !important;
-  position: unset !important;
-  width: unset !important;
+  position: fixed;
+  width: fit-content !important;
+  bottom: 49px !important;
+  left: 229px !important;
   margin-left: unset !important;
+  @media screen and(max-width: 480px){
+    left: 132px !important;
+  }
 }
 
 .hv-instructions {
@@ -296,7 +320,11 @@ input {
 .hv-preview-video {
   width: 346px !important;
   height: 206px !important;
-  border-radius: 10px;
+  border-radius: 10px !important;
+  @media screen {
+    width: 284.75px !important;
+    height: 177px !important;
+  }
 }
 
 .cdk-overlay-dark-backdrop {
@@ -315,3 +343,15 @@ input {
   }
 }
 
+@import "~swiper/css";
+@import "~swiper/css/pagination";
+@import "~swiper/css/navigation";
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+
+}

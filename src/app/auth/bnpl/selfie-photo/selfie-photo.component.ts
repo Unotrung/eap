@@ -7,10 +7,10 @@ import {AuthenticationService} from "../../../_service/auth/authentication.servi
 import {PictureService, NCardSide} from "../../../_service/kyc/picture.service";
 import {AccountBnplService} from "../../../_service/auth/account-bnpl.service";
 import {WaitingConfirmPhoneComponent} from "../waiting-confirm-phone/waiting-confirm.component-phone";
-import SwiperCore, {Navigation, Pagination, Virtual} from "swiper";
+import SwiperCore, {Navigation, Pagination} from "swiper";
 import {SwiperComponent} from "swiper/angular";
 
-SwiperCore.use([Pagination, Navigation, Virtual]);
+SwiperCore.use([Pagination, Navigation]);
 @Component({
     selector: 'app-selfie-photo',
     templateUrl: './selfie-photo.component.html',
@@ -169,5 +169,9 @@ export class SelfiePhotoComponent implements OnInit {
 
     scroll(el: HTMLElement) {
         el.scrollIntoView({behavior: 'smooth'});
+    }
+
+    onSlideChange() {
+
     }
 }
