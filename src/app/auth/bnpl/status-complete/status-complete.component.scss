@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
+}
+
+.stt-container {
+  font-style: normal;
+  position: relative;
+  margin: auto;
+  width: 627px;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid #EEEEEE;
+  background: #F3F3F3;
+  padding: 64px 0px 32px 0px;
+  @media screen and(max-width: 480px){
+    width: 335px;
+    padding: 36px 52px;
+    border-radius: 15px;
+  }
+}
+
+.cover-icon-tick {
+  width: 149px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  @media screen {
+    height: auto;
+  }
+  img {
+    width: 149px;
+    height: auto;
+    @media screen and(max-width: 480px){
+      width: 64px;
+      height: auto;
+    }
+  }
+}
+
+.title-status {
+  width: 100%;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin-top: 40px;
+  font-family: "MontserratAlternates";
+  @media screen and(max-width: 480px){
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 16px;
+  }
+}
+
+.auto-login-note {
+  width: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #333333;
+  margin-top: 16px;
+  @media screen and(max-width: 480px) {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+.here {
+  color: #197DDE;
+  cursor: pointer;
+}
+
+.close-popup {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  @media screen {
+    right: 10px;
+    top: 10px;
+  }
+}

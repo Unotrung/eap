@@ -1600,17 +1600,6 @@
   }
 }
 
-@import "~swiper/css";
-@import "~swiper/css/pagination";
-@import "~swiper/css/navigation";
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-
-}
 
 .cover-swiper-6 .swiper-pagination-bullet {
   width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 15px));
