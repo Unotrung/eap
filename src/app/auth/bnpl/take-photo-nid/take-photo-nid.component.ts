@@ -1,12 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {NCardSide, PictureService} from "../../../_service/kyc/picture.service";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../../../_service/auth/authentication.service";
+import SwiperCore, {Navigation, Pagination} from "swiper";
+import {SwiperComponent} from "swiper/angular";
 
+SwiperCore.use([Pagination, Navigation]);
 @Component({
     selector: 'app-take-photo-nid',
     templateUrl: './take-photo-nid.component.html',
     styleUrls: ['./take-photo-nid.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class TakePhotoNidComponent implements OnInit {
 
@@ -15,6 +19,7 @@ export class TakePhotoNidComponent implements OnInit {
     NCardSide = NCardSide
     isShowGuide: boolean = false;
     isShowStatusFront: boolean = false;
+    countStepGuide: number =0;
 
     constructor(public pictureService: PictureService,
                 private authService: AuthenticationService,
@@ -62,6 +67,16 @@ export class TakePhotoNidComponent implements OnInit {
         else {
             return 'Mặt sau'
         }
-
     }
+    @ViewChild('swiper3', {static: false}) swiper3?: SwiperComponent;
+
+    slideNext() {
+        this.countStepGuide = 1;
+        this.swiper3.swiperRef.slideTo(1);
+    }
+
+    slidePrev() {
+        this.swiper3.swiperRef.slidePrev(100);
+    }
+
 }

@@ -115,9 +115,9 @@
 
         <div class="cover-swiper-guide hidden-lager-screen">
             <swiper #swiper2
-                    [virtual]="true"
-                    [pagination]="true"
+                    [pagination]="{clickable: true}"
                     [slidesPerView]="1"
+                    (slideChange)="onSlideChange()"
                     [scrollbar]="{ draggable: true }">
                 <ng-template swiperSlide>
                     <div class="box-item">
