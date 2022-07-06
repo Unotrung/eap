@@ -1,13 +1,17 @@
+<div class="hidden-lager-screen" style="width: 100%">
+    <app-bar-process-bnpl [childData]="{widthLine: 0,numberStep:0}"></app-bar-process-bnpl>
+</div>
+
 <div class="container-right-body">
-    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
     <div fxLayout="column" fxLayoutAlign="center center">
-        <div style="width: 100%">
+        <div class="hidden-480" style="width: 100%">
             <app-bar-process-bnpl [childData]="{widthLine: 0,numberStep:0}"></app-bar-process-bnpl>
         </div>
         <div class="title-register">
             {{'kyc.titleForm' | translate}}
         </div>
-        <div class="des-form">
+        <div class="des-form hidden-480">
             {{'kyc.descriptionForm' | translate}}
         </div>
         <div [formGroup]="registerForm" class="main-content">
@@ -84,6 +88,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+<!--            mobile-->
+            <div class="personal-info">
+
             </div>
 <!--địa chỉ hiện tại-->
             <div class="personal-info">
@@ -362,7 +370,7 @@
         <!--            <span class="note-text-2">{{'kyc.contentNote' | translate}} </span>-->
         <!--        </div>-->
 
-        <div>
+        <div class="cover-btn-rg">
             <app-button-dialog
                     [isEnable]="registerForm.invalid"
                     [width]="200"
