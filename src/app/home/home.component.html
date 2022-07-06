@@ -2,6 +2,17 @@
     <div class="layer-1">
         <div class="left-body-homepage">
             <img class="iconVo" src="../../assets/images/img-main-home.png">
+            <!-- <div class="iconVo">
+                <div class="image-left">
+                    <img src="../../assets/images/left.png" alt="">
+                </div>
+                <div class="image-mid">
+                    <img src="../../assets/images/nu.png" alt="">
+                </div>
+                <div class="image-right">
+                    <img src="../../assets/images/right.png" alt="">
+                </div>
+            </div> -->
             <div class="content-and-btn hidden-ipad-screen">
                 <div class="content-layer-1">
                     <ul>
@@ -11,7 +22,7 @@
                     </ul>
                 </div>
                 <div class="cover-btn-join">
-                    <img class = "iconJoin" src="../../assets/images/Emoji.png">
+                    <img class="iconJoin" src="../../assets/images/Emoji.png">
                     <span>{{'home.btnJoin' | translate}}</span>
                 </div>
             </div>
@@ -30,14 +41,14 @@
                         </ul>
                     </div>
                     <div class="cover-btn-join" (click)="registerVoolo()">
-                        <img class = "iconJoin" src="../../assets/images/Emoji.png">
+                        <img class="iconJoin" src="../../assets/images/Emoji.png">
                         <span>{{'home.btnJoin' | translate}}</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id = "customer" class="layer-2">
+    <div id="customer" class="layer-2">
         <div class="layer-2-title">
             <img src="../../assets/images/bag.png">
             <label [innerHTML]="'home.titleBnplVoolo' | translate"></label>
@@ -46,7 +57,7 @@
             {{'home.descriptionBnplVoolo' | translate}}
         </div>
         <div class="layer-2-description-phone hidden-lager-screen">
-<!--            <div [innerHTML]="'home.descriptionBnplVooloPhone' | translate"></div>-->
+            <!--            <div [innerHTML]="'home.descriptionBnplVooloPhone' | translate"></div>-->
             <ul>
                 <li>{{'home.descriptionPhone-1' | translate}}</li>
                 <li>{{'home.descriptionPhone-2' | translate}}</li>
@@ -58,7 +69,7 @@
                 <div class="layer-2-icon"><img [src]="item.src"></div>
                 <div class="layer-2-lable" [innerHTML]="item.lable | translate"></div>
                 <div class="layer-2-content">{{item.content | translate}}</div>
-                <div class="layer-2-more" *ngIf = "i==0">
+                <div class="layer-2-more" *ngIf="i==0">
                     <span>{{'home.seeMore' | translate}}</span>
                     <img src="../../assets/images/more.png">
                 </div>
@@ -66,10 +77,7 @@
         </div>
         <!--        Dành cho điện thoại-->
         <div class="cover-swiper-2 hidden-lager-screen">
-            <swiper [slidesPerView]="1"
-                    [spaceBetween]="10"
-                    [scrollbar]="{ draggable: true }"
-                    [pagination]="{clickable: true}">
+            <swiper [slidesPerView]="1" [spaceBetween]="10" [scrollbar]="{ draggable: true }" [pagination]="{clickable: true}">
                 <ng-template *ngFor="let item of lisItemLayer2" swiperSlide>
                     <div class="content-item">
                         <div class="layer-2-icon"><img [src]="item.src"></div>
@@ -86,17 +94,12 @@
     </div>
     <div class="title-layer-3">
         <img src="../../assets/images/car-buy.png">
-<!--        <div [innerHTML]="'home.ownEverything' | translate"></div>-->
+        <!--        <div [innerHTML]="'home.ownEverything' | translate"></div>-->
         <div [innerHTML]="(space==12?'home.ownEverything-phone':'home.ownEverything-desk') | translate"></div>
     </div>
     <div class="layer-3">
         <div [className]="isPageSwip?'cover-swiper-3-small':'cover-swiper-3-big'">
-            <swiper #swiper
-                    [slidesPerView]="slidesPerView"
-                    [spaceBetween]="space"
-                    [loop]="true"
-                    [scrollbar]="{ draggable: true }"
-                    (window:resize)="onResize($event)">
+            <swiper #swiper [slidesPerView]="slidesPerView" [spaceBetween]="space" [loop]="true" [scrollbar]="{ draggable: true }" (window:resize)="onResize($event)">
                 <ng-template *ngFor="let item of listItemLayer3" swiperSlide>
                     <div class="layer-3-item">
                         <div class="cover-icon-layer-3"><img src="{{item.src}}"></div>
@@ -108,7 +111,7 @@
         <img (click)="slidePrev()" class="vector-next" src="../../assets/images/next-home.png">
         <img (click)="slideNext()" class="vector-pre" src="../../assets/images/next-home.png">
     </div>
-    <div id = "partner" class="layer-4">
+    <div id="partner" class="layer-4">
         <div class="layer-4-1">
             <div class="title-l4">
                 <img src="../../assets/images/two-hand.png">
@@ -137,34 +140,28 @@
         <div [innerHTML]="'home.customerComment' | translate"></div>
     </div>
     <div class="cover-swiper-6">
-        <swiper [spaceBetween]="30"
-                [slidesPerView]="1"
-                [scrollbar]="{ draggable: true }"
-                [pagination]="{clickable: true}">
+        <swiper [spaceBetween]="30" [slidesPerView]="1" [scrollbar]="{ draggable: true }" [pagination]="{clickable: true}">
             <ng-template *ngFor="let item of listPeopleComment, let i = index" swiperSlide>
                 <div class="layer-5">
                     <div class="layer-5-1">
                         <div class="cover-avatar">
-                            <img *ngFor=" let img of listPeopleComment,let j = index"
-                                 [className]="i==j?'avatar':
+                            <img *ngFor=" let img of listPeopleComment,let j = index" [className]="i==j?'avatar':
                              i==0&&j==1?'avatar-back-1':
                              i==0&&j==2?'avatar-back-2':
                              i==listPeopleComment.length-1&&j==i-1?'avatar-back-2':
                              i==listPeopleComment.length-1&&j==i-2?'avatar-back-1':
                              i>0&&i<listPeopleComment.length-1&&j<i?'avatar-back-2':
                              i>0&&i<listPeopleComment.length-1&&j>i?'avatar-back-1':
-                             null"
-                                 [hidden]="i==0&&j>2?true:
+                             null" [hidden]="i==0&&j>2?true:
                              i==listPeopleComment.length-1&&j<listPeopleComment.length-3?true:
-                             (i>0&&i<listPeopleComment.length-1)&&(j<i-1||j>i+1)?true:false"
-                                 [src]="img.avatar">
+                             (i>0&&i<listPeopleComment.length-1)&&(j<i-1||j>i+1)?true:false" [src]="img.avatar">
                         </div>
                     </div>
                     <div class="layer-5-2">
                         <div class="cover-comment-box">
                             <div>
                                 <span [innerHTML]="item.nameUser | translate" class="tag"></span> <br>
-                                <span  [innerHTML]="item.place | translate" class="place"></span>
+                                <span [innerHTML]="item.place | translate" class="place"></span>
                             </div>
                             <div class="content-comment">
                                 <div class="mb-comment" [innerHTML]="item.content | translate"></div>
@@ -176,49 +173,48 @@
             </ng-template>
         </swiper>
     </div>
-<!--    <div class="title-layer-6">-->
-<!--        <img src="../../assets/images/News.png">-->
-<!--        <div>{{'home.news' | translate}}</div>-->
-<!--    </div>-->
-<!--    <div class="layer-6 phone-hidden ipad-hidden">-->
-<!--        <div class="layer-6-1" *ngFor = "let item of listItemLayer6">-->
-<!--            <div  class="photo-news">-->
-<!--                <img class="news-img" [src]="item.src">-->
-<!--            </div>-->
-<!--            <div class="main-news">-->
-<!--                <div class="layer-6-lable">{{item.title | translate}}</div>-->
-<!--                <div class="layer-6-date">{{item.date | translate}}</div>-->
-<!--                <div class="layer-6-content">{{item.content | translate}}</div>-->
-<!--                <div class="layer-6-more">-->
-<!--                    <span>{{'home.seeMoreNews' | translate}}</span>-->
-<!--                    <img src="../../assets/images/more.png">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="cover-swiper-5 hidden-ipad-screen">-->
-<!--        <swiper [slidesPerView]="2"-->
-<!--                [spaceBetween]="spaceNew"-->
-<!--                [loop] = "true"-->
-<!--                [scrollbar]="{ draggable: true }"-->
-<!--                [pagination]="{clickable: true}">-->
-<!--            <ng-template *ngFor="let item of listItemLayer6" swiperSlide>-->
-<!--                <div class="layer-6-1">-->
-<!--                    <div  class="photo-news">-->
-<!--                        <img class="news-img" [src]="item.src">-->
-<!--                    </div>-->
-<!--                    <div class="main-news">-->
-<!--                        <div class="layer-6-lable">{{item.title | translate}}</div>-->
-<!--                        <div class="layer-6-date">{{item.date | translate}}</div>-->
-<!--                        <div class="layer-6-content">{{item.content | translate}}</div>-->
-<!--                        <div class="layer-6-more">-->
-<!--                            <span>{{'home.seeMoreNews' | translate}}</span>-->
-<!--                            <img src="../../assets/images/more.png">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </ng-template>-->
-<!--        </swiper>-->
-<!--    </div>-->
+    <!--    <div class="title-layer-6">-->
+    <!--        <img src="../../assets/images/News.png">-->
+    <!--        <div>{{'home.news' | translate}}</div>-->
+    <!--    </div>-->
+    <!--    <div class="layer-6 phone-hidden ipad-hidden">-->
+    <!--        <div class="layer-6-1" *ngFor = "let item of listItemLayer6">-->
+    <!--            <div  class="photo-news">-->
+    <!--                <img class="news-img" [src]="item.src">-->
+    <!--            </div>-->
+    <!--            <div class="main-news">-->
+    <!--                <div class="layer-6-lable">{{item.title | translate}}</div>-->
+    <!--                <div class="layer-6-date">{{item.date | translate}}</div>-->
+    <!--                <div class="layer-6-content">{{item.content | translate}}</div>-->
+    <!--                <div class="layer-6-more">-->
+    <!--                    <span>{{'home.seeMoreNews' | translate}}</span>-->
+    <!--                    <img src="../../assets/images/more.png">-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="cover-swiper-5 hidden-ipad-screen">-->
+    <!--        <swiper [slidesPerView]="2"-->
+    <!--                [spaceBetween]="spaceNew"-->
+    <!--                [loop] = "true"-->
+    <!--                [scrollbar]="{ draggable: true }"-->
+    <!--                [pagination]="{clickable: true}">-->
+    <!--            <ng-template *ngFor="let item of listItemLayer6" swiperSlide>-->
+    <!--                <div class="layer-6-1">-->
+    <!--                    <div  class="photo-news">-->
+    <!--                        <img class="news-img" [src]="item.src">-->
+    <!--                    </div>-->
+    <!--                    <div class="main-news">-->
+    <!--                        <div class="layer-6-lable">{{item.title | translate}}</div>-->
+    <!--                        <div class="layer-6-date">{{item.date | translate}}</div>-->
+    <!--                        <div class="layer-6-content">{{item.content | translate}}</div>-->
+    <!--                        <div class="layer-6-more">-->
+    <!--                            <span>{{'home.seeMoreNews' | translate}}</span>-->
+    <!--                            <img src="../../assets/images/more.png">-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </ng-template>-->
+    <!--        </swiper>-->
+    <!--    </div>-->
 </div>
-
