@@ -17,8 +17,15 @@
             </div>
         </div>
 
-        <app-button-dialog [contentBtn]="'forgotPass.confirmOtp' | translate"
+        <app-button-dialog class="hidden-480" [contentBtn]="'forgotPass.confirmOtp' | translate"
                            [isEnable]="otp.length<6"
+                           (click)="submit()">
+        </app-button-dialog>
+        <app-button-dialog class="hidden-lager-screen" [contentBtn]="'forgotPass.confirmOtp' | translate"
+                           [isEnable]="otp.length<6"
+                           [width]="200"
+                           [height]="41"
+                           [fontSize]="14"
                            (click)="submit()">
         </app-button-dialog>
 <!--        <div class="loading" *ngIf="loading">-->
@@ -26,7 +33,7 @@
 <!--        </div>-->
     </div>
     <div class="cover-bottom">
-        <p class="note-no-send">{{'forgotPass.noOtp' | translate}}?</p>
+        <div class="note-no-send">{{'forgotPass.noOtp' | translate}}?</div>
         <a [hidden]="countDown === 0"
            class="link-send-disable"
            [style]="countDown<=10?'color: red':null">

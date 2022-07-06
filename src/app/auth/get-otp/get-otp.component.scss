@@ -32,33 +32,6 @@
   }
 }
 
-.form-cover {
-  width: 68%;
-  margin: auto;
-  height: 36px;
-  border: 1px solid rgba(55, 63, 65, 0.5);
-  border-radius: 20px;
-  margin-bottom: 13px !important;
-}
-
-.name-input {
-  font-family: "MontserratAlternates";
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
-  margin-top: 30px;
-  margin-bottom: 5px;
-}
-
-.input-valid{
-  background: #FFFFFF;
-  border-radius: 20px;
-  height: 40px;
-  width: 100%;
-  border: 1px solid #000000;
-  padding-left: 16px;
-}
 
 .under-input {
   text-align: center;
@@ -69,32 +42,6 @@
   @media screen and(max-width: 480px) {
     min-height: 40px;
   }
-}
-
-.link-register {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-}
-
-
-.note-container {
-  width: 140px;
-  position: absolute;
-  left: 24px;
-  bottom: 30px;
-}
-
-.text-note {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 5px;
-  line-height: 10px;
-  color: #000000;
-}
-
-.text-note p {
-  margin-top: -5px;
 }
 
 
@@ -108,19 +55,6 @@
   }
 }
 
-
-.invalid-note {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 18px;
-  align-items: center;
-  color: rgba(4, 17, 62, 0.7);
-}
-
-.invalid-note label {
-  margin-left:24px;
-}
 
 .err {
   font-style: normal;
@@ -136,19 +70,6 @@
   width: 9%;
   margin: auto;
   margin-top: 16px !important;
-}
-
-
-.cover-input {
-  position: relative;
-}
-
-.icon-invalid {
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  right: 10px;
-  top: 13px;
 }
 
 .note-send {

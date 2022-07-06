@@ -10,9 +10,6 @@
   <div *ngIf = "isErrorRegister" class="title-status">{{'register.titleSttFalse' | translate}}</div>
 
   <div class="auto-login-note">
-    {{'register.click' | translate}}
-    <span (click)="onNoClick()" class="here">{{'register.here' | translate}}</span>
-    {{'register.back' | translate}}
     {{'register.autoLogin' | translate}} {{countDown}}s
   </div>
   <app-item-close-dialog class="close-popup" (click)="onNoClick()"></app-item-close-dialog>

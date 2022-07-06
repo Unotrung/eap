@@ -41,7 +41,7 @@
   }
   @font-face {
     font-family: "Montserrat";
-    src: local("Montserrat"), url(/assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
+    src: local("Montserrat"), url(/assets/font/Montserrat/Montserrat-Light.ttf) format("truetype");
   }
 
   .mat-list-active {
@@ -79,7 +79,7 @@ $dynamic-app-dark-theme: mat.define-dark-theme((
 
 @font-face {
   font-family: "Montserrat";
-  src: local("Montserrat"), url(assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
+  src: local("Montserrat"), url(assets/font/Montserrat/Montserrat-Light.ttf) format("truetype");
 }
 
 html {
@@ -134,7 +134,7 @@ div.mat-list-item-content {
 //}
 
 .code-input-3 .code-hidden .has-value {
-  background-image: url("../../../front-end-eap/fecproject/src/assets/images/has-value-code.png");
+  background-image: url("assets/images/has-value-code.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -305,7 +305,7 @@ input {
   bottom: 49px !important;
   left: 229px !important;
   margin-left: unset !important;
-  @media screen and(max-width: 480px){
+  @media screen and(max-width: 480px) {
     left: 132px !important;
   }
 }
@@ -355,3 +355,15 @@ input {
 .swiper-slide {
 
 }
+
+input:-webkit-autofill{
+  -webkit-text-fill-color: #000000 !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+

@@ -1,7 +1,10 @@
+<div class="hidden-lager-screen">
+    <app-bar-process-bnpl [childData]="{widthLine: 25,numberStep:1}"></app-bar-process-bnpl>
+</div>
 <div class="container-right-body">
-    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
     <div>
-        <div>
+        <div class="hidden-480">
             <app-bar-process-bnpl [childData]="{widthLine: 25,numberStep:1}"></app-bar-process-bnpl>
         </div>
 
@@ -11,7 +14,7 @@
 
         <div class="form-code">
             <form class="form-update">
-                <div style="margin-bottom: 16px"> {{'setPin.labelPin' | translate}}</div>
+                <div class="mb-label"> {{'setPin.labelPin' | translate}}</div>
 
                 <div class="cover-input-pin">
                     <code-input [className]="'code-input-3'"
@@ -26,7 +29,7 @@
             </form>
 
             <form class="form-update">
-                <div style="margin-bottom: 16px"> {{'setPin.labelVerifyPin' | translate}}</div>
+                <div class="mb-label"> {{'setPin.labelVerifyPin' | translate}}</div>
 
                 <div class="cover-input-pin">
                     <code-input [className]="msgVerifyError===''?'code-input-3':'code-input-4'"
@@ -58,7 +61,7 @@
 <!--            </div>-->
 
         </div>
-        <div class="cover-btn">
+        <div class="cover-btn-pin">
             <app-button-dialog (click)="submitSetPinCode()" [fontSize]="14" [height]="41" [width]="200"
                                [contentBtn]="'takePhotoNid.continue' | translate"
                                [isEnable]="pinCode.length<4||verifyPinCode.length<4">

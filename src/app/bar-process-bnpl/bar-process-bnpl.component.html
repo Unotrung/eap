@@ -20,12 +20,12 @@
     <div class="line-step">
         <div [style]="'width:'+childData.widthLine +'%'"></div>
     </div>
-    <mat-grid-list cols="5" rowHeight="30" style = "margin-bottom: -5px">
+    <mat-grid-list cols="5" rowHeight="26" style = "margin-bottom: -5px">
         <mat-grid-tile *ngFor="let n of listItemMobile, let i = index">
             <div [style]="i <= childData.numberStep? 'background-color:#197DDE':null" class="cycle-step"></div>
         </mat-grid-tile>
     </mat-grid-list>
-    <mat-grid-list cols="5" rowHeight="40">
+    <mat-grid-list cols="5" rowHeight="32">
         <mat-grid-tile *ngFor="let item of listItemMobile,let i = index ">
                 <span [style]="i <= childData.numberStep? 'color:#197DDE':null"
                       class="text-step"

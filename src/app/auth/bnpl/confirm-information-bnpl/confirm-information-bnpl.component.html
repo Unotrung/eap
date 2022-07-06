@@ -1,7 +1,10 @@
+<div class="hidden-lager-screen">
+    <app-bar-process-bnpl [childData]="{widthLine: 0,numberStep:0}"></app-bar-process-bnpl>
+</div>
 <div class="container-right-body">
-    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
     <div>
-        <div>
+        <div class="hidden-480">
             <app-bar-process-bnpl [childData]="{widthLine: 0,numberStep:0}"></app-bar-process-bnpl>
         </div>
         <div class="title-register">
@@ -13,7 +16,7 @@
         <div class="personal-info-confirm">
             <div class="title-box">{{'confirmInformation.labelInformation' | translate}}</div>
             <div class="cover-content-info">
-                <div class="block-info">
+                <div class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.fullName' | translate}}
                     </div>
@@ -21,7 +24,7 @@
                         {{customerInformationService.customerInfo$.getValue().name}}
                     </div>
                 </div>
-                <div class="block-info">
+                <div class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.gender' | translate}}
                     </div>
@@ -29,7 +32,7 @@
                         {{showGender}}
                     </div>
                 </div>
-                <div class="block-info">
+                <div class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.birthday' | translate}}
                     </div>
@@ -37,7 +40,7 @@
                         {{customerInformationService.customerInfo$.getValue().birthday | date: 'dd/MM/yyyy'}}
                     </div>
                 </div>
-                <div class="block-info">
+                <div class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.phone' | translate}}
                     </div>
@@ -45,7 +48,7 @@
                         {{customerInformationService.customerInfo$.getValue().phone}}
                     </div>
                 </div>
-                <div class="block-info">
+                <div class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.nid' | translate}}
                     </div>
@@ -53,7 +56,7 @@
                         {{customerInformationService.customerInfo$.getValue().citizenId}}
                     </div>
                 </div>
-                <div class="block-info">
+                <div class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.makeDateNid' | translate}}
                     </div>
@@ -61,7 +64,7 @@
                         {{customerInformationService.customerInfo$.getValue().issueDate | date: 'dd/MM/yyyy'}}
                     </div>
                 </div>
-                <div class="block-info">
+                <div class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.expiryDateNid' | translate}}
                     </div>
@@ -69,7 +72,7 @@
                         {{customerInformationService.customerInfo$.getValue().expiryDate | date: 'dd/MM/yyyy'}}
                     </div>
                 </div>
-                <div class="block-info" style="align-items: baseline;">
+                <div class="block-info mb-row" style="align-items: baseline;">
                     <div class="info-text-title">
                         {{'confirmInformation.address' | translate}}
                     </div>
@@ -90,7 +93,7 @@
         <div class="personal-info-confirm">
             <div class="title-box">{{'confirmInformation.labelRef' | translate}}</div>
             <div class="cover-content-info">
-                <div class="block-info">
+                <div class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.personalRef' | translate}}
                     </div>
@@ -98,7 +101,7 @@
                         {{showRelationship}}
                     </div>
                 </div>
-                <div class="block-info">
+                <div class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.fullNameRef' | translate}}
                     </div>
@@ -117,14 +120,19 @@
             </div>
         </div>
 
-        <div class="cover-btn">
+        <div class="cover-btn-confirm">
             <div class="back-step" (click)="backForm()">
                 <img src="../../../../assets/images/angle-down.png">
                 <div>{{'kyc.back' | translate}}</div>
             </div>
             <app-button-dialog (click)="onSendConfirm()" [height]="41" [width]="149" [fontSize]="14"
                                [contentBtn]="'takePhotoNid.continue' | translate"
-                               [isEnable]="false"></app-button-dialog>
+                               [isEnable]="false"
+                                class="hidden-480"></app-button-dialog>
+            <app-button-dialog (click)="onSendConfirm()" [height]="40" [width]="112 " [fontSize]="14"
+                               [contentBtn]="'takePhotoNid.continue' | translate"
+                               [isEnable]="false"
+                               class="hidden-lager-screen"></app-button-dialog>
         </div>
     </div>
 </div>

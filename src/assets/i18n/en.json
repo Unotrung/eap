@@ -242,6 +242,7 @@
 		"here": "here",
 		"back": "to back. ",
 		"autoLogin": "",
+		"autoBackBnpl": "",
 		"titleSttFalse": "",
 		"required": "Please enter information",
 		"patternOtp": "OTP is incorrect",

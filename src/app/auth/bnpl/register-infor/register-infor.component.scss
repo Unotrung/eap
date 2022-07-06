@@ -45,11 +45,11 @@
   line-height: 39px;
   text-align: center;
   color: #000000;
-  margin-top: 40px;
+  margin-top: 36px;
   margin-bottom: 6px;
   @media screen and(max-width: 480px){
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 
@@ -61,6 +61,10 @@
   align-items: center;
   text-align: center;
   color: #000000;
+  @media screen and(max-width: 480px){
+    font-size: 10px;
+    line-height: 12px;
+  }
 }
 
 .enter-info-text {
@@ -200,20 +204,32 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media screen and(max-width: 480px){
+    flex-direction: column;
+  }
 }
 
 .block-info-birthday {
   display: block;
   width: 47.2%;
+  @media screen and(max-width: 480px){
+    width: 159px;
+  }
 }
 .block-info-sex {
   display: block;
   width: 139px;
+  @media screen and(max-width: 480px){
+    width: 100px;
+  }
 }
 
 .block-info-issueDate {
   display: block;
   width: 47.2%;
+  @media screen and(max-width: 480px){
+    width: 159px;
+  }
 }
 
 

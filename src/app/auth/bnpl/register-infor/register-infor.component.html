@@ -11,12 +11,12 @@
         <div class="title-register">
             {{'kyc.titleForm' | translate}}
         </div>
-        <div class="des-form hidden-480">
+        <div class="des-form">
             {{'kyc.descriptionForm' | translate}}
         </div>
         <div [formGroup]="registerForm" class="main-content">
-<!-- thông tin cá nhân           -->
-            <div class="personal-info">
+            <!-- thông tin cá nhân           -->
+            <div class="personal-info hidden-480">
                 <div class="text-form">{{'kyc.inforPerson' | translate}}</div>
                 <div class="cover-content-info">
                     <div class="name-birth">
@@ -77,23 +77,92 @@
                                 <div class="info-title">
                                     {{'kyc.issueDate' | translate}}
                                 </div>
-                                <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="issueDate">
+                                <input class="narrow-input-info" appMarginTop="8" type="date"
+                                       formControlName="issueDate">
                             </div>
                             <div class="block-info-issueDate">
                                 <div class="info-title">
                                     {{'kyc.expiryDate' | translate}}
                                 </div>
-                                <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="expiryDate">
+                                <input class="narrow-input-info" appMarginTop="8" type="date"
+                                       formControlName="expiryDate">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-<!--            mobile-->
-            <div class="personal-info">
+            <!--            mobile-->
+            <div class="personal-info hidden-lager-screen">
+                <div class="text-form">{{'kyc.inforPerson' | translate}}</div>
+                <div class="cover-content-info">
+                    <div class="name-birth">
+                        <div class="block-info">
+                            <div class="info-title">{{'kyc.fullName' | translate}}</div>
+                            <input class="input-info" appMarginTop="8" formControlName="name">
+                        </div>
+                        <div class="block-info-sex">
+                            <div class="info-title" appMarginTop="25">
+                                <ng-container>{{'kyc.sex' | translate}}</ng-container>
+                            </div>
+                            <div style="position: relative">
+                                <input class="input-info"
+                                       [ngClass]="{'is-invalid': (f['sex'].touched || f['sex'].dirty) && f['sex'].errors}"
+                                       appMarginTop="8" formControlName="sex" matInput [matAutocomplete]="autoSex">
+                                <mat-autocomplete autoActiveFirstOption #autoSex="matAutocomplete">
+                                    <mat-option *ngFor="let option of sexOptions, let i = index"
+                                                [value]="lang == 'en'?sexOptionsEn[i]:option">
+                                        {{lang == 'en' ? sexOptionsEn[i] : option}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                            </div>
+                            <div class="error"
+                                 *ngIf="(f['sex'].touched || f['sex'].dirty) && f['sex'].errors">
+                                <span>{{'kyc.validSex' | translate}}</span>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="name-birth">
+                        <div class="block-info-birthday">
+                            <div class="info-title">{{'kyc.birthday' | translate}}</div>
+                            <input class="narrow-input-info" appMarginTop="8" type="date"
+                                   formControlName="birthday">
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="name-birth">
+                        <div class="block-info">
+                            <div class="info-title">{{'kyc.phone' | translate}}</div>
+                            <input (keypress)="keyPress($event, InputType.number)" type="text" class="narrow-input-info"
+                                   formControlName="phone"
+                                   appMarginTop="8"
+                                   [ngClass]="{ 'is-invalid': (f['phone'].touched || f['phone'].dirty) && f['phone'].errors }">
+                        </div>
+                        <div class="block-info">
+                            <div class="info-title">
+                                {{'kyc.nid' | translate}}
+                            </div>
+                            <input class="narrow-input-info" appMarginTop="8" formControlName="citizenId">
+                        </div>
+                    </div>
+
+                    <div class="flex-info">
+                        <div class="block-info-issueDate">
+                            <div class="info-title">
+                                {{'kyc.issueDate' | translate}}
+                            </div>
+                            <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="issueDate">
+                        </div>
+                        <div class="block-info-issueDate">
+                            <div class="info-title">
+                                {{'kyc.expiryDate' | translate}}
+                            </div>
+                            <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="expiryDate">
+                        </div>
+                    </div>
+                </div>
             </div>
-<!--địa chỉ hiện tại-->
+            <!--địa chỉ hiện tại-->
             <div class="personal-info">
                 <div class="text-form">{{'kyc.inforAddress' | translate}}</div>
                 <div class="cover-content-info">
@@ -190,7 +259,7 @@
                     </div>
                 </div>
             </div>
-<!--địa chỉ tạm tú-->
+            <!--địa chỉ tạm tú-->
             <div class="personal-info">
                 <div class="text-form">{{'kyc.inforAddressTemp' | translate}}</div>
                 <div class="cover-content-info">
@@ -214,7 +283,8 @@
                                 </mat-autocomplete>
                             </div>
 
-                            <div class="error" *ngIf="(f['cityTemp'].touched || f['cityTemp'].dirty) && f['cityTemp'].errors">
+                            <div class="error"
+                                 *ngIf="(f['cityTemp'].touched || f['cityTemp'].dirty) && f['cityTemp'].errors">
                                 <span>{{'kyc.validCity' | translate}}</span>
                             </div>
                         </div>
@@ -232,7 +302,8 @@
                                        [matAutocomplete]="autoDistrictTemp">
                                 <mat-autocomplete autoActiveFirstOption #autoDistrictTemp="matAutocomplete"
                                                   (optionSelected)="onSelectedDistrictTemp($event.option.value)">
-                                    <mat-option *ngFor="let option of districtFilteredOptionsTemp | async" [value]="option">
+                                    <mat-option *ngFor="let option of districtFilteredOptionsTemp | async"
+                                                [value]="option">
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
@@ -266,7 +337,8 @@
                                 </mat-autocomplete>
                             </div>
 
-                            <div class="error" *ngIf="(f['wardTemp'].touched || f['wardTemp'].dirty) && f['wardTemp'].errors">
+                            <div class="error"
+                                 *ngIf="(f['wardTemp'].touched || f['wardTemp'].dirty) && f['wardTemp'].errors">
                                 <span>{{'kyc.validWard' | translate}}</span>
                             </div>
                         </div>
@@ -280,14 +352,15 @@
                                        appMarginTop="8" formControlName="streetTemp">
                             </div>
 
-                            <div class="error" *ngIf="(f['streetTemp'].touched || f['streetTemp'].dirty) && f['streetTemp'].errors">
+                            <div class="error"
+                                 *ngIf="(f['streetTemp'].touched || f['streetTemp'].dirty) && f['streetTemp'].errors">
                                 <span>{{'kyc.validStreet' | translate}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-<!--thông tin tham chiếu-->
+            <!--thông tin tham chiếu-->
             <div class="personal-info">
                 <div class="text-form">{{'kyc.inforRef' | translate}}</div>
                 <div class="cover-content-info">
