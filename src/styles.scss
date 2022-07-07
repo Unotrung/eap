@@ -55,7 +55,7 @@ $dynamic-app-dark-theme: mat.define-dark-theme(( color: ( primary: mat.define-pa
 
 @font-face {
     font-family: "Montserrat";
-    src: local("Montserrat"), url(assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
+    src: local("Montserrat"), url(assets/font/Montserrat/Montserrat-Light.ttf) format("truetype");
 }
 
 html {
@@ -321,3 +321,16 @@ input {
 }
 
 .swiper-slide {}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #000000 !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}

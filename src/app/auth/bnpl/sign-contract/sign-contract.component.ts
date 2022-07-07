@@ -36,13 +36,14 @@ export class SignContractComponent implements OnInit {
         });
     }
 
-    handleCheckboxAgree(e) {
-        this.isAgree = !this.isAgree;
+    handleCheckboxAgree(num: number) {
+        if (num === 1) {
+            this.isAgree = !this.isAgree;
+        } else if (num === 2) {
+            this.isGetOtp = !this.isGetOtp;
+        }
     }
 
-    handleCheckboxGetOtp(e) {
-        this.isGetOtp = !this.isGetOtp;
-    }
 
     showAllPageContract() {
         this.isShow =!this.isShow

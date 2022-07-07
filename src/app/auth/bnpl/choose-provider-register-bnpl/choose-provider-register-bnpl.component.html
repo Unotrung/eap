@@ -1,7 +1,10 @@
+<div class="hidden-lager-screen">
+    <app-bar-process-bnpl [childData]="{widthLine: 25,numberStep:1}"></app-bar-process-bnpl>
+</div>
 <div class="container-right-body">
-    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
     <div class="container-choose">
-        <div>
+        <div class="hidden-480">
             <app-bar-process-bnpl [childData]="{widthLine: 25,numberStep:1}"></app-bar-process-bnpl>
         </div>
         <div *ngIf="!loading">
@@ -12,7 +15,7 @@
                     <div class="tick" (click)="chooseProvider(p.provider)">
                         <img *ngIf = "p.provider == providerChoose&&checkChoose" src="../../../../assets/images/tick-pay-2.png">
                     </div>
-                    <div><img [className]="p.provider === 'Fe Credit'? 'img-fe':'img-home'" [src]="p.url"></div>
+                    <img [className]="p.provider === 'Fe Credit'? 'img-fe':'img-home'" [src]="p.url">
                 </div>
             </div>
             <div class="cover-btn">

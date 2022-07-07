@@ -15,6 +15,13 @@
   margin-bottom: 40px;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
   position: relative;
+  @media screen and(max-width: 480px){
+    min-height: auto;
+    margin: 0px 20px 0px 20px;
+    background: transparent;
+    border-radius: 0px;
+    box-shadow: unset;
+  }
 }
 
 .title-infor {
@@ -92,8 +99,8 @@ h1 {
   border-top: 2px solid #4ECB71;
 }
 
-.cover-btn {
-  margin-top: 60px;
+.cover-btn-sign {
+  margin-top: 40px;
 }
 
 .btn-ctn {
@@ -127,13 +134,21 @@ h1 {
 }
 
 .form-contract {
-  padding: 32px 10px 32px 32px;
+  padding: 32px 10px 32px 26px;
   height: 450px;
   width: 66%;
   border-radius: 10px;
   background: #FFFFFF;
   margin: auto;
-  margin-top: 30px !important;
+  margin-top: 36px !important;
+  @media screen and(max-width: 480px){
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.12);
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+    margin-top: 24px !important;
+    padding: 28px 10px 32px 20px;
+  }
 }
 
 .name-contract {
@@ -143,6 +158,10 @@ h1 {
   line-height: 24px;
   color: #000000;
   font-family: "MontserratAlternates";
+  @media screen and(max-width: 480px) {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }
 
 .content {
@@ -155,6 +174,11 @@ h1 {
   color: #000000;
   padding-right: 24px;
   overflow-y: auto;
+  @media screen and(max-width: 480px){
+    font-size: 12px;
+    line-height: 18px;
+    padding-right: 12px;
+  }
 }
 
 .opacity-text {
@@ -172,18 +196,33 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80px;
-  width: 100%;
+  margin-right: 22px;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
   color: #197DDE;
   cursor: pointer;
+  margin-top: 2px;
+  margin-bottom: 24px;
+  @media screen and(max-width: 480px){
+    font-size: 9px;
+    line-height: 11px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    margin-top: 8px;
+    margin-right: 10px;
+  }
 }
 
 .img-see-more {
   width: 14.8px;
   margin-bottom: 5px;
+  @media screen and(max-width: 480px){
+    width: 8px;
+    filter: grayscale(100%) !important;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -193,11 +232,31 @@ h1 {
   background: #888;
 }
 
-.tick-1 {
-  height: 16px;
-  width: 16px;
-  margin-right: 16px;
+.tick-1-none {
+  height: 18.38px;
+  width: 18.38px;
+  border-radius: 3px;
+  border: 1px solid #000000;
+  margin-right: 17.25px;
+  @media screen and(max-width: 480px){
+    margin-right: 11.25px;
+    margin-top: 2px;
+  }
 }
+
+.content-tick {
+  width: auto;
+  @media screen and(max-width: 480px){
+    width: 264px;
+  }
+}
+
+.bgr-tick {
+  background-image: url("../../../../assets/images/tick-contract.png");
+  background-size: cover;
+  border: hidden !important;
+}
+
 
 .tick-2 {
   width: 26.5px;
@@ -210,14 +269,21 @@ h1 {
   font-size: 12px;
   line-height: 18px;
   color: #000000;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 16px;
-  div {
-    display: flex;
-    align-items: center;
+  margin-left: 6px;
+  @media screen and(max-width: 480px){
+    margin-left: 0px;
+    margin-right: 10px;
+    align-items: start;
+    height: auto;
   }
+}
+
+.mb-19 {
+  margin-bottom: 19px;
 }
 
 .example-section {

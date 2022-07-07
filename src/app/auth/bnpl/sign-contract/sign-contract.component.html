@@ -1,13 +1,12 @@
+<div class = "hidden-lager-screen">
+    <app-bar-process-bnpl [childData]="{widthLine: 50,numberStep:2}"></app-bar-process-bnpl>
+</div>
 <div class="container-right-body">
-    <div class="title-infor">{{'inforBnpl.title' | translate}}</div>
+    <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
     <div>
-        <div>
+        <div class = "hidden-480">
             <app-bar-process-bnpl [childData]="{widthLine: 50,numberStep:2}"></app-bar-process-bnpl>
         </div>
-
-<!--        <div class="title-register">-->
-<!--            {{'contract.title' | translate}}-->
-<!--        </div>-->
 
         <div [style]="isShow?'height: auto':null" class="form-contract">
             <div class="name-contract">
@@ -22,17 +21,19 @@
                 <div [style]="isShow?'transform: rotate(180deg)':null" (click)="showAllPageContract()"><img class="img-see-more" src="../../../../assets/images/angle-double-down.png"></div>
                 <div [hidden]="isShow" (click)="showAllPageContract()">{{'contract.seeMore' | translate}}</div>
             </div>
-            <div class="agree-tick">
-                <div><input (change)="handleCheckboxAgree($event)" class="tick-1" type="checkbox" name="agree"></div>
-                <div><label>{{'contract.checkbox1' | translate}}</label></div>
+            <div class="agree-tick mb-19">
+                <div (click)="handleCheckboxAgree(1)" class="tick-1-none"
+                [class.bgr-tick]="isAgree"></div>
+                <div class = "content-tick">{{'contract.checkbox1' | translate}}</div>
             </div>
             <div class="agree-tick">
-                <div><input (change)="handleCheckboxGetOtp($event)" class="tick-1" type="checkbox" name="agree"></div>
-                <div><label>{{'contract.checkbox2' | translate}}</label></div>
+                <div (click)="handleCheckboxAgree(2)" class="tick-1-none"
+                [class.bgr-tick]="isGetOtp"></div>
+                <div class = "content-tick">{{'contract.checkbox2' | translate}}</div>
             </div>
         </div>
 
-        <div class="cover-btn">
+        <div class="cover-btn-sign">
             <div>
                 <app-button-dialog
                         [isEnable]="!isGetOtp || !isAgree"
