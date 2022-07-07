@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
 
     listPeopleComment = [
         {
-            avatar: "../../assets/images/avatarComment.png",
+            avatar: "../../assets/images/chandung2.png",
             nameUser: this.translateService.instant("home.customerName"),
             place: this.translateService.instant("home.placeComment"),
             content: this.translateService.instant("home.contentComment"),
