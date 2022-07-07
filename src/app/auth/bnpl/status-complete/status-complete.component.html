@@ -1,0 +1,20 @@
+<div class="stt-container">
+  <div *ngIf = "!isError" class="cover-icon-tick">
+    <img src="../../../assets/images/smile.png">
+  </div>
+  <div *ngIf = "isError" class="cover-icon-tick">
+    <img src="../../../assets/images/cry.png">
+  </div>
+
+  <div *ngIf = "!isError" class="title-status">{{'register.titleSttTrue' | translate}}</div>
+  <div *ngIf = "isError" class="title-status">{{'register.titleSttFalse' | translate}}</div>
+
+  <div class="auto-login-note">
+    {{'register.click' | translate}}
+    <span (click)="onNoClick()" class="here">{{'register.here' | translate}}</span>
+    {{'register.back' | translate}}
+    {{'register.autoLogin' | translate}} {{countDown}}s
+  </div>
+  <app-item-close-dialog class="close-popup" (click)="back()"></app-item-close-dialog>
+</div>
+

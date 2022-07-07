@@ -23,22 +23,26 @@ SwiperCore.use([Pagination, Navigation]);
 export class HomeComponent implements OnInit {
     lisItemLayer2 = [
         {
-            src: "../../assets/images/icon1-layer2.png",
+            src: "",
+            // src: "../../assets/images/icon1-layer2.png",
             lable: this.translateService.instant("home.lable-2-1"),
             content: this.translateService.instant("home.content-2-1")
         },
         {
-            src: "../../assets/images/icon2-layer2.png",
+            src: "",
+            // src: "../../assets/images/icon2-layer2.png",
             lable: this.translateService.instant("home.lable-2-2"),
             content: this.translateService.instant("home.content-2-2")
         },
         {
-            src: "../../assets/images/icon3-layer2.png",
+            src: "",
+            // src: "../../assets/images/icon3-layer2.png",
             lable: this.translateService.instant("home.lable-2-3"),
             content: this.translateService.instant("home.content-2-3")
         },
         {
-            src: "../../assets/images/icon5-layer2.png",
+            src: "",
+            // src: "../../assets/images/icon5-layer2.png",
             lable: this.translateService.instant("home.lable-2-4"),
             content: this.translateService.instant("home.content-2-4")
         },
