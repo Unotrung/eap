@@ -23,13 +23,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-right: 40px;
+  padding-right: 50px;
   padding-left: 40px;
-  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4px;
+  box-shadow: inset 0px -1px 0px #E4E4E4;
 }
 
 
 .name-table {
+  font-family: "MontserratAlternates";
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
@@ -82,7 +84,7 @@
 .no-page {
   height: 30px;
   padding-left: 32px;
-  padding-right: 10px;
+  padding-right: 19.25px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -141,7 +143,7 @@ tbody {
 }
 
 tbody tr {
-  height: 54px;
+  height: 56px;
   background: #ffffff;
   box-shadow: inset 0px -1px 0px #E4E4E4;
 }
@@ -179,11 +181,17 @@ a {
   line-height: 16px;
 }
 
-.first-column {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 40px
+.tick-1-none {
+  height: 18.38px;
+  width: 18.38px;
+  border-radius: 3px;
+  border: 1px solid #000000;
+  margin-left: 46.19px;
+}
+.bgr-tick {
+  background-image: url("../../../assets/images/tick-contract.png");
+  background-size: cover;
+  border: hidden !important;
 }
 
 .btn-action {
@@ -200,21 +208,21 @@ a {
 
 .star-icon {
   position: absolute;
-  top: 18px;
-  left: 15px;
-  width: 16px !important;
+  top: 12.5px;
+  left: 12px;
+  width: 30px !important;
   height: auto;
   cursor: pointer;
 }
 
 .icon-del-row {
-  width: 19px;
-  height: 21px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 }
 
 .cover-icon-bar {
-  width: 156px;
+  width: 168px;
   height: 30px;
   display: flex;
   flex-direction: row;
@@ -231,7 +239,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding-left: 12px;
-  padding-right: 18px;
+  padding-right: 21px;
   margin-right: 32px;
   font-weight: 400;
   font-size: 12px;

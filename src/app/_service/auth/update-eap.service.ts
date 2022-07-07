@@ -17,11 +17,11 @@ export class UpdateEapService {
     return this.http.put(`${this.api_url_update}user/${id}`,data)
   }
   getOtp(data:any): Observable<any> {
-    return this.http.post(`${this.api_url_update}auth/sendOTPEmail`,data)
+    return this.http.post(`${this.api_url_update}auth/sendOTPUpdateEmail`,data)
   }
 
   verifyOtp(data:any): Observable<any> {
-    return this.http.post(`${this.api_url_update}auth/verifyOTPEmail`,data)
+    return this.http.post(`${this.api_url_update}auth/verifyOTPUpdateEmail`,data)
   }
 
   updateEmail(data:any): Observable<any> {
