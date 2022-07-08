@@ -3,7 +3,11 @@
 </div>
 <div class="container-right-body">
     <div *ngIf="(!isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))||
-((pictureService.citizenFrontImageComplete$ | async) && (pictureService.citizenBackImageComplete$ | async))" class="title-infor">{{'takePhotoNid.labelNid' | translate}}</div>
+((pictureService.citizenFrontImageComplete$ | async) && (pictureService.citizenBackImageComplete$ | async))" class="title-infor">
+        {{'takePhotoNid.labelNid' | translate}}
+    </div>
+    <div *ngIf="(isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))" class="title-infor" [innerHTML]="'takePhotoNid.guideTitleBig'|translate"></div>
+
     <div fxLayout="column" fxLayoutAlign="center center">
 
         <div style="width: 100%" class="hidden-480">

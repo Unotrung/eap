@@ -167,7 +167,7 @@ input {
 .form-update {
   margin: auto;
   width: 279px;
-  margin-top: 27px !important;
+  margin-top: 29px !important;
   text-align: center;
   font-weight: 600;
   font-size: 18px;
@@ -297,8 +297,18 @@ a {
   --item-border-bottom: 2px solid #FF8080 !important;
 }
 
-.status {
-  height: 50vh;
+.status-false {
+  height: 54vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and(max-width: 480px) {
+    height: unset;
+  }
+}
+.status-true {
+  height: 53vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

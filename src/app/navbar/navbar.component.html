@@ -1,8 +1,8 @@
 <div class="header-format" [class.header-format-login]="currentAccessToken&&isShowSidebar">
     <div class="header-left">
-        <img *ngIf="currentAccessToken==null || !isShowSidebar" (click)="onShowMenu($event)" class="icon-menu hidden-lager-screen"
+        <img *ngIf="currentAccessToken==null || !isShowSidebar" (click)="onShowMenu($event)" class="icon-menu hidden-min-960"
              src="../../assets/images/menu-header.png">
-        <img *ngIf="currentAccessToken!=null && isShowSidebar" (click)="onShowMenuAfterAuth($event)" class="icon-menu hidden-lager-screen"
+        <img *ngIf="currentAccessToken!=null && isShowSidebar" (click)="onShowMenuAfterAuth($event)" class="icon-menu hidden-min-960"
              src="../../assets/images/menu-header.png">
         <a class="cover-icon-home" href="/auth" *ngIf="currentAccessToken!==null">
             <img class="img-icon-home" src="../../assets/images/_VOOLOLogo.png">
@@ -24,13 +24,13 @@
     <div class="header-right">
         <div>
             <div class="cover-btn-icon">
-                <button class="btn-login" [hidden]="currentAccessToken!=null"
+                <button class="btn-header btn-login" [hidden]="currentAccessToken!=null"
                         (click)="openDialogLogin()">
                     {{'header.login' | translate}}
                 </button>
                 <button [hidden]="currentAccessToken!=null"
                         (click)="openDialogRegister()"
-                        class="btn-register">
+                        class="btn-header btn-register">
                     {{'header.register' | translate}}
                 </button>
 

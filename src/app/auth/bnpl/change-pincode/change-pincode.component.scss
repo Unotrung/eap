@@ -76,7 +76,7 @@
   line-height: 22px;
   text-align: center;
   color: #000000;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   @media screen and(max-width: 480px){
     font-size: 14px;
     line-height: 17px;
@@ -84,15 +84,15 @@
 }
 
 .cover-input-pin {
-  width: 189px;
+  width: 155px;
   margin: auto;
-  margin-bottom: 16px !important;
+  margin-bottom: 8px !important;
 }
 .note {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 315px;
+  width: 302px;
   margin: auto;
   font-weight: 400;
   font-size: 12px;
@@ -106,7 +106,7 @@
     width: 260px;
   }
   img {
-    margin-right: 10px;
+    margin-right: 6px;
     @media screen and(max-width: 480px){
       margin-right: 4px;
     }
@@ -169,8 +169,8 @@
 
 .code-input-3 {
   --item-border-radius: 50%;
-  --item-height: 21px;
-  --item-spacing: 21px;
+  --item-height: 20px;
+  --item-spacing: 15px;
   --item-background: rgba(154, 147, 147, 0.1);;
 }
 
@@ -181,8 +181,8 @@
 
 .code-input-4 {
   --item-border-radius: 50%;
-  --item-height: 21px;
-  --item-spacing: 21px;
+  --item-height: 20px;
+  --item-spacing: 15px;
   --item-background: rgba(154, 147, 147, 0.1);
   --item-border: 2px solid #FF8080 !important;
   --item-border-bottom: 2px solid #FF8080 !important;
@@ -193,8 +193,18 @@
   -webkit-box-shadow:0 0 0 50px #17D7A0 inset !important;
 }
 
-.status {
-  height: 50vh;
+.status-false {
+  height: 54vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media screen and(max-width: 480px){
+    height: auto;
+  }
+}
+.status-true {
+  height: 53vh;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,7 @@
 <div class="container-dropdown">
     <div class="top">
-        <div class="top-1" *ngFor="let x of listNote, let i = index" [style]="i==0?'opacity: 1 !important;':null">
+        <div class="top-1" *ngFor="let x of listNote, let i = index"
+             [style]="i==0?'opacity: 1 !important;':null">
             <div class="content overflow-ellipsis">
                 {{x.content}}
             </div>

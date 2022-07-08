@@ -4,10 +4,10 @@
     </div>
     <div class="header-table">
         <div class="cover-icon-bar">
-            <img src="../../../assets/images/icon-subtract.png" width="18.75px" height="18.75px">
-            <img src="../../../assets/images/icon-mail.png" width="21.45px" height="21.45px">
-            <img src="../../../assets/images/icon-mails.png" width="23.64" height="20.27px">
-            <img src="../../../assets/images/trash-icon.png" width="19px" height="21px">
+            <img src="../../../assets/images/icon-subtract.png" width="30px" height="30px">
+            <img src="../../../assets/images/icon-mail.png" width="30px" height="30px">
+            <img src="../../../assets/images/icon-mails.png" width="30px" height="30px">
+            <img src="../../../assets/images/trash-icon.png" width="30px" height="30px">
         </div>
         <div class="action-page">
             <div>
@@ -48,12 +48,11 @@
     <table>
         <tbody>
         <tr class="row-content" *ngFor="let note of listNote, let i = index">
-            <td width="60px">
-                <div class="first-column">
-                    <input type="checkbox">
-                </div>
+            <td width="70px">
+                <div (click)="checkTick(note)" class="tick-1-none"
+                     [class.bgr-tick]="note.isCheck"></div>
             </td>
-            <td style="position: relative; width: 50px">
+            <td style="position: relative; width: 62px">
                 <img (click)="pinNote(note)" class="star-icon" src="../../../assets/images/star-no-pin.png">
                 <img (click)="pinNote(note)" class="star-icon" *ngIf="note.isPin" class="star-icon"
                      src="../../../assets/images/star-pin.png">
@@ -61,7 +60,7 @@
             <td>
                 {{note.content}}
             </td>
-            <td>
+            <td width="130px">
                 <button class="btn-action"
                         [class.dd]="note.type === 'Giao dịch'"
                         [class.mgg]="note.type === 'Mã giảm giá'"
@@ -70,8 +69,8 @@
                     {{note.type}}
                 </button>
             </td>
-            <td>{{note.time}}</td>
-            <td width="58px">
+            <td width="100px">{{note.time}}</td>
+            <td width="68px">
                 <img class="icon-del-row" src="../../../assets/images/trash-icon.png">
             </td>
         </tr>

@@ -71,7 +71,7 @@
     height: 112px;
     letter-spacing: -0.015em;
     color: rgba(0, 0, 0, 0.8);
-    margin: -40px 224px 45px -20px;
+    margin: -38px 224px 45px -20px;
     @media screen and(max-width: 1280px) {
         font-size: 22px;
         margin-right: 24px;
@@ -195,7 +195,8 @@
 }
 
 .left-body-homepage {
-    width: 67%;
+    padding-left: 16px;
+    width: 70%;
     height: 668px;
     @media screen and(max-width: 1280px) {
         width: 54.2%;
@@ -226,6 +227,7 @@
 
 .left-body-homepage .iconVo {
     height: 668px;
+    width: 620px;
     // margin-left: 56px;
     @media screen and(max-width: 1200px) {
         margin-left: 40px;
@@ -298,7 +300,7 @@
 
 .cover-title {
     font-family: "MontserratAlternates";
-    width: 87.1%;
+    width: 89.4%;
     height: 298px;
     font-size: 72px;
     font-weight: 700;
@@ -336,8 +338,8 @@
 }
 
 .layer-2 {
-    margin: 103px -36px 116px -52px !important;
-    padding: 85px 60px 0px 60px;
+    margin: 103px -49px 105px -36px !important;
+    padding: 40px 60px 0px 60px;
     height: 1150px;
     border: 3px solid #EEEEEE;
     border-radius: 50px;
@@ -371,7 +373,8 @@
         font-size: 48px;
         font-weight: 700;
         line-height: 59px;
-        margin: -40px 0px -2px -6px;
+        padding: 2px 10px 0px 2px;
+        // margin: -40px 0px -2px -6px;
         letter-spacing: 0px;
         text-align: center;
         color: #000000;
@@ -413,10 +416,11 @@
         font-size: 16px;
         font-weight: 400;
         line-height: 32px;
-        margin-top: 15px;
-        margin-right: 10px;
+        padding-top: 12px;
+        padding-right: 9px;
         text-align: center;
-        margin-bottom: 42px;
+        letter-spacing: 0px;
+        // margin-bottom: 42px;
         @media screen and(max-width: 1200px) {
             font-size: 18px;
             line-height: 25px;
@@ -502,7 +506,7 @@
 }
 
 .layer-2-icon {
-    height: 178px;
+    height: 183px;
     width: 178px;
     @media screen and(max-width: 1200px) {
         height: 140px;
@@ -646,11 +650,13 @@
 }
 
 .title-layer-3 {
+    height: 122px;
     font-family: "MontserratAlternates";
     font-size: 48px;
     font-weight: 700;
     line-height: 59px;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
+    margin-left: -2px;
     text-align: left;
     // margin-left: 118px;
     color: #000000;
@@ -699,6 +705,7 @@
 }
 
 .title-layer-5 {
+    margin-left: 13px;
     font-family: "MontserratAlternates";
     font-size: 48px;
     font-weight: 700;
@@ -796,8 +803,8 @@
 .layer-3 {
     position: relative;
     width: 1620px;
-    margin-left: -31px;
-    margin-top: 53px;
+    margin-left: -220px;
+    // margin-top: 53px;
     margin-bottom: 40px;
     @media screen and(max-width: 1200px) {
         margin-top: 40px;
@@ -838,10 +845,10 @@
     cursor: pointer;
     z-index: 1;
     position: absolute;
-    left: 5.5%;
-    top: 33%;
-    width: 35px;
-    height: 70px;
+    left: 4.8%;
+    top: 36%;
+    width: 30px;
+    height: 60px;
     transform: rotate(180deg);
     @media screen and(max-width: 960px) {
         left: 9%;
@@ -859,10 +866,10 @@
     z-index: 1;
     cursor: pointer;
     position: absolute;
-    right: 7.6%;
-    top: 35%;
-    width: 35px;
-    height: 70px;
+    right: 4.8%;
+    top: 37%;
+    width: 30px;
+    height: 60px;
     @media screen and(max-width: 960px) {
         right: 10%;
         top: 32%;
@@ -876,7 +883,7 @@
 }
 
 .cover-icon-layer-3 {
-    width: 383px;
+    // width: 383px;
     border-radius: 50px;
     border: 3px solid #FFFFFF;
     display: flex;
@@ -900,10 +907,10 @@
 
 .name-img {
     text-align: center;
-    font-size: 35px;
+    font-size: 24px;
     font-weight: 600;
-    line-height: 55px;
-    margin-top: 48px;
+    line-height: 30px;
+    margin-top: 32px;
     font-family: "MontserratAlternates";
     @media screen and(max-width: 1200px) {
         font-size: 26px;
@@ -919,11 +926,10 @@
 .layer-4 {
     position: relative;
     height: auto;
-    margin-top: 117px;
-    margin-left: 118px;
-    display: flex;
+    margin-top: 127px;
+    margin-left: 0px;
     flex-direction: row;
-    margin-bottom: 160px;
+    margin-bottom: 88px;
     color: black;
     @media screen and(max-width: 1280px) {
         margin-bottom: 100px;
@@ -945,13 +951,14 @@
 .title-l4 {
     display: flex;
     position: absolute;
-    top: 0px;
+    top: 12px;
+    left: 0px;
     font-family: "MontserratAlternates";
-    font-size: 65px;
+    font-size: 48px;
     font-weight: 700;
-    line-height: 79px;
-    letter-spacing: 1px;
-    width: 150%;
+    line-height: 59px;
+    letter-spacing: 0px;
+    width: auto;
     label {
         @media screen and(max-width: 480px) {
             width: 180px;
@@ -960,11 +967,12 @@
     img {
         width: 65px;
         height: 65px;
-        margin-top: 8px;
+        margin-top: -3px;
+        margin-left: -4px;
         @media screen and(max-width: 1200px) {
             width: 50px;
             height: 50px;
-            margin-top: 4px;
+            margin-left: -2px;
         }
         @media screen and(max-width: 960px) {
             width: 45px;
@@ -978,7 +986,7 @@
         }
     }
     label {
-        margin-left: 22px;
+        margin-left: 32px;
         @media screen and(max-width: 480px) {
             margin-left: 16px;
         }
@@ -1006,57 +1014,22 @@
     }
 }
 
-.layer-4-1 {
-    width: 45%;
-    margin-top: 75px;
-    @media screen and(max-width: 960px) {
-        width: 100%;
-        margin: auto;
-        padding: 0 56px;
-    }
-    @media screen and(max-width: 480px) {
-        width: 100%;
-        margin: auto;
-        padding: 0 32px;
-    }
-    .content-l4 {
-        font-family: "Montserrat";
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 32px;
-        text-align: left;
-        margin-top: 35px;
-        margin-right: 54px;
-        @media screen and(max-width: 1200px) {
-            font-size: 18px;
-            margin-top: 16px;
-            margin-right: 16px;
-        }
-        @media screen and(max-width: 960px) {
-            font-size: 16px;
-            line-height: 24px;
-        }
-        @media screen and(max-width: 480px) {
-            font-size: 14px;
-            line-height: 22px;
-            margin-top: 17px;
-            margin-right: -4px;
-        }
-    }
-    .content-l4-under {
-        margin-top: 48px !important;
-        @media screen and(max-width: 1200px) {
-            margin-top: 16px !important;
-        }
-        @media screen and(max-width: 480px) {
-            margin-top: 13px !important;
-        }
-    }
+.content-l41 {
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    position: absolute;
+    left: 96px;
+    top: 95px;
 }
 
 .layer-4-2 {
     position: relative;
-    width: 55%;
+    width: 63%;
+    height: auto;
+    padding-left: 92px;
+    margin: auto;
     @media screen and(max-width: 960px) {
         width: 100%;
         display: flex;
@@ -1094,6 +1067,192 @@
         top: 28px;
         z-index: -1;
     }
+}
+
+.layer-4-2-1 {
+    position: absolute;
+    top: 241px;
+    left: -104px;
+    height: 135px;
+    width: 333px;
+}
+
+.layer-4-2-2 {
+    position: absolute;
+    top: 502px;
+    left: -203px;
+    height: 135px;
+    width: 333px;
+}
+
+.layer-4-2-3 {
+    position: absolute;
+    top: 359px;
+    left: 663px;
+    height: 135px;
+    width: 333px;
+}
+
+.text-4-1-1 {
+    height: 30px;
+    position: absolute;
+    width: 130px;
+    font-family: "Montserrat Alternates";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #F18F61;
+    padding-left: 18px;
+    padding-top: 0px;
+    letter-spacing: 1.5px;
+}
+
+.text-4-2-1 {
+    height: 30px;
+    position: absolute;
+    width: 200px;
+    font-family: "Montserrat Alternates";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #F18F61;
+    padding-left: 18px;
+    padding-top: 0px;
+    letter-spacing: 1.5px;
+}
+
+.text-4-3-1 {
+    height: 30px;
+    position: absolute;
+    width: 130px;
+    font-family: "Montserrat Alternates";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #F18F61;
+    padding-left: 18px;
+    padding-top: 0px;
+    letter-spacing: 1.5px;
+}
+
+.text-4-1-2 {
+    padding-top: 33px;
+    position: absolute;
+    width: 162px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    padding-left: 17px;
+}
+
+.text-4-2-2 {
+    padding-top: 33px;
+    position: absolute;
+    width: 250px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    padding-left: 17px;
+}
+
+.text-4-3-2 {
+    padding-top: 33px;
+    position: absolute;
+    width: 162px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    padding-left: 17px;
+}
+
+.layer-4-2-1-1 {
+    padding: 20px 50px 20px 79px;
+    position: relative;
+    height: 100px;
+    width: 282px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    mix-blend-mode: normal;
+    border: 2px solid #EEEEEE;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.layer-4-2-2-1 {
+    padding: 20px 50px 20px 79px;
+    position: relative;
+    height: 100px;
+    width: 353px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    mix-blend-mode: normal;
+    border: 2px solid #EEEEEE;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.layer-4-2-3-1 {
+    padding: 20px 50px 20px 36px;
+    position: relative;
+    height: 100px;
+    width: 282px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    mix-blend-mode: normal;
+    border: 2px solid #EEEEEE;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mg-4-1 {
+    position: absolute;
+    height: 167px;
+    width: 146.22px;
+    filter: drop-shadow(15px 15px 15px rgba(0, 0, 0, 0.1));
+    border-radius: 0px;
+    top: -20px;
+    left: -55px;
+}
+
+.mg-4-2 {
+    position: absolute;
+    height: 143px;
+    width: 146.22px;
+    filter: drop-shadow(15px 15px 15px rgba(0, 0, 0, 0.1));
+    border-radius: 0px;
+    top: -10px;
+    left: -60px;
+}
+
+.mg-4-3 {
+    position: absolute;
+    height: 167px;
+    width: 146.22px;
+    filter: drop-shadow(15px 15px 15px rgba(0, 0, 0, 0.1));
+    border-radius: 0px;
+    top: -33px;
+    left: 200px;
 }
 
 .cover-item-store {
@@ -1167,7 +1326,7 @@
 }
 
 .layer-5 {
-    margin: 20.6px 95px 88px 59px;
+    margin: 20.6px 80px 88px 74px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1258,7 +1417,7 @@
         box-shadow: 0px 10px 20px 0px #0000001F;
         background: #FFFFFF80;
         border-radius: 30px;
-        padding: 40px 47px 42px 46px;
+        padding: 44px 47px 42px 46px;
         @media screen and(max-width: 1200px) {
             padding: 28px;
             border-radius: 24px;

@@ -29,58 +29,67 @@ export class NotificationTableComponent implements OnInit {
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Thanh toán",
       time: "10:45 AM",
-      isPin: false
+      isPin: false,
+      isCheck: false
     },
     {
       id: 2,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Giao dịch",
       time: "10:45 AM",
-      isPin: false
+      isPin: false,
+      isCheck: false
     },
     {
       id: 3,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Mã giảm giá",
       time: "10:45 AM",
-      isPin: false
+      isPin: false,
+      isCheck: false
     },
     {
       id: 4,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Tin tức",
       time: "10:45 AM",
-      isPin: false
+      isPin: false,
+      isCheck: false
     },
     {
       id: 5,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Khác",
       time: "10:45 AM",
-      isPin: false
+      isPin: false,
+      isCheck: false
     },
     {
       id: 6,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Thanh toán",
       time: "10:45 AM",
-      isPin: false
+      isPin: false,
+      isCheck: false
     },
     {
       id: 7,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Giao dịch",
       time: "10:45 AM",
-      isPin: false
+      isPin: false,
+      isCheck: false
     },
     {
       id: 8,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
       type: "Mã giảm giá",
       time: "10:45 AM",
-      isPin: false
+      isPin: false,
+      isCheck: false
     }
   ]
+
   errorMgs: string = '';
   constructor(private sidebarService: SidebarService,
               private translateService: TranslateService) { }
@@ -140,5 +149,20 @@ export class NotificationTableComponent implements OnInit {
     })
     this.itemChooseMore = itemChoose;
     this.isShow = false;
+  }
+
+  checkTick(note: any) {
+    if (note.isCheck) {
+      this.updateCheck(false,note);
+    } else {
+      this.updateCheck(true,note);
+    }
+  }
+
+  updateCheck(isCheck:boolean, note: any) {
+    let newNote = {...note,isCheck: isCheck};
+    let newListNote = [...this.listNote];
+    newListNote.splice(note.id-1,1,newNote);
+    this.listNote = [...newListNote];
   }
 }

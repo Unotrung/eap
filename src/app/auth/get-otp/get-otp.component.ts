@@ -94,7 +94,7 @@ export class GetOTPComponent implements OnInit {
             }
         }, error => {
             this.resetMessage();
-            if (error.error.statusCode == 4000){
+            if (error.error.statusCode == 1009){
                 if (error.error.countFail<5) {
                     this.countFail = error.error.countFail;
                     this.messageErr = this.translateService.instant('forgotPass.wrongOtp');
