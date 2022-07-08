@@ -51,12 +51,12 @@
         </div>
     </div>
 
-    <div *ngIf="msgStt === 'success'" class="status">
+    <div *ngIf="msgStt === 'success'" class="status-true">
         <app-status [isStatus]="true"
                     [msgStatus]="'forgotPin.sttSuccess' | translate"
                     [msgDescription]=""></app-status>
     </div>
-    <div *ngIf="msgStt === 'fail'" class="status">
+    <div *ngIf="msgStt === 'fail'" class="status-false">
         <div style="margin-bottom: 32px">
             <app-status [isStatus]="false"
                         [msgStatus]="'forgotPin.sttFail' | translate"

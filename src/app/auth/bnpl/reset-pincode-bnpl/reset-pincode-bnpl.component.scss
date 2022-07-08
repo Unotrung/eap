@@ -297,8 +297,18 @@ a {
   --item-border-bottom: 2px solid #FF8080 !important;
 }
 
-.status {
+.status-false {
   height: 54vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and(max-width: 480px) {
+    height: unset;
+  }
+}
+.status-true {
+  height: 53vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

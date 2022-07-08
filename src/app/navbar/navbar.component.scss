@@ -12,110 +12,103 @@
   font-family: "MontserratAlternates";
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   max-width: 1512px;
   margin: 0 auto;
-  height: 119px;
-  padding-left: 120px;
-  padding-right: 120px;
+  height: 90px;
+  padding-top: 23.98px;
+  padding-left: 167px;
+  padding-right: 167px;
   position: relative;
   background: #F4F4F4;
-  @media screen and(max-width: 1511px){
-    padding-left: 60px;
-    padding-right: 60px;
-    height: 100px;
+  @media screen and(max-width: 1440px){
+    padding-left: 120px;
+    padding-right: 120px;
   }
-  @media screen and(max-width: 1380px){
-    padding-left: 56px;
-    padding-right: 56px;
-    height: 100px;
+  @media screen and(max-width: 1280px){
+    padding-left: 80px;
+    padding-right: 80px;
   }
-  @media screen and(max-width: 1140px){
+  @media screen and(max-width: 1180px){
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media screen and(max-width: 1024px){
     padding-left: 36px;
     padding-right: 36px;
-    height: 100px;
   }
   @media screen and(max-width: 960px){
     padding-left: 100px;
     padding-right: 40px;
-    height: 100px;
   }
   @media screen and(max-width: 480px){
     padding-left: 0px;
     padding-right: 0px;
-    height: 72px;
+    padding-top: 45px;
+    height: 83px;
     background: #FFFFFF;
   }
 }
 .img-icon-home {
-  height: 35px;
+  height: 30.43px;
   width: auto;
-  @media screen and(max-width: 1380px){
-    height: 32px;
+  @media screen and(max-width: 1440px){
   }
-  @media screen and(max-width: 1140px){
-    height: 30px;
+  @media screen and(max-width: 1280px){
+  }
+  @media screen and(max-width: 1024px){
   }
   @media screen and(max-width: 960px){
-    width: 100%;
-    height: auto;
-    margin-top: 0px;
+
   }
   @media screen and(max-width: 480px){
-    width: 127px;
-    height: auto;
-    margin-top: 0px;
+    width: 128px;
+    height: 25px;
   }
 
 }
 
 .cover-icon-home {
-  display: flex;
-  align-items: center;
-  height: 38px;
-  width: 25%;
-  margin-right: 40px;
+  height: auto;
+  width: 30.6%;
   @media screen and(max-width: 1440px){
-    align-items: baseline;
   }
-  @media screen and(max-width: 1380px){
-    align-items: baseline;
-    width: fit-content;
+  @media screen and(max-width: 1280px){
+
+  }
+  @media screen and(max-width: 1024px){
+
   }
   @media screen and(max-width: 960px){
-    width: 180px;
-    height: 34px;
-    margin-right: 24px;
+    width: unset;
   }
   @media screen and(max-width: 480px){
-    width: 127px;
-    height: 24px;
-    justify-content: center;
-    margin-right: 0px !important;
+    width: unset;
   }
 }
 
 .header-left {
-  width: 64.5%;
+  width: 57.9%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  font-size: 18px;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 20px;
   font-weight: 600;
-  line-height: 22px;
+
   @media screen and(max-width: 1440px){
+
   }
-  @media screen and(max-width: 1380px){
-    font-size: 16px;
+  @media screen and(max-width: 1280px){
+
   }
-  @media screen and(max-width: 1140px){
-  }
-  @media screen and(max-width: 1140px){
-    font-size: 14px;
-    line-height: 20px;
+  @media screen and(max-width: 1024px){
+    width: 64%;
   }
   @media screen and(max-width: 960px){
+
   }
   @media screen and(max-width: 480px){
     width: 100%;
@@ -141,74 +134,45 @@ a:hover {
   color: #000000 !important;
 }
 
-.btn-login {
-  height: 45px;
-  width: 200px;
+.btn-header {
+  height: 40px;
+  width: 170px;
   border-radius: 30px;
-  background: #FFFFFF;
   border: 1px solid #000000;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 22px;
+  line-height: 20px;
   letter-spacing: 0em;
   text-align: center;
-  color: black;
-  margin-right: 20px;
+
   @media screen and(max-width: 1440px){
-    width: 180px;
+
   }
-  @media screen and(max-width: 1380px){
-    width: 150px;
-    font-size: 16px;
-    height: 40px;
-  }
-  @media screen and(max-width: 1140px){
-    width: 130px;
-    height: 38px;
-    margin-right: 10px;
+  @media screen and(max-width: 1280px){
+
   }
   @media screen and(max-width: 1024px){
-    font-size: 14px;
+    width: 150px;
   }
+
   @media screen and(max-width: 960px){
-    font-size: 16px;
-    height: 40px;
-    width: 180px;
-    border-radius: 30px;
-    margin-right: 20px;
+
+  }
+}
+
+.btn-login {
+  color: black;
+  margin-right: 23px;
+  background: #FFFFFF;
+  @media screen and(max-width: 1024px){
+    margin-right: 16px;
   }
 }
 
 
 .btn-register {
-  height: 45px;
-  width: 200px;
-  border-radius: 30px;
   background: #000000;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: center;
   color: white;
-  @media screen and(max-width: 1380px){
-    width: 160px;
-    font-size: 16px;
-    height: 40px;
-  }
-  @media screen and(max-width: 1140px){
-    width: 130px;
-    height: 38px;
-  }
-  @media screen and(max-width: 1024px){
-    font-size: 14px;
-  }
-  @media screen and(max-width: 960px){
-    font-size: 16px;
-    height: 40px;
-    width: 180px;
-    border-radius: 30px;
-  }
 }
 
 .text-home-page {
@@ -216,15 +180,15 @@ a:hover {
 }
 
 .cover-item-menu {
-  width: 65%;
+  width: 69.4%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  @media screen and(max-width: 1380px){
-    width: 75%;
+  @media screen and(max-width: 1440px){
+  }
+  @media screen and(max-width: 1280px){
   }
   @media screen and(max-width: 1024px){
-    width: 73%;
   }
 }
 
@@ -359,15 +323,15 @@ a:hover {
   position: absolute;
   @media screen and(max-width: 960px){
     left: 40px;
-    top: 28px;
+    top: 16px;
     width: 48px;
-    height: auto;
+    height: 48px;
   }
   @media screen and(max-width: 480px){
     width: 30px;
     height: 30px;
     left: 20px;
-    top: 22px;
+    top: 43px;
   }
 }
 
@@ -411,11 +375,6 @@ a:hover {
   }
 }
 
-.hidden-lager-screen {
-  @media screen and(min-width: 480px){
-    display: none !important;
-  }
-}
 
 .icon-drop {
   position: relative;
@@ -439,7 +398,7 @@ app-notification-dropdown {
   flex-direction: row;
   position: absolute;
   right: 24px;
-  top: 21px;
+  top: 43px;
   width: 64px;
 }
 
@@ -456,39 +415,21 @@ app-notification-dropdown {
   font-family: "MontserratAlternates";
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   max-width: 1512px;
+  padding-top: 23.98px;
   margin: 0 auto;
-  height: 119px;
+  height: 90px;
   padding-left: 40px !important;
   padding-right: 40px !important;
   position: relative;
   background: #F4F4F4;
-  @media screen and(max-width: 1511px){
-    padding-left: 60px;
-    padding-right: 60px;
-    height: 100px;
-  }
-  @media screen and(max-width: 1380px){
-    padding-left: 56px;
-    padding-right: 56px;
-    height: 100px;
-  }
-  @media screen and(max-width: 1140px){
-    padding-left: 36px;
-    padding-right: 36px;
-    height: 100px;
-  }
-  @media screen and(max-width: 960px){
-    padding-left: 100px;
-    padding-right: 40px;
-    height: 100px;
-  }
   @media screen and(max-width: 480px){
     padding-left: 0px;
     padding-right: 0px;
-    height: 72px;
+    padding-top: 45px;
+    height: 83px;
     background: #FFFFFF;
   }
 }
