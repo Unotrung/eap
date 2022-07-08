@@ -71,7 +71,7 @@
     height: 112px;
     letter-spacing: -0.015em;
     color: rgba(0, 0, 0, 0.8);
-    margin: -38px 224px 45px -20px;
+    margin: -39px 224px 45px -16px;
     @media screen and(max-width: 1280px) {
         font-size: 22px;
         margin-right: 24px;
@@ -600,7 +600,7 @@
 
 .layer-2-more {
     display: flex;
-    padding-top: 4px;
+    padding-top: 1px;
     // margin: 30px 47px 0px 48px;
     flex-direction: row;
     align-items: center;
@@ -1121,7 +1121,7 @@
     line-height: 30px;
     display: flex;
     align-items: center;
-    color: #F18F61;
+    color: #197DDE;
     padding-left: 18px;
     padding-top: 0px;
     letter-spacing: 1.5px;
@@ -1138,7 +1138,7 @@
     line-height: 30px;
     display: flex;
     align-items: center;
-    color: #F18F61;
+    color: #CE53AD;
     padding-left: 18px;
     padding-top: 0px;
     letter-spacing: 1.5px;
@@ -1242,7 +1242,7 @@
     filter: drop-shadow(15px 15px 15px rgba(0, 0, 0, 0.1));
     border-radius: 0px;
     top: -10px;
-    left: -60px;
+    left: -55px;
 }
 
 .mg-4-3 {
@@ -1326,7 +1326,7 @@
 }
 
 .layer-5 {
-    margin: 20.6px 80px 88px 74px;
+    margin: 24.6px 80px 88px 74px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1836,7 +1836,7 @@
 
 .cover-swiper-6 .swiper-pagination {
     left: 18px !important;
-    bottom: 109px !important;
+    bottom: 105px !important;
 }
 
 .cover-swiper-2 .swiper {
