@@ -8,15 +8,17 @@
   position: relative;
   margin: auto;
   width: 464px;
-  height: auto;
+  height: 483px;
   border-radius: 20px;
-  border: 3px solid #EEEEEE;
   background: #F3F3F3;
   padding: 54px 32px 32px 32px;
+  filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.12));
   @media screen and(max-width: 480px){
-    width: 355px;
-    padding: 32px;
+    width: 335px;
+    height: 393px;
+    padding: 32px 23.5px;
     border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -30,6 +32,8 @@
   margin-bottom: 32px;
   @media screen and(max-width: 480px){
     font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 24px;
   }
 }
 
@@ -50,6 +54,7 @@
   color: #000000;
   margin-bottom: 12px;
   @media screen and(max-width: 480px){
+    margin-bottom: 6px;
   }
 }
 
@@ -60,6 +65,9 @@
   width: 100%;
   border: none;
   padding: 0 20px 0 20px;
+  @media screen and(max-width: 480px){
+    height: 45px;
+  }
 }
 
 .under-input {
@@ -71,24 +79,33 @@
   flex-direction: row;
   align-items: start;
   justify-content: space-between;
+  @media screen and(max-width: 480px){
+    padding-top: 4px;
+  }
 }
 
 .under-input-1 {
   width: 100%;
-  min-height: 32px;
+  min-height: 46px;
   height: auto;
   padding-top: 10px;
+  @media screen and(max-width: 480px){
+    min-height: 23px;
+    padding-top: 7px;
+  }
 }
 
 .link-register {
   width: 100%;
   text-align: center;
   margin-top: 12px;
-  font-size: 12px;
+  font-size: 10px;
+  line-height: 12px;
 }
 
 .link-forget-pw {
-  font-size: 12px
+  font-size: 10px;
+  line-height: 18px;
 }
 
 .note-container {
@@ -116,8 +133,8 @@
   right: 32px;
   top: 24px;
   @media screen and(max-width: 480px){
-    right: 10px;
-    top: 10px;
+    right: 12px;
+    top: 13px;
   }
 }
 
@@ -150,7 +167,6 @@
 a {
   font-style: normal;
   font-weight: 400;
-  line-height: 16px;
   text-decoration-line: underline;
   color: #397DCE;
   cursor: pointer;

@@ -20,6 +20,7 @@
     min-height: auto;
     margin-right: 0px;
     box-shadow: unset;
+    margin-bottom: 4px;
   }
 }
 
@@ -37,7 +38,7 @@
   @media screen and(max-width: 480px){
     font-size: 20px;
     line-height: 24px;
-    margin-left: -30px;
+    margin-left: -20px;
     border-bottom: none;
     padding-bottom: 0px;
     margin-top: 20px;
@@ -128,6 +129,9 @@
     line-height: 17px;
     text-align: center;
     font-family: "MontserratAlternates";
+    @media screen {
+      margin-bottom: 16px !important;
+    }
   }
 }
 
@@ -203,6 +207,7 @@
     width: auto;
     margin: 0 20px;
     background: #ffffff;
+    border-radius: 15px;
   }
 }
 
@@ -226,6 +231,8 @@
   margin-bottom: 40px !important;
   @media screen and(max-width: 480px){
     height: 170px;
+    margin-top: 12px !important;
+    margin-bottom: 32px !important;
   }
 }
 
