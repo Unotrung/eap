@@ -23,22 +23,26 @@ SwiperCore.use([Pagination, Navigation]);
 export class HomeComponent implements OnInit {
     lisItemLayer2 = [
         {
-            src: "../../assets/images/icon1-layer2.png",
+            src: "",
+            // src: "../../assets/images/icon1-layer2.png",
             lable: this.translateService.instant("home.lable-2-1"),
             content: this.translateService.instant("home.content-2-1")
         },
         {
-            src: "../../assets/images/icon2-layer2.png",
+            src: "",
+            // src: "../../assets/images/icon2-layer2.png",
             lable: this.translateService.instant("home.lable-2-2"),
             content: this.translateService.instant("home.content-2-2")
         },
         {
-            src: "../../assets/images/icon3-layer2.png",
+            src: "",
+            // src: "../../assets/images/icon3-layer2.png",
             lable: this.translateService.instant("home.lable-2-3"),
             content: this.translateService.instant("home.content-2-3")
         },
         {
-            src: "../../assets/images/icon5-layer2.png",
+            src: "",
+            // src: "../../assets/images/icon5-layer2.png",
             lable: this.translateService.instant("home.lable-2-4"),
             content: this.translateService.instant("home.content-2-4")
         },
@@ -131,7 +135,7 @@ export class HomeComponent implements OnInit {
         },
     ]
     slidesPerView = 4;
-    space = 30;
+    space = 28;
     spaceNew = -22;
     isPageSwip = false;
 
@@ -179,7 +183,7 @@ export class HomeComponent implements OnInit {
         }
         if (window.innerWidth > 960) {
             this.slidesPerView = 4;
-            this.space = 30;
+            this.space = 28;
             this.isPageSwip = false;
         } else if (window.innerWidth <= 960 && window.innerWidth > 480) {
             this.slidesPerView = 2;
@@ -208,7 +212,7 @@ export class HomeComponent implements OnInit {
         try {
             if (event.target.innerWidth > 960) {
                 this.slidesPerView = 4;
-                this.space = 30;
+                this.space = 28;
                 this.isPageSwip = false;
             } else if (event.target.innerWidth <= 960 && event.target.innerWidth > 480) {
                 this.slidesPerView = 2;
