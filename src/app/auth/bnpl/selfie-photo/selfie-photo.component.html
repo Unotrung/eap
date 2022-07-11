@@ -14,10 +14,9 @@
                        (mouseout)="handleNid($event)"
                        (change)="handleNid($event)"
                        (keypress)="keyPress($event)"
+                       [class.input-invalid]="(citizenId.touched) && citizenId.invalid || isExistNid"
                        class="global-input"
                        [formControl]="citizenId" appMarginTop="14">
-                <!--                <img *ngIf="(citizenId.dirty || citizenId.touched) && citizenId.invalid"-->
-                <!--                     class="img-invalid" src="../../../../assets/images/Warning.png">-->
             </div>
             <div class="error" appMarginTop="8" fxFlexAlign="start">
                 <label *ngIf="(citizenId.touched) && citizenId.hasError('required')">

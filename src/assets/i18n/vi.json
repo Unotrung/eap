@@ -30,7 +30,8 @@
 	"provider": {
 		"title": "Chọn nhà cung cấp BNPL",
 		"titleBnpl": "Mua trước trả sau cùng",
-		"confirmBtn": "Xác nhận"
+		"confirmBtn": "Xác nhận",
+		"continue": "Tiếp tục"
 	},
 	"takePhotoNid": {
 		"title": "Chào mừng bạn đến với quy trình đăng ký mua trước trả sau",
@@ -180,10 +181,10 @@
 		"female": "Nữ"
 	},
 	"selfie": {
-		"labelNid": "Vui lòng nhập CMND/CCCD",
+		"labelNid": "Vui lòng nhập số CMND/CCCD",
 		"validRequired": "Vui lòng nhập thông tin",
 		"validPattern": "Số CMND/CCCD không hợp lệ",
-		"validExist": "CMND/CCCD đã được đăng kí",
+		"validExist": "CMND/CCCD đã được đăng ký",
 		"labelTakePhoto": "Chụp ảnh chân dung",
 		"continue": "Tiếp tục",
 		"shouldNot": "Không nên",

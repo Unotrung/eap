@@ -134,12 +134,10 @@ div.mat-list-item-content {
 //}
 
 .code-input-3 .code-hidden .has-value {
-  background-image: url("assets/images/has-value-code.png");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: transparent;
+  background:  url("assets/images/has-value-code.png") no-repeat scroll center center transparent;;
+  -webkit-background-size: cover;
   color: transparent;
+  -webkit-transform: translateZ(0);
   padding: 0;
   //-webkit-text-fill-color: #56CA8B !important;
   //-webkit-box-shadow: 0 0 0 50px #56CA8B inset !important;

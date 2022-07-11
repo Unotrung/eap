@@ -30,7 +30,8 @@
 	"provider": {
 		"title": "",
 		"titleBnpl": "",
-		"confirmBtn": ""
+		"confirmBtn": "",
+		"continue": "Continue"
 	},
 	"takePhotoNid": {
 		"title": "",

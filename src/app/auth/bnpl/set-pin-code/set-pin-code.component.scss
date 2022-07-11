@@ -42,6 +42,7 @@
   text-align: center;
   color: #000000;
   margin-top: 40px;
+  white-space: nowrap;
   @media screen and(max-width: 480px){
     font-size: 20px;
     line-height: 24px;
@@ -90,7 +91,7 @@
 }
 
 .cover-btn-pin {
-  margin-top: 40px !important;
+  margin-top: 24px !important;
   @media screen and(max-width: 480px){
     margin-top: 16px !important;
   }
@@ -128,25 +129,38 @@ input {
 .form-update {
   margin: auto;
   width: 279px;
-  margin-top: 32px !important;
   text-align: center;
   color: #000000;
   @media screen and(max-width: 480px){
-    margin-top: 22px !important;
     width: unset;
   }
 }
 
-.mb-label {
+.mb-label-1 {
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   font-family: "MontserratAlternates";
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  margin-top: 32px;
   @media screen and(max-width: 480px){
-    margin-bottom: 23px;
-    font-size: 16px;
-    line-height: 20px;
+    margin-top: 19px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.mb-label-2 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "MontserratAlternates";
+  margin-bottom: 24px;
+  margin-top: 26px;
+  @media screen and(max-width: 480px){
+    margin-top: 28px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
@@ -181,7 +195,7 @@ a {
 }
 
 .cover-input-pin {
-  width: 145px;
+  width: 154.38px;
   margin: auto;
   padding: 0px;
   height: 34px;
@@ -248,7 +262,7 @@ a {
 .code-input-3 {
   --item-border-radius: 50%;
   --item-height: 20px;
-  --item-spacing: 13px;
+  --item-spacing: 14.88px;
   --item-background: rgba(154, 147, 147, 0.1);
 }
 
@@ -260,7 +274,7 @@ a {
 .code-input-4 {
   --item-border-radius: 50%;
   --item-height: 20px;
-  --item-spacing: 13px;
+  --item-spacing: 14.88px;
   --item-background: rgba(154, 147, 147, 0.1);
   --item-border: 2px solid #FF8080 !important;
   --item-border-bottom: 2px solid #FF8080 !important;

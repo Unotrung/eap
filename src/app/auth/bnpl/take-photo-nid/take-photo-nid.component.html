@@ -6,7 +6,7 @@
 ((pictureService.citizenFrontImageComplete$ | async) && (pictureService.citizenBackImageComplete$ | async))" class="title-infor">
         {{'takePhotoNid.labelNid' | translate}}
     </div>
-    <div *ngIf="(isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))" class="title-infor" [innerHTML]="'takePhotoNid.guideTitleBig'|translate"></div>
+    <div *ngIf="(isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))" class="title-infor hidden-480" [innerHTML]="'takePhotoNid.guideTitleBig'|translate"></div>
 
     <div fxLayout="column" fxLayoutAlign="center center">
 
