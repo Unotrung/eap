@@ -127,8 +127,9 @@
         <div class="row-repayment">
             <div>{{'repayment.status' | translate}}</div>
             <div class="row-repayment-status"
-                 [style]="re.status==='Chờ thanh toán'?'color:#EE9E3F':re.status==='Quá hạn thanh toán'?
-                'color:#EE4D2D':null">{{re.status}}</div>
+                 [style]="re.status==='Đến hạn thanh toán'?'color:#EE9E3F':
+                re.status==='Quá hạn thanh toán'?'color:#EE4D2D':
+                re.status==='Đã thanh toán'?'color:#8A8A8A':null">{{re.status}}</div>
         </div>
         <div class="row-repayment">
             <div>{{'repayment.viewInvoice' | translate}}</div>

@@ -140,6 +140,7 @@ export class RegisterInforComponent implements OnInit {
         }
         if ('doe' in citizenFrontData) {
             this.expiryDay = expiryDay = this.convertDateString(this.checkInfo(citizenFrontData['doe']).value)
+            console.log("ngày hết hạn", expiryDay)
         }
         if ('idNumber' in citizenFrontData) {
             this.citizenId = citizenId = this.checkInfo(citizenFrontData['idNumber']).value
@@ -302,7 +303,7 @@ export class RegisterInforComponent implements OnInit {
                 birthday: new FormControl({value:birthday, disabled: true}),
                 citizenId: new FormControl({value: citizenId, disabled: true}),
                 issueDate: new FormControl({value: issueDay, disabled: true}),
-                expiryDate: new FormControl({value: expiryDay, disabled: true}),
+                expiryDate: new FormControl({value: expiryDay?expiryDay:'', disabled: expiryDay?true:false}),
                 city: new FormControl({value: this.initCity.success ? this.initCity.city : '', disabled: false},
                     [Validators.required]),
                 district: new FormControl({value: this.initDistrict.success ? this.initDistrict.district : '', disabled: false},
@@ -320,6 +321,8 @@ export class RegisterInforComponent implements OnInit {
                 phone_ref: new FormControl('', [Validators.required, Validators.pattern(/^(09|03|07|08|05)+([0-9]{8}$)/g),
                     Validators.minLength(10), Validators.maxLength(10)])
             })
+
+            console.log("check ngay",this.registerForm.value.expiryDate)
             this.f['phone_ref'].valueChanges.subscribe(value => {
                 if (value.length > 10) {
                     this.f['phone_ref'].setValue(value.slice(0,10))

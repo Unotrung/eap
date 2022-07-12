@@ -90,6 +90,7 @@ const allMaterialModules = [
   MatPaginatorModule,
   MatSortModule,
   MatTableModule,
+  MatDatepickerModule
 ];
 
 @NgModule({

@@ -69,6 +69,10 @@
   line-height: 15px;
   text-align: center;
   color: #000000;
+  @media screen and(max-width: 480px){
+    font-size: 10px;
+    line-height: 12px;
+  }
 }
 
 .invalid-note {
@@ -106,7 +110,7 @@
   margin-top: 34px !important;
   @media screen and(max-width: 480px) {
     width: 310px;
-    margin-top: 21px !important;
+    margin-top: 24px !important;
   }
 }
 
@@ -225,7 +229,7 @@
   padding-top: 10px;
   width: 100%;
   @media screen and(max-width: 480px){
-    min-height: 28px;
+    min-height: 23px;
     padding-top: 8px;
   }
 }
