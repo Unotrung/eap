@@ -23,25 +23,25 @@ SwiperCore.use([Pagination, Navigation]);
 export class HomeComponent implements OnInit {
     lisItemLayer2 = [
         {
-            src: "",
+            src: "../../assets/images/thanhtoan.png",
             // src: "../../assets/images/icon1-layer2.png",
             lable: this.translateService.instant("home.lable-2-1"),
             content: this.translateService.instant("home.content-2-1")
         },
         {
-            src: "",
+            src: "../../assets/images/dk2p.png",
             // src: "../../assets/images/icon2-layer2.png",
             lable: this.translateService.instant("home.lable-2-2"),
             content: this.translateService.instant("home.content-2-2")
         },
         {
-            src: "",
+            src: "../../assets/images/muasam.png",
             // src: "../../assets/images/icon3-layer2.png",
             lable: this.translateService.instant("home.lable-2-3"),
             content: this.translateService.instant("home.content-2-3")
         },
         {
-            src: "",
+            src: "../../assets/images/uudai.png",
             // src: "../../assets/images/icon5-layer2.png",
             lable: this.translateService.instant("home.lable-2-4"),
             content: this.translateService.instant("home.content-2-4")
@@ -49,19 +49,19 @@ export class HomeComponent implements OnInit {
     ];
     listItemLayer3 = [
         {
-            src: "../../assets/images/icon3-layer3.jpg",
+            src: "../../assets/images/Fashion.png",
             title: this.translateService.instant('home.title-3-1')
         },
         {
-            src: "../../assets/images/icon2-layer3.png",
+            src: "../../assets/images/Beauty.png",
             title: this.translateService.instant('home.title-3-2')
         },
         {
-            src: "../../assets/images/icon1-layer3.png",
+            src: "../../assets/images/Electronic.png",
             title: this.translateService.instant('home.title-3-3')
         },
         {
-            src: "../../assets/images/icon4-layer3.png",
+            src: "../../assets/images/Fitness.png",
             title: this.translateService.instant('home.title-3-4')
         },
     ];
