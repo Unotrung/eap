@@ -5,7 +5,7 @@
 
 .body-container {
     font-family: "Montserrat";
-    max-width: 1178px;
+    max-width: 1512px;
     margin: 0 auto;
     padding-top: 30px;
     height: auto;
@@ -21,11 +21,18 @@
 }
 
 .layer-1 {
-    // margin: 30px 224px 103px 183px;
-    width: 100%;
+    margin: 0px 14.9% 0px 12.1%;
+    width: 73%;
     display: flex;
     flex-direction: row;
     height: auto;
+    @media screen and(max-width: 1105px) {
+        margin: 0px 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+    }
     @media screen and(max-width: 960px) {
         flex-direction: column-reverse;
         align-items: center;
@@ -72,7 +79,7 @@
     height: 112px;
     letter-spacing: -0.015em;
     color: rgba(0, 0, 0, 0.8);
-    margin: -39px 224px 45px -16px;
+    margin: 37px 224px 45px -20px;
     @media screen and(max-width: 1280px) {
         font-size: 22px;
         margin-right: 24px;
@@ -117,7 +124,7 @@
 
 .cover-btn-join {
     height: 64px;
-    width: 320px;
+    width: 67%;
     padding: 0 48px;
     border-radius: 40px;
     background: #000000;
@@ -137,6 +144,12 @@
         width: 330px;
         height: 56px;
         padding: 0 24px;
+        font-size: 26px;
+    }
+    @media screen and(max-width: 1105px) {
+        width: 330px;
+        height: 56px;
+        padding: 0px 22px;
         font-size: 26px;
     }
     @media screen and(max-width: 960px) {
@@ -196,8 +209,7 @@
 }
 
 .left-body-homepage {
-    padding-left: 16px;
-    width: 70%;
+    width: 77%;
     height: 668px;
     @media screen and(max-width: 1280px) {
         width: 54.2%;
@@ -306,14 +318,14 @@
 .cover-title {
     font-family: "MontserratAlternates";
     width: 89.4%;
-    height: 298px;
+    height: auto;
     font-size: 72px;
     font-weight: 700;
     line-height: 80px;
     letter-spacing: 0px;
     text-align: left;
     color: black;
-    margin-bottom: 7px;
+    // margin-bottom: 7px;
     @media screen and(max-width: 1280px) {
         font-size: 82px;
         line-height: 100px;
@@ -343,9 +355,9 @@
 }
 
 .layer-2 {
-    margin: 103px -49px 105px -36px !important;
-    padding: 40px 60px 0px 60px;
-    height: 1150px;
+    margin: 103px 8.5% 105px 8.5% !important;
+    padding: 42px 8.5% 74px 8.5%;
+    height: auto;
     border: 3px solid #EEEEEE;
     border-radius: 50px;
     background: #FFFFFF66;
@@ -379,8 +391,6 @@
         font-size: 48px;
         font-weight: 700;
         line-height: 59px;
-        padding: 2px 10px 0px 2px;
-        // margin: -40px 0px -2px -6px;
         letter-spacing: 0px;
         text-align: center;
         color: #000000;
@@ -420,14 +430,13 @@
         }
     }
     .layer-2-description {
+        padding-bottom: 42px;
         font-size: 16px;
         font-weight: 400;
         line-height: 32px;
         padding-top: 12px;
-        padding-right: 9px;
         text-align: center;
         letter-spacing: 0px;
-        // margin-bottom: 42px;
         @media screen and(max-width: 1200px) {
             font-size: 18px;
             line-height: 25px;
@@ -449,7 +458,6 @@
 }
 
 .layer-2-body {
-    margin: 42px 81px 74px 66px;
     height: 865px;
     display: flex;
     flex-direction: row;
@@ -476,7 +484,7 @@
 }
 
 .content-item {
-    width: 480px;
+    width: 48.4%;
     height: 420px !important;
     margin-bottom: 27px;
     padding: 0px 48px;
@@ -661,13 +669,13 @@
 }
 
 .title-layer-3 {
+    margin: 0px 10.9%;
     height: 122px;
     font-family: "MontserratAlternates";
     font-size: 48px;
     font-weight: 700;
     line-height: 59px;
     letter-spacing: 0px;
-    margin-left: -2px;
     text-align: left;
     // margin-left: 118px;
     color: #000000;
@@ -682,6 +690,7 @@
         margin-right: 32px;
         width: 65px;
         height: 65px;
+        margin-top: -9px;
         @media screen and(max-width: 1200px) {
             width: 45px;
             margin-right: 16px;
@@ -718,7 +727,8 @@
 }
 
 .title-layer-5 {
-    margin-left: 13px;
+    margin-left: 11.9%;
+    margin-right: 34.9%;
     font-family: "MontserratAlternates";
     font-size: 48px;
     font-weight: 700;
@@ -817,10 +827,8 @@
 
 .layer-3 {
     position: relative;
-    width: 1620px;
-    margin-left: -220px;
-    // margin-top: 53px;
-    margin-bottom: 40px;
+    width: 107%;
+    margin: 0px 0px 0px -54px;
     @media screen and(max-width: 1200px) {
         margin-top: 40px;
         margin-bottom: 72px;
@@ -897,7 +905,7 @@
 }
 
 .cover-icon-layer-3 {
-    width: 383px;
+    width: 100%;
     border-radius: 50px;
     border: 3px solid #FFFFFF;
     display: flex;
@@ -928,7 +936,7 @@
     font-size: 24px;
     font-weight: 600;
     line-height: 30px;
-    margin-top: 32px;
+    margin-top: 27px;
     font-family: "MontserratAlternates";
     @media screen and(max-width: 1200px) {
         font-size: 26px;
@@ -944,10 +952,8 @@
 .layer-4 {
     position: relative;
     height: auto;
-    margin-top: 127px;
-    margin-left: 0px;
+    margin: 128px 11.1% 90px 11.1%;
     flex-direction: row;
-    margin-bottom: 88px;
     color: black;
     @media screen and(max-width: 1280px) {
         margin-bottom: 100px;
@@ -969,7 +975,7 @@
 .title-l4 {
     display: flex;
     position: absolute;
-    top: 12px;
+    top: 2%;
     left: 0px;
     font-family: "MontserratAlternates";
     font-size: 48px;
@@ -1039,8 +1045,8 @@
     font-weight: 400;
     line-height: 24px;
     position: absolute;
-    left: 96px;
-    top: 95px;
+    left: 8%;
+    top: 12%;
     @media screen and(max-width: 480px) {
         font-family: "Montserrat";
         font-size: 14px;
@@ -1057,7 +1063,7 @@
     position: relative;
     width: 63%;
     height: auto;
-    padding-left: 92px;
+    padding-left: 8%;
     margin: auto;
     @media screen and(max-width: 960px) {
         width: 100%;
@@ -1101,24 +1107,24 @@
 
 .layer-4-2-1 {
     position: absolute;
-    top: 241px;
-    left: -104px;
+    top: 32%;
+    left: -14%;
     height: 135px;
     width: 333px;
 }
 
 .layer-4-2-2 {
     position: absolute;
-    top: 502px;
-    left: -203px;
+    top: 66%;
+    left: -28%;
     height: 135px;
     width: 333px;
 }
 
 .layer-4-2-3 {
     position: absolute;
-    top: 359px;
-    left: 663px;
+    top: 47%;
+    left: 90%;
     height: 135px;
     width: 333px;
 }
@@ -1356,7 +1362,7 @@
 }
 
 .layer-5 {
-    margin: 24.6px 80px 88px 74px;
+    margin: 21.6px 16.1% 88px 16.1%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1377,7 +1383,7 @@
 }
 
 .layer-5-1 {
-    width: 442px;
+    width: 41%;
     height: 336px;
     display: flex;
     align-items: center;
@@ -1391,40 +1397,40 @@
         height: 142px;
     }
     .cover-avatar {
-        width: 298.18px;
+        width: 71%;
         height: 298.18px;
         border-radius: 50%;
         // background: linear-gradient(136.22deg, #197DEE 15.68%, #CE53AD 51.75%, #F18F61 86.35%);
         background-image: url(../../assets/images/border-layer-5.png);
         display: flex;
-        margin-left: 100px;
+        margin-left: 96px;
         align-items: center;
         justify-content: center;
         position: relative;
-        margin: 20.4px -72px 18px 4px;
-        @media screen and(max-width: 1200px) {
-            width: 280px;
-            height: 280px;
-        }
-        @media screen and(max-width: 960px) {
-            margin-left: 20px;
-        }
-        @media screen and(max-width: 480px) {
-            margin-top: 33px;
-            width: 126px;
-            height: 126px;
-            margin-left: -55px;
-            background-image: unset;
-            background-image: url(../../assets/images/border-layer-5-126px.png);
-        }
+        // margin: 20.4px -72px 18px 4px;
+        // @media screen and(max-width: 1200px) {
+        //     width: 280px;
+        //     height: 280px;
+        // }
+        // @media screen and(max-width: 960px) {
+        //     margin-left: 20px;
+        // }
+        // @media screen and(max-width: 480px) {
+        //     margin-top: 33px;
+        //     width: 126px;
+        //     height: 126px;
+        //     margin-left: -55px;
+        //     background-image: unset;
+        //     background-image: url(../../assets/images/border-layer-5-126px.png);
+        // }
     }
 }
 
 .layer-5-2 {
     color: black;
-    width: 560px;
+    width: 54.7%;
     min-height: 240px;
-    padding-bottom: 22px;
+    padding-bottom: 18px;
     @media screen and(max-width: 1280px) {
         width: 48%;
     }
@@ -1451,7 +1457,7 @@
         box-shadow: 0px 10px 20px 0px #0000001F;
         background: #FFFFFF80;
         border-radius: 30px;
-        padding: 44px 47px 42px 46px;
+        padding: 40px 47px 42px 42px;
         @media screen and(max-width: 1200px) {
             padding: 28px;
             border-radius: 24px;
@@ -1530,10 +1536,10 @@
 .avatar-back-1 {
     position: absolute;
     z-index: -2;
-    top: 38px;
-    left: -63px;
-    width: 216.18px;
-    height: 216.18px;
+    margin-top: 4px;
+    margin-right: 199px;
+    width: 72.5%;
+    height: auto;
     border-radius: 50%;
     opacity: 0.6;
     @media screen and(max-width: 1200px) {
@@ -1551,10 +1557,10 @@
 .avatar-back-2 {
     position: absolute;
     z-index: -3;
-    top: 71px;
-    left: -106px;
-    width: 153px;
-    height: 153px;
+    margin-top: 0px;
+    margin-right: 353px;
+    width: 51.3%;
+    height: auto;
     border-radius: 50%;
     opacity: 0.5;
     @media screen and(max-width: 1200px) {
@@ -1877,8 +1883,10 @@
 }
 
 .cover-swiper-6 .swiper-pagination {
-    left: 18px !important;
-    bottom: 105px !important;
+    width: 10%;
+    margin-left: 47%;
+    margin-bottom: 98px;
+    margin-right: 45%;
     @media screen and(max-width: 480px) {
         left: -1px !important;
         bottom: 13px !important;

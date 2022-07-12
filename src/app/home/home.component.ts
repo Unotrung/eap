@@ -49,19 +49,19 @@ export class HomeComponent implements OnInit {
     ];
     listItemLayer3 = [
         {
-            src: "../../assets/images/Fashion.png",
+            src: "../../assets/images/Fashion-resize.png",
             title: this.translateService.instant('home.title-3-1')
         },
         {
-            src: "../../assets/images/Beauty.png",
+            src: "../../assets/images/Beauty-resize.png",
             title: this.translateService.instant('home.title-3-2')
         },
         {
-            src: "../../assets/images/Electronic.png",
+            src: "../../assets/images/Electronic-resize.png",
             title: this.translateService.instant('home.title-3-3')
         },
         {
-            src: "../../assets/images/Fitness.png",
+            src: "../../assets/images/Fitness-resize.png",
             title: this.translateService.instant('home.title-3-4')
         },
     ];
