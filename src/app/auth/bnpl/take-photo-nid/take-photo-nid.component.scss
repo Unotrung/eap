@@ -577,6 +577,15 @@ ul {
   height: 378px;
 }
 
+.cover-swiper-nid .swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 7px));
+  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 7px));
+}
+
+.cover-swiper-nid .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4.45px);
+}
+
 .box-skip {
   width: 72px;
   margin: auto;
