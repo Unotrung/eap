@@ -142,7 +142,7 @@ button {
     flex-direction: column;
     width: 240px;
     height: 106px;
-    margin-top: 32px !important;
+    margin-top: 36px !important;
     margin-bottom: 32px !important;
   }
 }
@@ -156,6 +156,8 @@ button {
   @media screen and(max-width: 480px){
     width: 100%;
     height: 40px;
+    justify-content: start;
+    padding-left: 12px;
   }
 }
 
@@ -178,6 +180,9 @@ button {
   border-radius: 50%;
   margin-right: 16px;
   border: 2px solid rgba(0, 0, 0, 0.2);
+  @media screen and(max-width: 480px){
+    margin-right: 32px;
+  }
 
   img {
     max-width: 24px !important;

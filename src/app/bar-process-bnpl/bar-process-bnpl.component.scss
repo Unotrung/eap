@@ -8,7 +8,7 @@
   margin: auto;
   margin-top: 36px !important;
   position: relative;
-  @media screen and(max-width: 480px){
+  @media screen and(max-width: 480px) {
     width: 319px;
     margin-top: 8px !important;
   }
@@ -22,7 +22,7 @@
   align-items: center;
   text-align: center;
   color: #A8A8A8;
-  @media screen and(max-width: 480px){
+  @media screen and(max-width: 480px) {
     font-size: 10px;
     line-height: 12px;
   }
@@ -33,7 +33,7 @@
   height: 15px;
   background: #C4C4C4;
   border-radius: 50%;
-  @media screen and(max-width: 480px){
+  @media screen and(max-width: 480px) {
     width: 10px;
     height: 10px;
   }
@@ -64,11 +64,14 @@
   color: #000000;
   margin-top: 61px;
   letter-spacing: -0.01rem;
-  @media screen and(max-width: 480px){
+  @media screen and(max-width: 480px) {
     font-size: 14px;
     line-height: 17px;
     margin-top: 22px !important;
     width: 70%;
     margin: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 }

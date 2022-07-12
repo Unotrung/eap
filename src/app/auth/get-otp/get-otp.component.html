@@ -25,13 +25,13 @@
         </div>
 
         <div *ngIf = "!isCancel">
-            <app-button-dialog class="hidden-480" [contentBtn]="'register.buttonOtp'|translate"
+            <app-button-dialog class="hidden-480" [contentBtn]="'register.button'|translate"
                                [isEnable]="otp.length<6"
                                (click)="submit()"
                                [width]="299"
                                [height]="46">
             </app-button-dialog>
-            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.buttonOtp'|translate"
+            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'register.button'|translate"
                                [isEnable]="otp.length<6"
                                (click)="submit()"
                                [width]="200"

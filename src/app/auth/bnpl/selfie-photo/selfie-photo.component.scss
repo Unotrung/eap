@@ -35,8 +35,8 @@
   display: flex;
   align-items: center;
   @media screen and(max-width: 480px){
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 22px;
     padding-left: unset;
     border-bottom: hidden;
     text-align: center;
@@ -106,6 +106,7 @@
   font-family: "MontserratAlternates";
   margin-bottom: 16px;
   @media screen and(max-width: 480px){
+    margin-bottom: 8px;
   }
 }
 
@@ -254,7 +255,7 @@ ul {
 .cover-btn-continue {
   margin-top: 64px;
   @media screen and(max-width: 480px) {
-    margin-top: 40px;
+    margin-top: 34px;
   }
 }
 
@@ -290,7 +291,7 @@ ul {
   @media screen and(max-width: 480px) {
     width: 335px;
     margin-bottom: 0px !important;
-    margin-top: 36px !important;
+    margin-top: 32px !important;
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -318,9 +319,12 @@ ul {
   height: 100%;
   background: #FFFFFF;
   border-radius: 40px;
-  border: hidden !important;
+  border: hidden;
 }
 
+.input-invalid {
+  border: 1px solid #EE4D2D;
+}
 .global-title {
   font-family: "MontserratAlternates";
   font-style: normal;
@@ -330,6 +334,9 @@ ul {
   text-align: center;
   color: #000000;
   margin-bottom: 12px;
+  @media screen and(max-width: 480px){
+    margin-bottom: 6px;
+  }
 }
 
 .text-under-camera {

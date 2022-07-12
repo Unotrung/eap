@@ -82,7 +82,7 @@
 <!--            <td>{{tran.provider}}</td>-->
             <td style="font-weight: 700 !important;">{{tran.paidMoney | moneyStyle}} đ</td>
             <td class="status-text"
-                [style]="tran.status==='Chờ thanh toán'?'color:#EE9E3F':
+                [style]="tran.status==='Đến hạn thanh toán'?'color:#EE9E3F':
                 tran.status==='Quá hạn thanh toán'?'color:#EE4D2D':
                 tran.status==='Đã thanh toán'?'color:#8A8A8A':null">
                 {{tran.status}}
@@ -91,7 +91,7 @@
 <!--                <a *ngIf="tran.status==='Chờ thanh toán'" routerLink="/repayment-detail/{{tran._id}}"-->
 <!--                   routerLinkActive="active">-->
 <!--                {{'repayment.pay' | translate}}</a>-->
-                <button class="btn-pay" *ngIf="tran.status==='Chờ thanh toán'||tran.status==='Chưa thanh toán'" (click)="pay()">
+                <button class="btn-pay" *ngIf="tran.status=='Đến hạn thanh toán' || tran.status=='Quá hạn thanh toán'" (click)="pay()">
                     {{'repayment.pay' | translate}}</button>
             </td>
             <td>
@@ -114,7 +114,7 @@
 <div class="container-mobile hidden-lager-screen">
     <div class="name-table">{{'repayment.titleTable' | translate}}</div>
     <div class="cover-item-repayment"
-         [style]="re.status=='Chờ thanh toán'?'height: 258px ':null"
+         [style]="re.status=='Đến hạn thanh toán' || re.status=='Quá hạn thanh toán'?'height: 258px ':null"
          *ngFor="let re of listRepayment">
         <div class="row-repayment">
             <div>{{'repayment.issueDate' | translate}}</div>
@@ -134,7 +134,7 @@
             <div>{{'repayment.viewInvoice' | translate}}</div>
             <div [style]="re.status!=='Đã thanh toán'?'color:#C1C1C1':null">{{'repayment.view' | translate}}</div>
         </div>
-        <div *ngIf = "re.status=='Chờ thanh toán'"
+        <div *ngIf = "re.status=='Đến hạn thanh toán' || re.status=='Quá hạn thanh toán'"
              class="row-repayment">
             <div></div>
             <div><app-button-dialog [width]="200" [height]="40"

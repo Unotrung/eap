@@ -10,8 +10,8 @@
                         (codeChanged)="onCodeChanged($event)"
                         (codeCompleted)="onCodeCompleted($event)">
             </code-input>
-            <div class="under-input" *ngIf="!isCheckOtp">
-                <div class="err">
+            <div class="under-input">
+                <div *ngIf="!isCheckOtp" class="err">
                     {{'forgotPass.wrongOtp' | translate}}
                 </div>
             </div>

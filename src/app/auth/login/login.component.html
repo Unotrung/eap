@@ -12,9 +12,6 @@
                        formControlName="phone_email"
                        (change)="resetMsg()"
                        (focusin)="errorMessageAccount = ''"/>
-                <!--                <img *ngIf="(userForm.controls.phone_email.invalid&&userForm.controls.phone_email.touched)||-->
-                <!--                            errorMessageAccount !==''"-->
-                <!--                     class="icon-invalid" [src]="linkImg">-->
             </div>
             <div class="under-input-1">
                 <div *ngFor="let invalid of validateMessage.phone_email">
@@ -37,9 +34,6 @@
                        formControlName="password"
                        (change)="resetMsg()"
                        (focusin)="errorMessagePass = ''"/>
-                <!--                <img *ngIf="userForm.controls.password.invalid&&userForm.controls.password.touched||-->
-                <!--                        errorMessagePass!==''"-->
-                <!--                     class="icon-invalid" [src]="linkImg">-->
             </div>
             <div class="under-input">
                 <div class="invalid-note">

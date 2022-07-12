@@ -1,6 +1,5 @@
 <div class="form-login-container">
     <div class="title-login">{{'repayment.titleFast' | translate}}</div>
-<!--    <div class="title-login" style="font-size: 15px">{{'repayment.underTitleFast' | translate}}</div>-->
     <div class="content">
         <div class="content-1">
             <div class="tick" (click)="choosePay('payoo')"
@@ -25,6 +24,7 @@
                        [isEnable]="!isPayoo && !isMomo"
                        [width]="200"
                        [height]="41"
+                       [fontSize]="14"
                        (click)="goPaYooHome()">
     </app-button-dialog>
     <app-item-close-dialog class="close-popup hidden-480" (click)="closeDialog()"></app-item-close-dialog>

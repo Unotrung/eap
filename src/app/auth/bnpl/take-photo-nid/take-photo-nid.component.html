@@ -6,7 +6,7 @@
 ((pictureService.citizenFrontImageComplete$ | async) && (pictureService.citizenBackImageComplete$ | async))" class="title-infor">
         {{'takePhotoNid.labelNid' | translate}}
     </div>
-    <div *ngIf="(isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))" class="title-infor" [innerHTML]="'takePhotoNid.guideTitleBig'|translate"></div>
+    <div *ngIf="(isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))" class="title-infor hidden-480" [innerHTML]="'takePhotoNid.guideTitleBig'|translate"></div>
 
     <div fxLayout="column" fxLayoutAlign="center center">
 
@@ -169,7 +169,7 @@
             <button (click)="onCaptureCitizenCard()"
                     class="btn-shot-front hidden-480">{{'takePhotoNid.start' | translate}}
             </button>
-            <button *ngIf ="countStepGuide === 1" (click)="onCaptureCitizenCard()"
+            <button style="margin-top: 16px" *ngIf ="countStepGuide === 1" (click)="onCaptureCitizenCard()"
                     class="btn-shot-front hidden-lager-screen">{{'takePhotoNid.start' | translate}}
             </button>
         </div>
