@@ -10,24 +10,26 @@
                         (codeChanged)="onCodeChanged($event)"
                         (codeCompleted)="onCodeCompleted($event)">
             </code-input>
-            <div class="under-input">
-                <div *ngIf="!isCheckOtp" class="err">
-                    {{'forgotPass.wrongOtp' | translate}}
-                </div>
+        </div>
+        <div class="under-input">
+            <div *ngIf="!isCheckOtp" class="err">
+                {{'forgotPass.wrongOtp' | translate}}
             </div>
         </div>
+        <div>
+            <app-button-dialog class="hidden-480" [contentBtn]="'forgotPass.confirmOtp' | translate"
+                               [isEnable]="otp.length<6"
+                               (click)="submit()">
+            </app-button-dialog>
+            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'forgotPass.confirmOtp' | translate"
+                               [isEnable]="otp.length<6"
+                               [width]="200"
+                               [height]="41"
+                               [fontSize]="14"
+                               (click)="submit()">
+            </app-button-dialog>
+        </div>
 
-        <app-button-dialog class="hidden-480" [contentBtn]="'forgotPass.confirmOtp' | translate"
-                           [isEnable]="otp.length<6"
-                           (click)="submit()">
-        </app-button-dialog>
-        <app-button-dialog class="hidden-lager-screen" [contentBtn]="'forgotPass.confirmOtp' | translate"
-                           [isEnable]="otp.length<6"
-                           [width]="200"
-                           [height]="41"
-                           [fontSize]="14"
-                           (click)="submit()">
-        </app-button-dialog>
 <!--        <div class="loading" *ngIf="loading">-->
 <!--            <app-loading></app-loading>-->
 <!--        </div>-->

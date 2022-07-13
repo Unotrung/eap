@@ -9,6 +9,7 @@ import {AccountBnplService} from "../../../_service/auth/account-bnpl.service";
 import {WaitingConfirmPhoneComponent} from "../waiting-confirm-phone/waiting-confirm.component-phone";
 import SwiperCore, {Navigation, Pagination} from "swiper";
 import {SwiperComponent} from "swiper/angular";
+import {CustomerInformationService} from "../../../_service/information-bnpl/customer-information.service";
 
 SwiperCore.use([Pagination, Navigation]);
 @Component({
@@ -35,7 +36,8 @@ export class SelfiePhotoComponent implements OnInit {
         private http: HttpClient,
         private authService: AuthenticationService,
         private router: Router,
-        private accountBnplService: AccountBnplService
+        private accountBnplService: AccountBnplService,
+        private customerInformationService: CustomerInformationService
     ) {
     }
 
@@ -66,6 +68,9 @@ export class SelfiePhotoComponent implements OnInit {
 
     onSelfieContinue() {
         if (this.citizenId.invalid) return;
+        this.customerInformationService.customerInfo$.next(
+            {... this.customerInformationService.customerInfo$.getValue(),
+            selfie_image: this.pictureService.base64Selfie$.getValue()})
         this.accountBnplService.isCheckNidBnpl({nid: this.citizenId.value}).subscribe(next => {
             console.log(next);
             if (next.status) {
