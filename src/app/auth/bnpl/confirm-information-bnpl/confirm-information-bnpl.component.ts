@@ -43,10 +43,10 @@ export class ConfirmInformationBnplComponent implements OnInit {
     ${this.customerInformationService.customerInfo$.getValue().district}, 
     ${this.customerInformationService.customerInfo$.getValue().city}`;
 
-        this.addressTemp = `${this.customerInformationService.customerInfo$.getValue().streetTemp}, 
-    ${this.customerInformationService.customerInfo$.getValue().wardTemp}, 
-    ${this.customerInformationService.customerInfo$.getValue().districtTemp}, 
-    ${this.customerInformationService.customerInfo$.getValue().cityTemp}`;
+        this.addressTemp = `${this.customerInformationService.customerInfo$.getValue().temporaryStreet}, 
+    ${this.customerInformationService.customerInfo$.getValue().temporaryWard}, 
+    ${this.customerInformationService.customerInfo$.getValue().temporaryDistrict}, 
+    ${this.customerInformationService.customerInfo$.getValue().temporaryCity}`;
     }
 
 

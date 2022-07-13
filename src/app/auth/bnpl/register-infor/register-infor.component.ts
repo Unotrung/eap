@@ -465,30 +465,28 @@ export class RegisterInforComponent implements OnInit {
 
     onContinue() {
         this.customerInformationService.customerInfo$.next({
-            // @ts-ignore
+            ... this.customerInformationService.customerInfo$.getValue(),
             name: this.name,
-            // sex: this.f['sex'].value,
             sex: this.handleValueGender(this.f['sex'].value),
             phone: this.authService.userCurrentSubject$.getValue().phone,
             birthday: new Date(this.birthday),
             citizenId: this.f['citizenId'].value,
             issueDate: new Date(this.issueDay),
-            expiryDate: new Date(this.expiryDay),
+            expirationDate: new Date(this.expiryDay),
 
             city: this.initCity.success ? this.initCity.city : this.f['city'].value,
             district: this.initDistrict.success ? this.initDistrict.district : this.f['district'].value,
             ward: this.initWard.success ? this.initWard.ward : this.f['ward'].value,
             street: this.initStreet.success ? this.initStreet.street : this.f['street'].value,
 
-            cityTemp: this.f['cityTemp'].value,
-            districtTemp: this.f['districtTemp'].value,
-            wardTemp: this.f['wardTemp'].value,
-            streetTemp: this.f['streetTemp'].value,
+            temporaryCity: this.f['cityTemp'].value,
+            temporaryDistrict: this.f['districtTemp'].value,
+            temporaryWard: this.f['wardTemp'].value,
+            temporaryStreet: this.f['streetTemp'].value,
 
-            // personal_title_ref: this.f['personal_title_ref'].value,
             personal_title_ref: this.handleValueRelationship(this.f['personal_title_ref'].value),
             name_ref: this.f['name_ref'].value,
-            phone_ref: this.f['phone_ref'].value
+            phone_ref: this.f['phone_ref'].value,
         })
 
         if (this.f['phone_ref'].value === this.authService.userCurrentSubject$.getValue().phone) {

@@ -5,17 +5,17 @@ export interface CustomerInformation {
         birthday?: Date;
         citizenId?: number;
         issueDate?: Date;
-        expiryDate?: Date;
+        expirationDate?: Date;
 
         city: string;
         district: string;
         ward: string;
         street: string;
 
-        cityTemp: string;
-        districtTemp: string;
-        wardTemp: string;
-        streetTemp: string;
+        temporaryCity: string;
+        temporaryDistrict: string;
+        temporaryWard: string;
+        temporaryStreet: string;
 
 
         personal_title_ref: string;
@@ -23,4 +23,7 @@ export interface CustomerInformation {
         phone_ref: string;
         pin?: string;
 
+        nid_front_image: string;
+        nid_back_image:string;
+        selfie_image: string;
 }

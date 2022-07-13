@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {AuthenticationService} from "../../../_service/auth/authentication.service";
 import SwiperCore, {Navigation, Pagination} from "swiper";
 import {SwiperComponent} from "swiper/angular";
+import {CustomerInformationService} from "../../../_service/information-bnpl/customer-information.service";
 
 SwiperCore.use([Pagination, Navigation]);
 @Component({
@@ -23,7 +24,8 @@ export class TakePhotoNidComponent implements OnInit {
 
     constructor(public pictureService: PictureService,
                 private authService: AuthenticationService,
-                private router: Router) {
+                private router: Router,
+                private customerInformationService: CustomerInformationService) {
     }
 
     ngOnInit() {
@@ -47,7 +49,11 @@ export class TakePhotoNidComponent implements OnInit {
     }
 
     onCitizenCardContinue() {
-        console.log("phu");
+        this.customerInformationService.customerInfo$.next({
+            ...this.customerInformationService.customerInfo$.getValue(),
+            nid_front_image: this.pictureService.base64citizenFrontImage$.getValue(),
+            nid_back_image: this.pictureService.base64citizenBackImage$.getValue()
+        })
         this.router.navigate(['/register-infor-bnpl']).then()
     }
 
