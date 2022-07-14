@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
+
 
 .container-transaction {
   min-height: 86vh;
@@ -28,7 +25,7 @@
 
 
 .name-table {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
@@ -133,7 +130,7 @@ thead {
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 thead tr th {

@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
+
 
 button:disabled {
   background: rgba(154, 147, 147, 0.1);
@@ -11,7 +8,7 @@ button:enabled {
 }
 
 button {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   height: 46px;
   width: 299px;
   border-radius: 30px;
@@ -20,7 +17,6 @@ button {
   line-height: 22px;
   text-align: center;
   color: #FFFFFF;
-  white-space: nowrap;
   @media screen and(max-width: 480px){
     font-size: 14px;
   }

@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
+
 
 .container-detail {
   height: auto;
@@ -45,7 +42,7 @@
   font-size: 32px;
   line-height: 39px;
   color: #000000;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   margin-left: 50px;
 }
 
@@ -66,7 +63,7 @@
       line-height: 24px;
       text-align: center;
       color: #000000;
-      font-family: "MontserratAlternates";
+      font-family: 'Montserrat Alternates', sans-serif;
       margin-bottom: 27px;
     }
   }
@@ -92,7 +89,7 @@ img {
   font-size: 14px;
   line-height: 20px;
   color: #000000;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -160,7 +157,7 @@ img {
 .f14 {
   font-weight: 600;
   font-size: 14px;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 .f16 {
   font-weight: 700;
@@ -171,7 +168,7 @@ img {
   font-size: 24px;
   line-height: 20px;
   color: #397DCE;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .tick {

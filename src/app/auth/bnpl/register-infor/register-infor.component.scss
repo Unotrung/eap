@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
+
 
 .container-right-body {
   min-height: 86vh;
@@ -25,7 +22,7 @@
 }
 
 .title-infor {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
@@ -38,7 +35,7 @@
 }
 
 .title-register {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -126,7 +123,7 @@
   font-size: 14px;
   line-height: 24px;
   color: #000000;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   @media screen and(max-width: 480px){
     margin-bottom: 6px;
     margin-top: 23px;
@@ -250,7 +247,7 @@
   line-height: 16px;
   align-items: center;
   color: #000000;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 .note-text-2 {
   font-style: normal;
@@ -364,7 +361,7 @@ input:disabled {
   align-items: center;
   border-bottom: 1px solid #FFFFFF;
   color: #000000;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   @media screen and(max-width: 480px){
     border-bottom: unset;
     height: auto;
@@ -387,8 +384,8 @@ input:disabled {
 //option 2
 //
 //@font-face {
-//  font-family: "MontserratAlternates";
-//  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
+//  font-family: 'Montserrat Alternates', sans-serif;
+//  src: local('Montserrat Alternates', sans-serif), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
 //}
 //
 //.container-right-body {
@@ -404,7 +401,7 @@ input:disabled {
 //}
 //
 //.title-infor {
-//  font-family: "MontserratAlternates";
+//  font-family: 'Montserrat Alternates', sans-serif;
 //  font-weight: 700;
 //  font-size: 32px;
 //  line-height: 39px;
@@ -415,7 +412,7 @@ input:disabled {
 //}
 //
 //.title-register {
-//  font-family: "MontserratAlternates";
+//  font-family: 'Montserrat Alternates', sans-serif;
 //  font-weight: 700;
 //  font-size: 24px;
 //  line-height: 24px;
@@ -473,7 +470,7 @@ input:disabled {
 //  font-size: 14px;
 //  line-height: 24px;
 //  color: #000000;
-//  font-family: "MontserratAlternates";
+//  font-family: 'Montserrat Alternates', sans-serif;
 //}
 //
 //.input-info {
@@ -541,7 +538,7 @@ input:disabled {
 //  line-height: 16px;
 //  align-items: center;
 //  color: #000000;
-//  font-family: "MontserratAlternates";
+//  font-family: 'Montserrat Alternates', sans-serif;
 //}
 //.note-text-2 {
 //  font-style: normal;
@@ -647,7 +644,7 @@ input:disabled {
 //  text-align: center;
 //  text-transform: uppercase;
 //  color: rgba(0, 0, 0, 0.8);
-//  font-family: "MontserratAlternates";
+//  font-family: 'Montserrat Alternates', sans-serif;
 //}
 //
 //.main-content {

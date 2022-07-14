@@ -1,6 +1,6 @@
 <div class="container-right-body">
     <div class="title-infor" *ngIf="!isShowGuide">{{'selfie.labelTakePhoto' | translate}}</div>
-    <div class="title-infor hidden-480" *ngIf = "isShowGuide"
+    <div class="title-infor hidden-480" *ngIf="isShowGuide"
          [innerHTML]="'selfie.titleGuideBig'|translate"></div>
 
     <div *ngIf="!isShowGuide" fxLayout="column" class="container-selfie">
@@ -12,6 +12,7 @@
                 <input type="text"
                        maxlength="12"
                        (mouseout)="handleNid($event)"
+                       (focusin)="isExistNid=false"
                        (change)="handleNid($event)"
                        (keypress)="keyPress($event)"
                        [class.input-invalid]="(citizenId.touched) && citizenId.invalid || isExistNid"
@@ -52,11 +53,12 @@
                 <div class="cover-camera"><img fxFlexAlign="center" width="24" height="24" alt=""
                                                src="assets/images/camera.png"></div>
             </div>
-            <div class="picture-selfie-overlay-2" fxLayout="column" fxLayoutAlign="top center"
-                 *ngIf="pictureService.selfieImageComplete$ | async">
-                <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
-                     [src]="pictureService.selfieImage">
-                <!--                <img class="icon-dell" (click)="onDeleteImage()" src="../../../../assets/images/trash.png">-->
+            <div class="position-img" *ngIf="pictureService.selfieImageComplete$ | async">
+                <div class="picture-selfie-overlay-2" fxLayout="column" fxLayoutAlign="top center">
+                    <img class="img-small" appMarginTop="8"
+                         [src]="pictureService.selfieImage">
+                    <!--                <img class="icon-dell" (click)="onDeleteImage()" src="../../../../assets/images/trash.png">-->
+                </div>
                 <img class="icon-tick" src="../../../../assets/images/tick-photo.png">
             </div>
         </div>
@@ -151,7 +153,7 @@
             </swiper>
         </div>
 
-        <div *ngIf = "countStepGuide === 0" (click)="slideNext()" class="box-skip hidden-lager-screen">
+        <div *ngIf="countStepGuide === 0" (click)="slideNext()" class="box-skip hidden-lager-screen">
             <div>{{'selfie.skip'|translate}}</div>
             <img src="../../../../assets/images/angle-down.png">
         </div>
@@ -166,7 +168,7 @@
             </app-button-dialog>
         </div>
 
-        <div *ngIf = "countStepGuide === 2" class="cover-btn-start hidden-lager-screen">
+        <div *ngIf="countStepGuide === 2" class="cover-btn-start hidden-lager-screen">
             <app-button-dialog
                     [isEnable]="false"
                     [contentBtn]="'selfie.start' | translate"

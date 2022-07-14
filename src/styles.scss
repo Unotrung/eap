@@ -35,14 +35,6 @@
   @include footer.theme($theme);
   @include themeSwitch.theme($theme);
   @include navbar.theme($theme);
-  @font-face {
-    font-family: "MontserratAlternates";
-    src: local("MontserratAlternates"), url(assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-  }
-  @font-face {
-    font-family: "Montserrat";
-    src: local("Montserrat"), url(/assets/font/Montserrat/Montserrat-Light.ttf) format("truetype");
-  }
 
   .mat-list-active {
     background-color: mat.get-color-from-palette($accent-palette, 400);
@@ -77,11 +69,6 @@ $dynamic-app-dark-theme: mat.define-dark-theme((
   @include all-theme-and-custom-component($dynamic-app-light-theme);
 }
 
-@font-face {
-  font-family: "Montserrat";
-  src: local("Montserrat"), url(assets/font/Montserrat/Montserrat-Light.ttf) format("truetype");
-}
-
 html {
   min-height: 100vh !important;
 }
@@ -94,12 +81,14 @@ html {
 html, body {
   height: auto;
   min-height: 100vh;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   margin: 0;
-  color: black;
-  font-family: "Montserrat";
+  color: #000000;
+  font-style: normal;
+  font-family: 'Montserrat', sans-serif;
   overflow-y: auto !important;
   position: unset !important;
 
@@ -254,7 +243,7 @@ input {
 }
 
 .hv-bottom-instructions {
-  font-family: "Montserrat" !important;
+  font-family: 'Montserrat', sans-serif !important;
   font-size: 14px !important;
   line-height: 20px !important;
   margin-top: 20px !important;

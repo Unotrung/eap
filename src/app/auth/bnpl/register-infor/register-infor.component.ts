@@ -103,16 +103,6 @@ export class RegisterInforComponent implements OnInit {
     }
 
     initFormInfo() {
-        // this.personalTitleOptions = [
-        //     this.translateService.instant("kyc.father"),
-        //     this.translateService.instant("kyc.mother"),
-        //     this.translateService.instant("kyc.brother"),
-        //     this.translateService.instant("kyc.sister"),
-        //     this.translateService.instant("kyc.son"),
-        //     this.translateService.instant("kyc.daughter"),
-        //     this.translateService.instant("kyc.spouse"),
-        //     this.translateService.instant("kyc.other"),
-        // ]
         this.personalTitleOptions = ["Bố", "Mẹ", "Anh em trai", "Chị em gái", "Con trai", "Con gái",
             "Vợ chồng", "Mối quan hệ khác"]
         this.personalTitleOptionsEn = ["Father", "Mother", "Brother", "Sister", "Son", "Daughter",
@@ -548,5 +538,13 @@ export class RegisterInforComponent implements OnInit {
                 this.selectedWardTemp$.next(value)
             }
         })
+    }
+
+    keyPressName(e: any) {
+        const pattern = /[^(\d\[\]!@#$%^&*\(\)_+\-={};':"\\|,\.<>\/?)]/;
+        let inputChar = String.fromCharCode(e.charCode);
+        if (!pattern.test(inputChar)) {
+            e.preventDefault();
+        }
     }
 }

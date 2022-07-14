@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
+
 
 .container-right-body {
   height: auto;
@@ -25,7 +22,7 @@
 }
 
 .title-infor {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
@@ -52,7 +49,7 @@
 }
 
 .title-take-nid {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 24px;
@@ -311,7 +308,7 @@ ul {
   }
 
   .msg-stt {
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 29px;
@@ -434,7 +431,7 @@ ul {
 }
 
 .text-title-guide {
-  font-family: 'MontserratAlternates';
+  font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -476,7 +473,7 @@ ul {
 }
 
 .title {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 32px;
@@ -513,7 +510,7 @@ ul {
   font-size: 18px;
   line-height: 22px;
   color: #FFFFFF;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   @media screen and(max-width: 480px){
     height: 41px;
     width: 200px;
