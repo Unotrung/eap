@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
+
 
 .stt-container {
   font-style: normal;
@@ -32,7 +29,7 @@
   line-height: 29px;
   text-align: center;
   color: #000000;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   @media screen and(max-width: 480px){
     font-size: 16px;
     line-height: 20px;

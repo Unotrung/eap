@@ -1,7 +1,3 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
 
 .bar-step {
   width: 822px;
@@ -55,7 +51,7 @@
 }
 
 .title {
-  font-family: 'MontserratAlternates';
+  font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -64,14 +60,13 @@
   color: #000000;
   margin-top: 61px;
   letter-spacing: -0.01rem;
+  white-space: nowrap;
   @media screen and(max-width: 480px) {
     font-size: 14px;
     line-height: 17px;
+    width: 286px;
     margin-top: 22px !important;
-    width: 70%;
     margin: auto;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    white-space: unset;
   }
 }

@@ -1,15 +1,6 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: local("Montserrat"), url(../../assets/font/Montserrat/Montserrat-Medium.ttf) format("truetype");
-}
 
 .header-format {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -109,7 +100,7 @@
     width: 64%;
   }
   @media screen and(max-width: 960px){
-
+    width: 45%;
   }
   @media screen and(max-width: 480px){
     width: 100%;
@@ -245,7 +236,7 @@ a:hover {
 }
 
 .name {
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   display: flex;
@@ -271,7 +262,7 @@ a:hover {
 }
 
 .text-note {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
@@ -295,7 +286,7 @@ a:hover {
   align-items: center;
   justify-content: start;
   height: 54px;
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
   font-weight: 400;
   font-size: 14px;
@@ -413,7 +404,7 @@ app-notification-dropdown {
   height: 24px;
 }
 .header-format-login {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   display: flex;
   flex-direction: row;
   align-items: start;

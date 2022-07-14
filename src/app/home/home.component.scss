@@ -1,10 +1,5 @@
-@font-face {
-    font-family: "MontserratAlternates";
-    src: local("MontserratAlternates"), url(../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
-
 .body-container {
-    font-family: "Montserrat";
+    font-family: 'Montserrat', sans-serif;
     max-width: 1512px;
     margin: 0 auto;
     padding-top: 30px;
@@ -143,7 +138,7 @@
     letter-spacing: 0em;
     text-align: center;
     color: #FFFFFF;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -345,7 +340,7 @@
 }
 
 .cover-title {
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     width: 100%;
     height: auto;
     font-size: 72px;
@@ -419,7 +414,7 @@
         height: 587px;
     }
     .layer-2-title {
-        //font-family: "MontserratAlternates";
+        //font-family: 'Montserrat Alternates', sans-serif;
         //width: 100%;
         //font-size: 65px;
         //font-weight: 700;
@@ -428,7 +423,7 @@
         //flex-direction: row;
         //align-items: start;
         //color: #000000;
-        font-family: "MontserratAlternates";
+        font-family: 'Montserrat Alternates', sans-serif;
         width: 100%;
         font-size: 48px;
         font-weight: 700;
@@ -595,7 +590,7 @@
 
 .layer-2-lable {
     width: 385px;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 24px;
     font-weight: 600;
     line-height: 30px;
@@ -632,7 +627,7 @@
 }
 
 .layer-2-content {
-    font-family: "Montserrat";
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -669,7 +664,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 13px;
     font-weight: 600;
     line-height: 17px;
@@ -717,7 +712,7 @@
     margin: 0px 10.9%;
     min-width: 850px;
     height: 122px;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 48px;
     font-weight: 700;
     line-height: 59px;
@@ -776,8 +771,7 @@
 .title-layer-5 {
     margin-left: 11.9%;
     margin-right: 34.9%;
-    min-width: 804px;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 48px;
     font-weight: 700;
     line-height: 59px;
@@ -833,7 +827,7 @@
 }
 
 .title-layer-6 {
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 65px;
     font-weight: 700;
     line-height: 79px;
@@ -988,7 +982,7 @@
     font-weight: 600;
     line-height: 30px;
     margin-top: 27px;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     @media screen and(max-width: 1200px) {
         font-size: 26px;
         margin-top: 24px;
@@ -1030,9 +1024,9 @@
 .title-l4 {
     display: flex;
     position: absolute;
-    margin-top: 14px;
-    margin-left: 40px;
-    font-family: "MontserratAlternates";
+    top: 2%;
+    left: 0px;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 48px;
     font-weight: 700;
     line-height: 59px;
@@ -1097,7 +1091,7 @@
 }
 
 .content-l41 {
-    font-family: "Montserrat";
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -1105,7 +1099,7 @@
     margin-left: 135px;
     margin-top: 95px;
     @media screen and(max-width: 480px) {
-        font-family: "Montserrat";
+        font-family: 'Montserrat', sans-serif;
         font-size: 14px;
         font-weight: 400;
         line-height: 22px;
@@ -1218,7 +1212,7 @@
     height: 30px;
     position: absolute;
     width: 140px;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -1234,7 +1228,7 @@
     height: 30px;
     position: absolute;
     width: 220px;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -1251,7 +1245,7 @@
     height: 30px;
     position: absolute;
     width: 130px;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -1268,7 +1262,7 @@
     padding-top: 33px;
     position: absolute;
     width: 162px;
-    font-family: "Montserrat";
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1283,7 +1277,7 @@
     padding-top: 33px;
     position: absolute;
     width: 250px;
-    font-family: "Montserrat";
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1298,7 +1292,7 @@
     padding-top: 33px;
     position: absolute;
     width: 162px;
-    font-family: "Montserrat";
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1567,7 +1561,7 @@
 }
 
 .tag {
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 24px;
     font-weight: 700;
     line-height: 29px;
@@ -1800,7 +1794,7 @@
         height: 218px;
     }
     .layer-6-lable {
-        font-family: "MontserratAlternates";
+        font-family: 'Montserrat Alternates', sans-serif;
         font-size: 32px;
         font-weight: 600;
         line-height: 40px;
@@ -1841,7 +1835,7 @@
         }
     }
     .layer-6-content {
-        font-family: "Montserrat";
+        font-family: 'Montserrat', sans-serif;
         font-size: 24px;
         font-weight: 400;
         line-height: 32px;
@@ -1880,7 +1874,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: start;
-        font-family: "MontserratAlternates";
+        font-family: 'Montserrat Alternates', sans-serif;
         font-size: 18px;
         font-weight: 700;
         line-height: 22px;
@@ -1932,7 +1926,7 @@
     text-align: center;
     justify-content: space-evenly;
     color: #FFFFFF;
-    font-family: "MontserratAlternates";
+    font-family: 'Montserrat Alternates', sans-serif;
     @media screen and(max-width: 1200px) {
         height: 48px;
         width: 260px;

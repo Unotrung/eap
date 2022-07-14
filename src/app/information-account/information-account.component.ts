@@ -82,7 +82,7 @@ export class InformationAccountComponent implements OnInit {
         const dialogRef = this.dialog.open(UpdatePasswordComponent, {
             width: '100%',
             data: id,
-            panelClass: ['animate__animated', 'animate__zoomIn', 'change-pass-animate']
+            panelClass: ['animate__animated', 'animate__faster', 'animate__zoomIn', 'change-pass-animate']
         });
 
         dialogRef.afterClosed().subscribe(result => {

@@ -62,10 +62,10 @@
             </td>
             <td width="130px">
                 <button class="btn-action"
-                        [class.dd]="note.type === 'Giao dịch'"
-                        [class.mgg]="note.type === 'Mã giảm giá'"
-                        [class.tt]="note.type === 'Tin tức'"
-                        [class.tht]="note.type === 'Thanh toán'">
+                        [class.dd]="note.type === 'GIAO DỊCH'"
+                        [class.mgg]="note.type === 'MÃ GIẢM GIÁ'"
+                        [class.tt]="note.type === 'TIN TỨC'"
+                        [class.tht]="note.type === 'THANH TOÁN'">
                     {{note.type}}
                 </button>
             </td>
@@ -89,10 +89,10 @@
     <div class="item-box" *ngFor="let note of listNote, let i = index">
         <div class="content-mobile">{{note.content}}</div>
         <button class="btn-mobile"
-                [class.dd]="note.type === 'Giao dịch'"
-                [class.mgg]="note.type === 'Mã giảm giá'"
-                [class.tt]="note.type === 'Tin tức'"
-                [class.tht]="note.type === 'Thanh toán'">
+                [class.dd]="note.type === 'GIAO DỊCH'"
+                [class.mgg]="note.type === 'MÃ GIẢM GIÁ'"
+                [class.tt]="note.type === 'TIN TỨC'"
+                [class.tht]="note.type === 'THANH TOÁN'">
             {{note.type}}
         </button>
     </div>

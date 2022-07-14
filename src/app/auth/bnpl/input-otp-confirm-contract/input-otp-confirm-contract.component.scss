@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
+
 
 .form-login-container {
   font-style: normal;
@@ -23,7 +20,7 @@
 }
 
 .title-login {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
@@ -202,9 +199,10 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
+  margin-top: 15px;
   @media screen and(max-width: 480px) {
     font-size: 10px;
-    margin-top: 10.5px;
+    margin-top: 10px;
   }
   .link-send {
     text-decoration-line: underline;

@@ -1,21 +1,21 @@
 <div class="container-sidebar">
     <div fxLayout = "row" style="margin-bottom: 16px" [className]="itemChoose=='infoEap'?'acc-infor-current':'acc-infor'" (click)="getInformationAccountEap()">
-        <div fxFlex = '14%' class="item" ><img src="../../assets/images/eapAc.png" width="20.14px" height="auto"></div>
-        <div fxFlex = ''><p>{{'sideBar.eapInformation' | translate}}</p></div>
+        <div fxFlex = '16%' class="item" ><img src="../../assets/images/eapAc.png"></div>
+        <div fxFlex = ''>{{'sideBar.eapInformation' | translate}}</div>
     </div>
     <div fxLayout = "row" style="margin-bottom: 16px" [className]="itemChoose=='registerBNPL'?'acc-infor-current':'acc-infor'" (click)="getInformationAccountBnpl()">
-        <div fxFlex = '14%' class="item" ><img src="../../assets/images/fingerprint.png" width="21px" height="auto"></div>
-        <div fxFlex = ''><p [innerHTML]="'sideBar.bnplInformation' | translate"></p></div>
+        <div fxFlex = '16%' class="item" ><img src="../../assets/images/fingerprint.png"></div>
+        <div fxFlex = '' [innerHTML]="'sideBar.bnplInformation' | translate"></div>
     </div>
 
     <div fxLayout = "row" style="margin-bottom: 9px" [className]="itemChoose=='transaction'?'acc-infor-current':'acc-infor'" (click)="getListTransaction()">
-        <div fxFlex = '14%' class="item" ><img src="../../assets/images/clock.png" width="23.63px" height="auto"></div>
-        <div fxFlex = ''><p>{{'sideBar.transaction' | translate}}</p></div>
+        <div fxFlex = '16%' class="item" ><img src="../../assets/images/clock.png"></div>
+        <div fxFlex = ''>{{'sideBar.transaction' | translate}}</div>
     </div>
 
     <div fxLayout = "row" style="margin-bottom: -10px" [className]="itemChoose=='repayment'?'acc-infor':'acc-infor'">
-        <div fxFlex = '14%' class="item" ><img src="../../assets/images/Star.png" width="23.25px" height="auto"></div>
-        <div fxFlex = '75%'  (click)="getRepaymentPlan()" ><p>{{'sideBar.repayment' | translate}}</p></div>
+        <div fxFlex = '16%' class="item" ><img src="../../assets/images/Star.png"></div>
+        <div fxFlex = '75%'  (click)="getRepaymentPlan()" >{{'sideBar.repayment' | translate}}</div>
         <div fxFlex = '' class="item" style="margin-left: 5.5px"><img
                 (click)="getRepaymentPlan(); $event.stopPropagation()"
                  [style]="showRepayment?'transform: rotate(-180deg)':null"

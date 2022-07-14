@@ -2,7 +2,7 @@
     <div class="header-left">
         <img *ngIf="currentAccessToken==null || !isShowSidebar" (click)="onShowMenu($event)" class="icon-menu hidden-min-960"
              src="../../assets/images/menu-header.png">
-        <img *ngIf="currentAccessToken!=null && isShowSidebar" (click)="onShowMenuAfterAuth($event)" class="icon-menu hidden-min-960"
+        <img *ngIf="currentAccessToken!=null && isShowSidebar" (click)="onShowMenuAfterAuth($event)" class="icon-menu hidden-lager-screen"
              src="../../assets/images/menu-header.png">
         <a class="cover-icon-home" href="/auth" *ngIf="currentAccessToken!==null">
             <img class="img-icon-home" src="../../assets/images/_VOOLOLogo.png">

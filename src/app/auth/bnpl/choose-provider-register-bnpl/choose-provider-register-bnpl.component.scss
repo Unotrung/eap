@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
+
 
 .container-right-body {
   min-height: 86vh;
@@ -25,7 +22,7 @@
 }
 
 .title-infor {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
@@ -38,7 +35,7 @@
 }
 
 .title-register {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
@@ -56,7 +53,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   text-align: center;
   color: #000000;
   margin-top: 12px;

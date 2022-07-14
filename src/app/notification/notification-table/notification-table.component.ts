@@ -27,7 +27,7 @@ export class NotificationTableComponent implements OnInit {
     {
       id: 1,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
-      type: "Thanh toán",
+      type: "THANH TOÁN",
       time: "10:45 AM",
       isPin: false,
       isCheck: false
@@ -35,7 +35,7 @@ export class NotificationTableComponent implements OnInit {
     {
       id: 2,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
-      type: "Giao dịch",
+      type: "GIAO DỊCH",
       time: "10:45 AM",
       isPin: false,
       isCheck: false
@@ -43,7 +43,7 @@ export class NotificationTableComponent implements OnInit {
     {
       id: 3,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
-      type: "Mã giảm giá",
+      type: "MÃ GIẢM GIÁ",
       time: "10:45 AM",
       isPin: false,
       isCheck: false
@@ -51,7 +51,7 @@ export class NotificationTableComponent implements OnInit {
     {
       id: 4,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
-      type: "Tin tức",
+      type: "TIN TỨC",
       time: "10:45 AM",
       isPin: false,
       isCheck: false
@@ -59,7 +59,7 @@ export class NotificationTableComponent implements OnInit {
     {
       id: 5,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
-      type: "Khác",
+      type: "KHÁC",
       time: "10:45 AM",
       isPin: false,
       isCheck: false
@@ -67,7 +67,7 @@ export class NotificationTableComponent implements OnInit {
     {
       id: 6,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
-      type: "Thanh toán",
+      type: "THANH TOÁN",
       time: "10:45 AM",
       isPin: false,
       isCheck: false
@@ -75,7 +75,7 @@ export class NotificationTableComponent implements OnInit {
     {
       id: 7,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
-      type: "Giao dịch",
+      type: "GIAO DỊCH",
       time: "10:45 AM",
       isPin: false,
       isCheck: false
@@ -83,7 +83,7 @@ export class NotificationTableComponent implements OnInit {
     {
       id: 8,
       content: "Mã thanh toán #1243555 đã đến hạn thanh toán",
-      type: "Mã giảm giá",
+      type: "MÃ GIẢM GIÁ",
       time: "10:45 AM",
       isPin: false,
       isCheck: false

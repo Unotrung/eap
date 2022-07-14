@@ -1,7 +1,3 @@
-@font-face {
-  font-family: "MontserratAlternates";
-  src: local("MontserratAlternates"), url(../../../assets/font/Montserrat_Alternates/MontserratAlternates-Bold.ttf) format("truetype");
-}
 
 .container-transaction {
   min-height: 86vh;
@@ -31,7 +27,7 @@
 
 
 .name-table {
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
@@ -128,7 +124,7 @@ thead {
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
-  font-family: "MontserratAlternates";
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 thead tr th {
@@ -202,7 +198,6 @@ a {
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
-  white-space: nowrap;
   background: #EDDFCF;
   color: #6A5644;
 }
@@ -320,7 +315,7 @@ a {
   font-weight: 700;
   font-size: 10px;
   line-height: 12px;
-  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .dd {
@@ -341,4 +336,11 @@ a {
 .tht {
   background-color: #B4B7EC !important;
   color: #22256A !important;
+}
+
+.row-content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
 }
