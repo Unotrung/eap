@@ -23,7 +23,7 @@ SwiperCore.use([Pagination, Navigation]);
 export class HomeComponent implements OnInit {
     lisItemLayer2 = [
         {
-            src: "../../assets/images/thanhtoan.png",
+            src: "../../assets/images/thanhtoan3.png",
             // src: "../../assets/images/icon1-layer2.png",
             lable: this.translateService.instant("home.lable-2-1"),
             content: this.translateService.instant("home.content-2-1")
