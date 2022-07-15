@@ -199,7 +199,6 @@ export class PictureService {
     }
 
     verifyNidAndFrontImage(): boolean {
-        console.log(this.citizenFrontData$.getValue())
         let match = true
         if (checkInfo(this.citizenFrontData$.getValue()['idNumber']).value !== this.authService.user$.getValue().citizenId) {
             // this.citizenFrontImageComplete$.next(false)
@@ -262,10 +261,10 @@ export class PictureService {
             this.base64citizenFrontImage$.next(image);
             this.citizenFrontImageComplete$.next(true);
             this.citizenFrontData$.next(data);
-            if (!this.verifyNidAndFrontImage()) {
-                return
-            }
-            this.verifyMatchImage()
+            // if (!this.verifyNidAndFrontImage()) {
+            //     return
+            // }
+            // this.verifyMatchImage()
         }
         if (side === NCardSide.back) {
             this.citizenBackImage = image;

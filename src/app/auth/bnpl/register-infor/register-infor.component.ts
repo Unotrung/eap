@@ -6,12 +6,13 @@ import {Router} from "@angular/router";
 import {PictureService} from "../../../_service/kyc/picture.service";
 import {map, startWith} from "rxjs/operators";
 import {City, District, Ward} from "../../../_model/vietnamLocation";
-import {checkInfo,keyPress} from "../../../_helpers/helper";
+import {checkInfo, keyPress} from "../../../_helpers/helper";
 import {CustomerInformationService} from "../../../_service/information-bnpl/customer-information.service";
 import {LocationAddressService} from "../../../_service/information-bnpl/location-address.service";
 import {InputType} from "../../../_model/user";
 import {TranslateService} from "@ngx-translate/core";
 import {LanguageService} from "../../../_service/language/language.service";
+import {Relationship} from "../../../_model/relationship";
 
 @Component({
     selector: 'app-register-infor',
@@ -33,15 +34,15 @@ export class RegisterInforComponent implements OnInit {
     districtFilteredOptionsTemp!: Observable<string[]>;
     wardFilteredOptionsTemp!: Observable<string[]>;
 
-    cityOptions : City[] = []
-    districtOptions : District[] = []
+    cityOptions: City[] = []
+    districtOptions: District[] = []
     wardOptions: Ward[] = []
 
-    cityOptionsTemp : City[] = []
-    districtOptionsTemp : District[] = []
+    cityOptionsTemp: City[] = []
+    districtOptionsTemp: District[] = []
     wardOptionsTemp: Ward[] = []
 
-    personalTitleOptions!: string[]
+    personalTitleOptions!: Relationship[]
     personalTitleOptionsEn!: string[]
     sexOptions!: string[]
     sexOptionsEn!: string[]
@@ -49,12 +50,12 @@ export class RegisterInforComponent implements OnInit {
 
 
     vietnamLocationData: any;
-    selectedCity$! : BehaviorSubject<City>;
+    selectedCity$!: BehaviorSubject<City>;
     selectedDistrict$!: BehaviorSubject<District>;
     selectedWard$!: BehaviorSubject<Ward>;
     selectedStreet$!: BehaviorSubject<any>;
 
-    selectedCityTemp$! : BehaviorSubject<City>;
+    selectedCityTemp$!: BehaviorSubject<City>;
     selectedDistrictTemp$!: BehaviorSubject<District>;
     selectedWardTemp$!: BehaviorSubject<Ward>;
 
@@ -81,6 +82,8 @@ export class RegisterInforComponent implements OnInit {
     expiryDay = ''
     citizenId = ''
 
+    isShowExpiryDate = true;
+
     checkInfo = checkInfo
     keyPress = keyPress
     InputType = InputType
@@ -92,23 +95,51 @@ export class RegisterInforComponent implements OnInit {
                 private pictureService: PictureService,
                 private translateService: TranslateService,
                 private languageService: LanguageService) {
+        this.registerForm = new FormGroup({
+            name: new FormControl({value: ''}, [Validators.required]),
+            sex: new FormControl({value: ''}, [Validators.required]),
+            phone: new FormControl({value: ''}, [Validators.required]),
+            birthday: new FormControl({value: ''}, [Validators.required]),
+            citizenId: new FormControl({value: ''}, [Validators.required]),
+            issueDate: new FormControl({value: ''}, [Validators.required]),
+            expiryDate: new FormControl({value: ''}, [Validators.required]),
+            city: new FormControl('', [Validators.required]),
+            district: new FormControl('', [Validators.required]),
+            ward: new FormControl('', [Validators.required]),
+            street: new FormControl('', [Validators.required]),
+            cityTemp: new FormControl('', [Validators.required]),
+            districtTemp: new FormControl('', [Validators.required]),
+            wardTemp: new FormControl('', [Validators.required]),
+            streetTemp: new FormControl('', [Validators.required]),
+            personal_title_ref: new FormControl('', [Validators.required]),
+            name_ref: new FormControl('', [Validators.required]),
+            phone_ref: new FormControl('', [Validators.required, Validators.pattern(/^(09|03|07|08|05)+([0-9]{8}$)/g),
+                Validators.minLength(10), Validators.maxLength(10)])
+        })
     }
 
     ngOnInit() {
-        this.languageService.lang$.subscribe(x=>this.lang = x);
+
+        this.languageService.lang$.subscribe(x => this.lang = x);
         // if (this.authService.step$.getValue() === 0) {
         //     this.router.navigate(['/infor-bnpl']);
         // }
         this.initFormInfo();
     }
 
-    initFormInfo() {
-        this.personalTitleOptions = ["Bố", "Mẹ", "Anh em trai", "Chị em gái", "Con trai", "Con gái",
-            "Vợ chồng", "Mối quan hệ khác"]
+    async getAllRelationship(): Promise<any> {
+        let res = await this.customerInformationService.getAllRelationship().toPromise();
+        this.personalTitleOptions = [...res.data];
+        console.log("relation", this.personalTitleOptions)
         this.personalTitleOptionsEn = ["Father", "Mother", "Brother", "Sister", "Son", "Daughter",
             "Spouse", "Other family relationship"]
-        this.sexOptions = ["Nam","Nữ"]
-        this.sexOptionsEn = ["Male","Female"]
+    }
+
+    async initFormInfo() {
+        await this.getAllRelationship();
+
+        this.sexOptions = ["Nam", "Nữ"]
+        this.sexOptionsEn = ["Male", "Female"]
 
         const citizenFrontData = this.pictureService.citizenFrontData$.getValue()
         const citizenBackData = this.pictureService.citizenBackData$.getValue()
@@ -116,10 +147,11 @@ export class RegisterInforComponent implements OnInit {
         console.log('back data', citizenBackData)
         let name = '', gender = '', birthday = '', issueDay = '', expiryDay = '', citizenId = ''
         if ('name' in citizenFrontData) {
-            this.name = name = this.checkInfo(citizenFrontData['name']).value
+            this.name = name = this.checkInfo(citizenFrontData['name']).value;
+            console.log(this.name)
         }
         if ('gender' in citizenFrontData) {
-            gender = (this.checkInfo(citizenFrontData['gender']).value === 'F') ? 'Nữ':
+            gender = (this.checkInfo(citizenFrontData['gender']).value === 'F') ? 'Nữ' :
                 this.checkInfo(citizenFrontData['gender']).value === 'M' ? 'Nam' : ''
         }
         if ('dob' in citizenFrontData) {
@@ -128,9 +160,10 @@ export class RegisterInforComponent implements OnInit {
         if ('doi' in citizenBackData) {
             this.issueDay = issueDay = this.convertDateString(this.checkInfo(citizenBackData['doi']).value)
         }
+        this.isShowExpiryDate = ('doe' in citizenFrontData);
+        console.log(this.isShowExpiryDate)
         if ('doe' in citizenFrontData) {
             this.expiryDay = expiryDay = this.convertDateString(this.checkInfo(citizenFrontData['doe']).value)
-            console.log("ngày hết hạn", expiryDay)
         }
         if ('idNumber' in citizenFrontData) {
             this.citizenId = citizenId = this.checkInfo(citizenFrontData['idNumber']).value
@@ -140,7 +173,7 @@ export class RegisterInforComponent implements OnInit {
         //address splitter
         const fullAddress = this.checkInfo(citizenFrontData['permanentAddress']).value
         const addressParts = fullAddress.split(',')
-        console.log('address parts',addressParts)
+        console.log('address parts', addressParts)
         const addressLength = addressParts.length
         let city = ''
         let district = ''
@@ -150,7 +183,7 @@ export class RegisterInforComponent implements OnInit {
             city = addressParts[addressLength - 1]
             district = addressParts[addressLength - 2]
             if (addressLength >= 4) {
-                ward = addressParts[addressLength-3]
+                ward = addressParts[addressLength - 3]
             }
             wardStreet = addressParts[0]
         }
@@ -176,8 +209,7 @@ export class RegisterInforComponent implements OnInit {
             );
             if (initCity === undefined) {
                 initCity = this.cityOptions[0]
-            }
-            else {
+            } else {
                 this.initCity = {
                     success: true,
                     city: initCity.name
@@ -187,17 +219,16 @@ export class RegisterInforComponent implements OnInit {
             this.selectedCity$ = new BehaviorSubject<City>(initCity)
             Object.entries(this.selectedCity$.getValue().districts).forEach(([key, value]) => {
                 // @ts-ignore
-                if (district.toLowerCase().indexOf(<District>value.name.toLowerCase()) > -1){
+                if (district.toLowerCase().indexOf(<District>value.name.toLowerCase()) > -1) {
                     initDistrict = value
                     // console.log(initDistrict)
                 }
             })
 
             // @ts-ignore
-            if(initDistrict === undefined) {
+            if (initDistrict === undefined) {
                 initDistrict = this.selectedCity$.getValue().districts[0]
-            }
-            else {
+            } else {
                 // this.initDistrict = true
                 this.initDistrict = {
                     success: true,
@@ -209,13 +240,12 @@ export class RegisterInforComponent implements OnInit {
             Object.entries(this.selectedDistrict$.getValue().wards).forEach(([key, value]) => {
                 if (ward) {
                     // @ts-ignore
-                    if (ward.toLowerCase().indexOf(<Ward>value.name.toLowerCase()) > -1){
+                    if (ward.toLowerCase().indexOf(<Ward>value.name.toLowerCase()) > -1) {
                         initWard = value
                         // console.log(initWard)
                     }
-                }
-                else { // @ts-ignore
-                    if (wardStreet.toLowerCase().indexOf(<Ward>value.name.toLowerCase()) > -1){
+                } else { // @ts-ignore
+                    if (wardStreet.toLowerCase().indexOf(<Ward>value.name.toLowerCase()) > -1) {
                         initWard = value
                         // console.log(initWard)
                     }
@@ -286,38 +316,66 @@ export class RegisterInforComponent implements OnInit {
             })
 
             let phone = this.authService.userCurrentSubject$.getValue().phone;
-            this.registerForm = new FormGroup({
-                name: new FormControl({value: name, disabled: true}),
-                sex: new FormControl({value:gender, disabled:gender?true:false}, [Validators.required]),
-                phone: new FormControl({value: phone, disabled: true}),
-                birthday: new FormControl({value:birthday, disabled: true}),
-                citizenId: new FormControl({value: citizenId, disabled: true}),
-                issueDate: new FormControl({value: issueDay, disabled: true}),
-                expiryDate: new FormControl({value: expiryDay?expiryDay:'', disabled: expiryDay?true:false}),
-                city: new FormControl({value: this.initCity.success ? this.initCity.city : '', disabled: false},
-                    [Validators.required]),
-                district: new FormControl({value: this.initDistrict.success ? this.initDistrict.district : '', disabled: false},
-                    [Validators.required]),
-                ward: new FormControl({value: this.initWard.success ? this.initWard.ward : '', disabled: false},
-                    [Validators.required]),
-                street: new FormControl({value: this.initStreet.success ? this.initStreet.street: '', disabled: false},
-                    [Validators.required]),
-                cityTemp: new FormControl('',[Validators.required]),
-                districtTemp: new FormControl('',[Validators.required]),
-                wardTemp: new FormControl('',[Validators.required]),
-                streetTemp: new FormControl('',[Validators.required]),
-                personal_title_ref: new FormControl('', [Validators.required]),
-                name_ref: new FormControl('', [Validators.required]),
-                phone_ref: new FormControl('', [Validators.required, Validators.pattern(/^(09|03|07|08|05)+([0-9]{8}$)/g),
-                    Validators.minLength(10), Validators.maxLength(10)])
+            this.registerForm.patchValue({
+                name: name ? name : '',
+                sex: gender ? gender : '',
+                phone: phone,
+                birthday: birthday ? birthday : '',
+                citizenId: citizenId ? citizenId : '',
+                issueDate: issueDay ? issueDay : '',
+                expiryDate: expiryDay ? expiryDay : '',
+                city: this.initCity.success ? this.initCity.city : '',
+                district: this.initDistrict.success ? this.initDistrict.district : '',
+                ward: this.initWard.success ? this.initWard.ward : '',
+                street: this.initStreet.success ? this.initStreet.street: ''
             })
+            if (name) {
+                this.registerForm.controls.name.disable();
+            }
+            if (gender) {
+                this.registerForm.controls.sex.disable();
+            }
+            if (phone) {
+                this.registerForm.controls.phone.disable();
+            }
+            if (birthday) {
+                this.registerForm.controls.birthday.disable();
+            }
+            if (citizenId) {
+                this.registerForm.controls.citizenId.disable();
+            }
+            if (issueDay) {
+                this.registerForm.controls.issueDate.disable();
+            }
+            if (expiryDay) {
+                this.registerForm.controls.expiryDate.disable();
+            }
 
-            console.log("check ngay",this.registerForm.value.expiryDate)
-            this.f['phone_ref'].valueChanges.subscribe(value => {
-                if (value.length > 10) {
-                    this.f['phone_ref'].setValue(value.slice(0,10))
-                }
-            })
+            // this.registerForm = new FormGroup({
+            //     name: new FormControl({value: name, disabled: true}),
+            //     sex: new FormControl({value:gender, disabled:gender?true:false}, [Validators.required]),
+            //     phone: new FormControl({value: phone, disabled: true}),
+            //     birthday: new FormControl({value:birthday, disabled: true}),
+            //     citizenId: new FormControl({value: citizenId, disabled: true}),
+            //     issueDate: new FormControl({value: issueDay, disabled: true}),
+            //     expiryDate: new FormControl({value: expiryDay?expiryDay:'', disabled: expiryDay?true:false}),
+            //     city: new FormControl({value: this.initCity.success ? this.initCity.city : '', disabled: false},
+            //         [Validators.required]),
+            //     district: new FormControl({value: this.initDistrict.success ? this.initDistrict.district : '', disabled: false},
+            //         [Validators.required]),
+            //     ward: new FormControl({value: this.initWard.success ? this.initWard.ward : '', disabled: false},
+            //         [Validators.required]),
+            //     street: new FormControl({value: this.initStreet.success ? this.initStreet.street: '', disabled: false},
+            //         [Validators.required]),
+            //     cityTemp: new FormControl('',[Validators.required]),
+            //     districtTemp: new FormControl('',[Validators.required]),
+            //     wardTemp: new FormControl('',[Validators.required]),
+            //     streetTemp: new FormControl('',[Validators.required]),
+            //     personal_title_ref: new FormControl('', [Validators.required]),
+            //     name_ref: new FormControl('', [Validators.required]),
+            //     phone_ref: new FormControl('', [Validators.required, Validators.pattern(/^(09|03|07|08|05)+([0-9]{8}$)/g),
+            //         Validators.minLength(10), Validators.maxLength(10)])
+            // })
 
             this.cityFilteredOptions = this.f['city'].valueChanges.pipe(
                 startWith(''),
@@ -343,10 +401,10 @@ export class RegisterInforComponent implements OnInit {
                 startWith(''),
                 map(value => this._filter(value, 'wardTemp'))
             )
-            this.personalTitleFilterOptions = this.f['personal_title_ref'].valueChanges.pipe(
-                startWith(''),
-                map(value => this._filter(value, 'personal_title_ref'))
-            )
+            // this.personalTitleFilterOptions = this.f['personal_title_ref'].valueChanges.pipe(
+            //     startWith(''),
+            //     map(value => this._filter(value, 'personal_title_ref'))
+            // )
         })
     }
 
@@ -363,7 +421,7 @@ export class RegisterInforComponent implements OnInit {
         }
         let wardStreetParts = streetWard.split(' ')
         const lastWord = wardStreetParts[wardStreetParts.length - 1].toLowerCase()
-        if (lastWord === 'xã' || lastWord === 'phường'){
+        if (lastWord === 'xã' || lastWord === 'phường') {
             wardStreetParts.pop()
         }
         if (lastWord === 'trấn') {
@@ -375,7 +433,7 @@ export class RegisterInforComponent implements OnInit {
                 word = word[0].toUpperCase() + word.substring(1).toLowerCase()
                 wardStreetParts[index] = word
             }
-        } )
+        })
         return wardStreetParts.join(' ').trim()
     }
 
@@ -406,9 +464,9 @@ export class RegisterInforComponent implements OnInit {
             const options = this.wardOptionsTemp.map(value => value.name)
             return options.filter(option => option.toLowerCase().includes(filterValue))
         }
-        if (zone === 'personal_title_ref') {
-            return this.personalTitleOptions.filter(option => option.toLowerCase().includes(filterValue))
-        }
+        // if (zone === 'personal_title_ref') {
+        //     return this.personalTitleOptions.filter(option => option.Text.toLowerCase().includes(filterValue))
+        // }
         return []
     }
 
@@ -422,12 +480,14 @@ export class RegisterInforComponent implements OnInit {
 
     get f(): {
         [key: string]: AbstractControl;
-    } { return this.registerForm.controls; }
+    } {
+        return this.registerForm.controls;
+    }
 
-    onSelectedCity(city: string){
+    onSelectedCity(city: string) {
         this.districtOptions.length = 0;
         this.cityOptions.forEach((value, index) => {
-            if (city === value.name){
+            if (city === value.name) {
                 this.selectedCity$.next(value);
                 this.f['district'].setValue('');
                 this.f['ward'].setValue('');
@@ -445,6 +505,7 @@ export class RegisterInforComponent implements OnInit {
             }
         })
     }
+
     onSelectedWard(ward: string) {
         this.wardOptions.forEach((value, index) => {
             if (ward === value.name) {
@@ -455,7 +516,7 @@ export class RegisterInforComponent implements OnInit {
 
     onContinue() {
         this.customerInformationService.customerInfo$.next({
-            ... this.customerInformationService.customerInfo$.getValue(),
+            ...this.customerInformationService.customerInfo$.getValue(),
             name: this.name,
             sex: this.handleValueGender(this.f['sex'].value),
             phone: this.authService.userCurrentSubject$.getValue().phone,
@@ -488,7 +549,7 @@ export class RegisterInforComponent implements OnInit {
         this.router.navigate(['/confirm-infor-bnpl']).then();
     }
 
-    handleValueGender(gender:string): string{
+    handleValueGender(gender: string): string {
         let genderFormat = '';
         if (gender == 'Male') {
             genderFormat = 'Nam'
@@ -503,18 +564,18 @@ export class RegisterInforComponent implements OnInit {
     handleValueRelationship(relationship: string): string {
         let relationshipFormat = relationship;
         let listRelVi = [...this.personalTitleOptions];
-        this.personalTitleOptionsEn.forEach(function (rel,index) {
+        this.personalTitleOptionsEn.forEach(function (rel, index) {
             if (relationship == rel) {
-                relationshipFormat = listRelVi[index]
+                relationshipFormat = listRelVi[index].Text;
             }
         })
-        return  relationshipFormat;
+        return relationshipFormat;
     }
 
     onSelectedCityTemp(city: string) {
         this.districtOptionsTemp.length = 0;
         this.cityOptionsTemp.forEach((value, index) => {
-            if (city === value.name){
+            if (city === value.name) {
                 this.selectedCityTemp$.next(value);
                 this.f['districtTemp'].setValue('');
                 this.f['wardTemp'].setValue('');

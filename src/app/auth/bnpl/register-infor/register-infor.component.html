@@ -23,6 +23,7 @@
                         <div class="block-info">
                             <div class="info-title">{{'kyc.fullName' | translate}}</div>
                             <input class="input-info" appMarginTop="8" formControlName="name">
+                            <div class="error"></div>
                         </div>
                         <div class="block-info">
                             <div class="info-title">{{'kyc.phone' | translate}}</div>
@@ -30,6 +31,7 @@
                                    formControlName="phone"
                                    appMarginTop="8"
                                    [ngClass]="{ 'is-invalid': (f['phone'].touched || f['phone'].dirty) && f['phone'].errors }">
+                            <div class="error"></div>
                         </div>
                     </div>
                     <div class="name-birth">
@@ -38,6 +40,7 @@
                                 <div class="info-title">{{'kyc.birthday' | translate}}</div>
                                 <input class="narrow-input-info" appMarginTop="8" type="date"
                                        formControlName="birthday">
+                                <div class="error"></div>
                             </div>
                             <div></div>
                         </div>
@@ -48,6 +51,8 @@
                                 </div>
                                 <div style="position: relative">
                                     <input class="input-info"
+                                           disabled
+                                           formControlName="sex"
                                            [ngClass]="{'is-invalid': (f['sex'].touched || f['sex'].dirty) && f['sex'].errors}"
                                            appMarginTop="8" formControlName="sex" matInput [matAutocomplete]="autoSex">
                                     <mat-autocomplete autoActiveFirstOption #autoSex="matAutocomplete">
@@ -57,9 +62,8 @@
                                         </mat-option>
                                     </mat-autocomplete>
                                 </div>
-                                <div class="error"
-                                     *ngIf="(f['sex'].touched || f['sex'].dirty) && f['sex'].errors">
-                                    <span>{{'kyc.validSex' | translate}}</span>
+                                <div class="error">
+                                    <span *ngIf="(f['sex'].touched || f['sex'].dirty) && f['sex'].errors">{{'kyc.validSex' | translate}}</span>
                                 </div>
                             </div>
                             <div></div>
@@ -71,21 +75,26 @@
                                 {{'kyc.nid' | translate}}
                             </div>
                             <input class="narrow-input-info" appMarginTop="8" formControlName="citizenId">
+                            <div class="error"></div>
                         </div>
                         <div class="flex-info">
-                            <div class="block-info-issueDate">
+                            <div [style]="!isShowExpiryDate?'width: 139px':null"
+                                 class="block-info-issueDate">
                                 <div class="info-title">
                                     {{'kyc.issueDate' | translate}}
                                 </div>
                                 <input class="narrow-input-info" appMarginTop="8" type="date"
                                        formControlName="issueDate">
+                                <div class="error"></div>
                             </div>
-                            <div class="block-info-issueDate">
+                            <div *ngIf = "isShowExpiryDate" class="block-info-issueDate">
                                 <div class="info-title">
                                     {{'kyc.expiryDate' | translate}}
                                 </div>
-                                <input class="narrow-input-info" appMarginTop="8" type="date"
+                                <input class="narrow-input-info" appMarginTop="8" type="text"
+                                       [disabled]="true"
                                        formControlName="expiryDate">
+                                <div class="error"></div>
                             </div>
                         </div>
                     </div>
@@ -106,6 +115,7 @@
                             </div>
                             <div style="position: relative">
                                 <input class="input-info"
+                                       formControlName="sex"
                                        [ngClass]="{'is-invalid': (f['sex'].touched || f['sex'].dirty) && f['sex'].errors}"
                                        appMarginTop="8" formControlName="sex" matInput [matAutocomplete]="autoSex">
                                 <mat-autocomplete autoActiveFirstOption #autoSex="matAutocomplete">
@@ -153,7 +163,7 @@
                             </div>
                             <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="issueDate">
                         </div>
-                        <div class="block-info-issueDate">
+                        <div *ngIf = "isShowExpiryDate" class="block-info-issueDate">
                             <div class="info-title">
                                 {{'kyc.expiryDate' | translate}}
                             </div>
@@ -371,6 +381,7 @@
                             </div>
                             <div style="position: relative">
                                 <input class="input-info" type="text"
+                                       (keydown)="true"
                                        [ngClass]="{'is-invalid': (f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors}"
                                        appMarginTop="8"
                                        matInput
@@ -380,9 +391,9 @@
                                 <div>
                                     <mat-autocomplete autoActiveFirstOption #autoPersonalTitle="matAutocomplete">
                                         <mat-option
-                                                *ngFor="let option of personalTitleFilterOptions | async, let i = index"
-                                                [value]="lang=='en'?personalTitleOptionsEn[i]:option">
-                                            {{lang == 'en' ? personalTitleOptionsEn[i] : option}}
+                                                *ngFor="let option of personalTitleOptions, let i = index"
+                                                [value]="option.Text">
+                                            {{lang == 'en' ? personalTitleOptionsEn[i] : (option.Text)}}
                                         </mat-option>
                                     </mat-autocomplete>
                                 </div>

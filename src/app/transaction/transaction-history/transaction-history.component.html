@@ -79,7 +79,7 @@
         <tr *ngIf="!loading" class="row-content">
             <td> <div class="first-column">{{tran.provider}}</div></td>
             <td>{{tran.date | dateStyle}}</td>
-            <td>{{tran.product}}</td>
+            <td class="td-name-product">{{tran.product}}</td>
             <td>{{tran.price}}</td>
             <td class="status-text"
                     [style]="tran.status==='Thành công'?'color:#56CA8B':
