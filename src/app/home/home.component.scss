@@ -398,10 +398,10 @@
     //     // padding: 42px 8.5% 74px 8.5%;
     //     // margin: 103px 5.2% 105px 5.2% !important;
     // }
-    @media screen and(max-width: 1300px) {
+    @media screen and(max-width: 1280px) {
         // width: 94%;
         max-width: 1000px;
-        padding: 42px 1% 74px 1% // margin: 103px 3% 105px 3% !important;
+        padding: 42px 6% 74px 6%; // margin: 103px 3% 105px 3% !important;
     }
     @media screen and(max-width: 960px) {
         padding: 40px !important;
@@ -533,6 +533,9 @@
     border-radius: 30px;
     background: #FFFFFF;
     box-shadow: 0px 10px 20px 0px #0000001F;
+    @media screen and(max-width: 1280px) {
+        width: 48%;
+    }
     @media screen and(max-width: 960px) {
         height: 370px;
         border-radius: 25px;
