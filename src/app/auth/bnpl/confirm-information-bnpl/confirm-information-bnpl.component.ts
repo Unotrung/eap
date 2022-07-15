@@ -5,6 +5,7 @@ import {AuthenticationService} from "../../../_service/auth/authentication.servi
 import {CustomerInformationService} from "../../../_service/information-bnpl/customer-information.service";
 import {WaitingConfirmComponent} from "../waiting-confirm/waiting-confirm.component";
 import {LanguageService} from "../../../_service/language/language.service";
+import {Relationship} from "../../../_model/relationship";
 
 @Component({
     selector: 'app-confirm-information-bnpl',
@@ -14,14 +15,10 @@ import {LanguageService} from "../../../_service/language/language.service";
 export class ConfirmInformationBnplComponent implements OnInit {
     address = '';
     addressTemp = '';
-    userBnpl: any;
     lang = '';
     showGender = '';
     showRelationship = '';
-    listRelationshipEn = ["Father", "Mother", "Brother", "Sister", "Son", "Daughter",
-        "Spouse", "Other family relationship"];
-    listRelationshipVi = ["Bố", "Mẹ", "Anh em trai", "Chị em gái", "Con trai", "Con gái",
-        "Vợ chồng", "Mối quan hệ khác"]
+    personalTitleOptions: Relationship[]
 
     constructor(
         public dialog: MatDialog,
@@ -33,11 +30,25 @@ export class ConfirmInformationBnplComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.languageService.lang$.subscribe(x => {this.lang = x;this.handleDataShowLanguage(this.lang)});
-
         // if (this.authService.step$.getValue() === 0) {
         //     this.router.navigate(['/infor-bnpl']);
         // }
+        this.handelDataConfirm();
+    }
+
+    async getAllRelationship(): Promise<any> {
+        let res = await this.customerInformationService.getAllRelationship().toPromise();
+        this.personalTitleOptions = [...res.data];
+    }
+
+    async handelDataConfirm() {
+        await this.getAllRelationship();
+        this.languageService.lang$.subscribe(x => {
+            this.lang = x;
+            this.handleDataShowLanguage(this.lang)
+        });
+        console.log("text")
+        console.log(this.customerInformationService.customerInfo$.getValue())
         this.address = `${this.customerInformationService.customerInfo$.getValue().street}, 
     ${this.customerInformationService.customerInfo$.getValue().ward}, 
     ${this.customerInformationService.customerInfo$.getValue().district}, 
@@ -49,8 +60,6 @@ export class ConfirmInformationBnplComponent implements OnInit {
     ${this.customerInformationService.customerInfo$.getValue().temporaryCity}`;
     }
 
-
-
     onSendConfirm() {
         const dialogRef = this.dialog.open(WaitingConfirmComponent, {
             width: '100%'
@@ -59,21 +68,20 @@ export class ConfirmInformationBnplComponent implements OnInit {
         });
     }
 
-    handleDataShowLanguage(lang: string){
-        if (lang=='en') {
+    handleDataShowLanguage(lang: string) {
+        if (lang == 'en') {
             if (this.customerInformationService.customerInfo$.getValue().sex == 'Nam') {
                 this.showGender = "Male"
             } else {
                 this.showGender = 'Female'
             }
             let relTemp = '';
-            let listRelationshipEn = ["Father", "Mother", "Brother", "Sister", "Son", "Daughter",
-                "Spouse", "Other family relationship"];
+            let listRelationshipEn = ["Brother", "Father", "Sister", "Daughter", "Son", "Mother",
+                "Other family relationship", "Spouse"];
             let relValue = this.customerInformationService.customerInfo$.getValue().personal_title_ref;
-            this.listRelationshipVi.forEach(function (rel,index) {
-                if (relValue == rel ){
+            this.personalTitleOptions.forEach(function (rel, index) {
+                if (relValue == rel.Text) {
                     relTemp = listRelationshipEn[index];
-                    console.log(relTemp);
                 }
             })
             this.showRelationship = relTemp;

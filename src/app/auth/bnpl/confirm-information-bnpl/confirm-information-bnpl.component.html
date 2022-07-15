@@ -64,7 +64,8 @@
                         {{customerInformationService.customerInfo$.getValue().issueDate | date: 'dd/MM/yyyy'}}
                     </div>
                 </div>
-                <div class="block-info mb-row">
+                <div *ngIf  = "customerInformationService.customerInfo$.getValue().expirationDate != null"
+                     class="block-info mb-row">
                     <div class="info-text-title">
                         {{'confirmInformation.expiryDateNid' | translate}}
                     </div>

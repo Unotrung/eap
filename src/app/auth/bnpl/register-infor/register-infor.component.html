@@ -87,14 +87,17 @@
                                        formControlName="issueDate">
                                 <div class="error"></div>
                             </div>
-                            <div *ngIf = "isShowExpiryDate" class="block-info-issueDate">
+                            <div *ngIf="isShowExpiryDate" class="block-info-issueDate">
                                 <div class="info-title">
                                     {{'kyc.expiryDate' | translate}}
                                 </div>
-                                <input class="narrow-input-info" appMarginTop="8" type="text"
+                                <input class="narrow-input-info" appMarginTop="8" [type]="expiryDay?'date':'text'"
                                        [disabled]="true"
                                        formControlName="expiryDate">
-                                <div class="error"></div>
+                                <div class="error">
+                                    <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('required')">{{'kyc.validExpiryDate' | translate}}</span>
+                                    <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('pattern')">{{'kyc.validExpiryDatePattern' | translate}}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,6 +111,7 @@
                         <div class="block-info">
                             <div class="info-title">{{'kyc.fullName' | translate}}</div>
                             <input class="input-info" appMarginTop="8" formControlName="name">
+                            <div class="error"></div>
                         </div>
                         <div class="block-info-sex">
                             <div class="info-title" appMarginTop="25">
@@ -125,9 +129,8 @@
                                     </mat-option>
                                 </mat-autocomplete>
                             </div>
-                            <div class="error"
-                                 *ngIf="(f['sex'].touched || f['sex'].dirty) && f['sex'].errors">
-                                <span>{{'kyc.validSex' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['sex'].touched || f['sex'].dirty) && f['sex'].errors">{{'kyc.validSex' | translate}}</span>
                             </div>
                         </div>
                     </div>
@@ -137,6 +140,7 @@
                             <div class="info-title">{{'kyc.birthday' | translate}}</div>
                             <input class="narrow-input-info" appMarginTop="8" type="date"
                                    formControlName="birthday">
+                            <div class="error"></div>
                         </div>
                         <div></div>
                     </div>
@@ -147,12 +151,14 @@
                                    formControlName="phone"
                                    appMarginTop="8"
                                    [ngClass]="{ 'is-invalid': (f['phone'].touched || f['phone'].dirty) && f['phone'].errors }">
+                            <div class="error"></div>
                         </div>
                         <div class="block-info">
                             <div class="info-title">
                                 {{'kyc.nid' | translate}}
                             </div>
                             <input class="narrow-input-info" appMarginTop="8" formControlName="citizenId">
+                            <div class="error"></div>
                         </div>
                     </div>
 
@@ -162,12 +168,17 @@
                                 {{'kyc.issueDate' | translate}}
                             </div>
                             <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="issueDate">
+                            <div class="error"></div>
                         </div>
-                        <div *ngIf = "isShowExpiryDate" class="block-info-issueDate">
+                        <div *ngIf="isShowExpiryDate" class="block-info-issueDate">
                             <div class="info-title">
                                 {{'kyc.expiryDate' | translate}}
                             </div>
-                            <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="expiryDate">
+                            <input class="narrow-input-info" appMarginTop="8" [type]="expiryDay?'date':'text'" formControlName="expiryDate">
+                            <div class="error">
+                                <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('required')">{{'kyc.validExpiryDate' | translate}}</span>
+                                <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('pattern')">{{'kyc.validExpiryDatePattern' | translate}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -196,8 +207,8 @@
                                 </mat-autocomplete>
                             </div>
 
-                            <div class="error" *ngIf="(f['city'].touched || f['city'].dirty) && f['city'].errors">
-                                <span>{{'kyc.validCity' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['city'].touched || f['city'].dirty) && f['city'].errors">{{'kyc.validCity' | translate}}</span>
                             </div>
                         </div>
                         <div class="block-info">
@@ -220,9 +231,8 @@
                                 </mat-autocomplete>
                             </div>
 
-                            <div class="error"
-                                 *ngIf="(f['district'].touched || f['district'].dirty) && f['district'].errors">
-                                <span>{{'kyc.validDistrict' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['district'].touched || f['district'].dirty) && f['district'].errors">{{'kyc.validDistrict' | translate}}</span>
                             </div>
                         </div>
                     </div>
@@ -248,8 +258,8 @@
                                 </mat-autocomplete>
                             </div>
 
-                            <div class="error" *ngIf="(f['ward'].touched || f['ward'].dirty) && f['ward'].errors">
-                                <span>{{'kyc.validWard' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['ward'].touched || f['ward'].dirty) && f['ward'].errors">{{'kyc.validWard' | translate}}</span>
                             </div>
                         </div>
                         <div class="block-info">
@@ -262,8 +272,8 @@
                                        appMarginTop="8" formControlName="street">
                             </div>
 
-                            <div class="error" *ngIf="(f['street'].touched || f['street'].dirty) && f['street'].errors">
-                                <span>{{'kyc.validStreet' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['street'].touched || f['street'].dirty) && f['street'].errors">{{'kyc.validStreet' | translate}}</span>
                             </div>
                         </div>
                     </div>
@@ -293,9 +303,8 @@
                                 </mat-autocomplete>
                             </div>
 
-                            <div class="error"
-                                 *ngIf="(f['cityTemp'].touched || f['cityTemp'].dirty) && f['cityTemp'].errors">
-                                <span>{{'kyc.validCity' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['cityTemp'].touched || f['cityTemp'].dirty) && f['cityTemp'].errors">{{'kyc.validCity' | translate}}</span>
                             </div>
                         </div>
                         <div class="block-info">
@@ -319,9 +328,8 @@
                                 </mat-autocomplete>
                             </div>
 
-                            <div class="error"
-                                 *ngIf="(f['districtTemp'].touched || f['districtTemp'].dirty) && f['districtTemp'].errors">
-                                <span>{{'kyc.validDistrict' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['districtTemp'].touched || f['districtTemp'].dirty) && f['districtTemp'].errors">{{'kyc.validDistrict' | translate}}</span>
                             </div>
                         </div>
                     </div>
@@ -347,9 +355,8 @@
                                 </mat-autocomplete>
                             </div>
 
-                            <div class="error"
-                                 *ngIf="(f['wardTemp'].touched || f['wardTemp'].dirty) && f['wardTemp'].errors">
-                                <span>{{'kyc.validWard' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['wardTemp'].touched || f['wardTemp'].dirty) && f['wardTemp'].errors">{{'kyc.validWard' | translate}}</span>
                             </div>
                         </div>
                         <div class="block-info">
@@ -362,9 +369,8 @@
                                        appMarginTop="8" formControlName="streetTemp">
                             </div>
 
-                            <div class="error"
-                                 *ngIf="(f['streetTemp'].touched || f['streetTemp'].dirty) && f['streetTemp'].errors">
-                                <span>{{'kyc.validStreet' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['streetTemp'].touched || f['streetTemp'].dirty) && f['streetTemp'].errors">{{'kyc.validStreet' | translate}}</span>
                             </div>
                         </div>
                     </div>
@@ -392,7 +398,7 @@
                                     <mat-autocomplete autoActiveFirstOption #autoPersonalTitle="matAutocomplete">
                                         <mat-option
                                                 *ngFor="let option of personalTitleOptions, let i = index"
-                                                [value]="option.Text">
+                                                [value]="lang == 'en' ? personalTitleOptionsEn[i] : (option.Text)">
                                             {{lang == 'en' ? personalTitleOptionsEn[i] : (option.Text)}}
                                         </mat-option>
                                     </mat-autocomplete>
@@ -400,9 +406,8 @@
                             </div>
 
 
-                            <div class="error"
-                                 *ngIf="(f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors">
-                                <span>{{'kyc.validTitleRef' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors">{{'kyc.validTitleRef' | translate}}</span>
                             </div>
                         </div>
                         <div class="block-info">
@@ -414,9 +419,8 @@
                                        [ngClass]="{'is-invalid': (f['name_ref'].touched || f['name_ref'].dirty) && f['name_ref'].errors}"
                                        appMarginTop="8" formControlName="name_ref">
                             </div>
-                            <div class="error"
-                                 *ngIf="(f['name_ref'].touched || f['name_ref'].dirty) && f['name_ref'].errors">
-                                <span>{{'kyc.validNameRef' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['name_ref'].touched || f['name_ref'].dirty) && f['name_ref'].errors">{{'kyc.validNameRef' | translate}}</span>
                             </div>
                         </div>
                     </div>
@@ -427,20 +431,15 @@
                             </div>
                             <div style="position: relative">
                                 <input class="input-info" (keypress)="keyPress($event, InputType.number)"
+                                       maxlength="10"
                                        [ngClass]="{'is-invalid': (f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].errors}"
                                        appMarginTop="8" formControlName="phone_ref"
                                        (change)="isCheckPhoneRef=false">
                             </div>
-                            <div class="error"
-                                 *ngIf="(f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].hasError('required')">
-                                <span>{{'kyc.validPhoneRef' | translate}}</span>
-                            </div>
-                            <div class="error"
-                                 *ngIf="(f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].hasError('pattern')">
-                                <span>{{'kyc.validPhoneRefPattern' | translate}}</span>
-                            </div>
-                            <div class="error" *ngIf="isCheckPhoneRef">
-                                <span>{{'kyc.validPhoneRefOverlap' | translate}}</span>
+                            <div class="error">
+                                <span *ngIf="(f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].hasError('required')">{{'kyc.validPhoneRef' | translate}}</span>
+                                <span *ngIf="(f['phone_ref'].touched || f['phone_ref'].dirty) && f['phone_ref'].hasError('pattern')">{{'kyc.validPhoneRefPattern' | translate}}</span>
+                                <span *ngIf="isCheckPhoneRef">{{'kyc.validPhoneRefOverlap' | translate}}</span>
                             </div>
                         </div>
                     </div>

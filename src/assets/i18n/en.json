@@ -74,6 +74,7 @@
 		"validWard": "Please enter city",
 		"street": "Street",
 		"validStreet": "Please enter street",
+		"validExpiryDate" : "Please enter expiry date",
 		"inforAddressTemp": "Temporary Address",
 		"inforRef": "Reference information",
 		"titleRef": "Relationship",
