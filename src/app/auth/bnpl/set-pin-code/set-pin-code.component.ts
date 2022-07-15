@@ -28,6 +28,7 @@ export class SetPinCodeComponent implements OnInit {
     codeCityTemp = '';
     codeDistrictTemp = '';
     codeWardTemp = '';
+    codeRelation = '';
     @ViewChild('codeInput') codeInput !: CodeInputComponent;
 
     constructor(private router: Router,
@@ -38,9 +39,9 @@ export class SetPinCodeComponent implements OnInit {
     }
 
     ngOnInit() {
-        // if (this.authService.step$.getValue() === 0) {
-        //     this.router.navigate(['/infor-bnpl']);
-        // }
+        if (this.authService.step$.getValue() === 0) {
+            this.router.navigate(['/infor-bnpl']);
+        }
         this.enCodePlace();
     }
 
@@ -208,12 +209,27 @@ export class SetPinCodeComponent implements OnInit {
         return res
     }
 
+    async getAllRelationship(): Promise<any> {
+        let res = await this.customerInformationService.getAllRelationship().toPromise();
+        let listRelationship = [...res.data];
+        let codeTemp = '';
+        let relName = this.customerInformationService.customerInfo$.getValue().personal_title_ref;
+        listRelationship.forEach(function (rel, index) {
+            if (rel.Text == relName) {
+                codeTemp = rel.Value;
+                return;
+            }
+        })
+        this.codeRelation = codeTemp;
+    }
+
     async enCodePlace() {
         let res1 = await this.getAllCities();
         let res2 = await this.getAllDistricts();
         let res3 = await this.getAllWards();
         let res4 = await  this.getAllDistrictsTemp();
         let res5 = await  this.getAllWardsTemp();
+        let res6 = await  this.getAllRelationship()
     }
 
     handleCodePlaceForCustomer() {
@@ -223,7 +239,8 @@ export class SetPinCodeComponent implements OnInit {
             ward: this.codeWard,
             temporaryCity: this.codeCityTemp,
             temporaryDistrict: this.codeDistrictTemp,
-            temporaryWard: this.codeWardTemp
+            temporaryWard: this.codeWardTemp,
+            personal_title_ref: this.codeRelation
         }
         this.customerInformationService.customerInfo$.next(this.userBnplEncode);
     }

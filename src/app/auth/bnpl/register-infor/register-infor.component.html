@@ -38,7 +38,7 @@
                         <div class="flex-info">
                             <div class="block-info-birthday">
                                 <div class="info-title">{{'kyc.birthday' | translate}}</div>
-                                <input class="narrow-input-info" appMarginTop="8" type="date"
+                                <input class="narrow-input-info" appMarginTop="8" type="text"
                                        formControlName="birthday">
                                 <div class="error"></div>
                             </div>
@@ -83,7 +83,7 @@
                                 <div class="info-title">
                                     {{'kyc.issueDate' | translate}}
                                 </div>
-                                <input class="narrow-input-info" appMarginTop="8" type="date"
+                                <input class="narrow-input-info" appMarginTop="8" type="text"
                                        formControlName="issueDate">
                                 <div class="error"></div>
                             </div>
@@ -91,7 +91,7 @@
                                 <div class="info-title">
                                     {{'kyc.expiryDate' | translate}}
                                 </div>
-                                <input class="narrow-input-info" appMarginTop="8" [type]="expiryDay?'date':'text'"
+                                <input class="narrow-input-info" appMarginTop="8" type="text"
                                        [disabled]="true"
                                        formControlName="expiryDate">
                                 <div class="error">
@@ -138,7 +138,7 @@
                     <div class="name-birth">
                         <div class="block-info-birthday">
                             <div class="info-title">{{'kyc.birthday' | translate}}</div>
-                            <input class="narrow-input-info" appMarginTop="8" type="date"
+                            <input class="narrow-input-info" appMarginTop="8" type="text"
                                    formControlName="birthday">
                             <div class="error"></div>
                         </div>
@@ -167,14 +167,14 @@
                             <div class="info-title">
                                 {{'kyc.issueDate' | translate}}
                             </div>
-                            <input class="narrow-input-info" appMarginTop="8" type="date" formControlName="issueDate">
+                            <input class="narrow-input-info" appMarginTop="8" type="text" formControlName="issueDate">
                             <div class="error"></div>
                         </div>
                         <div *ngIf="isShowExpiryDate" class="block-info-issueDate">
                             <div class="info-title">
                                 {{'kyc.expiryDate' | translate}}
                             </div>
-                            <input class="narrow-input-info" appMarginTop="8" [type]="expiryDay?'date':'text'" formControlName="expiryDate">
+                            <input class="narrow-input-info" appMarginTop="8" type="text" formControlName="expiryDate">
                             <div class="error">
                                 <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('required')">{{'kyc.validExpiryDate' | translate}}</span>
                                 <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('pattern')">{{'kyc.validExpiryDatePattern' | translate}}</span>

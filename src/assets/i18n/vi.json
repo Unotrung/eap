@@ -75,6 +75,7 @@
 		"street": "Đường",
 		"validStreet": "Vui lòng nhập tên đường",
 		"validExpiryDate" : "Vui lòng nhập ngày hết hạn",
+		"validExpiryDatePattern": "Ngày hết hạn sai định dạng",
 		"inforAddressTemp": "Địa chỉ tạm trú",
 		"inforRef": "Thông tin tham chiếu",
 		"titleRef": "Mối quan hệ",

@@ -75,6 +75,7 @@
 		"street": "Street",
 		"validStreet": "Please enter street",
 		"validExpiryDate" : "Please enter expiry date",
+		"validExpiryDatePattern": "Expiry date invalid",
 		"inforAddressTemp": "Temporary Address",
 		"inforRef": "Reference information",
 		"titleRef": "Relationship",

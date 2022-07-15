@@ -99,9 +99,11 @@ export class RegisterInforComponent implements OnInit {
             name: new FormControl({value: ''}, [Validators.required]),
             sex: new FormControl({value: ''}, [Validators.required]),
             phone: new FormControl({value: ''}, [Validators.required]),
-            birthday: new FormControl({value: ''}, [Validators.required]),
+            birthday: new FormControl({value: ''}, [Validators.required,
+                Validators.pattern('^(0?[1-9]|[12][0-9]|3[01])[\\/](0?[1-9]|1[012])[\\/]\\d{4}$')]),
             citizenId: new FormControl({value: ''}, [Validators.required]),
-            issueDate: new FormControl({value: ''}, [Validators.required]),
+            issueDate: new FormControl({value: ''}, [Validators.required,
+                Validators.pattern('^(0?[1-9]|[12][0-9]|3[01])[\\/](0?[1-9]|1[012])[\\/]\\d{4}$')]),
             expiryDate: new FormControl({value: ''}, [Validators.required,
                 Validators.pattern('^(0?[1-9]|[12][0-9]|3[01])[\\/](0?[1-9]|1[012])[\\/]\\d{4}$')]),
             city: new FormControl('', [Validators.required]),
@@ -120,11 +122,10 @@ export class RegisterInforComponent implements OnInit {
     }
 
     ngOnInit() {
-
         this.languageService.lang$.subscribe(x => this.lang = x);
-        // if (this.authService.step$.getValue() === 0) {
-        //     this.router.navigate(['/infor-bnpl']);
-        // }
+        if (this.authService.step$.getValue() === 0) {
+            this.router.navigate(['/infor-bnpl']);
+        }
         this.initFormInfo();
     }
 
@@ -156,17 +157,18 @@ export class RegisterInforComponent implements OnInit {
                 this.checkInfo(citizenFrontData['gender']).value === 'M' ? 'Nam' : ''
         }
         if ('dob' in citizenFrontData) {
-            this.birthday = birthday = this.convertDateString(this.checkInfo(citizenFrontData['dob']).value)
+            this.birthday = birthday = this.handleStringDate(this.convertDateString(this.checkInfo(citizenFrontData['dob']).value))
+
         }
         if ('doi' in citizenBackData) {
-            this.issueDay = issueDay = this.convertDateString(this.checkInfo(citizenBackData['doi']).value)
+            this.issueDay = issueDay = this.handleStringDate(this.convertDateString(this.checkInfo(citizenBackData['doi']).value))
         }
         this.isShowExpiryDate = ('doe' in citizenFrontData);
         if (!this.isShowExpiryDate) {
             this.expiryDay = expiryDay = "no"
         } else {
             if (this.convertDateString(this.checkInfo(citizenFrontData['doe']).value)) {
-                this.expiryDay = expiryDay = this.convertDateString(this.checkInfo(citizenFrontData['doe']).value)
+                this.expiryDay = expiryDay = this.handleStringDate(this.convertDateString(this.checkInfo(citizenFrontData['doe']).value))
             } else  {
                 expiryDay = '';
             }
@@ -488,23 +490,19 @@ export class RegisterInforComponent implements OnInit {
     }
 
     onContinue() {
-        let expiryDate = '';
-        if ((this.f['expiryDate'].value).includes('/')) {
-            let arrayTem = (this.f['expiryDate'].value).split("/");
-            let newString = arrayTem[2]+"-"+arrayTem[1]+"-"+arrayTem[0];
-            console.log(newString);
-            expiryDate = newString;
-        } else {
-            expiryDate = this.f['expiryDate'].value;
-        }
+        const birthday = this.convertStringToDate(this.f['birthday'].value);
+        const issueDate = this.convertStringToDate(this.f['issueDate'].value);
+        const expiryDate = this.convertStringToDate(this.f['expiryDate'].value);
+
+
         this.customerInformationService.customerInfo$.next({
             ...this.customerInformationService.customerInfo$.getValue(),
             name: this.name,
             sex: this.handleValueGender(this.f['sex'].value),
             phone: this.authService.userCurrentSubject$.getValue().phone,
-            birthday: new Date(this.f['birthday'].value),
+            birthday: new Date(birthday),
             citizenId: this.f['citizenId'].value,
-            issueDate: new Date(this.f['issueDate'].value),
+            issueDate: new Date(issueDate),
             expirationDate: this.f['expiryDate'].value == "no"? null: new Date(expiryDate),
 
             city: this.initCity.success ? this.initCity.city : this.f['city'].value,
@@ -553,6 +551,19 @@ export class RegisterInforComponent implements OnInit {
         })
         return relationshipFormat;
     }
+
+    handleStringDate(date: string): string {
+        let arrayTemp = date.split("-");
+        let newString = arrayTemp[2]+"/"+arrayTemp[1]+"/"+arrayTemp[0];
+        return newString
+    }
+
+    convertStringToDate(date: string): string {
+        let arrayTemp = date.split("/");
+        let newString = arrayTemp[2]+"-"+arrayTemp[1]+"-"+arrayTemp[0];
+        return newString
+    }
+
 
     onSelectedCityTemp(city: string) {
         this.districtOptionsTemp.length = 0;

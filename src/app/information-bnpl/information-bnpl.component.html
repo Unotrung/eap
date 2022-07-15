@@ -29,7 +29,7 @@
                         <div class="label-name f-14">{{'confirmInformation.makeDateNid' | translate}}</div>
                         <div class="detail-name f-14 f-bold-2">{{userBnpl.issueDate | dateStyle}}</div>
                     </div>
-                    <div class="row-content">
+                    <div *ngIf ="userBnpl.expirationDate !== null" class="row-content">
                         <div class="label-name f-14">{{'confirmInformation.expirationDate' | translate}}</div>
                         <div class="detail-name f-14 f-bold-2">{{userBnpl.expirationDate | dateStyle}}</div>
                     </div>
@@ -45,7 +45,7 @@
                 <div class="top-detail height-box-under">
                     <div class="row-content">
                         <div class="label-name f-14">{{'confirmInformation.personalRef' | translate}}</div>
-                        <div class="detail-name f-14 f-bold-2">{{userBnpl.personal_title_ref}}</div>
+                        <div class="detail-name f-14 f-bold-2">{{userBnpl.personalTitleRef.Text}}</div>
                     </div>
                     <div class="row-content">
                         <div class="label-name f-14">{{'confirmInformation.fullNameRef' | translate}}</div>

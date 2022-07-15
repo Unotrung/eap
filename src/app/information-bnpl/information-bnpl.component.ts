@@ -28,7 +28,7 @@ export class InformationBnplComponent implements OnInit {
         districtData:{},
         wardData:{},
         street:'',
-        personal_title_ref:'',
+        personalTitleRef:{},
         name_ref:'',
         phone_ref:''
     };
