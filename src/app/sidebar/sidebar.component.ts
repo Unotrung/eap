@@ -3,6 +3,8 @@ import {Router} from "@angular/router";
 import {SidebarService} from "../_service/side-bar/sidebar.service";
 import {AuthenticationService} from "../_service/auth/authentication.service";
 import {AccountBnplService} from "../_service/auth/account-bnpl.service";
+import {TranslateService} from "@ngx-translate/core";
+import {LanguageService} from "../_service/language/language.service";
 
 @Component({
     selector: 'app-sidebar',
@@ -14,16 +16,21 @@ export class SidebarComponent implements OnInit {
     username: string = '';
     phone: string = '';
     itemChoose:string = '';
+    supportLanguage = ["vi","en"];
 
     constructor(
         public sidebar: SidebarService,
         private route: Router,
         private authenticationService: AuthenticationService,
-        private accountBnplService: AccountBnplService
+        private accountBnplService: AccountBnplService,
+        private translateService: TranslateService,
+        private languageService: LanguageService
     ) {
     }
 
     ngOnInit(): void {
+        this.translateService.addLangs(this.supportLanguage);
+        this.translateService.setDefaultLang("vi");
         this.authenticationService.userCurrent$.subscribe(x => this.username = x.username);
         this.authenticationService.userCurrent$.subscribe(x => this.phone = x.phone);
         this.sidebar.itemSelect$.subscribe(x=> this.itemChoose = x);
@@ -71,5 +78,9 @@ export class SidebarComponent implements OnInit {
 
     getInformationAccountEap() {
         this.route.navigateByUrl('/infor-account')
+    }
+
+    selectLanguage(lang: string) {
+        this.translateService.use(lang);
     }
 }
