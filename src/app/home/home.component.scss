@@ -412,6 +412,7 @@
         padding: 24px 0px 0px 0px !important;
         border-radius: 15px;
         height: 587px;
+        width: 94.4%;
     }
     .layer-2-title {
         //font-family: 'Montserrat Alternates', sans-serif;
@@ -545,8 +546,9 @@
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
         border-radius: 15px;
         width: auto;
+        max-width: 310px;
         margin-left: 20px !important;
-        margin-right: 20px !important;
+        // margin-right: 20px !important;
         height: 310px !important;
         padding: 4px 24px 21px 24px;
     }
@@ -585,8 +587,8 @@
             width: 110px;
         }
         @media screen and(max-width: 480px) {
-            width: 124px;
-            margin-left: -7px;
+            width: 100px;
+            margin-left: 7px;
         }
     }
 }
@@ -824,7 +826,7 @@
         margin-left: 49px;
         letter-spacing: 0px;
         align-items: start;
-        margin-top: 435px;
+        margin-top: 50px;
         min-width: 265px;
         max-width: 270px;
     }
@@ -985,7 +987,7 @@
     font-size: 24px;
     font-weight: 600;
     line-height: 30px;
-    margin-top: 27px;
+    margin-top: 31px;
     font-family: 'Montserrat Alternates', sans-serif;
     @media screen and(max-width: 1200px) {
         font-size: 26px;
@@ -1028,8 +1030,8 @@
 .title-l4 {
     display: flex;
     position: absolute;
-    top: 2%;
-    left: 0px;
+    top: 1%;
+    left: 3%;
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 48px;
     font-weight: 700;
@@ -1100,8 +1102,8 @@
     font-weight: 400;
     line-height: 24px;
     position: absolute;
-    margin-left: 135px;
-    margin-top: 95px;
+    margin-left: 10.5%;
+    margin-top: 91px;
     @media screen and(max-width: 480px) {
         font-family: 'Montserrat', sans-serif;
         font-size: 14px;
@@ -1109,8 +1111,8 @@
         line-height: 22px;
         position: absolute;
         height: 144px;
-        margin-left: 32px;
-        margin-top: 382px;
+        margin-left: 18%;
+        margin-top: 75px;
     }
 }
 
@@ -1139,7 +1141,7 @@
         max-width: 714px;
         height: auto;
         margin-left: 127px;
-        margin-top: -7px;
+        margin-top: -11px;
         // @media screen and (max-width: 1376px) {
         //     width: 75%;
         //     height: auto;
@@ -1150,7 +1152,7 @@
         }
         @media screen and (max-width: 480px) {
             width: 305px;
-            margin: 32px auto 0px auto;
+            margin: 100px auto 0px auto;
             height: auto;
         }
     }
@@ -1170,7 +1172,7 @@
 .layer-4-2-1 {
     z-index: 1;
     position: absolute;
-    top: 242px;
+    top: 237px;
     left: 12%;
     height: auto;
     width: 333px;
@@ -1178,14 +1180,15 @@
         left: 10%;
     }
     @media screen and (max-width: 480px) {
-        display: none;
+        left: 6%;
+        top: 170px;
     }
 }
 
 .layer-4-2-2 {
     z-index: 1;
     position: absolute;
-    top: 502px;
+    top: 497px;
     left: 4%;
     height: auto;
     width: 333px;
@@ -1193,14 +1196,16 @@
         left: 2%;
     }
     @media screen and (max-width: 480px) {
-        display: none;
+        // display: none;
+        left: 0%;
+        top: 340px;
     }
 }
 
 .layer-4-2-3 {
     z-index: 1;
     position: absolute;
-    top: 358px;
+    top: 355px;
     right: -0.4%;
     height: auto;
     width: 333px;
@@ -1208,7 +1213,9 @@
         right: -5%
     }
     @media screen and (max-width: 480px) {
-        display: none;
+        // display: none;
+        right: -38%;
+        top: 235px;
     }
 }
 
@@ -1226,6 +1233,11 @@
     color: #F18F61;
     padding-left: 18px;
     letter-spacing: 0px;
+    @media screen and(max-width: 480px) {
+        font-size: 14px;
+        line-height: 22px;
+        padding-left: 0px;
+    }
 }
 
 .text-4-2-1 {
@@ -1243,6 +1255,11 @@
     padding-left: 18px;
     padding-top: 0px;
     letter-spacing: 0px;
+    @media screen and(max-width: 480px) {
+        font-size: 14px;
+        line-height: 22px;
+        padding-left: 18px;
+    }
 }
 
 .text-4-3-1 {
@@ -1260,6 +1277,11 @@
     padding-left: 18px;
     padding-top: 0px;
     letter-spacing: 1.5px;
+    @media screen and(max-width: 480px) {
+        font-size: 14px;
+        line-height: 22px;
+        padding-left: 18px;
+    }
 }
 
 .text-4-1-2 {
@@ -1275,6 +1297,12 @@
     align-items: center;
     color: #000000;
     padding-left: 17px;
+    @media screen and(max-width: 480px) {
+        font-size: 12px;
+        line-height: 18px;
+        padding-left: 0px;
+        padding-top: 25px;
+    }
 }
 
 .text-4-2-2 {
@@ -1290,6 +1318,13 @@
     align-items: center;
     color: #000000;
     padding-left: 17px;
+    @media screen and(max-width: 480px) {
+        font-size: 12px;
+        line-height: 20px;
+        padding-left: 17px;
+        padding-top: 25px;
+        width: 180px;
+    }
 }
 
 .text-4-3-2 {
@@ -1305,6 +1340,13 @@
     align-items: center;
     color: #000000;
     padding-left: 17px;
+    @media screen and(max-width: 480px) {
+        font-size: 12px;
+        line-height: 20px;
+        padding-left: 17px;
+        width: 120px;
+        padding-top: 25px;
+    }
 }
 
 .layer-4-2-1-1 {
@@ -1317,6 +1359,11 @@
     mix-blend-mode: normal;
     border: 2px solid #EEEEEE;
     box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
+    @media screen and(max-width: 480px) {
+        padding: 0px 30px 0px 30px;
+        height: 50px;
+        width: 140px;
+    }
 }
 
 .layer-4-2-2-1 {
@@ -1329,6 +1376,11 @@
     mix-blend-mode: normal;
     border: 2px solid #EEEEEE;
     box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
+    @media screen and(max-width: 480px) {
+        padding: 0px 40px 0px 40px;
+        height: 50px;
+        width: 237px;
+    }
 }
 
 .layer-4-2-3-1 {
@@ -1341,6 +1393,11 @@
     mix-blend-mode: normal;
     border: 2px solid #EEEEEE;
     box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
+    @media screen and(max-width: 480px) {
+        padding: 0px 20px 0px 20px;
+        height: 50px;
+        width: 170px;
+    }
 }
 
 .mg-4-1 {
@@ -1351,6 +1408,12 @@
     border-radius: 0px;
     top: -20px;
     left: -55px;
+    @media screen and(max-width: 480px) {
+        height: 55px;
+        width: 55px;
+        top: 0px;
+        left: -20px;
+    }
 }
 
 .mg-4-2 {
@@ -1361,6 +1424,12 @@
     border-radius: 0px;
     top: -10px;
     left: -55px;
+    @media screen and(max-width: 480px) {
+        top: 0px;
+        left: 0px;
+        height: 55px;
+        width: 55px;
+    }
 }
 
 .mg-4-3 {
@@ -1371,6 +1440,13 @@
     border-radius: 0px;
     top: -33px;
     left: 200px;
+    @media screen and(max-width: 480px) {
+        top: -5px;
+        right: -30px;
+        height: 55px;
+        width: 55px;
+        left: unset;
+    }
 }
 
 .cover-item-store {
