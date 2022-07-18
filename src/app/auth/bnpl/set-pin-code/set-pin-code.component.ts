@@ -39,9 +39,9 @@ export class SetPinCodeComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (this.authService.step$.getValue() === 0) {
-            this.router.navigate(['/infor-bnpl']);
-        }
+        // if (this.authService.step$.getValue() === 0) {
+        //     this.router.navigate(['/infor-bnpl']);
+        // }
         this.enCodePlace();
     }
 
@@ -93,6 +93,7 @@ export class SetPinCodeComponent implements OnInit {
             })
         } else {
             this.codeInput.reset();
+            this.verifyPinCode = '';
             this.msgVerifyError = this.translateService.instant('setPin.errPinMsg')
         }
     }

@@ -123,9 +123,9 @@ export class RegisterInforComponent implements OnInit {
 
     ngOnInit() {
         this.languageService.lang$.subscribe(x => this.lang = x);
-        if (this.authService.step$.getValue() === 0) {
-            this.router.navigate(['/infor-bnpl']);
-        }
+        // if (this.authService.step$.getValue() === 0) {
+        //     this.router.navigate(['/infor-bnpl']);
+        // }
         this.initFormInfo();
     }
 

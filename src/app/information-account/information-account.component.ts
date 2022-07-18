@@ -159,7 +159,8 @@ export class InformationAccountComponent implements OnInit {
                     });
                 }
             }, error => {
-                if (error.error.statusCode == 1000){
+                console.log(error)
+                if (error.error.statusCode == 5002){
                     this.msgErrorEmail = this.translateService.instant('accountEap.existEmail');
                     this.isFocus = true;
                 }

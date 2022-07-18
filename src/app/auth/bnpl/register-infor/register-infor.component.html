@@ -39,7 +39,8 @@
                             <div class="block-info-birthday">
                                 <div class="info-title">{{'kyc.birthday' | translate}}</div>
                                 <input class="narrow-input-info" appMarginTop="8" type="text"
-                                       formControlName="birthday">
+                                       formControlName="birthday"
+                                placeholder="dd/mm/yyyy">
                                 <div class="error"></div>
                             </div>
                             <div></div>
@@ -84,7 +85,8 @@
                                     {{'kyc.issueDate' | translate}}
                                 </div>
                                 <input class="narrow-input-info" appMarginTop="8" type="text"
-                                       formControlName="issueDate">
+                                       formControlName="issueDate"
+                                       placeholder="dd/mm/yyyy">
                                 <div class="error"></div>
                             </div>
                             <div *ngIf="isShowExpiryDate" class="block-info-issueDate">
@@ -93,7 +95,8 @@
                                 </div>
                                 <input class="narrow-input-info" appMarginTop="8" type="text"
                                        [disabled]="true"
-                                       formControlName="expiryDate">
+                                       formControlName="expiryDate"
+                                       placeholder="dd/mm/yyyy">
                                 <div class="error">
                                     <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('required')">{{'kyc.validExpiryDate' | translate}}</span>
                                     <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('pattern')">{{'kyc.validExpiryDatePattern' | translate}}</span>
@@ -139,7 +142,8 @@
                         <div class="block-info-birthday">
                             <div class="info-title">{{'kyc.birthday' | translate}}</div>
                             <input class="narrow-input-info" appMarginTop="8" type="text"
-                                   formControlName="birthday">
+                                   formControlName="birthday"
+                                   placeholder="dd/mm/yyyy">
                             <div class="error"></div>
                         </div>
                         <div></div>
@@ -167,14 +171,18 @@
                             <div class="info-title">
                                 {{'kyc.issueDate' | translate}}
                             </div>
-                            <input class="narrow-input-info" appMarginTop="8" type="text" formControlName="issueDate">
+                            <input class="narrow-input-info" appMarginTop="8" type="text"
+                                   formControlName="issueDate"
+                                   placeholder="dd/mm/yyyy">
                             <div class="error"></div>
                         </div>
                         <div *ngIf="isShowExpiryDate" class="block-info-issueDate">
                             <div class="info-title">
                                 {{'kyc.expiryDate' | translate}}
                             </div>
-                            <input class="narrow-input-info" appMarginTop="8" type="text" formControlName="expiryDate">
+                            <input class="narrow-input-info" appMarginTop="8" type="text"
+                                   formControlName="expiryDate"
+                                   placeholder="dd/mm/yyyy">
                             <div class="error">
                                 <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('required')">{{'kyc.validExpiryDate' | translate}}</span>
                                 <span *ngIf="(f['expiryDate'].touched || f['expiryDate'].dirty) && f['expiryDate'].hasError('pattern')">{{'kyc.validExpiryDatePattern' | translate}}</span>
