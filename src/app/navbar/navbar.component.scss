@@ -37,8 +37,7 @@
   @media screen and(max-width: 480px){
     padding-left: 0px;
     padding-right: 0px;
-    padding-top: 45px;
-    height: 83px;
+    height: 72px;
     background: #FFFFFF;
   }
 }
@@ -78,6 +77,8 @@
   }
   @media screen and(max-width: 480px){
     width: unset;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -323,7 +324,7 @@ a:hover {
     width: 30px;
     height: 30px;
     left: 20px;
-    top: 43px;
+    top: 21px;
   }
 }
 
@@ -392,7 +393,7 @@ app-notification-dropdown {
   flex-direction: row;
   position: absolute;
   right: 24px;
-  top: 43px;
+  top: 21px;
   width: 64px;
 }
 
@@ -422,8 +423,7 @@ app-notification-dropdown {
   @media screen and(max-width: 480px){
     padding-left: 0px;
     padding-right: 0px;
-    padding-top: 45px;
-    height: 83px;
+    height: 72px;
     background: #FFFFFF;
   }
 }

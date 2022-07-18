@@ -12,16 +12,25 @@
             </code-input>
         </div>
         <div class="under-input">
-            <div *ngIf="!isCheckOtp" class="err">
-                {{'forgotPass.wrongOtp' | translate}}
+            <div *ngIf="messageErr != '' && countFail < 5" class="err">
+                {{messageErr | translate}} <span *ngIf="countFail<5">({{countFail}}/5)</span>
             </div>
+            <div *ngIf="messageErr != '' && countFail===5" class="err">
+                {{messageErr | translate}}
+            </div>
+            <div *ngIf="messageErrExp != ''" class="err">
+                {{messageErrExp | translate}}
+            </div>
+<!--            <div *ngIf="!isCheckOtp" class="err">-->
+<!--                {{'forgotPass.wrongOtp' | translate}}-->
+<!--            </div>-->
         </div>
         <div>
-            <app-button-dialog class="hidden-480" [contentBtn]="'forgotPass.confirmOtp' | translate"
+            <app-button-dialog class="hidden-480" [contentBtn]="'forgotPass.continue' | translate"
                                [isEnable]="otp.length<6"
                                (click)="submit()">
             </app-button-dialog>
-            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'forgotPass.confirmOtp' | translate"
+            <app-button-dialog class="hidden-lager-screen" [contentBtn]="'forgotPass.continue' | translate"
                                [isEnable]="otp.length<6"
                                [width]="200"
                                [height]="41"

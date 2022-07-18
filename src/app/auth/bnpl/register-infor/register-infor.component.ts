@@ -24,6 +24,7 @@ export class RegisterInforComponent implements OnInit {
     registerForm!: FormGroup;
     submitted = false;
     isCheckPhoneRef = false;
+    rotateNameIcon = '';
 
     cityFilteredOptions!: Observable<string[]>;
     districtFilteredOptions!: Observable<string[]>;
@@ -468,6 +469,7 @@ export class RegisterInforComponent implements OnInit {
                 this.f['ward'].setValue('');
             }
         })
+        this.rotateNameIcon = '';
 
     }
 
@@ -479,6 +481,7 @@ export class RegisterInforComponent implements OnInit {
                 this.f['ward'].setValue('');
             }
         })
+        this.rotateNameIcon = '';
     }
 
     onSelectedWard(ward: string) {
@@ -487,6 +490,7 @@ export class RegisterInforComponent implements OnInit {
                 this.selectedWard$.next(value)
             }
         })
+        this.rotateNameIcon = '';
     }
 
     onContinue() {
@@ -505,10 +509,10 @@ export class RegisterInforComponent implements OnInit {
             issueDate: new Date(issueDate),
             expirationDate: this.f['expiryDate'].value == "no"? null: new Date(expiryDate),
 
-            city: this.initCity.success ? this.initCity.city : this.f['city'].value,
-            district: this.initDistrict.success ? this.initDistrict.district : this.f['district'].value,
-            ward: this.initWard.success ? this.initWard.ward : this.f['ward'].value,
-            street: this.initStreet.success ? this.initStreet.street : this.f['street'].value,
+            city: this.f['city'].value,
+            district: this.f['district'].value,
+            ward: this.f['ward'].value,
+            street: this.f['street'].value,
 
             temporaryCity: this.f['cityTemp'].value,
             temporaryDistrict: this.f['districtTemp'].value,
@@ -574,6 +578,7 @@ export class RegisterInforComponent implements OnInit {
                 this.f['wardTemp'].setValue('');
             }
         })
+        this.rotateNameIcon = '';
     }
 
     onSelectedDistrictTemp(district: string) {
@@ -584,6 +589,7 @@ export class RegisterInforComponent implements OnInit {
                 this.f['wardTemp'].setValue('');
             }
         })
+        this.rotateNameIcon = '';
     }
 
     onSelectedWardTemp(ward: string) {
@@ -592,6 +598,7 @@ export class RegisterInforComponent implements OnInit {
                 this.selectedWardTemp$.next(value)
             }
         })
+        this.rotateNameIcon = '';
     }
 
     keyPressName(e: any) {
@@ -600,5 +607,13 @@ export class RegisterInforComponent implements OnInit {
         if (!pattern.test(inputChar)) {
             e.preventDefault();
         }
+    }
+
+    rotateIcon(nameField: string) {
+        this.rotateNameIcon = nameField;
+    }
+
+    onSelectedRelation() {
+        this.rotateNameIcon = '';
     }
 }

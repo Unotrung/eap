@@ -23,7 +23,7 @@ export class ForgotPasswordComponent implements OnInit {
   });
 
   validateMessage=[
-      {type: 'required', message: this.translateService.instant('forgotPass.required')},
+      {type: 'required', message: this.translateService.instant('login.msgEmptyPhone')},
       {type: 'pattern', message: this.translateService.instant('forgotPass.pattern')}];
 
   isExist:boolean = true;

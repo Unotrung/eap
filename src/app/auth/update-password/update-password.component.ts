@@ -92,7 +92,9 @@ export class UpdatePasswordComponent implements OnInit {
   openDialogStatus() {
     const dialogRef = this.dialog.open(DialogStatusUpdateComponent, {
       width: '100%',
-      data : {isStatus: true, messageStatus: this.translateService.instant("updatePassword.status")},
+      data : {isStatus: true,
+        messageStatus: this.translateService.instant("updatePassword.status"),
+        messageStatusMobile: this.translateService.instant("updatePassword.statusMobile")},
       panelClass: ['animate__animated','animate__zoomIn','animate__faster', 'stt__update']
     });
 

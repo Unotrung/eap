@@ -28,6 +28,10 @@ export class InformationBnplComponent implements OnInit {
         districtData:{},
         wardData:{},
         street:'',
+        cityTempData:{},
+        districtTempData:{},
+        wardTempData:{},
+        temporaryStreet:'',
         personalTitleRef:{},
         name_ref:'',
         phone_ref:''

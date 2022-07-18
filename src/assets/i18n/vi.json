@@ -25,7 +25,7 @@
 		"sttNoteSuf": " để được hỗ trợ.",
 		"tryAgain": "Thử lại",
 		"validWrong": "Mã PIN không trùng khớp",
-		"validOverlap": "Mã PIN mới trùng với mã PIN cũ"
+		"validOverlap": "Mã PIN mới phải khác mã PIN hiện tại"
 	},
 	"provider": {
 		"title": "Chọn nhà cung cấp BNPL",
@@ -67,11 +67,11 @@
 		"expiryDate": "Ngày hết hạn",
 		"inforAddress": "Địa chỉ hiện tại",
 		"city": "Thành phố",
-		"validCity": "Vui lòng nhập thành phố",
+		"validCity": "Vui lòng nhập thành phố, tỉnh",
 		"district": "Quận/Huyện",
-		"validDistrict": "Vui lòng nhập Quận/Huyện",
+		"validDistrict": "Vui lòng nhập quận, huyện",
 		"ward": "Phường/Xã",
-		"validWard": "Vui lòng nhập tên phường/xã",
+		"validWard": "Vui lòng nhập phường, xã",
 		"street": "Đường",
 		"validStreet": "Vui lòng nhập tên đường",
 		"validExpiryDate" : "Vui lòng nhập ngày hết hạn",
@@ -81,10 +81,10 @@
 		"titleRef": "Mối quan hệ",
 		"validTitleRef": "Vui lòng nhập mối quan hệ",
 		"nameRef": "Họ và tên",
-		"validNameRef": "Vui lòng nhập họ và tên",
+		"validNameRef": "Vui lòng nhập họ tên",
 		"phoneRef": "Số điện thoại",
 		"validPhoneRef": "Vui lòng nhập số điện thoại",
-		"validPhoneRefPattern": "Số điện thoại không hợp lệ",
+		"validPhoneRefPattern": "Định dạng số điện thoại không hợp lệ",
 		"validPhoneRefOverlap": "Số điện thoại tham chiếu trùng số điện thoại đăng ký",
 		"face": {
 			"faceCaptureTitle": "Chụp ảnh chân dung",
@@ -285,6 +285,7 @@
 	},
 	"updatePassword": {
 		"status": "Cập nhật mật khẩu thành công",
+		"statusMobile": "Cập nhật mật khẩu<br/> thành công",
 		"title": "Thay đổi Mật Khẩu",
 		"oldPass": "Mật khẩu cũ",
 		"newPass": "Mật khẩu mới",

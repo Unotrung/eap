@@ -40,7 +40,7 @@
                                 <div class="info-title">{{'kyc.birthday' | translate}}</div>
                                 <input class="narrow-input-info" appMarginTop="8" type="text"
                                        formControlName="birthday"
-                                placeholder="dd/mm/yyyy">
+                                       placeholder="dd/mm/yyyy">
                                 <div class="error"></div>
                             </div>
                             <div></div>
@@ -205,14 +205,19 @@
                                        [ngClass]="{'is-invalid': (f['city'].touched || f['city'].dirty) && f['city'].errors}"
                                        appMarginTop="8"
                                        matInput
+                                       (focusin)="rotateIcon('city')"
+                                       (focusout)="rotateNameIcon = ''"
                                        formControlName="city"
-                                       [matAutocomplete]="autoCity">
+                                       [matAutocomplete]="autoCity"
+                                       placeholder="Chọn thành phố/tỉnh">
                                 <mat-autocomplete autoActiveFirstOption #autoCity="matAutocomplete"
                                                   (optionSelected)="onSelectedCity($event.option.value)">
                                     <mat-option *ngFor="let option of cityFilteredOptions | async" [value]="option">
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
+                                <img [class.icon-rotate]="rotateNameIcon === 'city'"
+                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -228,15 +233,20 @@
                                        [ngClass]="{'is-invalid': (f['district'].touched || f['district'].dirty) && f['district'].errors}"
                                        appMarginTop="8"
                                        matInput
+                                       (focusin)="rotateIcon('district')"
+                                       (focusout)="rotateNameIcon = ''"
                                        formControlName="district"
                                        onClick="this.setSelectionRange(0, this.value.length)"
-                                       [matAutocomplete]="autoDistrict">
+                                       [matAutocomplete]="autoDistrict"
+                                       placeholder="Chọn quận/huyện">
                                 <mat-autocomplete autoActiveFirstOption #autoDistrict="matAutocomplete"
                                                   (optionSelected)="onSelectedDistrict($event.option.value)">
                                     <mat-option *ngFor="let option of districtFilteredOptions | async" [value]="option">
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
+                                <img [class.icon-rotate]="rotateNameIcon === 'district'"
+                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -254,16 +264,21 @@
                                 <input class="narrow-input-info-2" appMarginTop="8" type="text"
                                        [ngClass]="{'is-invalid': (f['ward'].touched || f['ward'].dirty) && f['ward'].errors}"
                                        appMarginTop="8"
+                                       (focusin)="rotateIcon('ward')"
+                                       (focusout)="rotateNameIcon = ''"
                                        matInput
                                        formControlName="ward"
                                        onClick="this.setSelectionRange(0, this.value.length)"
-                                       [matAutocomplete]="autoWard">
+                                       [matAutocomplete]="autoWard"
+                                       placeholder="Chọn phường/xã">
                                 <mat-autocomplete autoActiveFirstOption #autoWard="matAutocomplete"
                                                   (optionSelected)="onSelectedWard($event.option.value)">
                                     <mat-option *ngFor="let option of wardFilteredOptions | async" [value]="option">
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
+                                <img [class.icon-rotate]="rotateNameIcon === 'ward'"
+                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -300,15 +315,20 @@
                                 <input class="input-info" type="text"
                                        [ngClass]="{'is-invalid': (f['cityTemp'].touched || f['cityTemp'].dirty) && f['cityTemp'].errors}"
                                        appMarginTop="8"
+                                       (focusin)="rotateIcon('cityTemp')"
+                                       (focusout)="rotateNameIcon = ''"
                                        matInput
                                        formControlName="cityTemp"
-                                       [matAutocomplete]="autoCityTemp">
+                                       [matAutocomplete]="autoCityTemp"
+                                       placeholder="Chọn thành phố/tỉnh">
                                 <mat-autocomplete autoActiveFirstOption #autoCityTemp="matAutocomplete"
                                                   (optionSelected)="onSelectedCityTemp($event.option.value)">
                                     <mat-option *ngFor="let option of cityFilteredOptionsTemp | async" [value]="option">
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
+                                <img [class.icon-rotate]="rotateNameIcon === 'cityTemp'"
+                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -323,10 +343,13 @@
                                 <input class="narrow-input-info-2" appMarginTop="8" type="text"
                                        [ngClass]="{'is-invalid': (f['districtTemp'].touched || f['districtTemp'].dirty) && f['districtTemp'].errors}"
                                        appMarginTop="8"
+                                       (focusin)="rotateIcon('districtTemp')"
+                                       (focusout)="rotateNameIcon = ''"
                                        matInput
                                        formControlName="districtTemp"
                                        onClick="this.setSelectionRange(0, this.value.length)"
-                                       [matAutocomplete]="autoDistrictTemp">
+                                       [matAutocomplete]="autoDistrictTemp"
+                                       placeholder="chọn quận/huyện">
                                 <mat-autocomplete autoActiveFirstOption #autoDistrictTemp="matAutocomplete"
                                                   (optionSelected)="onSelectedDistrictTemp($event.option.value)">
                                     <mat-option *ngFor="let option of districtFilteredOptionsTemp | async"
@@ -334,6 +357,8 @@
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
+                                <img [class.icon-rotate]="rotateNameIcon === 'districtTemp'"
+                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -351,16 +376,21 @@
                                 <input class="narrow-input-info-2" appMarginTop="8" type="text"
                                        [ngClass]="{'is-invalid': (f['wardTemp'].touched || f['wardTemp'].dirty) && f['wardTemp'].errors}"
                                        appMarginTop="8"
+                                       (focusin)="rotateIcon('wardTemp')"
+                                       (focusout)="rotateNameIcon = ''"
                                        matInput
                                        formControlName="wardTemp"
                                        onClick="this.setSelectionRange(0, this.value.length)"
-                                       [matAutocomplete]="autoWardTemp">
+                                       [matAutocomplete]="autoWardTemp"
+                                       placeholder="Chọn phường/xã">
                                 <mat-autocomplete autoActiveFirstOption #autoWardTemp="matAutocomplete"
                                                   (optionSelected)="onSelectedWardTemp($event.option.value)">
                                     <mat-option *ngFor="let option of wardFilteredOptionsTemp | async" [value]="option">
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
+                                <img [class.icon-rotate]="rotateNameIcon === 'wardTemp'"
+                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -395,15 +425,18 @@
                             </div>
                             <div style="position: relative">
                                 <input class="input-info" type="text"
-                                       (keydown)="true"
+                                       (keydown)="false"
                                        [ngClass]="{'is-invalid': (f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors}"
                                        appMarginTop="8"
+                                       (focusin)="rotateIcon('relation')"
+                                       (focusout)="rotateNameIcon = ''"
                                        matInput
                                        formControlName="personal_title_ref"
                                        onClick="this.setSelectionRange(0, this.value.length)"
                                        [matAutocomplete]="autoPersonalTitle">
                                 <div>
-                                    <mat-autocomplete autoActiveFirstOption #autoPersonalTitle="matAutocomplete">
+                                    <mat-autocomplete autoActiveFirstOption #autoPersonalTitle="matAutocomplete"
+                                                      (optionSelected)="onSelectedRelation()">
                                         <mat-option
                                                 *ngFor="let option of personalTitleOptions, let i = index"
                                                 [value]="lang == 'en' ? personalTitleOptionsEn[i] : (option.Text)">
@@ -411,6 +444,8 @@
                                         </mat-option>
                                     </mat-autocomplete>
                                 </div>
+                                <img [class.icon-rotate]="rotateNameIcon === 'relation'"
+                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
 
