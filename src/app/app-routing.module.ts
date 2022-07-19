@@ -44,8 +44,6 @@ import {HomePayooNoNidComponent} from "./fast-payment/home-payoo-no-nid/home-pay
 
 const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: '#customer', component: HomeComponent},
-    {path: '#partner', component: HomeComponent},
     {path: 'register-from-bnpl/:name/:phone', component: HomeComponent},
     {path: 'reset-password-from-admin/:phoneAdmin', component: HomeComponent},
     {path: '', component: HomeComponent, canActivate: [AuthGuard]},

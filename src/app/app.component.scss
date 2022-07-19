@@ -16,7 +16,7 @@ app-navbar {
   width: 100%;
   max-width: 1512px;
   margin:auto;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 90px);
   height: auto;
   display: flex;
   flex-direction: row;
@@ -33,7 +33,7 @@ app-navbar {
 
 .right-content {
   width: 100%;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 90px);
   @media screen and(max-width: 480px){
     min-height: calc(100vh - 72px);
   }

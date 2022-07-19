@@ -1,7 +1,7 @@
-<div class="title-infor hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
-<div class="container-right-body">
-        <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
-        <div *ngIf="!loading">
+<div class="title-infor-bnpl hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
+<div class="container-right-body-bnpl">
+        <div class="title-infor-bnpl hidden-480">{{'inforBnpl.title' | translate}}</div>
+        <div>
             <div class="top-content format-box">
                 <div class="top-title f-18 f-bold">{{'inforBnpl.infoPersion' | translate}}</div>
                 <div class="top-detail height-box-top">
@@ -62,23 +62,6 @@
                     </div>
                 </div>
             </div>
-<!--          <div class="infor-bnpl">-->
-<!--            <form>-->
-<!--              <div class="name-input">{{'inforBnpl.fullName' | translate}}</div>-->
-<!--              <div class="detai-infor">-->
-<!--                <input readonly class="content" type="text" [value]="userBnpl.name"/>-->
-<!--              </div>-->
-<!--              <div class="name-input">{{'inforBnpl.phone' | translate}}</div>-->
-<!--              <div class="detai-infor">-->
-<!--                <input readonly class="content" type="text" [value]="userBnpl.phone"/>-->
-<!--              </div>-->
-<!--              <div class="name-input">{{'inforBnpl.email' | translate}}</div>-->
-<!--              <div class="detai-infor">-->
-<!--                <input readonly class="content" type="text" [value]="userBnpl.email"/>-->
-<!--              </div>-->
-<!--            </form>-->
-<!--          </div>-->
-
           <div>
             <div class="cover-btn-edit">
               <button style=" " class="btn-edit bgr-btn-black"
@@ -94,8 +77,8 @@
             </div>
           </div>
         </div>
-        <div class="loading" *ngIf="loading">
-          <app-loading></app-loading>
-        </div>
+<!--        <div class="loading" *ngIf="loading">-->
+<!--          <app-loading></app-loading>-->
+<!--        </div>-->
 </div>
 

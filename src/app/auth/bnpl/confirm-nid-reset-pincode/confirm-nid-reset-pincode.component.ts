@@ -55,6 +55,7 @@ export class ConfirmNidResetPincodeComponent implements OnInit {
             }
         }, error => {
             this.resetMsg();
+            console.log(error)
             if (error.error.statusCode == 1001) {
                 this.messageError = this.translateService.instant('forgotPin.nidWrong')
             } else if (error.error.statusCode == 1002) {

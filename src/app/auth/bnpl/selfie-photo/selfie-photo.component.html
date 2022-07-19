@@ -1,6 +1,6 @@
 <div class="container-right-body">
-    <div class="title-infor" *ngIf="!isShowGuide">{{'selfie.labelTakePhoto' | translate}}</div>
-    <div class="title-infor hidden-480" *ngIf="isShowGuide"
+    <div class="title-infor-selfie" *ngIf="!isShowGuide">{{'selfie.labelTakePhoto' | translate}}</div>
+    <div class="title-infor-selfie hidden-480" *ngIf="isShowGuide"
          [innerHTML]="'selfie.titleGuideBig'|translate"></div>
 
     <div *ngIf="!isShowGuide" fxLayout="column" class="container-selfie">

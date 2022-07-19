@@ -123,11 +123,13 @@ export class RegisterInforComponent implements OnInit {
     }
 
     ngOnInit() {
+        setTimeout(()=>{
+            this.initFormInfo();
+        },0)
         this.languageService.lang$.subscribe(x => this.lang = x);
-        // if (this.authService.step$.getValue() === 0) {
-        //     this.router.navigate(['/infor-bnpl']);
-        // }
-        this.initFormInfo();
+        if (this.authService.step$.getValue() === 0) {
+            this.router.navigate(['/infor-bnpl']);
+        }
     }
 
     async getAllRelationship(): Promise<any> {
@@ -158,18 +160,18 @@ export class RegisterInforComponent implements OnInit {
                 this.checkInfo(citizenFrontData['gender']).value === 'M' ? 'Nam' : ''
         }
         if ('dob' in citizenFrontData) {
-            this.birthday = birthday = this.handleStringDate(this.convertDateString(this.checkInfo(citizenFrontData['dob']).value))
+            this.birthday = birthday = this.handleStringDate(this.checkInfo(citizenFrontData['dob']).value)
 
         }
         if ('doi' in citizenBackData) {
-            this.issueDay = issueDay = this.handleStringDate(this.convertDateString(this.checkInfo(citizenBackData['doi']).value))
+            this.issueDay = issueDay = this.handleStringDate(this.checkInfo(citizenBackData['doi']).value)
         }
         this.isShowExpiryDate = ('doe' in citizenFrontData);
         if (!this.isShowExpiryDate) {
             this.expiryDay = expiryDay = "no"
         } else {
-            if (this.convertDateString(this.checkInfo(citizenFrontData['doe']).value)) {
-                this.expiryDay = expiryDay = this.handleStringDate(this.convertDateString(this.checkInfo(citizenFrontData['doe']).value))
+            if (this.checkInfo(citizenFrontData['doe']).value) {
+                this.expiryDay = expiryDay = this.handleStringDate(this.checkInfo(citizenFrontData['doe']).value)
             } else  {
                 expiryDay = '';
             }
@@ -558,7 +560,7 @@ export class RegisterInforComponent implements OnInit {
 
     handleStringDate(date: string): string {
         let arrayTemp = date.split("-");
-        let newString = arrayTemp[2]+"/"+arrayTemp[1]+"/"+arrayTemp[0];
+        let newString = arrayTemp[0]+"/"+arrayTemp[1]+"/"+arrayTemp[2];
         return newString
     }
 

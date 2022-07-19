@@ -9,8 +9,11 @@
   <div *ngIf = "!isErrorRegister" class="title-status">{{'register.titleSttTrue' | translate}}</div>
   <div *ngIf = "isErrorRegister" class="title-status">{{'register.titleSttFalse' | translate}}</div>
 
-  <div class="auto-login-note">
+  <div class="auto-login-note" *ngIf = "!isErrorRegister">
     {{'register.autoLogin' | translate}} {{countDown}}s
+  </div>
+  <div class="auto-login-note" *ngIf = "isErrorRegister">
+    Bấm vào <a href="/">đây</a> để quay đăng ký lại
   </div>
   <app-item-close-dialog class="close-popup" (click)="onNoClick()"></app-item-close-dialog>
 </div>

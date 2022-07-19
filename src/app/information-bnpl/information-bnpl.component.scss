@@ -1,6 +1,5 @@
 
-
-.container-right-body {
+.container-right-body-bnpl {
   min-height: 86vh;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
@@ -10,18 +9,16 @@
   padding-bottom: 40px;
   margin-bottom: 40px;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
-  position: relative;
   @media screen and(max-width: 480px){
     padding: 0px;
     background: rgba(255, 255, 255, 0);
     min-height: auto;
-    margin-right: 0px;
+    margin: 0 20px 4px 20px;
     box-shadow: unset;
-    margin-bottom: 4px;
   }
 }
 
-.title-infor {
+.title-infor-bnpl {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -36,11 +33,11 @@
   @media screen and(max-width: 480px){
     font-size: 20px;
     line-height: 24px;
-    margin-left: -20px;
-    border-bottom: none;
-    padding-bottom: 0px;
-    margin-top: 20px;
-    height: auto;
+    border-bottom: hidden;
+    height: 24px;
+    margin: 20px;
+    padding: 0;
+    display: block;
   }
 }
 
@@ -79,24 +76,6 @@
   font-family: 'Montserrat Alternates', sans-serif;
   margin-bottom: 16px;
   margin-top: 22px;
-}
-
-.edit-icon {
-  cursor: pointer;
-  position: absolute;
-  right: 17.5px;
-  top: 16.5px;
-  width: 21px;
-  height: 21px;
-}
-
-.complete-icon {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: 12.5px;
-  top: 15px;
 }
 
 .loading {
@@ -192,7 +171,7 @@
   margin-top: 67px !important;
   @media screen and(max-width: 480px){
     height: 430px;
-    margin-top: 20px !important;
+    margin-top: unset !important;
   }
 }
 
@@ -203,7 +182,6 @@
   border-radius: 10px;
   @media screen and(max-width: 480px){
     width: auto;
-    margin: 0 20px;
     background: #ffffff;
     border-radius: 15px;
   }

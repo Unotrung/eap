@@ -218,6 +218,10 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  img {
+    width: 18px;
+    height: 20px;
+  }
 }
 
 .profile {
@@ -295,6 +299,7 @@ a:hover {
   color: #2F172A;
   padding-left: 24px;
   .icon-show {
+    width: 30px;
     height: auto;
     margin-right: 16px;
   }

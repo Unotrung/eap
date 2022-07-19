@@ -37,8 +37,6 @@ export class InformationBnplComponent implements OnInit {
         phone_ref:''
     };
     loading:boolean = false;
-    listProvider = [];
-    nid: string = '';
 
     constructor(
         private authenticationService: AuthenticationService,
@@ -59,15 +57,12 @@ export class InformationBnplComponent implements OnInit {
 
     getInformationBnpl() {
         this.loading = true;
-        let email = this.authenticationService.userCurrentSubject$.getValue().email;
         let phone = this.authenticationService.userCurrentSubject$.getValue().phone;
         this.accountBnplService.getInformationBnpl(phone).subscribe(next=>{
             if (next.status){
                 console.log("bnpl info: ", next.data)
                 this.authenticationService.step$.next(0);
                 this.userBnpl = {...next.data};
-                this.listProvider = next.data.providers;
-                this.nid = next.data.citizenId;
                 this.loading = false;
             }
         },error => {
@@ -103,15 +98,15 @@ export class InformationBnplComponent implements OnInit {
     }
 
     getListProvider() {
-        console.log(this.listProvider);
-        const dialogRef = this.dialog.open(GetProvidersComponent, {
-            width: '100%',
-            data: {listProviders: this.listProvider,nid: this.nid},
-            panelClass: ['animate__animated', 'animate__zoomIn','animate__faster', 'get-provider-animate']
-        });
-
-        dialogRef.afterClosed().subscribe(result => {
-        });
+        // console.log(this.listProvider);
+        // const dialogRef = this.dialog.open(GetProvidersComponent, {
+        //     width: '100%',
+        //     data: {listProviders: this.listProvider,nid: this.nid},
+        //     panelClass: ['animate__animated', 'animate__zoomIn','animate__faster', 'get-provider-animate']
+        // });
+        //
+        // dialogRef.afterClosed().subscribe(result => {
+        // });
     }
 
     changePin() {
