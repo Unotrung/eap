@@ -156,14 +156,13 @@
                 <div class="name-language"
                      (click)="selectLanguage(lg,$event)"
                      *ngFor="let lg of supportLanguage, let i = index"
-                     [style]="!isChanged&&i==0?'background: #ffffff !important;font-weight: 400 !important;':null"
                      [class.shadow-bt]="i==0"
                      [class.divTop]="i==0"
                      [class.divBottom]="i==supportLanguage.length-1"
                      [class.choose-bgr]="langChoose===listShowLanguage[i]"
                      (mouseover)="changeHover(lg)"
-                     (mouseleave)="isChanged = true"
-                     [id]="i">
+                     (mouseleave)="isChanged = false"
+                     [class.choose-bgr-unset]="isChanged">
                     {{listShowLanguage[i]}}
                 </div>
             </div>

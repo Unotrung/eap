@@ -904,12 +904,21 @@
   }
   
   .choose-bgr {
-      background: #F0F0F0 !important;
-      font-weight: 600 !important;
+      background: #F0F0F0;
+      font-weight: 600;
+  }
+
+  .choose-bgr-unset {
+      background: unset;
+      font-weight: unset;
   }
   
   .divTop {
       border-radius: 10px 10px 0px 0px;
+  }
+
+  .shadow-bt {
+      box-shadow: inset 0px -1px 0px #E4E4E4;
   }
   
   .divBottom {

@@ -179,7 +179,7 @@ export class HomeComponent implements OnInit {
 
         if (this.authenticationService.currentAccessTokenValue) {
 
-            this.router.navigate(['/auth']);
+            // this.router.navigate(['/auth']);
         }
         if (window.innerWidth > 960) {
             this.slidesPerView = 4;

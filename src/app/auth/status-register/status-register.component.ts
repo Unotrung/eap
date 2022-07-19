@@ -62,7 +62,7 @@ export class StatusRegisterComponent implements OnInit {
                 this.authenticationService.userCurrentSubject$.next(user);
                 this.authenticationService.refreshTokenSubject$.next(res.data.refreshToken);
                 this.dialog.closeAll();
-                this.router.navigateByUrl('/auth');
+                this.router.navigateByUrl('/');
                 this.loading = false;
             }
         }, error => {

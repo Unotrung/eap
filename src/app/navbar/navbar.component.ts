@@ -92,6 +92,7 @@ export class NavbarComponent implements OnInit {
             this.authenticationService.currentAccessToken$.subscribe(x => {
                 this.currentAccessToken = x;});
             this.sidebarService.isShowSidebar$.subscribe(x=>{this.isShowSidebar =x});
+            this.authenticationService.currentItemMenu$.subscribe(x=>this.currentItem = x);
         },0)
     }
 

@@ -82,7 +82,8 @@ export class LoginComponent implements OnInit {
                     this.authenticationService.userCurrentSubject$.next(<User>user);
                     this.authenticationService.refreshTokenSubject$.next(res.data.refreshToken);
                     this.sidebarService.isShowMenu$.next(false);
-                    this.router.navigate(['/auth']).then();
+                    this.authenticationService.itemMenu$.next(1);
+                    this.router.navigate(['/']).then();
                     this.dialogRef.close();
                     this.loading = false;
                 }
