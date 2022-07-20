@@ -60,6 +60,7 @@ export class NavbarComponent implements OnInit {
     @ViewChild('menuProfile') menuProfile: ElementRef;
     currentItem: number = 1;
     isShowSidebar = true;
+    isShowNoteMobile: boolean = false;
 
     constructor(
         private router: Router,
@@ -173,6 +174,7 @@ export class NavbarComponent implements OnInit {
     }
 
     showAllNotification() {
-        this.router.navigate(['/all-note'])
+        this.isShowNoteMobile = !this.isShowNoteMobile
+        // this.router.navigate(['/all-note'])
     }
 }

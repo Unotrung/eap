@@ -1,0 +1,16 @@
+<div class="container-note-mobile">
+  <div class="item-box" style="height: 5px; padding: 0px; box-shadow: inset 0px -6px 0px #e4e4e7;"></div>
+  <div *ngFor="let note of listNote, let i = index">
+    <div class="item-box">
+      <div class="content-mobile">{{note.content}}</div>
+      <button class="btn-mobile"
+              [class.dd]="note.type === 'GIAO DỊCH'"
+              [class.mgg]="note.type === 'MÃ GIẢM GIÁ'"
+              [class.tt]="note.type === 'TIN TỨC'"
+              [class.tht]="note.type === 'THANH TOÁN'">
+        {{note.type}}
+      </button>
+    </div>
+  </div>
+
+</div>

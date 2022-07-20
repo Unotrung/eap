@@ -391,6 +391,17 @@ app-notification-dropdown {
   top: 50px;
 }
 
+app-notification-mobile {
+  z-index: 1;
+  position: absolute;
+  left: 0px;
+  top: 72px;
+  min-height: 90vh;
+  height: 86vmax;
+  width: 100%;
+  overflow: auto;
+}
+
 .box-icon-mobile {
   display: flex;
   align-items: center;

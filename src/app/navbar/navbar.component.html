@@ -71,10 +71,11 @@
         </div>
     </div>
     <!--    icon-mobile-->
-    <div *ngIf="currentAccessToken != null" class="hidden-lager-screen box-icon-mobile">
+    <div  *ngIf="currentAccessToken != null" class="hidden-lager-screen box-icon-mobile">
         <img (click)="showAllNotification()" class="bell" src="../../assets/images/bell.png">
         <img (click)="showProfileUser()" class="icon-pro" src="../../assets/images/profile-mobile.png">
     </div>
+    <app-notification-mobile class="hidden-lager-screen" [hidden]="!isShowNoteMobile"></app-notification-mobile>
 </div>
 
 
