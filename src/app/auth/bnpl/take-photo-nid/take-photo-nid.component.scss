@@ -202,22 +202,14 @@
       height: auto;
     }
   }
+}
 
-  div .icon-dell {
-    position: absolute;
-    bottom: -11px;
-    right: 33px;
-    cursor: pointer;
-  }
-
-  div .icon-tick {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    bottom: -29px;
-    right: -10px;
-    cursor: pointer;
-  }
+.icon-tick-nid {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: -3px;
+  right: -7px;
 }
 
 .citizen-image-text {

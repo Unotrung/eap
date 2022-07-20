@@ -30,9 +30,9 @@ export class TakePhotoNidComponent implements OnInit {
 
     ngOnInit() {
         this.pictureService.clearDataNid();
-        if (this.authService.step$.getValue() === 0) {
-            this.router.navigate(['/infor-bnpl']);
-        }
+        // if (this.authService.step$.getValue() === 0) {
+        //     this.router.navigate(['/infor-bnpl']);
+        // }
     }
 
     onCaptureCitizenCard() {
