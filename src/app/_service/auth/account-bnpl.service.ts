@@ -35,6 +35,10 @@ export class AccountBnplService {
         return this.http.post(`${this.api_url_register_bnpl}user/sendOtpPin`, data);
     }
 
+    checkNidAndPhone(data: any): Observable<any> {
+        return this.http.post(`${this.api_url_register_bnpl}user/checkNidPhoneExists`, data);
+    }
+
     verifyOtp(data: any): Observable<any> {
         return this.http.post(`${this.api_url_register_bnpl}user/verifyOtpPin`, data);
     }
