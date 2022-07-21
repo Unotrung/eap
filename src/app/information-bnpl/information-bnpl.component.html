@@ -1,7 +1,7 @@
 <div class="title-infor-bnpl hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
 <div class="container-right-body-bnpl">
         <div class="title-infor-bnpl hidden-480">{{'inforBnpl.title' | translate}}</div>
-        <div>
+        <div *ngIf = "!loading">
             <div class="top-content format-box">
                 <div class="top-title f-18 f-bold">{{'inforBnpl.infoPersion' | translate}}</div>
                 <div class="top-detail height-box-top">
@@ -77,8 +77,8 @@
             </div>
           </div>
         </div>
-<!--        <div class="loading" *ngIf="loading">-->
-<!--          <app-loading></app-loading>-->
-<!--        </div>-->
+        <div class="loading" *ngIf="loading">
+          <app-loading></app-loading>
+        </div>
 </div>
 

@@ -261,10 +261,10 @@ export class PictureService {
             this.base64citizenFrontImage$.next(image);
             this.citizenFrontImageComplete$.next(true);
             this.citizenFrontData$.next(data);
-            // if (!this.verifyNidAndFrontImage()) {
-            //     return
-            // }
-            // this.verifyMatchImage()
+            if (!this.verifyNidAndFrontImage()) {
+                return
+            }
+            this.verifyMatchImage()
         }
         if (side === NCardSide.back) {
             this.citizenBackImage = image;

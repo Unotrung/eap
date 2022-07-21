@@ -249,12 +249,17 @@ export class HomeComponent implements OnInit {
     }
 
     registerVoolo() {
-        const dialogRef = this.dialog.open(RegisterComponent, {
-            width: '100%',
-            panelClass: ['animate__animated', 'animate__zoomIn', 'animate__faster', 'animate__register']
-        });
+        if (this.authenticationService.currentAccessTokenValue) {
+            return
+        } {
+            const dialogRef = this.dialog.open(RegisterComponent, {
+                width: '100%',
+                panelClass: ['animate__animated', 'animate__zoomIn', 'animate__faster', 'animate__register']
+            });
 
-        dialogRef.afterClosed().subscribe(result => {
-        });
+            dialogRef.afterClosed().subscribe(result => {
+            });
+        }
+
     }
 }

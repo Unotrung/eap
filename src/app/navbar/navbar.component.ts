@@ -110,6 +110,7 @@ export class NavbarComponent implements OnInit {
     showProfileUser() {
         setTimeout(() => {
             this.showBtnProfile = false;
+            this.isShowNoteMobile = false
         }, 0)
         this.sidebarService.itemSelectObject$.next('');
         this.router.navigate(["/infor-account"]).then();
@@ -147,6 +148,7 @@ export class NavbarComponent implements OnInit {
 
     onShowMenu(e: any) {
         e.stopPropagation();
+        this.isShowNoteMobile = false;
         this.sidebarService.isShowMenu$.next(true);
         this.sidebarService.heightMenu$.next(100)
     }
@@ -165,6 +167,7 @@ export class NavbarComponent implements OnInit {
     }
 
     onShowMenuAfterAuth(e: any) {
+        this.isShowNoteMobile = false
         e.stopPropagation();
         if (this.sidebarService.heightSidebar$.getValue()==100){
             this.sidebarService.heightSidebar$.next(0)
