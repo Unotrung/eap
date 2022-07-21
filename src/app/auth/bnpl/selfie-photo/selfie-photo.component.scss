@@ -20,7 +20,7 @@
   }
 }
 
-.title-infor {
+.title-infor-selfie {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -222,6 +222,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   .img-small {
     width: auto;

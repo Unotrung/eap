@@ -1,7 +1,7 @@
 <div class="form-login-container" id="get-otp">
     <div class="title-otp">{{'register.inputOtp' | translate}}</div>
     <div class="note-send">
-        {{'register.noteOtp' | translate}} <span style="font-weight: bold">{{registerUSer.email | emailStyle}}</span>
+        {{'register.noteOtp' | translate}} <span style="font-weight: 700">{{registerUSer.email | emailStyle}}</span>
     </div>
     <div>
         <div class="cover-input-pin">
@@ -11,19 +11,18 @@
                         (codeChanged)="onCodeChanged($event)"
                         (codeCompleted)="onCodeCompleted($event)">
             </code-input>
-            <div class="under-input">
-                <div *ngIf="messageErr != '' && countFail < 5" class="err">
-                    {{messageErr | translate}} <span *ngIf="countFail<5">({{countFail}}/5)</span>
-                </div>
-                <div *ngIf="messageErr != '' && countFail===5" class="err">
-                    {{messageErr | translate}}
-                </div>
-                <div *ngIf="messageErrExp != ''" class="err">
-                    {{messageErrExp | translate}}
-                </div>
+        </div>
+        <div class="under-input">
+            <div *ngIf="messageErr != '' && countFail < 5" class="err">
+                {{messageErr | translate}} <span *ngIf="countFail<5">({{countFail}}/5)</span>
+            </div>
+            <div *ngIf="messageErr != '' && countFail===5" class="err">
+                {{messageErr | translate}}
+            </div>
+            <div *ngIf="messageErrExp != ''" class="err">
+                {{messageErrExp | translate}}
             </div>
         </div>
-
         <div *ngIf = "!isCancel">
             <app-button-dialog class="hidden-480" [contentBtn]="'register.button'|translate"
                                [isEnable]="otp.length<6"

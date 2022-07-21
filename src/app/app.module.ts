@@ -99,6 +99,7 @@ import {SidebarMobileComponent} from "./sidebar-mobile/sidebar-mobile.component"
 import {HomePayooNoNidComponent} from "./fast-payment/home-payoo-no-nid/home-payoo-no-nid.component";
 import {WaitingConfirmSignContractComponent} from "./auth/bnpl/waiting-confirm-sign-contract/waiting-confirm-sign-contract.component";
 import {StatusCompleteComponent} from "./auth/bnpl/status-complete/status-complete.component";
+import {NotificationMobileComponent} from "./notification/notification-mobile/notification-mobile.component";
 
 // @ts-ignore
 @NgModule({
@@ -179,7 +180,8 @@ import {StatusCompleteComponent} from "./auth/bnpl/status-complete/status-comple
         SidebarMobileComponent,
         HomePayooNoNidComponent,
         WaitingConfirmSignContractComponent,
-        StatusCompleteComponent
+        StatusCompleteComponent,
+        NotificationMobileComponent
     ],
     entryComponents: [],
     imports: [

@@ -1,7 +1,7 @@
-<div class="title-infor hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
-<div class="container-right-body">
-        <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
-        <div *ngIf="!loading">
+<div class="title-infor-bnpl hidden-lager-screen">{{'inforBnpl.title' | translate}}</div>
+<div class="container-right-body-bnpl">
+        <div class="title-infor-bnpl hidden-480">{{'inforBnpl.title' | translate}}</div>
+        <div *ngIf = "!loading">
             <div class="top-content format-box">
                 <div class="top-title f-18 f-bold">{{'inforBnpl.infoPersion' | translate}}</div>
                 <div class="top-detail height-box-top">
@@ -29,7 +29,7 @@
                         <div class="label-name f-14">{{'confirmInformation.makeDateNid' | translate}}</div>
                         <div class="detail-name f-14 f-bold-2">{{userBnpl.issueDate | dateStyle}}</div>
                     </div>
-                    <div class="row-content">
+                    <div *ngIf ="userBnpl.expirationDate !== null" class="row-content">
                         <div class="label-name f-14">{{'confirmInformation.expirationDate' | translate}}</div>
                         <div class="detail-name f-14 f-bold-2">{{userBnpl.expirationDate | dateStyle}}</div>
                     </div>
@@ -38,6 +38,11 @@
                         <div class="detail-name f-14 f-bold-2">{{userBnpl.street}}, {{userBnpl.wardData.UI_Show}},
                             {{userBnpl.districtData.UI_Show}}, {{userBnpl.cityData.UI_Show}}</div>
                     </div>
+                    <div class="row-content">
+                        <div class="label-name f-14">{{'confirmInformation.addressTemp' | translate}}</div>
+                        <div class="detail-name f-14 f-bold-2">{{userBnpl.temporaryStreet}}, {{userBnpl.wardTempData.UI_Show}},
+                            {{userBnpl.districtTempData.UI_Show}}, {{userBnpl.cityTempData.UI_Show}}</div>
+                    </div>
                 </div>
             </div>
             <div class="under-content format-box">
@@ -45,7 +50,7 @@
                 <div class="top-detail height-box-under">
                     <div class="row-content">
                         <div class="label-name f-14">{{'confirmInformation.personalRef' | translate}}</div>
-                        <div class="detail-name f-14 f-bold-2">{{userBnpl.personal_title_ref}}</div>
+                        <div class="detail-name f-14 f-bold-2">{{userBnpl.personalTitleRef.Text}}</div>
                     </div>
                     <div class="row-content">
                         <div class="label-name f-14">{{'confirmInformation.fullNameRef' | translate}}</div>
@@ -57,23 +62,6 @@
                     </div>
                 </div>
             </div>
-<!--          <div class="infor-bnpl">-->
-<!--            <form>-->
-<!--              <div class="name-input">{{'inforBnpl.fullName' | translate}}</div>-->
-<!--              <div class="detai-infor">-->
-<!--                <input readonly class="content" type="text" [value]="userBnpl.name"/>-->
-<!--              </div>-->
-<!--              <div class="name-input">{{'inforBnpl.phone' | translate}}</div>-->
-<!--              <div class="detai-infor">-->
-<!--                <input readonly class="content" type="text" [value]="userBnpl.phone"/>-->
-<!--              </div>-->
-<!--              <div class="name-input">{{'inforBnpl.email' | translate}}</div>-->
-<!--              <div class="detai-infor">-->
-<!--                <input readonly class="content" type="text" [value]="userBnpl.email"/>-->
-<!--              </div>-->
-<!--            </form>-->
-<!--          </div>-->
-
           <div>
             <div class="cover-btn-edit">
               <button style=" " class="btn-edit bgr-btn-black"

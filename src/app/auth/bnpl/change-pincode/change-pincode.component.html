@@ -15,9 +15,9 @@
                             (codeCompleted)="onCurrentCodeComplete($event)"
                             #codeInput3>
                 </code-input>
-                <div class="text-invalid">
-                    <label *ngIf="msgWrongPassword!==''">{{msgWrongPassword|translate}}</label>
-                </div>
+            </div>
+            <div class="text-invalid">
+                <label *ngIf="msgWrongPassword!==''">{{msgWrongPassword|translate}}</label>
             </div>
             <div class="lable-name">{{'changePin.newPin'|translate}}</div>
             <div class="cover-input-pin">
@@ -30,9 +30,9 @@
                             (codeCompleted)="onNewCodeCompleted($event)"
                             #codeInput2>
                 </code-input>
-                <div class="text-invalid">
-                    <label *ngIf="msgNewPinError!==''">{{msgNewPinError|translate}}</label>
-                </div>
+            </div>
+            <div class="text-invalid">
+                <label *ngIf="msgNewPinError!==''">{{msgNewPinError|translate}}</label>
             </div>
             <div class="lable-name">{{'changePin.verifyPin'|translate}}</div>
             <div class="cover-input-pin">
@@ -45,9 +45,9 @@
                             (codeCompleted)="onCodeCompletedVerify($event)"
                             #codeInput>
                 </code-input>
-                <div class="text-invalid">
-                    <label *ngIf="msgVerifyError!==''">{{msgVerifyError|translate}}</label>
-                </div>
+            </div>
+            <div class="text-invalid">
+                <label *ngIf="msgVerifyError!==''">{{msgVerifyError|translate}}</label>
             </div>
 
         </div>

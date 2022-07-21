@@ -54,6 +54,10 @@ export class CustomerInformationService {
     return this.http.post(`${this.api_url_get_code}common/getWard`,data);
   }
 
+  getAllRelationship() : Observable<any>{
+    return this.http.get(`${this.api_url_get_code}common/getAllReferenceRelation`);
+  }
+
   // getCustomerInfo():Observable<any> {
   //
   // }

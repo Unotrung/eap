@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 export class DialogStatusUpdateComponent implements OnInit {
   isStatus = false;
   messageStatus = '';
+  messageStatusMobile? = '';
 
   constructor(public dialogRef: MatDialogRef<DialogStatusUpdateComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
@@ -18,6 +19,7 @@ export class DialogStatusUpdateComponent implements OnInit {
 
   ngOnInit() {
     this.isStatus = this.data.isStatus;
+    this.messageStatusMobile = this.data.messageStatusMobile;
     this.messageStatus = this.data.messageStatus;
   }
 

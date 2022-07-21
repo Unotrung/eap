@@ -6,6 +6,7 @@
     <img src="../../../assets/images/cry.png">
   </div>
 
-  <div class="title-status">{{messageStatus | translate}}</div>
+  <div *ngIf = "messageStatus" class="title-status hidden-480" [innerHTML]="messageStatus | translate"></div>
+  <div *ngIf = "messageStatusMobile" class="title-status hidden-lager-screen" [innerHTML]="messageStatusMobile | translate"></div>
   <app-item-close-dialog class="close-popup" (click)="closePopup()"></app-item-close-dialog>
 </div>

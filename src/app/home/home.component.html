@@ -79,12 +79,12 @@
         <!--        Dành cho điện thoại-->
         <div class="cover-swiper-2 hidden-lager-screen">
             <swiper [slidesPerView]="1" [spaceBetween]="10" [scrollbar]="{ draggable: true }" [pagination]="{clickable: true}">
-                <ng-template *ngFor="let item of lisItemLayer2" swiperSlide>
+                <ng-template *ngFor="let item of lisItemLayer2,let i = index" swiperSlide>
                     <div class="content-item">
                         <div class="layer-2-icon"><img [src]="item.src"></div>
                         <div class="layer-2-lable" [innerHTML]="item.lable | translate"></div>
                         <div class="layer-2-content">{{item.content | translate}}</div>
-                        <div class="layer-2-more">
+                        <div class="layer-2-more" *ngIf="i==0">
                             <span>{{'home.seeMore' | translate}}</span>
                             <img src="../../assets/images/more.png">
                         </div>

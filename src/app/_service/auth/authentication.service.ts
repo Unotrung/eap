@@ -21,6 +21,8 @@ export class AuthenticationService  {
   public api_url_logout = "";
   public api_url_change_token = "";
   public tokenOtp$: BehaviorSubject<string>;
+  public itemMenu$: BehaviorSubject<number>;
+  public currentItemMenu$: Observable<number>;
   constructor(private http: HttpClient,
               private router: Router) {
     this.api_url_login = `${environment.urlApiEap}v1/eap/auth/login`;
@@ -35,6 +37,8 @@ export class AuthenticationService  {
     this.user$ = new BehaviorSubject<User>({});
     this.step$ = new BehaviorSubject<number>(0);
     this.tokenOtp$ = new BehaviorSubject<string>("");
+    this.itemMenu$ = new BehaviorSubject<number>(1);
+    this.currentItemMenu$ = this.itemMenu$.asObservable();
   }
 
   loginUser(data: any): Observable<any>{
@@ -59,6 +63,7 @@ export class AuthenticationService  {
      localStorage.removeItem('accessToken');
      localStorage.removeItem('userCurrent');
      localStorage.removeItem('refreshToken');
+     this.itemMenu$.next(1);
      this.router.navigate(['/']);
   }
 

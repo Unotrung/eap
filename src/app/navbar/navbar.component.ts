@@ -60,6 +60,7 @@ export class NavbarComponent implements OnInit {
     @ViewChild('menuProfile') menuProfile: ElementRef;
     currentItem: number = 1;
     isShowSidebar = true;
+    isShowNoteMobile: boolean = false;
 
     constructor(
         private router: Router,
@@ -92,6 +93,7 @@ export class NavbarComponent implements OnInit {
             this.authenticationService.currentAccessToken$.subscribe(x => {
                 this.currentAccessToken = x;});
             this.sidebarService.isShowSidebar$.subscribe(x=>{this.isShowSidebar =x});
+            this.authenticationService.currentItemMenu$.subscribe(x=>this.currentItem = x);
         },0)
     }
 
@@ -108,6 +110,7 @@ export class NavbarComponent implements OnInit {
     showProfileUser() {
         setTimeout(() => {
             this.showBtnProfile = false;
+            this.isShowNoteMobile = false
         }, 0)
         this.sidebarService.itemSelectObject$.next('');
         this.router.navigate(["/infor-account"]).then();
@@ -145,6 +148,7 @@ export class NavbarComponent implements OnInit {
 
     onShowMenu(e: any) {
         e.stopPropagation();
+        this.isShowNoteMobile = false;
         this.sidebarService.isShowMenu$.next(true);
         this.sidebarService.heightMenu$.next(100)
     }
@@ -163,6 +167,7 @@ export class NavbarComponent implements OnInit {
     }
 
     onShowMenuAfterAuth(e: any) {
+        this.isShowNoteMobile = false
         e.stopPropagation();
         if (this.sidebarService.heightSidebar$.getValue()==100){
             this.sidebarService.heightSidebar$.next(0)
@@ -172,6 +177,7 @@ export class NavbarComponent implements OnInit {
     }
 
     showAllNotification() {
-        this.router.navigate(['/all-note'])
+        this.isShowNoteMobile = !this.isShowNoteMobile
+        // this.router.navigate(['/all-note'])
     }
 }

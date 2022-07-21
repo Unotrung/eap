@@ -1,5 +1,3 @@
-
-
 .container-transaction {
   min-height: 86vh;
   background: rgba(255, 255, 255, 0.4);
@@ -7,7 +5,7 @@
   margin-right: 40px;
   font-style: normal;
   color: #000000;
-  padding-top: 72.5px;
+  padding-top: 71.5px;
   padding-bottom: 40px;
   margin-bottom: 40px;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.1);
@@ -20,7 +18,7 @@
   align-items: center;
   justify-content: space-between;
   margin-left: 40px;
-  margin-right: 40px;
+  margin-right: 18.25px;
 }
 
 
@@ -31,13 +29,12 @@
   line-height: 39px;
   color: #000000;
   position: absolute;
-  top: 43.5px;
+  top: 39.5px;
   left: 40px;
   @media screen and(max-width: 480px){
     font-size: 20px;
     line-height: 24px;
-    margin: 20px;
-    top: 72px;
+    top: 104px;
     margin-left: -20px !important;
   }
 }
@@ -83,15 +80,16 @@
   margin-right: 20px;
 }
 .no-page {
+  width: 107px;
   height: 30px;
+  margin-right: 19.25px;
   padding-left: 32px;
-  padding-right: 10px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   display: flex;
   align-items: center;
-  text-align: right;
+  justify-content: start;
   color: #2F172A;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -102,6 +100,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 
 select {
   width: 138px;
@@ -138,9 +137,9 @@ thead tr th {
 }
 
 tbody {
-  font-weight: 100;
+  font-weight: 400;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
   color: #000000;
 }
 
@@ -172,8 +171,7 @@ td {
 .sort-icon-esc {
   transform: rotate(0deg);
   cursor: pointer;
-  height: 3.3333334922790527px;
-  width: 6.666666507720947px;
+  width: 8px;
 }
 
 a {
@@ -237,4 +235,8 @@ a {
     height: 20px;
     cursor: pointer;
   }
+}
+
+.td-name-product {
+  padding-right: 16px;
 }

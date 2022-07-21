@@ -4,7 +4,7 @@
              src="../../assets/images/menu-header.png">
         <img *ngIf="currentAccessToken!=null && isShowSidebar" (click)="onShowMenuAfterAuth($event)" class="icon-menu hidden-lager-screen"
              src="../../assets/images/menu-header.png">
-        <a class="cover-icon-home" href="/auth" *ngIf="currentAccessToken!==null">
+        <a class="cover-icon-home" href="/" *ngIf="currentAccessToken!==null">
             <img class="img-icon-home" src="../../assets/images/_VOOLOLogo.png">
         </a>
         <a class="cover-icon-home" href="/" *ngIf="currentAccessToken==null">
@@ -14,7 +14,7 @@
             <a *ngFor="let item of listItemMenu, let i = index"
                [innerHTML]="item.text | translate"
                [className]="currentItem===item.id?'link-home':'text-home-page'"
-               [href] = "item.router!=='/fastPay'?('#'+item.router):undefined"
+               href = "{{item.router!=='/fastPay'?('#'+item.router):undefined}}"
                (click)="openOtherPage(item.router,item.id,$event)"
             ></a>
         </div>
@@ -55,7 +55,7 @@
                             <img src="../../assets/images/angle-down.png">
                             <div #menuProfile [hidden]="!showBtnProfile" class="view-profile-drop">
                                 <div class="box-show box-profile" (click)="showProfileUser()">
-                                    <img class="icon-show" src="../../assets/images/avatar-nav.png">
+                                    <img class="icon-show" src="../../assets/images/avatar-nav-2.png">
                                     <div>{{'header.showInformation' | translate}}</div>
                                 </div>
                                 <div class="box-show box-logout" (click)="logoutUser()">
@@ -71,10 +71,11 @@
         </div>
     </div>
     <!--    icon-mobile-->
-    <div *ngIf="currentAccessToken != null" class="hidden-lager-screen box-icon-mobile">
+    <div  *ngIf="currentAccessToken != null" class="hidden-lager-screen box-icon-mobile">
         <img (click)="showAllNotification()" class="bell" src="../../assets/images/bell.png">
         <img (click)="showProfileUser()" class="icon-pro" src="../../assets/images/profile-mobile.png">
     </div>
+    <app-notification-mobile class="hidden-lager-screen" [hidden]="!isShowNoteMobile"></app-notification-mobile>
 </div>
 
 

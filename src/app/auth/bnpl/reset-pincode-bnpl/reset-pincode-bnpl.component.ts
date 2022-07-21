@@ -84,7 +84,6 @@ export class ResetPincodeBnplComponent implements OnInit {
 
     changePinAgain() {
         this.router.navigate(['/change-pin']);
-        window.location.reload();
     }
 
     focusAll(num:number) {

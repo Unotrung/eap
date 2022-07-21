@@ -20,6 +20,8 @@ export class InputOtpConfirmContractComponent implements OnInit {
     messageErr: string = '';
     otp: string = '';
     phone = '';
+    messageErrExp: string = '';
+    countFail: number = 0;
 
     constructor(public dialogRef: MatDialogRef<InputOtpConfirmContractComponent>,
                 @Inject(MAT_DIALOG_DATA) public data,
@@ -70,23 +72,36 @@ export class InputOtpConfirmContractComponent implements OnInit {
     }
 
     submit() {
-        this.dialogRef.close();
-        // this.route.navigateByUrl('/process-confirm');
-        const dialogRef = this.dialog.open(WaitingConfirmSignContractComponent, {
-            width: '100%',
-        });
-        dialogRef.afterClosed().subscribe(result => {
-            if (result) {
-                this.openDialogStatus(result);
+        if (this.otp === '111111') {
+            this.dialogRef.close();
+            // this.route.navigateByUrl('/process-confirm');
+            const dialogRef = this.dialog.open(WaitingConfirmSignContractComponent, {
+                width: '100%',
+            });
+            dialogRef.afterClosed().subscribe(result => {
+                if (result) {
+                    this.openDialogStatus(result);
+                }
+            });
+            this.countFail = 0;
+        } else {
+            this.countFail = this.countFail + 1;
+            this.messageErr = this.translateService.instant('forgotPass.wrongOtp');
+            if (this.countFail === 5) {
+                this.messageErr = this.messageErr = this.translateService.instant('forgotPass.blockOtp');
             }
-        });
+            if (this.countFail > 5) {
+                this.dialogRef.close()
+            }
+        }
+
     }
 
     closeDialog() {
         this.dialogRef.close();
     }
 
-    openDialogStatus(isComplete:boolean){
+    openDialogStatus(isComplete: boolean) {
         const dialogRef = this.dialog.open(StatusCompleteComponent, {
             width: '100%',
             data: isComplete

@@ -13,7 +13,10 @@ export class DateStylePipe extends DatePipe implements PipeTransform {
                 break;
             }
         }
-        newDate = newDate.replace('-','/');
-        return super.transform(newDate, 'dd/MM/yyyy')
+        let temArray = newDate.split("-");
+        let dateShow = temArray[2]+"/"+temArray[1]+"/"+temArray[0];
+        return dateShow;
+        // newDate = newDate.replace('-','/');
+        // return super.transform(newDate, 'dd/MM/yyyy')
     }
 }

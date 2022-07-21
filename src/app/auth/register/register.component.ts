@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
             Validators.pattern("[^(!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?0-9)]{2,64}")
         ]),
         phone: new FormControl("", [Validators.required,
-            Validators.pattern("0[0-9]{9}")
+            Validators.pattern("(09|03|07|08|05)[\\d]{8}")
         ]),
         email: new FormControl("", [Validators.required,
             Validators.pattern("^(\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+)$")

@@ -3,10 +3,13 @@
 </div>
 <div class="container-right-body">
     <div *ngIf="(!isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))||
-((pictureService.citizenFrontImageComplete$ | async) && (pictureService.citizenBackImageComplete$ | async))" class="title-infor">
+(pictureService.citizenFrontImageComplete$ | async)"
+         class="title-infor-nid">
         {{'takePhotoNid.labelNid' | translate}}
     </div>
-    <div *ngIf="(isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))" class="title-infor hidden-480" [innerHTML]="'takePhotoNid.guideTitleBig'|translate"></div>
+    <div *ngIf="(isShowGuide && !(pictureService.citizenFrontImageComplete$ | async))"
+         class="title-infor-nid hidden-480"
+         [innerHTML]="'takePhotoNid.guideTitleBig'|translate"></div>
 
     <div fxLayout="column" fxLayoutAlign="center center">
 
@@ -20,37 +23,43 @@
                 <div class="title-text">{{'takePhotoNid.labelNid' | translate}}</div>
             </div>
             <div class="citizen-frame-list" fxLayout="row" fxLayoutAlign="space-around center" appMarginTop="34">
-                <div class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
-                    <div (click)="isShowGuide = true"
-                         class="inside-card"
-                         *ngIf="!(pictureService.citizenFrontImageComplete$ | async)">
-                        <div class="cover-camera">
-                            <img fxFlexAlign="center" width="24" height="24" alt="" src="assets/images/camera.png">
+                <div style="position: relative">
+                    <div class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
+                        <div (click)="isShowGuide = true"
+                             class="inside-card"
+                             *ngIf="!(pictureService.citizenFrontImageComplete$ | async)">
+                            <div class="cover-camera">
+                                <img fxFlexAlign="center" width="24" height="24" alt="" src="assets/images/camera.png">
+                            </div>
+                        </div>
+                        <div *ngIf="pictureService.citizenFrontImageComplete$ | async">
+                            <img class="img-small" appMarginTop="8" [src]="pictureService.citizenFrontImage">
+                            <!--                        <img class="icon-dell" (click)="onDeleteImage(NCardSide.front)"-->
+                            <!--                             src="../../../../assets/images/trash2.png">-->
                         </div>
                     </div>
-                    <div *ngIf="pictureService.citizenFrontImageComplete$ | async" style="position: relative">
-                        <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
-                             [src]="pictureService.citizenFrontImage">
-                        <!--                        <img class="icon-dell" (click)="onDeleteImage(NCardSide.front)"-->
-                        <!--                             src="../../../../assets/images/trash2.png">-->
-                        <img class="icon-tick" src="../../../../assets/images/tick-photo.png">
-                    </div>
+                    <img *ngIf="pictureService.citizenFrontImageComplete$ | async"
+                         class="icon-tick-nid" src="../../../../assets/images/tick-photo.png">
                 </div>
-                <div class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
-                    <div (click)="isShowGuide = true"
-                         *ngIf="!(pictureService.citizenBackImageComplete$ | async)"
-                         class="inside-card">
-                        <div class="cover-camera">
-                            <img fxFlexAlign="center" width="24" height="24" alt="" src="assets/images/camera.png">
+                <div style="position: relative">
+                    <div class="card-box" fxLayout="column" fxLayoutAlign="space-around center">
+                        <div (click)="isShowGuide = true"
+                             *ngIf="!(pictureService.citizenBackImageComplete$ | async)"
+                             class="inside-card">
+                            <div class="cover-camera">
+                                <img fxFlexAlign="center" width="24" height="24" alt="" src="assets/images/camera.png">
+                            </div>
                         </div>
-                    </div>
 
-                    <div *ngIf="pictureService.citizenBackImageComplete$ | async" style="position: relative">
-                        <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
-                             [src]="pictureService.citizenBackImage">
-                        <img class="icon-tick" src="../../../../assets/images/tick-photo.png">
+                        <div *ngIf="pictureService.citizenBackImageComplete$ | async">
+                            <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
+                                 [src]="pictureService.citizenBackImage">
+                        </div>
                     </div>
+                    <img *ngIf="pictureService.citizenBackImageComplete$ | async"
+                         class="icon-tick-nid" src="../../../../assets/images/tick-photo.png">
                 </div>
+
             </div>
             <div class="citizen-frame-list" fxLayout="row" fxLayoutAlign="space-around center">
                 <div class="citizen-image-text">{{'takePhotoNid.labelBefore' | translate}}</div>
@@ -77,7 +86,7 @@
             </div>
             <div class="cover-btn-shot hidden-480" *ngIf="!(pictureService.citizenBackImageComplete$ | async)">
                 <app-button-dialog
-                        [isEnable]="false"
+                        [isEnable]="true"
                         [contentBtn]="'takePhotoNid.continue' | translate"
                         (click)="isShowGuide = true">
                 </app-button-dialog>
@@ -87,7 +96,7 @@
                         [width]="200"
                         [height]="44"
                         [fontSize]="14"
-                        [isEnable]="false"
+                        [isEnable]="true"
                         [contentBtn]="'takePhotoNid.continue' | translate"
                         (click)="isShowGuide = true">
                 </app-button-dialog>

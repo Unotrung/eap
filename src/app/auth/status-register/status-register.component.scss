@@ -4,14 +4,16 @@
   font-style: normal;
   position: relative;
   margin: auto;
-  width: 627px;
-  height: auto;
+  width: 515px;
+  height: 378px;
   border-radius: 20px;
   border: 3px solid #EEEEEE;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.12);
   background: #F3F3F3;
-  padding: 64px 0px 32px 0px;
+  padding: 96px 0px 40px 0px;
   @media screen and(max-width: 480px){
     width: 335px;
+    height: auto;
     padding: 36px 46px;
     border-radius: 15px;
   }
@@ -49,7 +51,7 @@
   @media screen and(max-width: 480px){
     font-size: 16px;
     line-height: 20px;
-    margin-top: 16px;
+    margin-top: 20px;
   }
 }
 
@@ -64,6 +66,7 @@
   @media screen and(max-width: 480px) {
     font-size: 10px;
     line-height: 12px;
+    margin-top: 8px;
   }
 }
 

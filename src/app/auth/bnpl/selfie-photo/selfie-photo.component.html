@@ -1,6 +1,6 @@
 <div class="container-right-body">
-    <div class="title-infor" *ngIf="!isShowGuide">{{'selfie.labelTakePhoto' | translate}}</div>
-    <div class="title-infor hidden-480" *ngIf="isShowGuide"
+    <div class="title-infor-selfie" *ngIf="!isShowGuide">{{'selfie.labelTakePhoto' | translate}}</div>
+    <div class="title-infor-selfie hidden-480" *ngIf="isShowGuide"
          [innerHTML]="'selfie.titleGuideBig'|translate"></div>
 
     <div *ngIf="!isShowGuide" fxLayout="column" class="container-selfie">
@@ -54,7 +54,7 @@
                                                src="assets/images/camera.png"></div>
             </div>
             <div class="position-img" *ngIf="pictureService.selfieImageComplete$ | async">
-                <div class="picture-selfie-overlay-2" fxLayout="column" fxLayoutAlign="top center">
+                <div (click)="startCaptureImage()" class="picture-selfie-overlay-2" fxLayout="column" fxLayoutAlign="top center">
                     <img class="img-small" appMarginTop="8"
                          [src]="pictureService.selfieImage">
                     <!--                <img class="icon-dell" (click)="onDeleteImage()" src="../../../../assets/images/trash.png">-->

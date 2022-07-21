@@ -42,24 +42,10 @@
                                 #codeInput>
                     </code-input>
                     <div class="text-invalid" >
-                        <label *ngIf="(pinCode !== verifyPinCode) && verifyPinCode.length == 4">{{msgVerifyError|translate}}</label>
+                        <label *ngIf="(pinCode !== verifyPinCode)">{{msgVerifyError|translate}}</label>
                     </div>
                 </div>
-
-
-<!--                <div class="text-invalid" *ngIf="messageError!==''">-->
-<!--                    <label class="content-valid">{{messageError}}</label>-->
-<!--                </div>-->
             </form>
-
-<!--            <div class="cover-note">-->
-<!--                <div class="note-text">Lưu ý</div>-->
-<!--                <div class="note-text-2">-->
-<!--                    <span class="red-star">*</span>-->
-<!--                    Mã pin bao gồm 4 số, dùng để check out khi thanh toán-->
-<!--                </div>-->
-<!--            </div>-->
-
         </div>
         <div class="cover-btn-pin">
             <app-button-dialog (click)="submitSetPinCode()" [fontSize]="14" [height]="41" [width]="200"

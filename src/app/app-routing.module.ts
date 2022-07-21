@@ -46,7 +46,7 @@ const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'register-from-bnpl/:name/:phone', component: HomeComponent},
     {path: 'reset-password-from-admin/:phoneAdmin', component: HomeComponent},
-    {path: 'auth', component: HomeComponent, canActivate: [AuthGuard]},
+    {path: '', component: HomeComponent, canActivate: [AuthGuard]},
     {path: 'login', component: HomeAfterLoginComponent, canActivate: [AuthGuard]},
     {path: 'home-after-auth', component: HomeAfterLoginComponent, canActivate: [AuthGuard]},
     {path: 'choose-provider', component: ChooseProviderRegisterBnplComponent, canActivate: [AuthGuard]},

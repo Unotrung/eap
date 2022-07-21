@@ -149,17 +149,20 @@ export class InformationAccountComponent implements OnInit {
                             }
                             this.updateEapService.updateEmail(data).subscribe(next => {
                                 this.openDialogStatusUpdate(true,
+                                    this.translateService.instant('accountEap.statusSuccess'),
                                     this.translateService.instant('accountEap.statusSuccess'));
                             },error => {
                                 this.email = this.oldEmail;
                                 this.openDialogStatusUpdate(false,
+                                    this.translateService.instant('accountEap.statusFail'),
                                     this.translateService.instant('accountEap.statusFail'));
                             })
                         }
                     });
                 }
             }, error => {
-                if (error.error.statusCode == 1000){
+                console.log(error)
+                if (error.error.statusCode == 5002){
                     this.msgErrorEmail = this.translateService.instant('accountEap.existEmail');
                     this.isFocus = true;
                 }
@@ -183,9 +186,11 @@ export class InformationAccountComponent implements OnInit {
         let id = this.authenticationService.userCurrentSubject$.getValue()._id;
         this.updateEapService.updatePassword(id, {username: this.username}).subscribe(next=>{
             this.openDialogStatusUpdate(true,
+                this.translateService.instant('accountEap.statusSuccessName'),
                 this.translateService.instant('accountEap.statusSuccessName'));
         },error => {
             this.openDialogStatusUpdate(true,
+                this.translateService.instant('accountEap.statusFailName'),
                 this.translateService.instant('accountEap.statusFailName'));
         })
     }
@@ -236,10 +241,10 @@ export class InformationAccountComponent implements OnInit {
         this.email = this.oldEmail;
     }
 
-    openDialogStatusUpdate(status:boolean,msg:string){
+    openDialogStatusUpdate(status:boolean,msg:string, msgMobile: string){
         const dialogRef = this.dialog.open(DialogStatusUpdateComponent, {
             width: '100%',
-            data: {isStatus: status, messageStatus: msg},
+            data: {isStatus: status, messageStatus: msg, messageStatusMobile: msgMobile},
             panelClass: ['animate__animated', 'animate__faster', 'animate__zoomIn', 'stt__update']
         });
         dialogRef.afterClosed().subscribe(result => {

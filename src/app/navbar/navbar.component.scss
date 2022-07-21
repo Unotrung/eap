@@ -37,8 +37,7 @@
   @media screen and(max-width: 480px){
     padding-left: 0px;
     padding-right: 0px;
-    padding-top: 45px;
-    height: 83px;
+    height: 72px;
     background: #FFFFFF;
   }
 }
@@ -78,6 +77,8 @@
   }
   @media screen and(max-width: 480px){
     width: unset;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -217,6 +218,10 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  img {
+    width: 18px;
+    height: 20px;
+  }
 }
 
 .profile {
@@ -294,6 +299,7 @@ a:hover {
   color: #2F172A;
   padding-left: 24px;
   .icon-show {
+    width: 30px;
     height: auto;
     margin-right: 16px;
   }
@@ -323,7 +329,7 @@ a:hover {
     width: 30px;
     height: 30px;
     left: 20px;
-    top: 43px;
+    top: 21px;
   }
 }
 
@@ -369,6 +375,8 @@ a:hover {
 
 
 .icon-drop {
+  width: 8.7px;
+  height: auto;
   position: relative;
   display: flex;
   align-items: center;
@@ -383,6 +391,17 @@ app-notification-dropdown {
   top: 50px;
 }
 
+app-notification-mobile {
+  z-index: 1;
+  position: absolute;
+  left: 0px;
+  top: 72px;
+  min-height: 90vh;
+  height: 86vmax;
+  width: 100%;
+  overflow: auto;
+}
+
 .box-icon-mobile {
   display: flex;
   align-items: center;
@@ -390,7 +409,7 @@ app-notification-dropdown {
   flex-direction: row;
   position: absolute;
   right: 24px;
-  top: 43px;
+  top: 21px;
   width: 64px;
 }
 
@@ -420,8 +439,7 @@ app-notification-dropdown {
   @media screen and(max-width: 480px){
     padding-left: 0px;
     padding-right: 0px;
-    padding-top: 45px;
-    height: 83px;
+    height: 72px;
     background: #FFFFFF;
   }
 }

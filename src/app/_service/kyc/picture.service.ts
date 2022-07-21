@@ -199,7 +199,6 @@ export class PictureService {
     }
 
     verifyNidAndFrontImage(): boolean {
-        console.log(this.citizenFrontData$.getValue())
         let match = true
         if (checkInfo(this.citizenFrontData$.getValue()['idNumber']).value !== this.authService.user$.getValue().citizenId) {
             // this.citizenFrontImageComplete$.next(false)
