@@ -15,19 +15,21 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class ConfirmNidResetPincodeComponent implements OnInit {
     formNid: FormGroup = new FormGroup({
-        nid: new FormControl("",[Validators.required,Validators.pattern("^(\\d{9}|\\d{12})$")]),
+        nid: new FormControl("", [Validators.required, Validators.pattern("^(\\d{9}|\\d{12})$")]),
     });
     validateMessage = {
-        'nid' : [
-            {type: "required",message: this.translateService.instant('forgotPin.required')},
-            {type: "pattern",message: this.translateService.instant('forgotPin.pattern')}
-        ]}
+        'nid': [
+            {type: "required", message: this.translateService.instant('forgotPin.required')},
+            {type: "pattern", message: this.translateService.instant('forgotPin.pattern')}
+        ]
+    }
     messageError: string = "";
+
     constructor(
-                public router: Router,
-                public authService: AuthenticationService,
-                private accountBnplService: AccountBnplService,
-                private translateService: TranslateService) {
+        public router: Router,
+        public authService: AuthenticationService,
+        private accountBnplService: AccountBnplService,
+        private translateService: TranslateService) {
     }
 
     ngOnInit() {
@@ -46,30 +48,29 @@ export class ConfirmNidResetPincodeComponent implements OnInit {
         if (this.formNid.invalid) return;
         let nid = this.formNid.value.nid;
         let phone = this.authService.userCurrentSubject$.getValue().phone;
-        this.accountBnplService.getOtp({phone: phone, nid: nid}).subscribe(next => {
-            if (next.status) {
-                this.resetMsg();
-                console.log(next);
-                this.authService.user$.next({...this.authService.user$.getValue(),citizenId: nid});
-                this.router.navigate(['/get-otp-reset-pin'])
+        this.accountBnplService.checkNidAndPhone({phone: phone, nid: nid}).subscribe(next => {
+            if (next.statusCode === 1000) {
+                this.accountBnplService.getOtp({phone: phone, nid: nid}).subscribe(res => {
+                    if (res.status) {
+                        console.log("OTP: ",res);
+                        this.authService.user$.next({...this.authService.user$.getValue(), citizenId: nid});
+                        this.router.navigate(['/get-otp-reset-pin'])
+                    }
+                })
+            } else if (next.statusCode === 900) {
+                this.messageError = this.translateService.instant('forgotPin.nidWrong')
             }
         }, error => {
-            this.resetMsg();
-            console.log(error)
-            if (error.error.statusCode == 1001) {
-                this.messageError = this.translateService.instant('forgotPin.nidWrong')
-            } else if (error.error.statusCode == 1002) {
-                this.messageError = this.translateService.instant('forgotPin.PhoneWrong')
-            } else {
-                this.router.navigate(['/error'])
-            }
+            this.messageError = this.translateService.instant('forgotPin.PhoneWrong')
         })
+
     }
 
     resetMsg() {
         this.messageError = '';
     }
 }
+
 //
 // import {Component, Inject, OnInit} from '@angular/core';
 // import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";

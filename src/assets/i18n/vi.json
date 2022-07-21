@@ -260,7 +260,8 @@
 		"patternEmail": "Định dạng Email không hợp lệ.",
 		"errorPhone": "Số điện thoại đã được đăng ký VOOLO. Vui lòng đăng nhập",
 		"errorEmail": "Email đã được đăng ký VOOLO. Vui lòng đăng nhập",
-		"BlockEmail": "Email bạn đã bị khoá do nhập sai OTP nhiều lần, vui lòng thử lại sau 60 phút."
+		"BlockEmail": "Email bạn đã bị khoá do nhập sai OTP nhiều lần, vui lòng thử lại sau 60 phút.",
+		"BlockPhone": "Số điện thoại bạn đã bị khoá do nhập sai OTP nhiều lần, vui lòng thử lại sau 60 phút."
 	},
 	"status": {
 		"contentSuccess": "Bạn đã đăng ký thành công",

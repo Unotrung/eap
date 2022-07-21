@@ -95,7 +95,7 @@ export class InputOtpEditEapComponent implements OnInit {
                         }
                     }, error => {
                     console.log('err',error)
-                        if (error.error.statusCode == 1009) {
+                        if (error.error.statusCode == 1004) {
                             if (error.error.countFail<5) {
                                 this.countFail = error.error.countFail;
                                 this.messageErr = this.translateService.instant('forgotPass.wrongOtp');
@@ -106,10 +106,6 @@ export class InputOtpEditEapComponent implements OnInit {
                             }
                         } else if (error.error.statusCode == 3000) {
                             this.messageErrExp = this.translateService.instant('forgotPass.ExpiredOtp');
-                        } else if (error.error.statusCode == 1004) {
-                            this.countFail = error.error.countFail;
-                            this.isCancel = true;
-                            this.messageErr = this.translateService.instant('forgotPass.blockOtp');
                         }
                         this.loading = false;
                     }

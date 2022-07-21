@@ -111,7 +111,14 @@ export class RegisterComponent implements OnInit {
             } else if (error.error.statusCode == 2011) {
                 this.errorMsgEmail = this.translateService.instant('register.errorEmail');
             } else if (error.error.statusCode == 1004) {
-                this.errorMsgEmail = this.translateService.instant('register.BlockEmail');
+                if (error.error.type==='both') {
+                    this.errorMsgPhone = this.translateService.instant('register.BlockPhone');
+                    this.errorMsgEmail = this.translateService.instant('register.BlockEmail');
+                } else if (error.error.type==='phone') {
+                    this.errorMsgPhone = this.translateService.instant('register.BlockPhone');
+                } else if (error.error.type==='email') {
+                    this.errorMsgEmail = this.translateService.instant('register.BlockEmail');
+                }
             }
             this.isExistAccount = true;
             this.loading = false;

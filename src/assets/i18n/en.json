@@ -260,7 +260,8 @@
 		"patternEmail": "Invalid email",
 		"errorPhone": "Phone number has been registered VOOLO. Please login!",
 		"errorEmail": "Email has been registered VOOLO. Please login!",
-		"BlockEmail": "Your email has been locked due to incorrect OTP input many times, please try again in 60 minute"
+		"BlockEmail": "Your email has been locked due to incorrect OTP input many times, please try again in 60 minute",
+		"BlockEmail": "Your phone has been locked due to incorrect OTP input many times, please try again in 60 minute"
 	},
 	"status": {
 		"contentSuccess": "",
