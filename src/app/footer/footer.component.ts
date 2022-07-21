@@ -36,8 +36,8 @@ export class FooterComponent implements OnInit {
   selectLanguage(lang: string,e:any) {
     e.stopPropagation();
     this.isShowLang = false;
-    this.languageService.langSubject$.next('vi');
-    this.translateService.use('vi');
+    this.languageService.langSubject$.next(lang);
+    this.translateService.use(lang);
     this.langChooseValue = lang;
     let showLanguage = '';
     let listShowLanguage = ['Tiếng Việt','English']
