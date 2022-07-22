@@ -52,7 +52,6 @@
                                 </div>
                                 <div style="position: relative">
                                     <input class="input-info"
-                                           disabled
                                            formControlName="sex"
                                            [ngClass]="{'is-invalid': (f['sex'].touched || f['sex'].dirty) && f['sex'].errors}"
                                            appMarginTop="8" formControlName="sex" matInput [matAutocomplete]="autoSex">
@@ -203,7 +202,9 @@
                                 {{'kyc.city' | translate}}
                             </div>
                             <div style="position: relative">
-                                <input class="input-info" type="text"
+                                <input class="input-info bgr-input-drop"
+                                       [class.bgr-input-drop-rotate]="rotateNameIcon==='city'"
+                                       type="text"
                                        [ngClass]="{'is-invalid': (f['city'].touched || f['city'].dirty) && f['city'].errors}"
                                        appMarginTop="8"
                                        matInput
@@ -218,8 +219,6 @@
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
-                                <img [class.icon-rotate]="rotateNameIcon === 'city'"
-                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -231,7 +230,9 @@
                                 {{'kyc.district' | translate}}
                             </div>
                             <div style="position: relative">
-                                <input class="narrow-input-info-2" appMarginTop="8" type="text"
+                                <input class="narrow-input-info-2 bgr-input-drop"
+                                       [class.bgr-input-drop-rotate]="rotateNameIcon==='district'"
+                                       appMarginTop="8" type="text"
                                        [ngClass]="{'is-invalid': (f['district'].touched || f['district'].dirty) && f['district'].errors}"
                                        appMarginTop="8"
                                        matInput
@@ -246,8 +247,6 @@
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
-                                <img [class.icon-rotate]="rotateNameIcon === 'district'"
-                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -262,7 +261,9 @@
                                 <ng-container>{{'kyc.ward' | translate}}</ng-container>
                             </div>
                             <div style="position: relative">
-                                <input class="narrow-input-info-2" appMarginTop="8" type="text"
+                                <input class="narrow-input-info-2 bgr-input-drop"
+                                       [class.bgr-input-drop-rotate]="rotateNameIcon==='ward'"
+                                       type="text"
                                        [ngClass]="{'is-invalid': (f['ward'].touched || f['ward'].dirty) && f['ward'].errors}"
                                        appMarginTop="8"
                                        (focusin)="rotateIcon('ward')"
@@ -277,8 +278,6 @@
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
-                                <img [class.icon-rotate]="rotateNameIcon === 'ward'"
-                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -312,7 +311,9 @@
                                 {{'kyc.city' | translate}}
                             </div>
                             <div style="position: relative">
-                                <input class="input-info" type="text"
+                                <input class="narrow-input-info-2 bgr-input-drop"
+                                       [class.bgr-input-drop-rotate]="rotateNameIcon==='cityTemp'"
+                                       type="text"
                                        [ngClass]="{'is-invalid': (f['cityTemp'].touched || f['cityTemp'].dirty) && f['cityTemp'].errors}"
                                        appMarginTop="8"
                                        (focusin)="rotateIcon('cityTemp')"
@@ -327,8 +328,6 @@
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
-                                <img [class.icon-rotate]="rotateNameIcon === 'cityTemp'"
-                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -340,7 +339,9 @@
                                 {{'kyc.district' | translate}}
                             </div>
                             <div style="position: relative">
-                                <input class="narrow-input-info-2" appMarginTop="8" type="text"
+                                <input class="narrow-input-info-2 bgr-input-drop"
+                                       [class.bgr-input-drop-rotate]="rotateNameIcon==='districtTemp'"
+                                       appMarginTop="8" type="text"
                                        [ngClass]="{'is-invalid': (f['districtTemp'].touched || f['districtTemp'].dirty) && f['districtTemp'].errors}"
                                        appMarginTop="8"
                                        (focusin)="rotateIcon('districtTemp')"
@@ -356,8 +357,6 @@
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
-                                <img [class.icon-rotate]="rotateNameIcon === 'districtTemp'"
-                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -372,7 +371,9 @@
                                 <ng-container>{{'kyc.ward' | translate}}</ng-container>
                             </div>
                             <div style="position: relative">
-                                <input class="narrow-input-info-2" appMarginTop="8" type="text"
+                                <input class="narrow-input-info-2 bgr-input-drop"
+                                       [class.bgr-input-drop-rotate]="rotateNameIcon==='wardTemp'"
+                                       appMarginTop="8" type="text"
                                        [ngClass]="{'is-invalid': (f['wardTemp'].touched || f['wardTemp'].dirty) && f['wardTemp'].errors}"
                                        appMarginTop="8"
                                        (focusin)="rotateIcon('wardTemp')"
@@ -387,8 +388,6 @@
                                         {{option}}
                                     </mat-option>
                                 </mat-autocomplete>
-                                <img [class.icon-rotate]="rotateNameIcon === 'wardTemp'"
-                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
                             <div class="error">
@@ -422,7 +421,9 @@
                                 {{'kyc.titleRef' | translate}}
                             </div>
                             <div style="position: relative">
-                                <input class="input-info" type="text"
+                                <input class="input-info bgr-input-drop"
+                                       [class.bgr-input-drop-rotate]="rotateNameIcon === 'relation'"
+                                       type="text"
                                        (keydown)="false"
                                        [ngClass]="{'is-invalid': (f['personal_title_ref'].touched || f['personal_title_ref'].dirty) && f['personal_title_ref'].errors}"
                                        appMarginTop="8"
@@ -441,8 +442,6 @@
                                         </mat-option>
                                     </mat-autocomplete>
                                 </div>
-                                <img [class.icon-rotate]="rotateNameIcon === 'relation'"
-                                     class="icon-option-drop" src="../../../../assets/images/angle-down.png">
                             </div>
 
 
