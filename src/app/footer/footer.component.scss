@@ -761,12 +761,15 @@
         //height: 400px;
     }
     @media screen and(max-width: 960px) {
-        padding: 56px 56px 0px 56px;
+        padding: 40px 56px 40px 56px;
         position: relative;
         height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     @media screen and(max-width: 480px) {
-        padding: 32px 32px;
+        padding: 24px 32px;
         position: relative;
         height: 120px;
     }
@@ -811,7 +814,7 @@
         width: 131px;
         height: 30px;
         position: absolute;
-        bottom: 32px;
+        bottom: 24px;
         right: 42px;
         font-size: 12px;
         line-height: 17px;
@@ -1037,7 +1040,7 @@
     @media screen and(max-width: 480px) {
         position: absolute;
         left: 32px;
-        bottom: 32px;
+        bottom: 24px;
         width: auto;
         right: unset;
     }
