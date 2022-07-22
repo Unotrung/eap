@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {environment} from "../../../environments/environment"
 
 @Injectable({
@@ -9,10 +9,16 @@ import {environment} from "../../../environments/environment"
 export class AccountBnplService {
     public api_url_register_bnpl = '';
     public api_url_check_bnpl_fec = '';
-
+    public stepRegister$: BehaviorSubject<any>;
+    public currentStepRegister$: Observable<any>;
     constructor(private http: HttpClient) {
         this.api_url_register_bnpl = `${environment.urlApiBnpl}v1/bnpl/`;
         this.api_url_check_bnpl_fec = `${environment.urlApiFec}mocking/api/v1/sources/exchange/assets/c2a50950-c027-4e3d-9806-8f2e0008c9ba/bnpl_api/2.0.3/m/Check`;
+        this.stepRegister$ = new BehaviorSubject<any>({
+            widthLine: 50,
+            numberStep:2
+        });
+        this.currentStepRegister$ = this.stepRegister$.asObservable()
     }
 
     registerUserBnpl(data: any): Observable<any> {

@@ -194,9 +194,10 @@
     justify-content: center;
   }
 
-  div .img-small {
-    width: auto;
-    height: 100%;
+  div .img-small-nid {
+    width: 100px;
+    height:100px;
+    object-fit: contain;
     @media screen and(max-width: 480px){
       width: 100%;
       height: auto;

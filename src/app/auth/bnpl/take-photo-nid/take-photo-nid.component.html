@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div *ngIf="pictureService.citizenFrontImageComplete$ | async">
-                            <img class="img-small" appMarginTop="8" [src]="pictureService.citizenFrontImage">
+                            <img class="img-small-nid" appMarginTop="8" [src]="pictureService.citizenFrontImage">
                             <!--                        <img class="icon-dell" (click)="onDeleteImage(NCardSide.front)"-->
                             <!--                             src="../../../../assets/images/trash2.png">-->
                         </div>
@@ -52,7 +52,7 @@
                         </div>
 
                         <div *ngIf="pictureService.citizenBackImageComplete$ | async">
-                            <img class="img-small" appMarginTop="8" width="60" height="40" alt=""
+                            <img class="img-small-nid" appMarginTop="8" width="60" height="40" alt=""
                                  [src]="pictureService.citizenBackImage">
                         </div>
                     </div>

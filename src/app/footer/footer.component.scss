@@ -763,7 +763,7 @@
     @media screen and(max-width: 960px) {
         padding: 56px 56px 0px 56px;
         position: relative;
-        height: 360px;
+        height: 250px;
     }
     @media screen and(max-width: 480px) {
         padding: 32px 32px;
@@ -927,7 +927,6 @@
 
 .footer-2 {
     //margin-top: 24px;
-    align-items: flex-end;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -936,6 +935,31 @@
     font-size: 20px;
     line-height: 25px;
     color: #FFFFFF;
+    height: 75px;
+    @media screen and(max-width: 1280px) {
+        //margin-top: 56px;
+        //height: 124px;
+    }
+    @media screen and(max-width: 1180px) {
+        font-size: 18px;
+    }
+    @media screen and(max-width: 1024px) {
+        //margin-top: 64px;
+        //height: 130px;
+        font-size: 18px;
+    }
+    @media screen and(max-width: 960px) {
+        //margin-top: 24px;
+        align-items: flex-end;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        color: #FFFFFF;
+    }
     @media screen and(max-width: 1280px) {
         //margin-top: 56px;
         //height: 124px;

@@ -6,6 +6,7 @@ import {AuthenticationService} from "../../../_service/auth/authentication.servi
 import {WaitingConfirmPhoneComponent} from "../waiting-confirm-phone/waiting-confirm.component-phone";
 import {WaitingConfirmSignContractComponent} from "../waiting-confirm-sign-contract/waiting-confirm-sign-contract.component";
 import {StatusCompleteComponent} from "../status-complete/status-complete.component";
+import {AccountBnplService} from "../../../_service/auth/account-bnpl.service";
 
 @Component({
     selector: 'app-input-otp-confirm-contract',
@@ -23,12 +24,14 @@ export class InputOtpConfirmContractComponent implements OnInit {
     messageErrExp: string = '';
     countFail: number = 0;
 
+
     constructor(public dialogRef: MatDialogRef<InputOtpConfirmContractComponent>,
                 @Inject(MAT_DIALOG_DATA) public data,
                 private dialog: MatDialog,
                 private route: Router,
                 public translateService: TranslateService,
-                private authenticationService: AuthenticationService) {
+                private authenticationService: AuthenticationService,
+                private accountBnplService: AccountBnplService) {
     }
 
     ngOnInit() {
@@ -73,8 +76,8 @@ export class InputOtpConfirmContractComponent implements OnInit {
 
     submit() {
         if (this.otp === '111111') {
+            this.accountBnplService.stepRegister$.next({widthLine: 75,numberStep:3});
             this.dialogRef.close();
-            // this.route.navigateByUrl('/process-confirm');
             const dialogRef = this.dialog.open(WaitingConfirmSignContractComponent, {
                 width: '100%',
             });

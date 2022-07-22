@@ -4,6 +4,7 @@ import {InputOtpConfirmContractComponent} from "../input-otp-confirm-contract/in
 import {AuthenticationService} from "../../../_service/auth/authentication.service";
 import {Router} from "@angular/router";
 import {TranslateService} from "@ngx-translate/core";
+import {AccountBnplService} from "../../../_service/auth/account-bnpl.service";
 
 @Component({
     selector: 'app-sign-contract',
@@ -14,17 +15,23 @@ export class SignContractComponent implements OnInit {
     isAgree: boolean = false;
     isGetOtp: boolean = false;
     isShow = false;
+    stepRegister = {
+        widthLine: 50,
+        numberStep:2
+    }
 
     constructor(public dialog: MatDialog,
                 private authService: AuthenticationService,
                 private router: Router,
-                private translateService: TranslateService) {
+                private translateService: TranslateService,
+                private accountBnplService: AccountBnplService) {
     }
 
     ngOnInit() {
-        // if (this.authService.step$.getValue() === 0) {
-        //     this.router.navigate(['/infor-bnpl']);
-        // }
+        this.accountBnplService.currentStepRegister$.subscribe(x=>this.stepRegister = {...x})
+        if (this.authService.step$.getValue() === 0) {
+            this.router.navigate(['/infor-bnpl']);
+        }
     }
 
     submitToSignContract() {

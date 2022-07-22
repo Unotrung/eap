@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {AuthenticationService} from "../../../_service/auth/authentication.service";
 import {Router} from "@angular/router";
+import {AccountBnplService} from "../../../_service/auth/account-bnpl.service";
 
 @Component({
   selector: 'app-status-complete',
@@ -17,10 +18,14 @@ export class StatusCompleteComponent implements OnInit {
               @Inject(MAT_DIALOG_DATA) public data: any,
               public dialog: MatDialog,
               private authenticationService: AuthenticationService,
+              private accountBnplService: AccountBnplService,
               public router: Router) { }
 
   ngOnInit() {
     this.isError = !this.data;
+    if (!this.isError) {
+      this.accountBnplService.stepRegister$.next({widthLine: 100,numberStep:4});
+    }
     this.callLogin(5);
   }
   onNoClick() {

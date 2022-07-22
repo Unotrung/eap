@@ -121,7 +121,7 @@ table {
   margin-top: 18px;
 }
 
-thead {
+thead tr td {
   height: 40px;
   font-style: normal;
   color: #000000;
@@ -130,6 +130,10 @@ thead {
   font-size: 14px;
   line-height: 16px;
   font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.height-40 {
+  height: 40px;
 }
 
 thead tr th {
