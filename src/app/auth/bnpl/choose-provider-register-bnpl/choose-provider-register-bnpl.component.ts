@@ -25,9 +25,9 @@ export class ChooseProviderRegisterBnplComponent implements OnInit {
     }
 
     ngOnInit() {
-        // if (this.authenticationService.step$.getValue()===0){
-        //     this.router.navigate(['/infor-bnpl']);
-        // }
+        if (this.authenticationService.step$.getValue()===0){
+            this.router.navigate(['/infor-bnpl']);
+        }
         this.getProvider();
         let phone = this.authenticationService.userCurrentSubject$.getValue().phone;
         this.getInformationBnpl(phone);

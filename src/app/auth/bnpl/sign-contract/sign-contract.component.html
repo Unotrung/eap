@@ -1,11 +1,11 @@
 <div class = "hidden-lager-screen">
-    <app-bar-process-bnpl [childData]="{widthLine: 50,numberStep:2}"></app-bar-process-bnpl>
+    <app-bar-process-bnpl [childData]="stepRegister"></app-bar-process-bnpl>
 </div>
 <div class="container-right-body">
     <div class="title-infor hidden-480">{{'inforBnpl.title' | translate}}</div>
     <div>
         <div class = "hidden-480">
-            <app-bar-process-bnpl [childData]="{widthLine: 50,numberStep:2}"></app-bar-process-bnpl>
+            <app-bar-process-bnpl [childData]="stepRegister"></app-bar-process-bnpl>
         </div>
 
         <div [style]="isShow?'height: auto':null" class="form-contract">
